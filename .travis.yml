@@ -1,0 +1,18 @@
+language: clojure
+dist: bionic
+addons:
+  chrome: stable
+lein: 2.9.0
+jdk: openjdk11
+sudo: false
+
+script:
+  - lein do clean, cljfmt check, test
+  - lein do clean, uberjar
+branches:
+  only:
+    - master
+
+cache:
+  directories:
+    - $HOME/.m2

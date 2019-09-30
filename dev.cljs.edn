@@ -1,0 +1,4 @@
+^{:watch-dirs   ["src" "test"]
+  :auto-testing true
+  :open-url     "http://[[server-hostname]]:[[server-port]]/figwheel-extra-main/auto-testing"}
+{:main reagent-material-ui.core}
