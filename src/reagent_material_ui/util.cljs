@@ -2,15 +2,25 @@
   (:require-macros [reagent-material-ui.macro :refer [e]])
   (:require [reagent.core :as r]
             [clojure.walk :refer [postwalk]]
-            [camel-snake-kebab.core :refer [->kebab-case]]
+            [camel-snake-kebab.core :refer [->kebab-case ->camelCaseString]]
             [cljsjs.react]
+            [material-ui]
             [goog.object :as obj]))
+
+(def ^:private color-key? #{:A100 :A200 :A400 :A700})
+
+(defn clj->js' [obj]
+  (clj->js obj :keyword-fn (fn [k]
+                             (if (color-key? k)
+                               (name k)
+                               (->camelCaseString k)))))
 
 (defn js->clj' [obj]
   (postwalk (fn [x]
-              (if (keyword? x)
-                (->kebab-case x)
-                x))
+              (cond
+                (color-key? x) x
+                (keyword? x) (->kebab-case x)
+                :else x))
             (js->clj obj :keywordize-keys true)))
 
 (defn wrap-clj-function [f]

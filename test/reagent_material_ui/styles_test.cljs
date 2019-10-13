@@ -2,7 +2,7 @@
   (:require [cljs.test :refer-macros [deftest testing is use-fixtures async]]
             [dommy.core :as dommy :refer-macros [sel1]]
             [reagent.core :as r]
-            [reagent-material-ui.styles :refer [make-styles with-styles styled use-theme with-theme]]
+            [reagent-material-ui.styles :refer [make-styles with-styles styled use-theme with-theme theme-provider]]
             [reagent-material-ui.test-util :refer [unmount-fixture unmount render]]))
 
 (use-fixtures :each unmount-fixture)
@@ -137,3 +137,25 @@
         (is (= "#f50057" (.. root -dataset -secondarycolor)))
         (is (= font-size (.. root -dataset -fontsize)))
         (is (= text-node (dommy/text root)))))))
+
+(deftest theme-provider-test
+  (testing "theme-provider"
+    (let [theme-1 {:foo "foo"}
+          theme-2 {:bar "bar"}
+          component (fn []
+                      (let [theme (use-theme)]
+                        (r/as-element [:div#theme-provider-test-root
+                                       {:data-foo (:foo theme)
+                                        :data-bar (:bar theme)}])))]
+      (testing "should provide the theme"
+        (render [theme-provider theme-1
+                 [:> component]])
+        (let [root (sel1 "#theme-provider-test-root")]
+          (is (= "foo" (.. root -dataset -foo)))))
+      (testing "should merge themes"
+        (render [theme-provider theme-1
+                 [theme-provider theme-2
+                  [:> component]]])
+        (let [root (sel1 "#theme-provider-test-root")]
+          (is (= "foo" (.. root -dataset -foo)))
+          (is (= "bar" (.. root -dataset -bar))))))))

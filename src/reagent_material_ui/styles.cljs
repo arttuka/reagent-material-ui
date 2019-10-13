@@ -1,6 +1,5 @@
 (ns reagent-material-ui.styles
   "Imports some styles related helpers and components from @material-ui/core/styles.
-   Moving to @material-ui/styles is a work in progress.
    Original documentation is at https://material-ui.com/styles/basics/ ."
   (:require [reagent.core :as r]
             [material-ui]
@@ -12,6 +11,8 @@
 (def ^:private styled* (obj/get js/MaterialUIStyles "styled"))
 (def ^:private use-theme* (obj/get js/MaterialUIStyles "useTheme"))
 (def ^:private with-theme* (obj/get js/MaterialUIStyles "withTheme"))
+(def ^:private theme-provider* (r/adapt-react-class (obj/get js/MaterialUIStyles "MuiThemeProvider")))
+(def ^:private create-mui-theme* (obj/get js/MaterialUIStyles "createMuiTheme"))
 
 (defn make-styles
   "Takes a styles-generating function or a styles object.
@@ -57,3 +58,15 @@
    Note: input component has to take all its props (including children) in a single map."
   [component]
   (util/apply-hoc with-theme* component))
+
+(defn theme-provider
+  "Component that takes a theme object and makes it available in child components.
+   It should preferably be used at the root of your component tree."
+  [theme & children]
+  (into [theme-provider* {:theme theme}]
+        (map r/as-element children)))
+
+(defn create-mui-theme
+  "Takes an incomplete theme object and adds the missing parts"
+  [options]
+  (util/js->clj' (create-mui-theme* (util/clj->js' options))))
