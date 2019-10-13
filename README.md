@@ -13,7 +13,7 @@ without the hassle that Reagent/React interop usually is. It is meant to be comp
 If you aren't familiar with [Material UI or its documentation](https://material-ui.com) yet, that is the best place to start.
 Their examples are very good. and this library tries to follow the original ideas as well as possible. See the [example project](./example) for a simple usage example.
 
-To add Material UI to an existing Reagent project, just add this project to your dependencies:
+To add Material UI to an existing Reagent project, just add this library to your dependencies:
 ```
 [arttuka/reagent-material-ui "4.4.3-0"]
 ```
