@@ -7,14 +7,18 @@
 
 (use-fixtures :each unmount-fixture)
 
-(def primary-color "rgb(63, 81, 181)")
-(def secondary-color "rgb(245, 0, 87)")
+(def theme-primary-color "rgb(63, 81, 181)")
+(def theme-primary-color-hex "#3f51b5")
+(def theme-secondary-color "rgb(245, 0, 87)")
+(def theme-secondary-color-hex "#f50057")
+(def custom-primary-color "rgb(0, 42, 255)")
+(def custom-secondary-color "rgb(98, 99, 100)")
 (def font-size "42px")
 (def text-node "some text content")
 
 (def basic-styles {:root  {:font-size font-size
-                           :color     primary-color}
-                   :child {:color secondary-color}})
+                           :color     custom-primary-color}
+                   :child {:color custom-secondary-color}})
 
 (def theme-level-fn (fn [theme]
                       {:root  {:font-size font-size
@@ -23,8 +27,8 @@
 
 (def prop-level-fn {:root  {:font-size (fn [props]
                                          (:font-size props))
-                            :color     primary-color}
-                    :child {:color secondary-color}})
+                            :color     custom-primary-color}
+                    :child {:color custom-secondary-color}})
 
 (def advanced-styles (fn [theme]
                        {:root  (fn [props]
@@ -32,7 +36,7 @@
                                   :color     (get-in theme [:palette :primary :main])})
                         :child {:color (get-in theme [:palette :secondary :main])}}))
 
-(defn run-make-styles-test [styles]
+(defn run-make-styles-test [styles root-color child-color]
   (let [use-styles (make-styles styles)
         component (fn []
                     (let [classes (use-styles {:font-size font-size})]
@@ -42,23 +46,23 @@
     (render [:> component])
     (let [root (sel1 "#make-styles-test-root")]
       (is (= font-size (dommy/style root :font-size)))
-      (is (= primary-color (dommy/style root :color))))
+      (is (= root-color (dommy/style root :color))))
     (let [child (sel1 "#make-styles-test-child")]
-      (is (= secondary-color (dommy/style child :color))))
+      (is (= child-color (dommy/style child :color))))
     (unmount)))
 
 (deftest make-styles-test
   (testing "make-styles"
     (testing "with basic styles"
-      (run-make-styles-test basic-styles))
+      (run-make-styles-test basic-styles custom-primary-color custom-secondary-color))
     (testing "with theme level fn"
-      (run-make-styles-test theme-level-fn))
+      (run-make-styles-test theme-level-fn theme-primary-color theme-secondary-color))
     (testing "with prop level fn"
-      (run-make-styles-test prop-level-fn))
+      (run-make-styles-test prop-level-fn custom-primary-color custom-secondary-color))
     (testing "with advanced styles"
-      (run-make-styles-test advanced-styles))))
+      (run-make-styles-test advanced-styles theme-primary-color theme-secondary-color))))
 
-(defn run-with-styles-test [styles]
+(defn run-with-styles-test [styles root-color child-color]
   (let [component (fn [props]
                     [:div#with-styles-test-root {:class (get-in props [:classes :root])}
                      [:div#with-styles-test-child {:class (get-in props [:classes :child])}
@@ -68,45 +72,50 @@
              text-node])
     (let [root (sel1 "#with-styles-test-root")]
       (is (= font-size (dommy/style root :font-size)))
-      (is (= primary-color (dommy/style root :color))))
+      (is (= root-color (dommy/style root :color))))
     (let [child (sel1 "#with-styles-test-child")]
-      (is (= secondary-color (dommy/style child :color)))
+      (is (= child-color (dommy/style child :color)))
       (is (= text-node (dommy/text child))))
     (unmount)))
 
 (deftest with-styles-test
   (testing "with-styles"
     (testing "with basic styles"
-      (run-with-styles-test basic-styles))
+      (run-with-styles-test basic-styles custom-primary-color custom-secondary-color))
     (testing "with theme level fn"
-      (run-with-styles-test theme-level-fn))
+      (run-with-styles-test theme-level-fn theme-primary-color theme-secondary-color))
     (testing "with prop level fn"
-      (run-with-styles-test prop-level-fn))
+      (run-with-styles-test prop-level-fn custom-primary-color custom-secondary-color))
     (testing "with advanced styles"
-      (run-with-styles-test advanced-styles))))
+      (run-with-styles-test advanced-styles theme-primary-color theme-secondary-color))))
 
-(defn run-styled-test [styles]
-  (let [component (fn [props]
-                    [:div#styled-test-root {:class (:class-name props)}
-                     (:children props)])
+(defn run-styled-test [styles color]
+  (let [component (fn [{:keys [class-name children extra-param]}]
+                    [:div#styled-test-root {:class           class-name
+                                            :data-extraparam extra-param}
+                     children])
         styled-component (styled component styles)]
-    (render [styled-component {:font-size "42px"}
+    (render [styled-component {:font-size   "42px"
+                               :extra-param "foo"}
              text-node])
     (let [root (sel1 "#styled-test-root")]
       (is (= font-size (dommy/style root :font-size)))
-      (is (= primary-color (dommy/style root :color)))
-      (is (= text-node (dommy/text root))))
+      (is (= color (dommy/style root :color)))
+      (is (= text-node (dommy/text root)))
+      (is (= "foo" (.. root -dataset -extraparam))))
     (unmount)))
 
 (deftest styled-test
   (testing "styled"
     (testing "with basic styles"
       (run-styled-test {:font-size font-size
-                        :color     primary-color}))
+                        :color     custom-primary-color}
+                       custom-primary-color))
     (testing "with function styles"
       (run-styled-test (fn [props]
                          {:font-size (:font-size props)
-                          :color     (get-in props [:theme :palette :primary :main])})))))
+                          :color     (get-in props [:theme :palette :primary :main])})
+                       theme-primary-color))))
 
 (deftest use-theme-test
   (testing "use-theme"
@@ -118,23 +127,23 @@
                            :data-secondarycolor (get-in theme [:palette :secondary :main])}])))]
       (render [:> component])
       (let [root (sel1 "#use-theme-test-root")]
-        (is (= "#3f51b5" (.. root -dataset -primarycolor)))
-        (is (= "#f50057" (.. root -dataset -secondarycolor)))))))
+        (is (= theme-primary-color-hex (.. root -dataset -primarycolor)))
+        (is (= theme-secondary-color-hex (.. root -dataset -secondarycolor)))))))
 
 (deftest with-theme-test
   (testing "with-theme"
-    (let [component (fn [props]
+    (let [component (fn [{:keys [theme font-size children]}]
                       [:div#with-theme-test-root
-                       {:data-primarycolor   (get-in props [:theme :palette :primary :main])
-                        :data-secondarycolor (get-in props [:theme :palette :secondary :main])
-                        :data-fontsize       (:font-size props)}
-                       (:children props)])
+                       {:data-primarycolor   (get-in theme [:palette :primary :main])
+                        :data-secondarycolor (get-in theme [:palette :secondary :main])
+                        :data-fontsize       font-size}
+                       children])
           wrapped-component (with-theme component)]
       (render [wrapped-component {:font-size font-size}
                text-node])
       (let [root (sel1 "#with-theme-test-root")]
-        (is (= "#3f51b5" (.. root -dataset -primarycolor)))
-        (is (= "#f50057" (.. root -dataset -secondarycolor)))
+        (is (= theme-primary-color-hex (.. root -dataset -primarycolor)))
+        (is (= theme-secondary-color-hex (.. root -dataset -secondarycolor)))
         (is (= font-size (.. root -dataset -fontsize)))
         (is (= text-node (dommy/text root)))))))
 

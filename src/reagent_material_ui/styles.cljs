@@ -17,7 +17,7 @@
 (defn make-styles
   "Takes a styles-generating function or a styles object.
    Returns a React hook which accepts a props object and returns the mapping from styles to class names.
-   Note: can't be used in regular Reagent components: http://reagent-project.github.io/docs/master/ReactFeatures.html#hooks"
+   Note: React hooks can't be used in regular Reagent components: http://reagent-project.github.io/docs/master/ReactFeatures.html#hooks"
   ([styles]
    (make-styles styles {}))
   ([styles opts]
@@ -49,7 +49,7 @@
 
 (defn use-theme
   "React hook that returns the theme object.
-   Note: can't be used in regular Reagent components: http://reagent-project.github.io/docs/master/ReactFeatures.html#hooks"
+   Note: React hooks can't be used in regular Reagent components: http://reagent-project.github.io/docs/master/ReactFeatures.html#hooks"
   []
   (util/js->clj' (use-theme*)))
 
