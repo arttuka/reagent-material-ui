@@ -41,9 +41,7 @@
   ([component styles]
    (styled component styles {}))
   ([component styles opts]
-   (let [styled-component (-> (util/wrap-js-props component)
-                              (r/reactify-component)
-                              (styled*))]
+   (let [styled-component (styled* (util/reactify-component component))]
      (r/adapt-react-class
       (styled-component (util/wrap-jss-styles styles) (clj->js opts))))))
 

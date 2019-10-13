@@ -1,5 +1,5 @@
 (ns reagent-material-ui.styles-test
-  (:require [cljs.test :refer-macros [deftest testing is use-fixtures async]]
+  (:require [cljs.test :refer-macros [deftest testing is use-fixtures]]
             [dommy.core :as dommy :refer-macros [sel1]]
             [reagent.core :as r]
             [reagent-material-ui.styles :refer [make-styles with-styles styled use-theme with-theme theme-provider]]
@@ -63,10 +63,10 @@
       (run-make-styles-test advanced-styles theme-primary-color theme-secondary-color))))
 
 (defn run-with-styles-test [styles root-color child-color]
-  (let [component (fn [props]
-                    [:div#with-styles-test-root {:class (get-in props [:classes :root])}
-                     [:div#with-styles-test-child {:class (get-in props [:classes :child])}
-                      (:children props)]])
+  (let [component (fn [{:keys [classes children]}]
+                    [:div#with-styles-test-root {:class (:root classes)}
+                     [:div#with-styles-test-child {:class (:child classes)}
+                      children]])
         styled-component ((with-styles styles) component)]
     (render [styled-component {:font-size font-size}
              text-node])
@@ -87,7 +87,14 @@
     (testing "with prop level fn"
       (run-with-styles-test prop-level-fn custom-primary-color custom-secondary-color))
     (testing "with advanced styles"
-      (run-with-styles-test advanced-styles theme-primary-color theme-secondary-color))))
+      (run-with-styles-test advanced-styles theme-primary-color theme-secondary-color))
+    (testing "forwards ref to component"
+      (let [ref (.createRef js/React)
+            component (fn [props]
+                        [:div#with-styles-test-root props])
+            styled-component ((with-styles {}) component)]
+        (render [styled-component {:ref ref}])
+        (is (= "with-styles-test-root" (.-id (.-current ref))))))))
 
 (defn run-styled-test [styles color]
   (let [component (fn [{:keys [class-name children extra-param]}]
@@ -115,7 +122,14 @@
       (run-styled-test (fn [props]
                          {:font-size (:font-size props)
                           :color     (get-in props [:theme :palette :primary :main])})
-                       theme-primary-color))))
+                       theme-primary-color))
+    (testing "forwards ref to component"
+      (let [ref (.createRef js/React)
+            component (fn [props]
+                        [:div#styled-test-root props])
+            styled-component (styled component {})]
+        (render [styled-component {:ref ref}])
+        (is (= "styled-test-root" (.-id (.-current ref))))))))
 
 (deftest use-theme-test
   (testing "use-theme"
@@ -132,20 +146,28 @@
 
 (deftest with-theme-test
   (testing "with-theme"
-    (let [component (fn [{:keys [theme font-size children]}]
-                      [:div#with-theme-test-root
-                       {:data-primarycolor   (get-in theme [:palette :primary :main])
-                        :data-secondarycolor (get-in theme [:palette :secondary :main])
-                        :data-fontsize       font-size}
-                       children])
-          wrapped-component (with-theme component)]
-      (render [wrapped-component {:font-size font-size}
-               text-node])
-      (let [root (sel1 "#with-theme-test-root")]
-        (is (= theme-primary-color-hex (.. root -dataset -primarycolor)))
-        (is (= theme-secondary-color-hex (.. root -dataset -secondarycolor)))
-        (is (= font-size (.. root -dataset -fontsize)))
-        (is (= text-node (dommy/text root)))))))
+    (testing "adds theme to component's props"
+      (let [component (fn [{:keys [theme font-size children]}]
+                        [:div#with-theme-test-root
+                         {:data-primarycolor   (get-in theme [:palette :primary :main])
+                          :data-secondarycolor (get-in theme [:palette :secondary :main])
+                          :data-fontsize       font-size}
+                         children])
+            wrapped-component (with-theme component)]
+        (render [wrapped-component {:font-size font-size}
+                 text-node])
+        (let [root (sel1 "#with-theme-test-root")]
+          (is (= theme-primary-color-hex (.. root -dataset -primarycolor)))
+          (is (= theme-secondary-color-hex (.. root -dataset -secondarycolor)))
+          (is (= font-size (.. root -dataset -fontsize)))
+          (is (= text-node (dommy/text root))))))
+    (testing "forwards ref to component"
+      (let [ref (.createRef js/React)
+            component (fn [props]
+                        [:div#with-theme-test-root props])
+            wrapped-component (with-theme component)]
+        (render [wrapped-component {:ref ref}])
+        (is (= "with-theme-test-root" (.-id (.-current ref))))))))
 
 (deftest theme-provider-test
   (testing "theme-provider"
