@@ -1,0 +1,7 @@
+(ns reagent-material-ui.core.menu-item
+  "Imports @material-ui/core/MenuItem as a Reagent component.
+   Original documentation is at https://material-ui.com/api/menu-item/ ."
+  (:require [reagent.core :as r]
+            [material-ui]))
+
+(def menu-item (r/adapt-react-class (.-MenuItem js/MaterialUI)))

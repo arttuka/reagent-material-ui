@@ -1,7 +1,10 @@
 (ns reagent-material-ui.util
+  (:require-macros [reagent-material-ui.macro :refer [e]])
   (:require [reagent.core :as r]
             [clojure.walk :refer [postwalk]]
-            [camel-snake-kebab.core :refer [->kebab-case]]))
+            [camel-snake-kebab.core :refer [->kebab-case]]
+            [cljsjs.react]
+            [goog.object :as obj]))
 
 (defn js->clj' [obj]
   (postwalk (fn [x]
@@ -43,3 +46,18 @@
       (r/reactify-component)
       (hoc)
       (r/adapt-react-class)))
+
+(defn create-svg-icon [path display-name]
+  (let [svg-icon (.-SvgIcon js/MaterialUI)
+        component (->> (fn [props ref]
+                         (e svg-icon (.assign js/Object #js {:ref ref} props) path))
+                       (.forwardRef js/React)
+                       (.memo js/React))]
+
+    (when (not= (some-> js/process
+                        (obj/get "env")
+                        (obj/get "NODE_ENV"))
+                "production")
+      (set! (.-displayName component) (str display-name "Icon")))
+    (set! (.-muiName component) (.-muiName svg-icon))
+    (r/adapt-react-class component)))
