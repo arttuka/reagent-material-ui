@@ -7,7 +7,6 @@
                  [org.clojure/clojurescript "1.10.520"]
                  [reagent "0.9.0-rc1"]
                  [cljsjs/material-ui "4.4.3-0"]
-                 [cljsjs/material-ui-icons "4.4.1-0"]
                  [camel-snake-kebab "0.4.0"]]
   :plugins [[lein-cljfmt "0.6.4"]]
   :source-paths ["src"]
