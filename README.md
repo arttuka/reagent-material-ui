@@ -59,6 +59,9 @@ There are two ways to run tests:
 * Single run from the command line with `lein test`
 * Web test frontend with automatic code reloading with `lein figwheel`
 
+Icon files are excluded from Figwheel dev build, because constantly rebuilding
+such a large number of files causes Figwheel to break.
+
 The build process also includes `lein cljfmt`. 
 
 ### Version numbers

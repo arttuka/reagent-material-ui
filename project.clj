@@ -11,14 +11,15 @@
                  [com.andrewmcveigh/cljs-time "0.5.2"]
                  [camel-snake-kebab "0.4.0"]]
   :plugins [[lein-cljfmt "0.6.4"]]
-  :source-paths ["src"]
+  :source-paths ["src/core" "src/icons"]
   :profiles {:dev {:dependencies   [[com.bhauman/figwheel-main "0.2.3"]
                                     [prismatic/dommy "1.1.0"]
                                     [com.bhauman/rebel-readline-cljs "0.1.4"]
                                     [cider/piggieback "0.4.1"]]
                    :test-paths     ["test"]
-                   :resource-paths ["target"]}}
+                   :resource-paths ["target"]}
+             :figwheel {:source-paths ^:replace ["src/core"]}}
   :clean-targets ^{:protect false} ["target"]
-  :aliases {"figwheel" ["trampoline" "run" "-m" "figwheel.main" "-b" "dev" "-r"]
+  :aliases {"figwheel" ["with-profile" "+figwheel" "trampoline" "run" "-m" "figwheel.main" "-b" "dev" "-r"]
             "test"     ["run" "-m" "figwheel.main" "-co" "test.cljs.edn" "-m" reagent-material-ui.test-runner]}
   :repl-options {:nrepl-middleware [cider.piggieback/wrap-cljs-repl]})
