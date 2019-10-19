@@ -21,6 +21,9 @@
      adapted)))
 
 (def ^:private color-key? #{:A100 :A200 :A400 :A700 "A100" "A200" "A400" "A700"})
+(defn ^:private numeric-string? [s]
+  (and (string? s)
+       (some? (re-matches #"[0-9]+" s))))
 
 (defn clj->js' [obj]
   (clj->js obj :keyword-fn (fn [k]
@@ -35,7 +38,7 @@
                 (let [[k v] x]
                   [(cond
                      (color-key? k) (keyword k)
-                     (number? k) k
+                     (numeric-string? k) (js/parseInt k)
                      :else (->kebab-case-keyword k))
                    v])
                 x))
