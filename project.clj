@@ -1,12 +1,12 @@
-(defproject arttuka/reagent-material-ui "4.4.3-0"
+(defproject arttuka/reagent-material-ui "4.5.1-0-SNAPSHOT"
   :description "Reagent wrapper library for Material UI v4"
   :url "https://github.com/arttuka/reagent-material-ui"
   :license {:name "Eclipse Public License 2.0"
             :url  "https://www.eclipse.org/legal/epl-2.0/"}
   :dependencies [[org.clojure/clojure "1.10.1"]
                  [org.clojure/clojurescript "1.10.520"]
-                 [reagent "0.9.0-rc1"]
-                 [cljsjs/material-ui "4.4.3-0"]
+                 [reagent "0.9.0-rc2"]
+                 [cljsjs/material-ui "4.5.1-0"]
                  [camel-snake-kebab "0.4.0"]]
   :plugins [[lein-cljfmt "0.6.4"]]
   :source-paths ["src"]

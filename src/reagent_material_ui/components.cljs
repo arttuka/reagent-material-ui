@@ -71,6 +71,7 @@
             reagent-material-ui.core.menu-list
             reagent-material-ui.core.mobile-stepper
             reagent-material-ui.core.modal
+            reagent-material-ui.core.modal-manager
             reagent-material-ui.core.native-select
             reagent-material-ui.core.no-ssr
             reagent-material-ui.core.outlined-input
@@ -182,6 +183,7 @@
 (def menu-list reagent-material-ui.core.menu-list/menu-list)
 (def mobile-stepper reagent-material-ui.core.mobile-stepper/mobile-stepper)
 (def modal reagent-material-ui.core.modal/modal)
+(def modal-manager reagent-material-ui.core.modal-manager/modal-manager)
 (def native-select reagent-material-ui.core.native-select/native-select)
 (def no-ssr reagent-material-ui.core.no-ssr/no-ssr)
 (def outlined-input reagent-material-ui.core.outlined-input/outlined-input)
