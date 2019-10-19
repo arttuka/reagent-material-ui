@@ -11,7 +11,7 @@
 (def ^:private styled* (obj/get js/MaterialUIStyles "styled"))
 (def ^:private use-theme* (obj/get js/MaterialUIStyles "useTheme"))
 (def ^:private with-theme* (obj/get js/MaterialUIStyles "withTheme"))
-(def ^:private theme-provider* (r/adapt-react-class (obj/get js/MaterialUIStyles "MuiThemeProvider")))
+(def ^:private theme-provider* (util/adapt-react-class (obj/get js/MaterialUIStyles "MuiThemeProvider") "mui-theme-provider"))
 (def ^:private create-mui-theme* (obj/get js/MaterialUIStyles "createMuiTheme"))
 
 (defn make-styles
@@ -42,7 +42,7 @@
    (styled component styles {}))
   ([component styles opts]
    (let [styled-component (styled* (util/reactify-component component))]
-     (r/adapt-react-class
+     (util/adapt-react-class
       (styled-component (util/wrap-jss-styles styles) (clj->js opts))))))
 
 (defn use-theme

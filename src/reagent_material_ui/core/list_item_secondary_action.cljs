@@ -1,7 +1,7 @@
 (ns reagent-material-ui.core.list-item-secondary-action
   "Imports @material-ui/core/ListItemSecondaryAction as a Reagent component.
    Original documentation is at https://material-ui.com/api/list-item-secondary-action/ ."
-  (:require [reagent.core :as r]
+  (:require [reagent-material-ui.util :refer [adapt-react-class]]
             [material-ui]))
 
-(def list-item-secondary-action (r/adapt-react-class (.-ListItemSecondaryAction js/MaterialUI)))
+(def list-item-secondary-action (adapt-react-class (.-ListItemSecondaryAction js/MaterialUI) "mui-list-item-secondary-action"))

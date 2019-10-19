@@ -62,7 +62,6 @@
       (let [with-styles-node (sel1 "#with-styles-root")
             styled-node (sel1 "#styled-root")
             with-theme-node (sel1 "#with-theme-root")]
-        (.log js/console with-styles-node)
         (is (= "0" (dommy/text with-styles-node)))
         (is (= "0" (dommy/text styled-node)))
         (is (= "0" (dommy/text with-theme-node)))

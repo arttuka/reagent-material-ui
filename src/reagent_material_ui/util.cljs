@@ -1,27 +1,45 @@
 (ns reagent-material-ui.util
   (:require-macros [reagent-material-ui.macro :refer [e]])
   (:require [reagent.core :as r]
+            [clojure.string :as str]
             [clojure.walk :refer [postwalk]]
-            [camel-snake-kebab.core :refer [->kebab-case ->camelCaseString]]
+            [camel-snake-kebab.core :refer [->kebab-case-keyword ->camelCaseString]]
             [cljsjs.react]
             [material-ui]
             [goog.object :as obj]))
 
-(def ^:private color-key? #{:A100 :A200 :A400 :A700})
+(defn component-name [component]
+  (when-let [name (or (.-displayName component) (.-name component))]
+    (str/replace name "$" "__")))
+
+(defn adapt-react-class
+  ([c]
+   (adapt-react-class c (component-name c)))
+  ([c display-name]
+   (let [adapted (r/adapt-react-class c)]
+     (set! (.-displayName adapted) display-name)
+     adapted)))
+
+(def ^:private color-key? #{:A100 :A200 :A400 :A700 "A100" "A200" "A400" "A700"})
 
 (defn clj->js' [obj]
   (clj->js obj :keyword-fn (fn [k]
-                             (if (color-key? k)
-                               (name k)
-                               (->camelCaseString k)))))
+                             (cond
+                               (color-key? k) (name k)
+                               (number? k) k
+                               :else (->camelCaseString k)))))
 
 (defn js->clj' [obj]
   (postwalk (fn [x]
-              (cond
-                (color-key? x) x
-                (keyword? x) (->kebab-case x)
-                :else x))
-            (js->clj obj :keywordize-keys true)))
+              (if (map-entry? x)
+                (let [[k v] x]
+                  [(cond
+                     (color-key? k) (keyword k)
+                     (number? k) k
+                     :else (->kebab-case-keyword k))
+                   v])
+                x))
+            (js->clj obj)))
 
 (defn wrap-clj-function [f]
   (fn [& args]
@@ -39,9 +57,11 @@
             m))
 
 (defn reactify-component [component]
-  (.forwardRef js/React (fn [props ref]
-                          (r/as-element [component (assoc (js->clj' props)
-                                                          :ref ref)]))))
+  (let [reactified (.forwardRef js/React (fn [props ref]
+                                           (r/as-element [component (assoc (js->clj' props)
+                                                                           :ref ref)])))]
+    (set! (.-displayName reactified) (component-name component))
+    reactified))
 
 (defn wrap-jss-styles [styles]
   (if (fn? styles)
@@ -56,7 +76,7 @@
   (-> component
       (reactify-component)
       (hoc)
-      (r/adapt-react-class)))
+      (adapt-react-class)))
 
 (def ^:private svg-icon (.-SvgIcon js/MaterialUI))
 
@@ -65,10 +85,4 @@
                          (e svg-icon (.assign js/Object #js {:ref ref} props) path))
                        (.forwardRef js/React)
                        (.memo js/React))]
-    (when (not= (some-> js/process
-                        (obj/get "env")
-                        (obj/get "NODE_ENV"))
-                "production")
-      (set! (.-displayName component) (str display-name "Icon")))
-    (set! (.-muiName component) (.-muiName svg-icon))
-    (r/adapt-react-class component)))
+    (adapt-react-class component display-name)))

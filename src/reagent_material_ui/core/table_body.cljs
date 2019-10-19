@@ -1,7 +1,7 @@
 (ns reagent-material-ui.core.table-body
   "Imports @material-ui/core/TableBody as a Reagent component.
    Original documentation is at https://material-ui.com/api/table-body/ ."
-  (:require [reagent.core :as r]
+  (:require [reagent-material-ui.util :refer [adapt-react-class]]
             [material-ui]))
 
-(def table-body (r/adapt-react-class (.-TableBody js/MaterialUI)))
+(def table-body (adapt-react-class (.-TableBody js/MaterialUI) "mui-table-body"))
