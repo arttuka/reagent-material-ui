@@ -1,12 +1,14 @@
 (ns example.core
   (:require [reagent.core :as r]
+            [reagent-material-ui.cljs-time-utils :refer [cljs-time-utils]]
             [reagent-material-ui.components :as mui]
             [reagent-material-ui.colors :as colors]
             [reagent-material-ui.icons.add-box :refer [add-box]]
             [reagent-material-ui.icons.clear :refer [clear]]
             [reagent-material-ui.icons.face :refer [face]]
+            [reagent-material-ui.pickers :as pickers]
             [reagent-material-ui.styles :as styles]
-            [material-ui-icons]))
+            goog.i18n.DateTimeSymbols_en_US))
 
 (set! *warn-on-infer* true)
 
@@ -30,6 +32,7 @@
 (def with-custom-styles (styles/with-styles custom-styles))
 
 (defonce text-state (r/atom "foobar"))
+(defonce date-picker-state (r/atom nil))
 
 (defn form [{:keys [classes] :as props}]
   [mui/grid
@@ -97,29 +100,32 @@
       "Item 2"]]]
 
    [mui/grid {:item true}
-    [mui/grid
-     {:container true
-      :direction "row"
-      :spacing   4}
+    ;; For properties that require React Node as parameter,
+    ;; use r/as-element to convert Reagent hiccup forms into React elements,
+    ;; or use r/create-element to directly instantiate element from React class (i.e. non-adapted React component).
+    [mui/grid {:item true}
+     [mui/chip
+      {:icon  (r/as-element [face])
+       :label "Icon element example, r/as-element"}]]]
 
-     ;; For properties that require React Node as parameter,
-     ;; use r/as-element to convert Reagent hiccup forms into React elements,
-     ;; or use r/create-element to directly instantiate element from React class (i.e. non-adapted React component).
-     [mui/grid {:item true}
-      [mui/chip
-       {:icon  (r/as-element [face])
-        :label "Icon element example, r/as-element"}]]
-
-     [mui/grid {:item true}
-      [mui/chip
-       {:icon  (r/create-element (.-Face js/MaterialUIIcons))
-        :label "Icon element example, r/create-element"}]]]]])
+   [mui/grid {:item true}
+    [pickers/date-picker {:value       @date-picker-state
+                          :on-change   (fn [value]
+                                           (reset! date-picker-state value))
+                          :format      "MM/dd/yyyy"
+                          :placeholder "Select a date"
+                          :helper-text "Helper text"
+                          :auto-ok     true}]]])
 
 (defn main []
   ;; fragment
   [:<>
    [mui/css-baseline]
-   [styles/theme-provider (styles/create-mui-theme custom-theme)
+   ;; mui-pickers-utils-provider provides date handling utils to date and time pickers.
+   ;; cljs-time-utils is an utility package that allows you to use cljs-time / goog.date date objects.
+   [pickers/mui-pickers-utils-provider {:utils  cljs-time-utils
+                                        :locale goog.i18n.DateTimeSymbols_en_US}
+    [styles/theme-provider (styles/create-mui-theme custom-theme)
     [mui/grid
      {:container true
       :direction "row"
@@ -127,7 +133,7 @@
      [mui/grid
       {:item true
        :xs   6}
-      [(with-custom-styles form)]]]]])
+      [(with-custom-styles form)]]]]]])
 
 (defn start []
   (r/render [main] (js/document.getElementById "app")))

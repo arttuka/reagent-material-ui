@@ -7,6 +7,8 @@
                  [org.clojure/clojurescript "1.10.520"]
                  [reagent "0.9.0-rc2"]
                  [cljsjs/material-ui "4.5.1-0"]
+                 [cljsjs/material-ui-pickers "3.2.7-0"]
+                 [com.andrewmcveigh/cljs-time "0.5.2"]
                  [camel-snake-kebab "0.4.0"]]
   :plugins [[lein-cljfmt "0.6.4"]]
   :source-paths ["src"]
