@@ -7,20 +7,23 @@
 
 (use-fixtures :each unmount-fixture)
 
+(defn p [text]
+  [:p text])
+
 (deftest ratom-inside-wrapped-component-test
   (testing "reagent atom dereffed inside wrapped component"
     (let [a (r/atom 0)
           with-styles-component ((with-styles {})
                                  (fn []
                                    [:div#with-styles-root
-                                    @a]))
+                                    [p @a]]))
           styled-component (styled (fn []
                                      [:div#styled-root
-                                      @a])
+                                      [p @a]])
                                    {})
           with-theme-component (with-theme (fn []
                                              [:div#with-theme-root
-                                              @a]))
+                                              [p @a]]))
           container (fn []
                       [:<>
                        [with-styles-component]
@@ -55,9 +58,9 @@
                                               children]))
           container (fn []
                       [:<>
-                       [with-styles-component @a]
-                       [styled-component @a]
-                       [with-theme-component @a]])]
+                       [with-styles-component [p @a]]
+                       [styled-component [p @a]]
+                       [with-theme-component [p @a]]])]
       (render [container])
       (let [with-styles-node (sel1 "#with-styles-root")
             styled-node (sel1 "#styled-root")

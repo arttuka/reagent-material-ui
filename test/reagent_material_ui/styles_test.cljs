@@ -16,6 +16,9 @@
 (def font-size "42px")
 (def text-node "some text content")
 
+(defn p [text]
+  [:p text])
+
 (def basic-styles {:root  {:font-size font-size
                            :color     custom-primary-color}
                    :child {:color custom-secondary-color}})
@@ -94,7 +97,16 @@
                         [:div#with-styles-test-root props])
             styled-component ((with-styles {}) component)]
         (render [styled-component {:ref ref}])
-        (is (= "with-styles-test-root" (.-id (.-current ref))))))))
+        (is (= "with-styles-test-root" (.-id (.-current ref))))))
+    (testing "allows reagent components as children"
+      (let [component (fn [{:keys [children]}]
+                        [:div#with-styles-test-root
+                         children])
+            styled-component ((with-styles {}) component)]
+        (render [styled-component
+                 [p "Some text"]
+                 [p "More text"]])
+        (is (= "Some textMore text" (dommy/text (sel1 "#with-styles-test-root"))))))))
 
 (defn run-styled-test [styles color]
   (let [component (fn [{:keys [class-name children extra-param]}]
@@ -129,7 +141,16 @@
                         [:div#styled-test-root props])
             styled-component (styled component {})]
         (render [styled-component {:ref ref}])
-        (is (= "styled-test-root" (.-id (.-current ref))))))))
+        (is (= "styled-test-root" (.-id (.-current ref))))))
+    (testing "allows reagent components as children"
+      (let [component (fn [{:keys [children]}]
+                        [:div#styled-test-root
+                         children])
+            styled-component (styled component {})]
+        (render [styled-component
+                 [p "Some text"]
+                 [p "More text"]])
+        (is (= "Some textMore text" (dommy/text (sel1 "#styled-test-root"))))))))
 
 (deftest use-theme-test
   (testing "use-theme"
@@ -167,7 +188,16 @@
                         [:div#with-theme-test-root props])
             wrapped-component (with-theme component)]
         (render [wrapped-component {:ref ref}])
-        (is (= "with-theme-test-root" (.-id (.-current ref))))))))
+        (is (= "with-theme-test-root" (.-id (.-current ref))))))
+    (testing "allows reagent components as children"
+      (let [component (fn [{:keys [children]}]
+                        [:div#with-theme-test-root
+                         children])
+            wrapped-component (with-theme component)]
+        (render [wrapped-component
+                 [p "Some text"]
+                 [p "More text"]])
+        (is (= "Some textMore text" (dommy/text (sel1 "#with-theme-test-root"))))))))
 
 (deftest theme-provider-test
   (testing "theme-provider"

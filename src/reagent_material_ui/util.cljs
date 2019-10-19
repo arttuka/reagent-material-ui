@@ -58,8 +58,11 @@
 
 (defn reactify-component [component]
   (let [reactified (.forwardRef js/React (fn [props ref]
-                                           (r/as-element [component (assoc (js->clj' props)
-                                                                           :ref ref)])))]
+                                           (let [clj-props (-> (js->clj' props)
+                                                               (dissoc :children)
+                                                               (assoc :ref ref
+                                                                      :children (or (obj/get props "children") [])))]
+                                             (r/as-element [component clj-props]))))]
     (set! (.-displayName reactified) (component-name component))
     reactified))
 
