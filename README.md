@@ -72,4 +72,4 @@ The project follows Material UI's version numbering.
 
 This project is licensed under the [Eclipse Public License 2.0](https://www.eclipse.org/legal/epl-2.0/).
 
-Parts of example project are copyright (c) 2013-2017 Dan Holmsand and Reagent contributors, used under the terms of the MIT License. 
+Parts of example project are copyright (c) 2013-2017 Dan Holmsand and Reagent contributors, used under the terms of the MIT License. Material UI Icons are copyright (c) Material UI contributors, used under the terms of the MIT License. 
