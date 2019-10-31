@@ -3,16 +3,9 @@
    Original documentation is at https://material-ui.com/styles/basics/ ."
   (:require [reagent.core :as r]
             [material-ui]
-            [goog.object :as obj]
             [reagent-material-ui.util :as util]))
 
-(def ^:private make-styles* (obj/get js/MaterialUIStyles "makeStyles"))
-(def ^:private with-styles* (obj/get js/MaterialUIStyles "withStyles"))
-(def ^:private styled* (obj/get js/MaterialUIStyles "styled"))
-(def ^:private use-theme* (obj/get js/MaterialUIStyles "useTheme"))
-(def ^:private with-theme* (obj/get js/MaterialUIStyles "withTheme"))
-(def ^:private theme-provider* (util/adapt-react-class (obj/get js/MaterialUIStyles "MuiThemeProvider") "mui-theme-provider"))
-(def ^:private create-mui-theme* (obj/get js/MaterialUIStyles "createMuiTheme"))
+(def ^:private theme-provider* (util/adapt-react-class (.-MuiThemeProvider js/MaterialUIStyles) "mui-theme-provider"))
 
 (defn make-styles
   "Takes a styles-generating function or a styles object.
@@ -21,7 +14,7 @@
   ([styles]
    (make-styles styles {}))
   ([styles opts]
-   (let [use-styles (make-styles* (util/wrap-jss-styles styles) (clj->js opts))]
+   (let [use-styles (.makeStyles js/MaterialUIStyles (util/wrap-jss-styles styles) (clj->js opts))]
      (util/wrap-js-function use-styles))))
 
 (defn with-styles
@@ -31,7 +24,7 @@
   ([styles]
    (with-styles styles {}))
   ([styles opts]
-   (let [hoc (with-styles* (util/wrap-jss-styles styles) (clj->js opts))]
+   (let [hoc (.withStyles js/MaterialUIStyles (util/wrap-jss-styles styles) (clj->js opts))]
      (partial util/apply-hoc hoc))))
 
 (defn styled
@@ -41,7 +34,7 @@
   ([component styles]
    (styled component styles {}))
   ([component styles opts]
-   (let [styled-component (styled* (util/reactify-component component))]
+   (let [styled-component (.styled js/MaterialUIStyles (util/reactify-component component))]
      (util/adapt-react-class
       (styled-component (util/wrap-jss-styles styles) (clj->js opts))))))
 
@@ -49,13 +42,13 @@
   "React hook that returns the theme object.
    Note: React hooks can't be used in regular Reagent components: http://reagent-project.github.io/docs/master/ReactFeatures.html#hooks"
   []
-  (util/js->clj' (use-theme*)))
+  (util/js->clj' (.useTheme js/MaterialUIStyles)))
 
 (defn with-theme
   "Higher order component that provides the theme object as a prop to the input component.
    Note: input component has to take all its props (including children) in a single map."
   [component]
-  (util/apply-hoc with-theme* component))
+  (util/apply-hoc (.-withTheme js/MaterialUIStyles) component))
 
 (defn theme-provider
   "Component that takes a theme object and makes it available in child components.
@@ -67,4 +60,4 @@
 (defn create-mui-theme
   "Takes an incomplete theme object and adds the missing parts"
   [options]
-  (util/js->clj' (create-mui-theme* (util/clj->js' options))))
+  (util/js->clj' (.createMuiTheme js/MaterialUIStyles (util/clj->js' options))))

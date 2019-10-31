@@ -1,6 +1,7 @@
 (ns reagent-material-ui.util
   (:require-macros [reagent-material-ui.macro :refer [e]])
   (:require [reagent.core :as r]
+            [reagent.impl.util :refer [fun-name]]
             [clojure.string :as str]
             [clojure.walk :refer [postwalk]]
             [camel-snake-kebab.core :refer [->kebab-case-keyword ->camelCaseString]]
@@ -8,13 +9,9 @@
             [material-ui]
             [goog.object :as obj]))
 
-(defn component-name [component]
-  (when-let [name (or (.-displayName component) (.-name component))]
-    (str/replace name "$" "__")))
-
 (defn adapt-react-class
   ([c]
-   (adapt-react-class c (component-name c)))
+   (adapt-react-class c (fun-name c)))
   ([c display-name]
    (let [adapted (r/adapt-react-class c)]
      (set! (.-displayName adapted) display-name)
@@ -25,24 +22,34 @@
   (and (string? s)
        (some? (re-matches #"[0-9]+" s))))
 
-(defn clj->js' [obj]
-  (clj->js obj :keyword-fn (fn [k]
-                             (cond
-                               (color-key? k) (name k)
-                               (number? k) k
-                               :else (->camelCaseString k)))))
+(defn ^:private key->str [k]
+  (let [n (name k)]
+    (cond
+      (color-key? k) n
+      (str/starts-with? n "data-") n
+      (str/starts-with? n "aria-") n
+      :else (->camelCaseString k))))
 
-(defn js->clj' [obj]
+(defn ^:private convert-map-keys [m f]
   (postwalk (fn [x]
               (if (map-entry? x)
-                (let [[k v] x]
-                  [(cond
-                     (color-key? k) (keyword k)
-                     (numeric-string? k) (js/parseInt k)
-                     :else (->kebab-case-keyword k))
-                   v])
+                [(f (key x)) (val x)]
                 x))
-            (js->clj obj)))
+            m))
+
+(defn clj->js'
+  [obj]
+  (clj->js (convert-map-keys obj (fn [k]
+                                   (if (keyword? k)
+                                     (key->str k)
+                                     k)))))
+
+(defn js->clj' [obj]
+  (convert-map-keys (js->clj obj) (fn [k]
+                                    (cond
+                                      (color-key? k) (keyword k)
+                                      (numeric-string? k) (js/parseInt k)
+                                      :else (->kebab-case-keyword k)))))
 
 (defn wrap-clj-function [f]
   (fn [& args]
@@ -62,11 +69,10 @@
 (defn reactify-component [component]
   (let [reactified (.forwardRef js/React (fn [props ref]
                                            (let [clj-props (-> (js->clj' props)
-                                                               (dissoc :children)
-                                                               (assoc :ref ref
-                                                                      :children (or (obj/get props "children") [])))]
+                                                               (merge {:ref      ref
+                                                                       :children (obj/get props "children")}))]
                                              (r/as-element [component clj-props]))))]
-    (set! (.-displayName reactified) (component-name component))
+    (set! (.-displayName reactified) (fun-name component))
     reactified))
 
 (defn wrap-jss-styles [styles]
@@ -84,11 +90,9 @@
       (hoc)
       (adapt-react-class)))
 
-(def ^:private svg-icon (.-SvgIcon js/MaterialUI))
-
 (defn create-svg-icon [path display-name]
   (let [component (->> (fn [props ref]
-                         (e svg-icon (.assign js/Object #js {:ref ref} props) path))
+                         (e (.-SvgIcon js/MaterialUI) (.assign js/Object #js {:ref ref} props) path))
                        (.forwardRef js/React)
                        (.memo js/React))]
     (adapt-react-class component display-name)))
