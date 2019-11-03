@@ -130,13 +130,13 @@
     (fn? ref) (ref value)
     ref (set! (.-current ref) value)))
 
-(defn use-fork-ref [ref-a ref-b]
+(defn use-fork-ref [& refs]
   (.useMemo js/React
-            #(when (or ref-a ref-b)
+            #(when (not-every? nil? refs)
                (fn [value]
-                 (set-ref ref-a value)
-                 (set-ref ref-b value)))
-            #js [ref-a ref-b]))
+                 (doseq [ref refs]
+                   (set-ref ref value))))
+            (apply array refs)))
 
 (defn use-callback [callback props]
   (.useCallback js/React callback props))

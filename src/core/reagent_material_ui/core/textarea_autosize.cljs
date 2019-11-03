@@ -24,9 +24,8 @@
           controlled? (some? value)
           ^js/React.Ref input-ref (use-ref nil)
           ^js/React.Ref shadow-ref (use-ref nil)
-          handle-input-ref-prop (use-fork-ref (:input-ref props) input-ref)
-          handle-ref (use-fork-ref ref handle-input-ref-prop)
-          [state set-state] (use-state #js {})
+          handle-ref (use-fork-ref (:input-ref props) input-ref ref)
+          [state set-state] (use-state {})
           sync-height (use-callback #(let [input (.-current input-ref)
                                            shadow (.-current shadow-ref)
                                            computed-style (.getComputedStyle js/window input)
@@ -49,13 +48,12 @@
                                                           outer-height)
                                            overflow? (not (different? outer-height inner-height))]
                                        (set-state (fn [prev-state]
-                                                    (let [{prev-overflow? "overflow", prev-height "height"} (js->clj prev-state)]
-                                                      (if (or (and (pos? outer-height)
-                                                                   (different? prev-height outer-height))
-                                                              (not= overflow? prev-overflow?))
-                                                        #js {:overflow overflow?
-                                                             :height   outer-height}
-                                                        prev-state)))))
+                                                    (if (or (and (pos? outer-height)
+                                                                 (different? (:height prev-state) outer-height))
+                                                            (not= overflow? (:overflow? prev-state)))
+                                                      {:overflow? overflow?
+                                                       :height    outer-height}
+                                                      prev-state))))
                                     #js [rows rows-max placeholder])
           handle-change (fn [e]
                           (when-not controlled?
@@ -70,28 +68,27 @@
                   #js [sync-height])
       (use-layout-effect sync-height)
       (r/as-element
-       (let [{:strs [overflow height]} (js->clj state)]
-         [:<>
-          [:textarea (remove-undefined-vals
-                      (merge {:on-change handle-change
-                              :ref       handle-ref
-                              :rows      (or rows 1)
-                              :style     (merge {:height   height
-                                                 :overflow (when overflow :hidden)}
-                                                style)}
-                             other-props))]
-          [:textarea {:aria-hidden true
-                      :class-name  (:class-name props)
-                      :read-only   true
-                      :ref         shadow-ref
-                      :tab-index   -1
-                      :style       (merge {:visibility :hidden
-                                           :position   :absolute
-                                           :overflow   :hidden
-                                           :height     0
-                                           :top        0
-                                           :left       0
-                                           :transform  "translateZ(0)"}
-                                          style)}]])))))
+       [:<>
+        [:textarea (remove-undefined-vals
+                    (merge {:on-change handle-change
+                            :ref       handle-ref
+                            :rows      (or rows 1)
+                            :style     (merge {:height   (:height state)
+                                               :overflow (when (:overflow? state) :hidden)}
+                                              style)}
+                           other-props))]
+        [:textarea {:aria-hidden true
+                    :class-name  (:class-name props)
+                    :read-only   true
+                    :ref         shadow-ref
+                    :tab-index   -1
+                    :style       (merge {:visibility :hidden
+                                         :position   :absolute
+                                         :overflow   :hidden
+                                         :height     0
+                                         :top        0
+                                         :left       0
+                                         :transform  "translateZ(0)"}
+                                        style)}]]))))
 
 (def textarea-autosize (adapt-react-class react-textarea-autosize))
