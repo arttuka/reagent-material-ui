@@ -5,7 +5,7 @@
             [clojure.string :as str]
             [clojure.walk :refer [postwalk]]
             [camel-snake-kebab.core :refer [->kebab-case-keyword ->camelCaseKeyword ->camelCaseString]]
-            [cljsjs.react]
+            [goog.object :as obj]
             [material-ui]))
 
 (defn adapt-react-class
@@ -66,10 +66,11 @@
             m))
 
 (defn reactify-component [component]
-  (let [reactified (forward-ref [props ref]
+  (let [^js/React.Component
+        reactified (forward-ref [props ref]
                      (let [clj-props (merge (js->clj' props)
                                             {:ref      ref
-                                             :children (.-children props)})]
+                                             :children (obj/get props "children")})]
                        (r/as-element [component clj-props])))]
     (set! (.-displayName reactified) (fun-name component))
     reactified))
@@ -124,7 +125,7 @@
               (transient m)
               m)))
 
-(defn set-ref [ref value]
+(defn set-ref [^js/React.Ref ref value]
   (cond
     (fn? ref) (ref value)
     ref (set! (.-current ref) value)))
@@ -154,5 +155,5 @@
 
 (defn create-svg-icon [path display-name]
   (let [component (.memo js/React (forward-ref [props ref]
-                                    (e (.-SvgIcon js/MaterialUI) (.assign js/Object #js {:ref ref} props) path)))]
+                                    (e (.-SvgIcon js/MaterialUI) (js/Object.assign #js {:ref ref} props) path)))]
     (adapt-react-class component display-name)))

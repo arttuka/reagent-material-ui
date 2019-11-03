@@ -1,54 +1,65 @@
 (ns reagent-material-ui.cljs-time-utils
   "Interface for using cljs-time with Material UI Pickers"
   (:require [cljs-time.core :as time]
-            [cljs-time.coerce :as coerce])
-  (:import (goog.i18n DateTimeFormat DateTimeParse DateTimeSymbols)))
+            [cljs-time.coerce :as coerce]
+            [goog.object :as obj])
+  (:import (goog.date DateTime)
+           (goog.i18n DateTimeFormat DateTimeParse DateTimeSymbols)))
 
-(defn ^:private start-of-day [date]
-  (time/at-midnight date))
+(defn ^:private to-start-of-day [^DateTime date]
+  (doto date
+    (.setHours 0)
+    (.setMinutes 0)
+    (.setSeconds 0)
+    (.setMilliseconds 0)))
 
-(defn ^:private to-end-of-day [date]
+(defn ^:private start-of-day [^DateTime date]
+  (to-start-of-day (.clone date)))
+
+(defn ^:private to-end-of-day [^DateTime date]
   (doto date
     (.setHours 23)
     (.setMinutes 59)
     (.setSeconds 59)
     (.setMilliseconds 999)))
 
-(defn ^:private end-of-day [date]
+(defn ^:private end-of-day [^DateTime date]
   (to-end-of-day (.clone date)))
 
-(defn ^:private start-of-month [date]
-  (doto (time/at-midnight date)
-    (.setDate 1)))
+(defn ^:private start-of-month [^DateTime date]
+  (doto ^DateTime (.clone date)
+    (.setDate 1)
+    (to-start-of-day)))
 
 (defn ^:private end-of-month [date]
-  (doto (time/plus date (time/months 1))
+  (doto ^DateTime (time/plus date (time/months 1))
     (.setDate 0)
     (to-end-of-day)))
 
 (defn ^:private end-of-year [date]
-  (doto (time/plus date (time/years 1))
+  (doto ^DateTime (time/plus date (time/years 1))
     (.setMonth 0)
     (.setDate 0)
     (to-end-of-day)))
 
-(defn ^:private start-of-year [date]
-  (doto (time/at-midnight date)
+(defn ^:private start-of-year [^DateTime date]
+  (doto ^DateTime (.clone date)
     (.setMonth 0)
-    (.setDate 1)))
+    (.setDate 1)
+    (to-start-of-day)))
 
-(defn ^:private start-of-week [date locale]
+(defn ^:private start-of-week [^DateTime date ^DateTimeSymbols locale]
   (let [first-day-of-week (.-FIRSTDAYOFWEEK locale)
         day-of-week (mod (dec (.getDay date)) 7)
         diff (+ (if (< day-of-week first-day-of-week) 7 0)
                 day-of-week
                 (- first-day-of-week))]
-    (time/at-midnight (time/minus date (time/days diff)))))
+    (to-start-of-day (time/minus date (time/days diff)))))
 
 (defn ^:private end-of-week [date locale]
   (-> (start-of-week date locale)
       (time/plus (time/days 6))
-      (end-of-day)))
+      (to-end-of-day)))
 
 (defn ^:private date-seq [from increment]
   (iterate #(time/plus % increment) from))
@@ -56,9 +67,10 @@
 (defn cljs-time-utils
   "Interface for using cljs-time with Material UI Pickers"
   [opts]
-  (let [locale (or (.-locale opts) DateTimeSymbols)
+  (let [^DateTimeSymbols locale (obj/get opts "locale" DateTimeSymbols)
         format (fn [date format-str]
-                 (.format (DateTimeFormat. format-str locale) date))]
+                 (let [^DateTimeFormat formatter (DateTimeFormat. format-str locale)]
+                   (.format formatter date)))]
     #js {:locale                      locale
          :yearFormat                  "yyyy"
          :yearMonthFormat             "MMMM yyyy"
@@ -74,7 +86,8 @@
                                           :else (coerce/to-date-time value)))
          :parse                       (fn [value format-str]
                                         (let [date (time/now)
-                                              cnt (.strictParse (DateTimeParse. format-str locale) value date)]
+                                              ^DateTimeParse parser (DateTimeParse. format-str locale)
+                                              cnt (.strictParse parser value date)]
                                           (when (pos? cnt)
                                             date)))
          :isNull                      (fn [value]
@@ -119,24 +132,24 @@
                                         number)
          :getHours                    (fn [date]
                                         (time/hour date))
-         :setHours                    (fn [date n]
-                                        (doto (.clone date)
+         :setHours                    (fn [^DateTime date n]
+                                        (doto ^DateTime (.clone date)
                                           (.setHours n)))
          :getMinutes                  (fn [date]
                                         (time/minute date))
-         :setMinutes                  (fn [date n]
-                                        (doto (.clone date)
+         :setMinutes                  (fn [^DateTime date n]
+                                        (doto ^DateTime (.clone date)
                                           (.setMinutes n)))
          :getSeconds                  (fn [date]
                                         (time/second date))
-         :setSeconds                  (fn [date n]
-                                        (doto (.clone date)
+         :setSeconds                  (fn [^DateTime date n]
+                                        (doto ^DateTime (.clone date)
                                           (.setSeconds n)))
-         :getMonth                    (fn [date]
+         :getMonth                    (fn [^DateTime date]
                                         (.getMonth date))
-         :setMonth                    (fn [date n]
+         :setMonth                    (fn [^DateTime date n]
                                         (let [last-day-of-month (time/day (time/last-day-of-the-month (time/year date) (inc n)))]
-                                          (doto (.clone date)
+                                          (doto ^DateTime (.clone date)
                                             (.setDate (min last-day-of-month (time/day date)))
                                             (.setMonth n))))
          :getNextMonth                (fn [date]
@@ -147,11 +160,11 @@
                                         (clj->js (take 12 (date-seq (start-of-year date) (time/months 1)))))
          :getYear                     (fn [date]
                                         (time/year date))
-         :setYear                     (fn [date n]
-                                        (doto (.clone date)
+         :setYear                     (fn [^DateTime date n]
+                                        (doto ^DateTime (.clone date)
                                           (.setFullYear n)))
-         :mergeDateAndTime            (fn [date time]
-                                        (doto (.clone date)
+         :mergeDateAndTime            (fn [^DateTime date time]
+                                        (doto ^DateTime (.clone date)
                                           (.setHours (time/hour time))
                                           (.setMinutes (time/minute time))))
          :getWeekdays                 (fn []
