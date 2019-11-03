@@ -1,45 +1,39 @@
 (ns reagent-material-ui.cljs-time-utils
   "Interface for using cljs-time with Material UI Pickers"
   (:require [cljs-time.core :as time]
-            [cljs-time.coerce :as coerce]
-            [cljs-time.format :as format]
-            [goog.object :as obj]
-            [goog.i18n.DateTimeSymbols]
-            [goog.i18n.DateTimeFormat]))
+            [cljs-time.coerce :as coerce])
+  (:import (goog.i18n DateTimeFormat DateTimeParse DateTimeSymbols)))
 
-(defn ^:private start-of-day [d]
-  (time/at-midnight d))
+(defn ^:private start-of-day [date]
+  (time/at-midnight date))
 
-(defn ^:private end-of-day [d]
-  (doto (.clone d)
+(defn ^:private to-end-of-day [date]
+  (doto date
     (.setHours 23)
     (.setMinutes 59)
     (.setSeconds 59)
     (.setMilliseconds 999)))
 
-(defn ^:private start-of-month [d]
-  (doto (time/at-midnight d)
+(defn ^:private end-of-day [date]
+  (to-end-of-day (.clone date)))
+
+(defn ^:private start-of-month [date]
+  (doto (time/at-midnight date)
     (.setDate 1)))
 
-(defn ^:private end-of-month [d]
-  (doto (time/plus d (time/months 1))
+(defn ^:private end-of-month [date]
+  (doto (time/plus date (time/months 1))
     (.setDate 0)
-    (.setHours 23)
-    (.setMinutes 59)
-    (.setSeconds 59)
-    (.setMilliseconds 999)))
+    (to-end-of-day)))
 
-(defn ^:private end-of-year [d]
-  (doto (time/plus d (time/years 1))
+(defn ^:private end-of-year [date]
+  (doto (time/plus date (time/years 1))
     (.setMonth 0)
     (.setDate 0)
-    (.setHours 23)
-    (.setMinutes 59)
-    (.setSeconds 59)
-    (.setMilliseconds 999)))
+    (to-end-of-day)))
 
-(defn ^:private start-of-year [d]
-  (doto (time/at-midnight d)
+(defn ^:private start-of-year [date]
+  (doto (time/at-midnight date)
     (.setMonth 0)
     (.setDate 1)))
 
@@ -62,25 +56,27 @@
 (defn cljs-time-utils
   "Interface for using cljs-time with Material UI Pickers"
   [opts]
-  (let [locale (obj/get opts "locale" goog.i18n.DateTimeSymbols)
-        format (fn [value format-str]
-                 (let [formatter (goog.i18n.DateTimeFormat. format-str locale)]
-                   (.format formatter value)))]
+  (let [locale (or (.-locale opts) DateTimeSymbols)
+        format (fn [date format-str]
+                 (.format (DateTimeFormat. format-str locale) date))]
     #js {:locale                      locale
          :yearFormat                  "yyyy"
          :yearMonthFormat             "MMMM yyyy"
-         :dateTime12hFormat           "MMMM do hh:mm A"
-         :dateTime24hFormat           "MMMM do HH:mm"
+         :dateTime12hFormat           "MMMM d hh:mm A"
+         :dateTime24hFormat           "MMMM d HH:mm"
          :time12hFormat               "hh:mm A"
          :time24hFormat               "HH:mm"
-         :dateFormat                  "MMMM do"
+         :dateFormat                  "MMMM d"
          :date                        (fn [value]
                                         (cond
                                           (undefined? value) (time/now)
                                           (nil? value) nil
                                           :else (coerce/to-date-time value)))
          :parse                       (fn [value format-str]
-                                        (format/parse (format/formatter format-str) value))
+                                        (let [date (time/now)
+                                              cnt (.strictParse (DateTimeParse. format-str locale) value date)]
+                                          (when (pos? cnt)
+                                            date)))
          :isNull                      (fn [value]
                                         (nil? value))
          :isValid                     (fn [value]
@@ -108,51 +104,51 @@
                                         (time/before? this (start-of-day that)))
          :isBeforeYear                (fn [this that]
                                         (time/before? this (start-of-year that)))
-         :startOfMonth                (fn [value]
-                                        (start-of-month value))
-         :endOfMonth                  (fn [value]
-                                        (end-of-month value))
-         :addDays                     (fn [value n]
-                                        (time/plus value (time/days n)))
-         :startOfDay                  (fn [value]
-                                        (start-of-day value))
-         :endOfDay                    (fn [value]
-                                        (end-of-day value))
+         :startOfMonth                (fn [date]
+                                        (start-of-month date))
+         :endOfMonth                  (fn [date]
+                                        (end-of-month date))
+         :addDays                     (fn [date n]
+                                        (time/plus date (time/days n)))
+         :startOfDay                  (fn [date]
+                                        (start-of-day date))
+         :endOfDay                    (fn [date]
+                                        (end-of-day date))
          :format                      format
          :formatNumber                (fn [number]
                                         number)
-         :getHours                    (fn [value]
-                                        (time/hour value))
-         :setHours                    (fn [value n]
-                                        (doto (.clone value)
+         :getHours                    (fn [date]
+                                        (time/hour date))
+         :setHours                    (fn [date n]
+                                        (doto (.clone date)
                                           (.setHours n)))
-         :getMinutes                  (fn [value]
-                                        (time/minute value))
-         :setMinutes                  (fn [value n]
-                                        (doto (.clone value)
+         :getMinutes                  (fn [date]
+                                        (time/minute date))
+         :setMinutes                  (fn [date n]
+                                        (doto (.clone date)
                                           (.setMinutes n)))
-         :getSeconds                  (fn [value]
-                                        (time/second value))
-         :setSeconds                  (fn [value n]
-                                        (doto (.clone value)
+         :getSeconds                  (fn [date]
+                                        (time/second date))
+         :setSeconds                  (fn [date n]
+                                        (doto (.clone date)
                                           (.setSeconds n)))
-         :getMonth                    (fn [value]
-                                        (.getMonth value))
-         :setMonth                    (fn [value n]
-                                        (let [last-day-of-month (time/day (time/last-day-of-the-month (time/year value) (inc n)))]
-                                          (doto (.clone value)
-                                            (.setDate (min last-day-of-month (time/day value)))
+         :getMonth                    (fn [date]
+                                        (.getMonth date))
+         :setMonth                    (fn [date n]
+                                        (let [last-day-of-month (time/day (time/last-day-of-the-month (time/year date) (inc n)))]
+                                          (doto (.clone date)
+                                            (.setDate (min last-day-of-month (time/day date)))
                                             (.setMonth n))))
-         :getNextMonth                (fn [value]
-                                        (time/plus value (time/months 1)))
-         :getPreviousMonth            (fn [value]
-                                        (time/minus value (time/months 1)))
-         :getMonthArray               (fn [value]
-                                        (clj->js (take 12 (date-seq (start-of-year value) (time/months 1)))))
-         :getYear                     (fn [value]
-                                        (time/year value))
-         :setYear                     (fn [value n]
-                                        (doto (.clone value)
+         :getNextMonth                (fn [date]
+                                        (time/plus date (time/months 1)))
+         :getPreviousMonth            (fn [date]
+                                        (time/minus date (time/months 1)))
+         :getMonthArray               (fn [date]
+                                        (clj->js (take 12 (date-seq (start-of-year date) (time/months 1)))))
+         :getYear                     (fn [date]
+                                        (time/year date))
+         :setYear                     (fn [date n]
+                                        (doto (.clone date)
                                           (.setFullYear n)))
          :mergeDateAndTime            (fn [date time]
                                         (doto (.clone date)
