@@ -7,15 +7,14 @@
             [reagent-material-ui.icons.clear :refer [clear]]
             [reagent-material-ui.icons.face :refer [face]]
             [reagent-material-ui.pickers :as pickers]
-            [reagent-material-ui.styles :as styles]
-            goog.i18n.DateTimeSymbols_en_US))
+            [reagent-material-ui.styles :as styles])
+  (:import (goog.i18n DateTimeSymbols_en_US)))
 
 (set! *warn-on-infer* true)
 
 (defn event-value
   [^js/Event e]
-  (let [^js/HTMLInputElement el (.-target e)]
-    (.-value el)))
+  (.. e -target -value))
 
 ;; Example
 
@@ -111,7 +110,7 @@
    [mui/grid {:item true}
     [pickers/date-picker {:value       @date-picker-state
                           :on-change   (fn [value]
-                                           (reset! date-picker-state value))
+                                         (reset! date-picker-state value))
                           :format      "MM/dd/yyyy"
                           :placeholder "Select a date"
                           :helper-text "Helper text"
@@ -124,16 +123,16 @@
    ;; mui-pickers-utils-provider provides date handling utils to date and time pickers.
    ;; cljs-time-utils is an utility package that allows you to use cljs-time / goog.date date objects.
    [pickers/mui-pickers-utils-provider {:utils  cljs-time-utils
-                                        :locale goog.i18n.DateTimeSymbols_en_US}
+                                        :locale DateTimeSymbols_en_US}
     [styles/theme-provider (styles/create-mui-theme custom-theme)
-    [mui/grid
-     {:container true
-      :direction "row"
-      :justify   "center"}
      [mui/grid
-      {:item true
-       :xs   6}
-      [(with-custom-styles form)]]]]]])
+      {:container true
+       :direction "row"
+       :justify   "center"}
+      [mui/grid
+       {:item true
+        :xs   6}
+       [(with-custom-styles form)]]]]]])
 
 (defn start []
   (r/render [main] (js/document.getElementById "app")))

@@ -22,4 +22,5 @@
   :clean-targets ^{:protect false} ["target"]
   :aliases {"figwheel" ["with-profile" "+figwheel" "trampoline" "run" "-m" "figwheel.main" "-b" "dev" "-r"]
             "test"     ["run" "-m" "figwheel.main" "-co" "test.cljs.edn" "-m" reagent-material-ui.test-runner]}
-  :repl-options {:nrepl-middleware [cider.piggieback/wrap-cljs-repl]})
+  :repl-options {:nrepl-middleware [cider.piggieback/wrap-cljs-repl]}
+  :cljfmt {:indents {forward-ref [[:inner 0]]}})
