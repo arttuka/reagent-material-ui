@@ -8,7 +8,7 @@
                                               use-callback use-effect use-layout-effect use-ref use-state]]))
 
 ;; Converted from https://github.com/mui-org/material-ui/blob/v4.5.1/packages/material-ui/src/TextareaAutosize/TextareaAutosize.js
-;; Original code is copyright (c) Material UI contributors. Used used under the terms of the MIT License.
+;; Original code is copyright (c) Material UI contributors. Used under the terms of the MIT License.
 
 (defn ^:private different? [a b]
   (< 1 (.abs js/Math (- (or a 0) (or b 0)))))

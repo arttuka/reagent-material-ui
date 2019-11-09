@@ -9,21 +9,21 @@
 ;; Fix cursor positioning for Reagent
 ;; https://github.com/reagent-project/reagent/blob/master/doc/examples/material-ui.md
 
+(defn ^:private input-props [props]
+  (-> props
+      (assoc :ref (:inputRef props))
+      (dissoc :inputRef)
+      (remove-undefined-vals)))
+
 (def ^:private input
   (r/reactify-component
    (fn input [props]
-     [:input (-> props
-                 (assoc :ref (:inputRef props))
-                 (dissoc :inputRef)
-                 (remove-undefined-vals))])))
+     [:input (input-props props)])))
 
 (def ^:private textarea
   (r/reactify-component
    (fn textarea [props]
-     [:textarea (-> props
-                    (assoc :ref (:inputRef props))
-                    (dissoc :inputRef)
-                    (remove-undefined-vals))])))
+     [:textarea (input-props props)])))
 
 (def ^:private mui-text-field (adapt-react-class (.-TextField js/MaterialUI) "mui-text-field"))
 

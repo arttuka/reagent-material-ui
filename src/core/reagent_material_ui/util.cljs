@@ -20,6 +20,10 @@
 (defn ^:private numeric-string? [s]
   (and (string? s)
        (some? (re-matches #"[0-9]+" s))))
+(defn ^:private pascal-case? [s]
+  (and (string? s)
+       (contains? #{\A \B \C \D \E \F \G \H \I \J \K \L \M \N \O \P \Q \R \S \T \U \V \W \X \Y \Z}
+                  (first s))))
 
 (defn ^:private key->str [k]
   (let [n (name k)]
@@ -27,6 +31,7 @@
       (color-key? k) n
       (str/starts-with? n "data-") n
       (str/starts-with? n "aria-") n
+      (pascal-case? n) n
       :else (->camelCaseString k))))
 
 (defn ^:private convert-map-keys [m f]
@@ -43,12 +48,26 @@
                                      (key->str k)
                                      k)))))
 
-(defn js->clj' [obj]
-  (convert-map-keys (js->clj obj) (fn [k]
-                                    (cond
-                                      (color-key? k) (keyword k)
-                                      (numeric-string? k) (js/parseInt k)
-                                      :else (->kebab-case-keyword k)))))
+(defn js->clj'
+  ([obj]
+   (js->clj' obj true))
+  ([obj pass-ref?]
+   (let [children (obj/get obj "children")
+         result (cond-> (js->clj obj)
+                  children (dissoc "children")
+                  true (convert-map-keys (fn [k]
+                                           (cond
+                                             (keyword? k) k
+                                             (color-key? k) (keyword k)
+                                             (numeric-string? k) (js/parseInt k)
+                                             (pascal-case? k) (keyword k)
+                                             :else (->kebab-case-keyword k))))
+                  children (assoc :children children))]
+     (if pass-ref?
+       (if-let [ref (obj/get obj "ref")]
+         (assoc result :ref ref)
+         result)
+       result))))
 
 (defn wrap-clj-function [f]
   (fn [& args]
@@ -68,7 +87,7 @@
 (defn reactify-component [component]
   (let [^js/React.Component
         reactified (forward-ref [props ref]
-                     (let [clj-props (merge (js->clj' props)
+                     (let [clj-props (merge (js->clj' props false)
                                             {:ref      ref
                                              :children (obj/get props "children")})]
                        (r/as-element [component clj-props])))]
