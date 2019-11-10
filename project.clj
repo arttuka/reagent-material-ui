@@ -15,10 +15,11 @@
   :profiles {:dev {:dependencies   [[com.bhauman/figwheel-main "0.2.3"]
                                     [prismatic/dommy "1.1.0"]
                                     [com.bhauman/rebel-readline-cljs "0.1.4"]
-                                    [cider/piggieback "0.4.1"]]
+                                    [cider/piggieback "0.4.2"]]
+                   :source-paths   ["dev"]
                    :test-paths     ["test"]
                    :resource-paths ["target"]}
-             :figwheel {:source-paths ^:replace ["src/core"]}}
+             :figwheel {:source-paths ^:replace ["src/core" "dev"]}}
   :clean-targets ^{:protect false} ["target"]
   :aliases {"figwheel" ["with-profile" "+figwheel" "trampoline" "run" "-m" "figwheel.main" "-b" "dev" "-r"]
             "test"     ["run" "-m" "figwheel.main" "-co" "test.cljs.edn" "-m" reagent-material-ui.test-runner]}
