@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.8.3-1
+
+**[compare](https://github.com/arttuka/reagent-material-ui/compare/v4.8.3-0...v4.8.3-1)**
+
+- Fix time zone handling in `cljs-time-utils`
+
 ## 4.8.3-0
 
 **[compare](https://github.com/arttuka/reagent-material-ui/compare/v4.5.1-1...v4.8.3-0)**
