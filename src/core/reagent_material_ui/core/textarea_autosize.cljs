@@ -7,7 +7,7 @@
             [reagent-material-ui.util :refer [adapt-react-class debounce js->clj' remove-undefined-vals use-fork-ref
                                               use-callback use-effect use-layout-effect use-ref use-state]]))
 
-;; Converted from https://github.com/mui-org/material-ui/blob/v4.5.1/packages/material-ui/src/TextareaAutosize/TextareaAutosize.js
+;; Converted from https://github.com/mui-org/material-ui/blob/v4.8.3/packages/material-ui/src/TextareaAutosize/TextareaAutosize.js
 ;; Original code is copyright (c) Material UI contributors. Used under the terms of the MIT License.
 
 (defn ^:private different? [a b]
@@ -19,8 +19,9 @@
 (def react-textarea-autosize
   (forward-ref textarea-autosize [props ref]
     (let [props (js->clj' props)
-          {:keys [on-change placeholder rows rows-max style value]} props
-          other-props (dissoc props :input-ref :on-change :rows :rows-max :style)
+          {:keys [on-change placeholder rows rows-max rows-min style value]} props
+          other-props (dissoc props :input-ref :on-change :rows :rows-max :rows-min :style)
+          rows-min (or rows rows-min 1)
           controlled? (some? value)
           ^js/React.Ref input-ref (use-ref nil)
           ^js/React.Ref shadow-ref (use-ref nil)
@@ -40,7 +41,7 @@
                                            _ (set! (.-value shadow) "x")
                                            single-row-height (- (.-scrollHeight shadow) padding)
                                            outer-height (cond-> inner-height
-                                                          rows (max (* (js/Number. rows) single-row-height))
+                                                          rows-min (max (* (js/Number. rows-min) single-row-height))
                                                           rows-max (min (* (js/Number. rows-max) single-row-height))
                                                           true (max single-row-height))
                                            outer-height (if (= "border-box" box-sizing)
@@ -54,7 +55,7 @@
                                                       {:overflow? overflow?
                                                        :height    outer-height}
                                                       prev-state))))
-                                    #js [rows rows-max placeholder])
+                                    #js [rows-max rows-min placeholder])
           handle-change (fn [e]
                           (when-not controlled?
                             (sync-height))
@@ -72,7 +73,7 @@
         [:textarea (remove-undefined-vals
                     (merge {:on-change handle-change
                             :ref       handle-ref
-                            :rows      (or rows 1)
+                            :rows      rows-min
                             :style     (merge {:height   (:height state)
                                                :overflow (when (:overflow? state) :hidden)}
                                               style)}

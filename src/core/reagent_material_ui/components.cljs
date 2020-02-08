@@ -41,6 +41,7 @@
             reagent-material-ui.core.fade
             reagent-material-ui.core.filled-input
             reagent-material-ui.core.form-control
+            reagent-material-ui.core.use-form-control
             reagent-material-ui.core.form-control-label
             reagent-material-ui.core.form-group
             reagent-material-ui.core.form-helper-text
@@ -81,6 +82,7 @@
             reagent-material-ui.core.portal
             reagent-material-ui.core.radio
             reagent-material-ui.core.radio-group
+            reagent-material-ui.core.use-radio-group
             reagent-material-ui.core.root-ref
             reagent-material-ui.core.select
             reagent-material-ui.core.slide
@@ -101,6 +103,7 @@
             reagent-material-ui.core.table
             reagent-material-ui.core.table-body
             reagent-material-ui.core.table-cell
+            reagent-material-ui.core.table-container
             reagent-material-ui.core.table-footer
             reagent-material-ui.core.table-head
             reagent-material-ui.core.table-pagination
@@ -112,7 +115,9 @@
             reagent-material-ui.core.toolbar
             reagent-material-ui.core.tooltip
             reagent-material-ui.core.typography
-            reagent-material-ui.core.zoom))
+            reagent-material-ui.core.zoom
+            reagent-material-ui.core.use-media-query
+            reagent-material-ui.core.use-scroll-trigger))
 
 (def app-bar reagent-material-ui.core.app-bar/app-bar)
 (def avatar reagent-material-ui.core.avatar/avatar)
@@ -153,6 +158,7 @@
 (def fade reagent-material-ui.core.fade/fade)
 (def filled-input reagent-material-ui.core.filled-input/filled-input)
 (def form-control reagent-material-ui.core.form-control/form-control)
+(def use-form-control reagent-material-ui.core.use-form-control/use-form-control)
 (def form-control-label reagent-material-ui.core.form-control-label/form-control-label)
 (def form-group reagent-material-ui.core.form-group/form-group)
 (def form-helper-text reagent-material-ui.core.form-helper-text/form-helper-text)
@@ -193,6 +199,7 @@
 (def portal reagent-material-ui.core.portal/portal)
 (def radio reagent-material-ui.core.radio/radio)
 (def radio-group reagent-material-ui.core.radio-group/radio-group)
+(def use-radio-group reagent-material-ui.core.use-radio-group/use-radio-group)
 (def root-ref reagent-material-ui.core.root-ref/root-ref)
 (def select reagent-material-ui.core.select/select)
 (def slide reagent-material-ui.core.slide/slide)
@@ -213,6 +220,7 @@
 (def table reagent-material-ui.core.table/table)
 (def table-body reagent-material-ui.core.table-body/table-body)
 (def table-cell reagent-material-ui.core.table-cell/table-cell)
+(def table-container reagent-material-ui.core.table-container/table-container)
 (def table-footer reagent-material-ui.core.table-footer/table-footer)
 (def table-head reagent-material-ui.core.table-head/table-head)
 (def table-pagination reagent-material-ui.core.table-pagination/table-pagination)
@@ -225,3 +233,5 @@
 (def tooltip reagent-material-ui.core.tooltip/tooltip)
 (def typography reagent-material-ui.core.typography/typography)
 (def zoom reagent-material-ui.core.zoom/zoom)
+(def use-media-query reagent-material-ui.core.use-media-query/use-media-query)
+(def use-scroll-trigger reagent-material-ui.core.use-scroll-trigger/use-scroll-trigger)
