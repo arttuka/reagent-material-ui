@@ -83,6 +83,7 @@
                                         (cond
                                           (undefined? value) (time/now)
                                           (nil? value) nil
+                                          (time/date? value) value
                                           :else (coerce/to-date-time value)))
          :parse                       (fn [value format-str]
                                         (let [date (time/now)
