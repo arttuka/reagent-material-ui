@@ -84,7 +84,6 @@
             reagent-material-ui.core.radio-group
             reagent-material-ui.core.use-radio-group
             reagent-material-ui.core.root-ref
-            reagent-material-ui.core.scoped-css-baseline
             reagent-material-ui.core.select
             reagent-material-ui.core.slide
             reagent-material-ui.core.slider
@@ -202,7 +201,6 @@
 (def radio-group reagent-material-ui.core.radio-group/radio-group)
 (def use-radio-group reagent-material-ui.core.use-radio-group/use-radio-group)
 (def root-ref reagent-material-ui.core.root-ref/root-ref)
-(def scoped-css-baseline reagent-material-ui.core.scoped-css-baseline/scoped-css-baseline)
 (def select reagent-material-ui.core.select/select)
 (def slide reagent-material-ui.core.slide/slide)
 (def slider reagent-material-ui.core.slider/slider)
