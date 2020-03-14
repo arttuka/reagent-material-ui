@@ -3,5 +3,5 @@
   (:require-macros [reagent-material-ui.macro :refer [e]])
   (:require [reagent-material-ui.util :refer [create-svg-icon]]))
 
-(def indeterminate-check-box (create-svg-icon (e (.-Fragment js/React) nil (e "defs" nil (e "path" #js {"d" "M0 0h24v24H0z", "id" "a"})) (e "path" #js {"d" "M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10H7v-2h10v2z"}))
+(def indeterminate-check-box (create-svg-icon (e "path" #js {"d" "M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10H7v-2h10v2z"})
                                               "IndeterminateCheckBox"))

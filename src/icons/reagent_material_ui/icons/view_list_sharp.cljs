@@ -3,5 +3,5 @@
   (:require-macros [reagent-material-ui.macro :refer [e]])
   (:require [reagent-material-ui.util :refer [create-svg-icon]]))
 
-(def view-list-sharp (create-svg-icon (e (.-Fragment js/React) nil (e "path" #js {"d" "M0 0h24v24H0V0z", "fill" "none", "opacity" ".87"}) (e "path" #js {"d" "M3 14h4v-4H3v4zm0 5h4v-4H3v4zM3 9h4V5H3v4zm5 5h12v-4H8v4zm0 5h12v-4H8v4zM8 5v4h12V5H8z"}))
+(def view-list-sharp (create-svg-icon (e "path" #js {"d" "M3 14h4v-4H3v4zm0 5h4v-4H3v4zM3 9h4V5H3v4zm5 5h12v-4H8v4zm0 5h12v-4H8v4zM8 5v4h12V5H8z"})
                                       "ViewListSharp"))

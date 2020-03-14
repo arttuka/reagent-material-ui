@@ -3,5 +3,5 @@
   (:require-macros [reagent-material-ui.macro :refer [e]])
   (:require [reagent-material-ui.util :refer [create-svg-icon]]))
 
-(def looks-3 (create-svg-icon (e (.-Fragment js/React) nil (e "path" #js {"d" "M.01 0h24v24h-24z", "fill" "none"}) (e "path" #js {"d" "M19.01 3h-14c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-4 7.5c0 .83-.67 1.5-1.5 1.5.83 0 1.5.67 1.5 1.5V15c0 1.11-.9 2-2 2h-4v-2h4v-2h-2v-2h2V9h-4V7h4c1.1 0 2 .89 2 2v1.5z"}))
+(def looks-3 (create-svg-icon (e "path" #js {"d" "M19.01 3h-14c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-4 7.5c0 .83-.67 1.5-1.5 1.5.83 0 1.5.67 1.5 1.5V15c0 1.11-.9 2-2 2h-4v-2h4v-2h-2v-2h2V9h-4V7h4c1.1 0 2 .89 2 2v1.5z"})
                               "Looks3"))
