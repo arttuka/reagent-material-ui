@@ -5,7 +5,7 @@
             :url  "https://www.eclipse.org/legal/epl-2.0/"}
   :dependencies [[org.clojure/clojure "1.10.1"]
                  [org.clojure/clojurescript "1.10.597"]
-                 [reagent "0.9.1"]
+                 [reagent "0.10.0"]
                  [cljsjs/material-ui "4.8.3-0"]
                  [cljsjs/material-ui-pickers "3.2.7-0"]
                  [com.andrewmcveigh/cljs-time "0.5.2"]

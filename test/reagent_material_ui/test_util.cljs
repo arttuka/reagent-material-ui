@@ -1,5 +1,5 @@
 (ns reagent-material-ui.test-util
-  (:require [reagent.core :as r]
+  (:require [reagent.dom :as r]
             [dommy.core :refer-macros [sel1] :refer [create-element set-attr!]]))
 
 (def render-target-id "reagent-material-ui-render-target")
