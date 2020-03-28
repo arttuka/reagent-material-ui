@@ -1,5 +1,7 @@
 (ns reagent-material-ui.util-test
-  (:require [cljs.test :refer-macros [deftest testing is use-fixtures]]
+  (:require [cljsjs.react]
+            [cljsjs.react.dom]
+            [cljs.test :refer-macros [deftest testing is use-fixtures]]
             [goog.object :as obj]
             [reagent-material-ui.util :refer [clj->js' js->clj']]))
 

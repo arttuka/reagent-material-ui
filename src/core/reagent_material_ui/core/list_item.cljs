@@ -2,6 +2,6 @@
   "Imports @material-ui/core/ListItem as a Reagent component.
    Original documentation is at https://material-ui.com/api/list-item/ ."
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
-            [material-ui]))
+            ["@material-ui/core/ListItem" :as ListItem]))
 
-(def list-item (adapt-react-class (.-ListItem js/MaterialUI) "mui-list-item"))
+(def list-item (adapt-react-class (or (.-default ListItem) (.-ListItem ListItem)) "mui-list-item"))

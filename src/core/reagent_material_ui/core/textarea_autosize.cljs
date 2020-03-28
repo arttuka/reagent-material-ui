@@ -80,7 +80,9 @@
                        (.removeEventListener js/window "resize" handle-resize)))
                   #js [sync-height])
       (use-layout-effect sync-height)
-      (use-effect #(set! (.-current renders) 0)
+      (use-effect (fn []
+                    (set! (.-current renders) 0)
+                    js/undefined)
                   #js [value])
       (r/as-element
        [:<>

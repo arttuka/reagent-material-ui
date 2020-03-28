@@ -55,13 +55,7 @@ Bug reports, pull requests and ideas for improvement are very welcome. No extern
 
 ### Tests
 
-There are three ways to run tests:
-* Single run from the command line with `lein test`
-* Web test frontend with automatic code reloading with `lein figwheel`
-* The web test frontend and CLJS-REPL is also available via nREPL by running `(user/start)`
-
-Icon files are excluded from Figwheel dev build, because constantly rebuilding
-such a large number of files causes Figwheel to break.
+Run tests with `npm test`.
 
 The build process also includes `lein cljfmt`. 
 

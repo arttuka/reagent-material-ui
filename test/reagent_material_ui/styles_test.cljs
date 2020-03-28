@@ -1,5 +1,7 @@
 (ns reagent-material-ui.styles-test
-  (:require [cljs.test :refer-macros [deftest testing is use-fixtures]]
+  (:require [cljsjs.react]
+            [cljsjs.react.dom]
+            [cljs.test :refer-macros [deftest testing is use-fixtures]]
             [dommy.core :as dommy :refer-macros [sel1]]
             [reagent.core :as r]
             [reagent-material-ui.styles :refer [make-styles with-styles styled use-theme with-theme theme-provider]]

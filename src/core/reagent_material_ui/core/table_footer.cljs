@@ -2,6 +2,6 @@
   "Imports @material-ui/core/TableFooter as a Reagent component.
    Original documentation is at https://material-ui.com/api/table-footer/ ."
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
-            [material-ui]))
+            ["@material-ui/core/TableFooter" :as TableFooter]))
 
-(def table-footer (adapt-react-class (.-TableFooter js/MaterialUI) "mui-table-footer"))
+(def table-footer (adapt-react-class (or (.-default TableFooter) (.-TableFooter TableFooter)) "mui-table-footer"))

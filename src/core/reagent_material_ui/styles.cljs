@@ -2,10 +2,10 @@
   "Imports some styles related helpers and components from @material-ui/core/styles.
    Original documentation is at https://material-ui.com/styles/basics/ ."
   (:require [reagent.core :as r]
-            [material-ui]
+            ["@material-ui/core/styles" :as mui-styles]
             [reagent-material-ui.util :as util]))
 
-(def ^:private theme-provider* (util/adapt-react-class (.-MuiThemeProvider js/MaterialUIStyles) "mui-theme-provider"))
+(def ^:private theme-provider* (util/adapt-react-class mui-styles/MuiThemeProvider "mui-theme-provider"))
 
 (defn make-styles
   "Takes a styles-generating function or a styles object.
@@ -14,7 +14,7 @@
   ([styles]
    (make-styles styles {}))
   ([styles opts]
-   (let [use-styles (.makeStyles js/MaterialUIStyles (util/wrap-jss-styles styles) (clj->js opts))]
+   (let [use-styles (mui-styles/makeStyles (util/wrap-jss-styles styles) (clj->js opts))]
      (util/wrap-js-function use-styles))))
 
 (defn with-styles
@@ -24,7 +24,7 @@
   ([styles]
    (with-styles styles {}))
   ([styles opts]
-   (let [hoc (.withStyles js/MaterialUIStyles (util/wrap-jss-styles styles) (clj->js opts))]
+   (let [hoc (mui-styles/withStyles (util/wrap-jss-styles styles) (clj->js opts))]
      (partial util/apply-hoc hoc))))
 
 (defn styled
@@ -34,7 +34,7 @@
   ([component styles]
    (styled component styles {}))
   ([component styles opts]
-   (let [styled-component (.styled js/MaterialUIStyles (util/reactify-component component))]
+   (let [styled-component (mui-styles/styled (util/reactify-component component))]
      (util/adapt-react-class
       (styled-component (util/wrap-jss-styles styles) (clj->js opts))))))
 
@@ -42,13 +42,13 @@
   "React hook that returns the theme object.
    Note: React hooks can't be used in regular Reagent components: http://reagent-project.github.io/docs/master/ReactFeatures.html#hooks"
   []
-  (util/js->clj' (.useTheme js/MaterialUIStyles)))
+  (util/js->clj' (mui-styles/useTheme)))
 
 (defn with-theme
   "Higher order component that provides the theme object as a prop to the input component.
    Note: input component has to take all its props (including children) in a single map."
   [component]
-  (util/apply-hoc (.-withTheme js/MaterialUIStyles) component))
+  (util/apply-hoc mui-styles/withTheme component))
 
 (defn theme-provider
   "Component that takes a theme object and makes it available in child components.
@@ -60,4 +60,4 @@
 (defn create-mui-theme
   "Takes an incomplete theme object and adds the missing parts"
   [options]
-  (util/js->clj' (.createMuiTheme js/MaterialUIStyles (util/clj->js' options))))
+  (util/js->clj' (mui-styles/createMuiTheme (util/clj->js' options))))

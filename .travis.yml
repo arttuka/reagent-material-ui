@@ -4,10 +4,13 @@ lein: 2.9.0
 jdk: openjdk12
 sudo: false
 before_script:
+  - nvm install 12
+  - npm install
   - "sudo chown root /opt/google/chrome/chrome-sandbox"
   - "sudo chmod 4755 /opt/google/chrome/chrome-sandbox"
 script:
-  - lein do clean, cljfmt check, test
+  - lein do clean, cljfmt check
+  - npm test
 branches:
   only:
     - master

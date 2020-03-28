@@ -1,5 +1,7 @@
 (ns reagent-material-ui.text-field-test
-  (:require [cljs.test :refer-macros [deftest testing is use-fixtures]]
+  (:require [cljsjs.react]
+            [cljsjs.react.dom]
+            [cljs.test :refer-macros [deftest testing is use-fixtures]]
             [reagent.core :as r]
             [reagent-material-ui.core.text-field :refer [text-field]]
             [reagent-material-ui.test-util :refer [unmount-fixture unmount render]]))

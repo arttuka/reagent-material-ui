@@ -1,0 +1,24 @@
+{
+  "name": "reagent-material-ui",
+  "private": true,
+  "devDependencies": {
+    "karma": "^4.4.1",
+    "karma-chrome-launcher": "^3.1.0",
+    "karma-cljs-test": "^0.1.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "shadow-cljs": "2.8.94",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11"
+  },
+  "dependencies": {
+    "@material-ui/core": "4.9.8",
+    "@material-ui/lab": "4.0.0-alpha.47",
+    "@material-ui/pickers": "3.2.10"
+  },
+  "scripts": {
+    "build:dev": "webpack --mode development",
+    "build:prod": "webpack --mode production",
+    "test": "shadow-cljs compile test && karma start --single-run"
+  }
+}

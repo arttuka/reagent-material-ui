@@ -2,6 +2,6 @@
   "Imports @material-ui/core/CardHeader as a Reagent component.
    Original documentation is at https://material-ui.com/api/card-header/ ."
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
-            [material-ui]))
+            ["@material-ui/core/CardHeader" :as CardHeader]))
 
-(def card-header (adapt-react-class (.-CardHeader js/MaterialUI) "mui-card-header"))
+(def card-header (adapt-react-class (or (.-default CardHeader) (.-CardHeader CardHeader)) "mui-card-header"))

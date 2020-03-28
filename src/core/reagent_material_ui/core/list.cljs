@@ -3,6 +3,6 @@
    Original documentation is at https://material-ui.com/api/list/ ."
   (:refer-clojure :exclude [list])
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
-            [material-ui]))
+            ["@material-ui/core/List" :as List]))
 
-(def list (adapt-react-class (.-List js/MaterialUI) "mui-list"))
+(def list (adapt-react-class (or (.-default List) (.-List List)) "mui-list"))

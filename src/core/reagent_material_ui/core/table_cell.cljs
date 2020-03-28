@@ -2,6 +2,6 @@
   "Imports @material-ui/core/TableCell as a Reagent component.
    Original documentation is at https://material-ui.com/api/table-cell/ ."
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
-            [material-ui]))
+            ["@material-ui/core/TableCell" :as TableCell]))
 
-(def table-cell (adapt-react-class (.-TableCell js/MaterialUI) "mui-table-cell"))
+(def table-cell (adapt-react-class (or (.-default TableCell) (.-TableCell TableCell)) "mui-table-cell"))

@@ -2,6 +2,6 @@
   "Imports @material-ui/core/FormControl as a Reagent component.
    Original documentation is at https://material-ui.com/api/form-control/ ."
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
-            [material-ui]))
+            ["@material-ui/core/FormControl" :as FormControl]))
 
-(def form-control (adapt-react-class (.-FormControl js/MaterialUI) "mui-form-control"))
+(def form-control (adapt-react-class (or (.-default FormControl) (.-FormControl FormControl)) "mui-form-control"))

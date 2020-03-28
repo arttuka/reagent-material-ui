@@ -1,3 +1,0 @@
-^{:watch-dirs ["src/core" "src/icons" "test"]
-  :launch-js  "scripts/test.sh"}
-{:main reagent-material-ui.test-runner}

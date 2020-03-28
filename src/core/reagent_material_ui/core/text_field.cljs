@@ -2,7 +2,7 @@
   "Imports @material-ui/core/TextField as a Reagent component.
    Original documentation is at https://material-ui.com/api/text-field/ ."
   (:require [reagent.core :as r]
-            [material-ui]
+            ["@material-ui/core/TextField" :as TextField]
             [reagent-material-ui.core.textarea-autosize :refer [react-textarea-autosize]]
             [reagent-material-ui.util :refer [adapt-react-class get-anycase assoc-anycase remove-undefined-vals]]))
 
@@ -25,7 +25,7 @@
    (fn textarea [props]
      [:textarea (input-props props)])))
 
-(def ^:private mui-text-field (adapt-react-class (.-TextField js/MaterialUI) "mui-text-field"))
+(def ^:private mui-text-field (adapt-react-class (or (.-default TextField) (.-TextField TextField)) "mui-text-field"))
 
 (defn text-field [props & children]
   (let [rows-max (get-anycase props :rows-max)

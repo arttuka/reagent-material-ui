@@ -6,7 +6,7 @@
             [clojure.walk :refer [postwalk]]
             [camel-snake-kebab.core :refer [->kebab-case-keyword ->camelCaseKeyword ->camelCaseString]]
             [goog.object :as obj]
-            [material-ui]))
+            ["@material-ui/core/SvgIcon" :as SvgIcon]))
 
 (defn adapt-react-class
   ([c]
@@ -174,5 +174,7 @@
 
 (defn create-svg-icon [path display-name]
   (let [component (.memo js/React (forward-ref [props ref]
-                                    (e (.-SvgIcon js/MaterialUI) (js/Object.assign #js {:ref ref} props) path)))]
+                                    (e (or (.-default SvgIcon) (.-SvgIcon SvgIcon))
+                                       (js/Object.assign #js {:ref ref} props)
+                                       path)))]
     (adapt-react-class component display-name)))

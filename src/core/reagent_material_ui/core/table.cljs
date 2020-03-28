@@ -2,6 +2,6 @@
   "Imports @material-ui/core/Table as a Reagent component.
    Original documentation is at https://material-ui.com/api/table/ ."
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
-            [material-ui]))
+            ["@material-ui/core/Table" :as Table]))
 
-(def table (adapt-react-class (.-Table js/MaterialUI) "mui-table"))
+(def table (adapt-react-class (or (.-default Table) (.-Table Table)) "mui-table"))
