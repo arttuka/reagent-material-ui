@@ -15,7 +15,7 @@ Their examples are very good. and this library tries to follow the original idea
 
 To add Material UI to an existing Reagent project, just add this library to your dependencies:
 ```
-[arttuka/reagent-material-ui "4.9.5-1"]
+[arttuka/reagent-material-ui "4.9.8-0"]
 ```
 
 Most of the library is in the form of regular Reagent components. Each component is contained in a namespace that mirrors
@@ -38,6 +38,12 @@ Namespace `reagent-material-ui.pickers` contains all components from `@material-
 Namespace `reagent-material-ui.cljs-time-utils` contains an utility package that lets you use the pickers with `cljs-time` (`goog.date`) date objects.
 The locale prop must be an instance of `goog.i18n.DateTimeSymbols`. The default locale is used if no locale prop is given.
 See the example project for a usage example.
+
+#### material-ui-lab
+
+This library also includes date and time picker components from [Material-UI Lab](https://material-ui.com/components/about-the-lab/).
+
+Namespace `reagent-material-ui.lab` contains all components from `@material-ui/lab`.
 
 ### Common pitfalls in Reagent/React interop
 
@@ -63,9 +69,10 @@ The build process also includes `lein cljfmt`.
 
 The project follows Material UI's version numbering.
 
-* Current `@material-ui/core` version: `4.9.5`
-* Current `@material-ui/icons` version: `4.9.5`
-* Current `@material-ui/pickers` version: `3.2.7`
+* Current `@material-ui/core` version: `4.9.8`
+* Current `@material-ui/icons` version: `4.9.8`
+* Current `@material-ui/pickers` version: `3.2.10`
+* Current `@material-ui/lab` version: `4.0.0-alpha.47`
 
 ### License
 
