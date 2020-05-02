@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.9.12-0
+
+**[compare](https://github.com/arttuka/reagent-material-ui/compare/v4.9.8-0...v4.9.12-0)**
+
+- Update Material UI to v4.9.12
+
 ## 4.9.8-0
 
 **[compare](https://github.com/arttuka/reagent-material-ui/compare/v4.9.5-1...v4.9.8-0)**
