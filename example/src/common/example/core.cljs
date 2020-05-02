@@ -1,12 +1,21 @@
-(ns example.core
+(ns ^:figwheel-hooks example.core
   (:require [reagent.core :as r]
+            [reagent.dom :as rdom]
             [reagent-material-ui.cljs-time-utils :refer [cljs-time-utils]]
-            [reagent-material-ui.components :as mui]
             [reagent-material-ui.colors :as colors]
+            [reagent-material-ui.core.button :refer [button]]
+            [reagent-material-ui.core.chip :refer [chip]]
+            [reagent-material-ui.core.css-baseline :refer [css-baseline]]
+            [reagent-material-ui.core.grid :refer [grid]]
+            [reagent-material-ui.core.menu-item :refer [menu-item]]
+            [reagent-material-ui.core.text-field :refer [text-field]]
+            [reagent-material-ui.core.textarea-autosize :refer [textarea-autosize]]
+            [reagent-material-ui.core.toolbar :refer [toolbar]]
             [reagent-material-ui.icons.add-box :refer [add-box]]
             [reagent-material-ui.icons.clear :refer [clear]]
             [reagent-material-ui.icons.face :refer [face]]
-            [reagent-material-ui.pickers :as pickers]
+            [reagent-material-ui.pickers.date-picker :refer [date-picker]]
+            [reagent-material-ui.pickers.mui-pickers-utils-provider :refer [mui-pickers-utils-provider]]
             [reagent-material-ui.styles :as styles])
   (:import (goog.i18n DateTimeSymbols_en_US)))
 
@@ -34,15 +43,15 @@
 (defonce date-picker-state (r/atom nil))
 
 (defn form [{:keys [classes] :as props}]
-  [mui/grid
+  [grid
    {:container true
     :direction "column"
     :spacing   2}
 
-   [mui/grid {:item true}
-    [mui/toolbar
+   [grid {:item true}
+    [toolbar
      {:disable-gutters true}
-     [mui/button
+     [button
       {:variant  "contained"
        :color    "primary"
        :class    (:button classes)
@@ -50,7 +59,7 @@
       "Update value property"
       [add-box]]
 
-     [mui/button
+     [button
       {:variant  "outlined"
        :color    "secondary"
        :class    (:button classes)
@@ -58,19 +67,18 @@
       "Reset"
       [clear]]]]
 
-   [mui/grid {:item true}
-    [mui/text-field
+   [grid {:item true}
+    [text-field
      {:value       @text-state
       :label       "Text input"
       :placeholder "Placeholder"
       :helper-text "Helper text"
       :class       (:text-field classes)
       :on-change   (fn [e]
-                     (reset! text-state (event-value e)))
-      :inputRef    #(js/console.log "input-ref" %)}]]
+                     (reset! text-state (event-value e)))}]]
 
-   [mui/grid {:item true}
-    [mui/text-field
+   [grid {:item true}
+    [text-field
      {:value       @text-state
       :label       "Textarea"
       :placeholder "Placeholder"
@@ -81,8 +89,17 @@
       :multiline   true
       :rows        10}]]
 
-   [mui/grid {:item true}
-    [mui/text-field
+   [grid {:item true}
+    [textarea-autosize
+     {:id        :textarea-autosize
+      :value     @text-state
+      :class     (:text-field classes)
+      :on-change (fn [e]
+                   (reset! text-state (event-value e)))
+      :rows-max  10}]]
+
+   [grid {:item true}
+    [text-field
      {:value       @text-state
       :label       "Select"
       :placeholder "Placeholder"
@@ -91,50 +108,52 @@
       :on-change   (fn [e]
                      (reset! text-state (event-value e)))
       :select      true}
-     [mui/menu-item
+     [menu-item
       {:value 1}
       "Item 1"]
-     [mui/menu-item
+     [menu-item
       {:value 2}
       "Item 2"]]]
 
-   [mui/grid {:item true}
+   [grid {:item true}
     ;; For properties that require React Node as parameter,
     ;; use r/as-element to convert Reagent hiccup forms into React elements,
     ;; or use r/create-element to directly instantiate element from React class (i.e. non-adapted React component).
-    [mui/grid {:item true}
-     [mui/chip
+    [grid {:item true}
+     [chip
       {:icon  (r/as-element [face])
        :label "Icon element example, r/as-element"}]]]
 
-   [mui/grid {:item true}
-    [pickers/date-picker {:value       @date-picker-state
-                          :on-change   (fn [value]
-                                         (reset! date-picker-state value))
-                          :format      "MM/dd/yyyy"
-                          :placeholder "Select a date"
-                          :helper-text "Helper text"
-                          :auto-ok     true}]]])
+   [grid {:item true}
+    [date-picker {:value       @date-picker-state
+                  :on-change   (fn [value]
+                                 (reset! date-picker-state value))
+                  :format      "MM/dd/yyyy"
+                  :placeholder "Select a date"
+                  :helper-text "Helper text"
+                  :auto-ok     true}]]])
 
 (defn main []
   ;; fragment
   [:<>
-   [mui/css-baseline]
+   [css-baseline]
    ;; mui-pickers-utils-provider provides date handling utils to date and time pickers.
    ;; cljs-time-utils is an utility package that allows you to use cljs-time / goog.date date objects.
-   [pickers/mui-pickers-utils-provider {:utils  cljs-time-utils
-                                        :locale DateTimeSymbols_en_US}
+   [mui-pickers-utils-provider {:utils  cljs-time-utils
+                                :locale DateTimeSymbols_en_US}
     [styles/theme-provider (styles/create-mui-theme custom-theme)
-     [mui/grid
+     [grid
       {:container true
        :direction "row"
        :justify   "center"}
-      [mui/grid
+      [grid
        {:item true
         :xs   6}
        [(with-custom-styles form)]]]]]])
 
-(defn start []
-  (r/render [main] (js/document.getElementById "app")))
+(defn ^:after-load
+  mount []
+  (rdom/render [main] (js/document.getElementById "app")))
 
-(start)
+(defn ^:export init []
+  (mount))

@@ -12,5 +12,5 @@ pom.xml.asc
 *.iml
 .rebel_readline_history
 /dev-resources
-/node_modules
-/.shadow-cljs
+node_modules
+.shadow-cljs
