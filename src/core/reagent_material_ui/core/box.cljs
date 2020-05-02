@@ -2,6 +2,6 @@
   "Imports @material-ui/core/Box as a Reagent component.
    Original documentation is at https://material-ui.com/api/box/ ."
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
-            ["@material-ui/core/Box" :as Box]))
+            ["@material-ui/core/Box" :as MuiBox]))
 
-(def box (adapt-react-class (or (.-default Box) (.-Box Box)) "mui-box"))
+(def box (adapt-react-class (or (.-default MuiBox) (.-Box MuiBox)) "mui-box"))

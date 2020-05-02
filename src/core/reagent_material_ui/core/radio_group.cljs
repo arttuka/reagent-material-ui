@@ -2,6 +2,6 @@
   "Imports @material-ui/core/RadioGroup as a Reagent component.
    Original documentation is at https://material-ui.com/api/radio-group/ ."
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
-            ["@material-ui/core/RadioGroup" :as RadioGroup]))
+            ["@material-ui/core/RadioGroup" :as MuiRadioGroup]))
 
-(def radio-group (adapt-react-class (or (.-default RadioGroup) (.-RadioGroup RadioGroup)) "mui-radio-group"))
+(def radio-group (adapt-react-class (or (.-default MuiRadioGroup) (.-RadioGroup MuiRadioGroup)) "mui-radio-group"))

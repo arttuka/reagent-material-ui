@@ -2,6 +2,6 @@
   "Imports @material-ui/lab/SpeedDial as a Reagent component.
    Original documentation is at https://material-ui.com/api/speed-dial/ ."
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
-            ["@material-ui/lab/SpeedDial" :as SpeedDial]))
+            ["@material-ui/lab/SpeedDial" :as MuiSpeedDial]))
 
-(def speed-dial (adapt-react-class (or (.-default SpeedDial) (.-SpeedDial SpeedDial)) "mui-speed-dial"))
+(def speed-dial (adapt-react-class (or (.-default MuiSpeedDial) (.-SpeedDial MuiSpeedDial)) "mui-speed-dial"))

@@ -2,6 +2,6 @@
   "Imports @material-ui/core/DialogContent as a Reagent component.
    Original documentation is at https://material-ui.com/api/dialog-content/ ."
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
-            ["@material-ui/core/DialogContent" :as DialogContent]))
+            ["@material-ui/core/DialogContent" :as MuiDialogContent]))
 
-(def dialog-content (adapt-react-class (or (.-default DialogContent) (.-DialogContent DialogContent)) "mui-dialog-content"))
+(def dialog-content (adapt-react-class (or (.-default MuiDialogContent) (.-DialogContent MuiDialogContent)) "mui-dialog-content"))

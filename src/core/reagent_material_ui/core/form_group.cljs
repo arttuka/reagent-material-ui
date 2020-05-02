@@ -2,6 +2,6 @@
   "Imports @material-ui/core/FormGroup as a Reagent component.
    Original documentation is at https://material-ui.com/api/form-group/ ."
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
-            ["@material-ui/core/FormGroup" :as FormGroup]))
+            ["@material-ui/core/FormGroup" :as MuiFormGroup]))
 
-(def form-group (adapt-react-class (or (.-default FormGroup) (.-FormGroup FormGroup)) "mui-form-group"))
+(def form-group (adapt-react-class (or (.-default MuiFormGroup) (.-FormGroup MuiFormGroup)) "mui-form-group"))

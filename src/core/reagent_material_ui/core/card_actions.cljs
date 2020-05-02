@@ -2,6 +2,6 @@
   "Imports @material-ui/core/CardActions as a Reagent component.
    Original documentation is at https://material-ui.com/api/card-actions/ ."
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
-            ["@material-ui/core/CardActions" :as CardActions]))
+            ["@material-ui/core/CardActions" :as MuiCardActions]))
 
-(def card-actions (adapt-react-class (or (.-default CardActions) (.-CardActions CardActions)) "mui-card-actions"))
+(def card-actions (adapt-react-class (or (.-default MuiCardActions) (.-CardActions MuiCardActions)) "mui-card-actions"))

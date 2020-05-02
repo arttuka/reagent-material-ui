@@ -33,6 +33,8 @@
                                            computed-style (.getComputedStyle js/window input)
                                            _ (set! (.-width (.-style shadow)) (obj/get computed-style "width"))
                                            _ (set! (.-value shadow) (or (.-value input) placeholder "x"))
+                                           _ (when (= (last (.-value shadow)) \newline)
+                                               (set! (.-value shadow) (str (.-value shadow) " ")))
                                            box-sizing (obj/get computed-style "box-sizing")
                                            padding (+ (get-style-value computed-style "padding-bottom")
                                                       (get-style-value computed-style "padding-top"))
@@ -59,7 +61,8 @@
                                                         {:overflow? overflow?
                                                          :height    outer-height})
                                                       (do
-                                                        (when (and (not= "production" (.. js/process -env -NODE_ENV))
+                                                        (when (and (or (not (exists? js/process))
+                                                                       (not= "production" (.. js/process -env -NODE_ENV)))
                                                                    (= (.-current renders) 20))
                                                           (.error js/console "Material-UI: too many re-renders. The layout is unstable.\nTextareaAutosize limits the number of renders to prevent an infinite loop"))
                                                         prev-state)))))

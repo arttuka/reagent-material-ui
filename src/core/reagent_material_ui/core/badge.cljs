@@ -2,6 +2,6 @@
   "Imports @material-ui/core/Badge as a Reagent component.
    Original documentation is at https://material-ui.com/api/badge/ ."
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
-            ["@material-ui/core/Badge" :as Badge]))
+            ["@material-ui/core/Badge" :as MuiBadge]))
 
-(def badge (adapt-react-class (or (.-default Badge) (.-Badge Badge)) "mui-badge"))
+(def badge (adapt-react-class (or (.-default MuiBadge) (.-Badge MuiBadge)) "mui-badge"))

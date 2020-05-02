@@ -2,6 +2,6 @@
   "Imports @material-ui/core/StepContent as a Reagent component.
    Original documentation is at https://material-ui.com/api/step-content/ ."
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
-            ["@material-ui/core/StepContent" :as StepContent]))
+            ["@material-ui/core/StepContent" :as MuiStepContent]))
 
-(def step-content (adapt-react-class (or (.-default StepContent) (.-StepContent StepContent)) "mui-step-content"))
+(def step-content (adapt-react-class (or (.-default MuiStepContent) (.-StepContent MuiStepContent)) "mui-step-content"))

@@ -95,6 +95,7 @@ var MaterialUI = {
   RadioGroup: function () { },
   useRadioGroup: function () { },
   RootRef: function () { },
+  ScopedCssBaseline: function () { },
   Select: function () { },
   Slide: function () { },
   Slider: function () { },
@@ -126,11 +127,9 @@ var MaterialUI = {
   Toolbar: function () { },
   Tooltip: function () { },
   Typography: function () { },
+  Zoom: function () { },
   useMediaQuery: function () { },
   useScrollTrigger: function () { },
-  withMobileDialog: function () { },
-  withWidth: function () { },
-  Zoom: function () { },
 };
 
 var MaterialUIStyles = {
@@ -182,10 +181,10 @@ var MaterialUIStyles = {
 var MaterialUILab = {
   Alert: function () { },
   AlertTitle: function () { },
-  AutoComplete: function () { },
+  Autocomplete: function () { },
   AvatarGroup: function () { },
-  createFilterOptions: function () { },
   Pagination: function () { },
+  usePagination: function () { },
   PaginationItem: function () { },
   Rating: function () { },
   Skeleton: function () { },
@@ -197,5 +196,21 @@ var MaterialUILab = {
   TreeItem: function () { },
   TreeView: function () { },
   useAutocomplete: function () { },
-  usePagination: function () { }
+};
+
+var MaterialUIPickers = {
+  Calendar: function () { },
+  Clock: function () { },
+  ClockView: function () { },
+  DatePicker: function () { },
+  DateTimePicker: function () { },
+  Day: function () { },
+  KeyboardDatePicker: function () { },
+  KeyboardDateTimePicker: function () { },
+  KeyboardTimePicker: function () { },
+  MuiPickersContext: function () { },
+  MuiPickersUtilsProvider: function () { },
+  Picker: function () { },
+  TimePicker: function () { },
+  TimePickerView: function () { },
 };
