@@ -139,7 +139,7 @@
     "@material-ui/lab/ToggleButtonGroup"
     "@material-ui/lab/TreeItem"
     "@material-ui/lab/TreeView"
-    "@material-ui/lab/useAutocomplete"]
+    "@material-ui/lab/useAutocomplete"],
    :global-exports
    {"@material-ui/core" MaterialUI,
     "@material-ui/core/AppBar" MaterialUI,
