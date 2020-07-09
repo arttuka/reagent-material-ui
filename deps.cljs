@@ -123,7 +123,23 @@
     "@material-ui/core/Typography"
     "@material-ui/core/Zoom"
     "@material-ui/core/useMediaQuery"
-    "@material-ui/core/useScrollTrigger"],
+    "@material-ui/core/useScrollTrigger"
+    "@material-ui/lab/Alert"
+    "@material-ui/lab/AlertTitle"
+    "@material-ui/lab/Autocomplete"
+    "@material-ui/lab/AvatarGroup"
+    "@material-ui/lab/Pagination"
+    "@material-ui/lab/PaginationItem"
+    "@material-ui/lab/Rating"
+    "@material-ui/lab/Skeleton"
+    "@material-ui/lab/SpeedDial"
+    "@material-ui/lab/SpeedDialAction"
+    "@material-ui/lab/SpeedDialIcon"
+    "@material-ui/lab/ToggleButton"
+    "@material-ui/lab/ToggleButtonGroup"
+    "@material-ui/lab/TreeItem"
+    "@material-ui/lab/TreeView"
+    "@material-ui/lab/useAutocomplete"]
    :global-exports
    {"@material-ui/core" MaterialUI,
     "@material-ui/core/AppBar" MaterialUI,
