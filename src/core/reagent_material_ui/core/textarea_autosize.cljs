@@ -2,7 +2,8 @@
   "Imports @material-ui/core/TextareaAutosize as a Reagent component.
    Original documentation is at https://material-ui.com/api/textarea-autosize/ ."
   (:require-macros [reagent-material-ui.macro :refer [forward-ref]])
-  (:require [reagent.core :as r :refer [atom]]
+  (:require ["react" :as react]
+            [reagent.core :as r :refer [atom]]
             [goog.object :as obj]
             [reagent-material-ui.util :refer [adapt-react-class debounce js->clj' remove-undefined-vals use-fork-ref
                                               use-callback use-effect use-layout-effect use-ref use-state]]))
@@ -23,9 +24,9 @@
           other-props (dissoc props :input-ref :on-change :rows :rows-max :rows-min :style)
           rows-min (or rows rows-min 1)
           controlled? (some? value)
-          ^js/React.Ref input-ref (use-ref nil)
-          ^js/React.Ref shadow-ref (use-ref nil)
-          ^js/React.Ref renders (use-ref 0)
+          input-ref (use-ref nil)
+          shadow-ref (use-ref nil)
+          renders (use-ref 0)
           handle-ref (use-fork-ref (:input-ref props) input-ref ref)
           [state set-state] (use-state {})
           sync-height (use-callback #(let [input (.-current input-ref)

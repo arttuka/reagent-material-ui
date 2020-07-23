@@ -1,6 +1,5 @@
 (ns reagent-material-ui.text-field-test
-  (:require [cljsjs.react]
-            [cljsjs.react.dom]
+  (:require [react :as react]
             [cljs.test :refer-macros [deftest testing is use-fixtures]]
             [reagent.core :as r]
             [reagent-material-ui.core.text-field :refer [text-field]]
@@ -22,7 +21,7 @@
   (testing "changing textfield value moves cursor as many letters as were added"
     (testing "in a single line text-field"
       (let [value (r/atom "foobar")
-            ref (.createRef js/React)
+            ref (react/createRef)
             component (fn []
                         [text-field {:value     @value
                                      :input-ref ref}])
@@ -36,7 +35,7 @@
         (unmount)))
     (testing "in a multi line text-field"
       (let [value (r/atom "foo\nbar")
-            ref (.createRef js/React)
+            ref (react/createRef)
             component (fn []
                         [text-field {:value     @value
                                      :input-ref ref
@@ -52,7 +51,7 @@
         (unmount)))
     (testing "in a flexible multi line text-field"
       (let [value (r/atom "foo\nbar")
-            ref (.createRef js/React)
+            ref (react/createRef)
             component (fn []
                         [text-field {:value     @value
                                      :input-ref ref
@@ -70,7 +69,7 @@
 (deftest textarea-autosize-test
   (testing "autosized text area"
     (let [value (r/atom "")
-          ref (.createRef js/React)
+          ref (react/createRef)
           component (fn []
                       [text-field {:value      @value
                                    :input-ref  ref

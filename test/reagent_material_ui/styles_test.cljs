@@ -1,6 +1,5 @@
 (ns reagent-material-ui.styles-test
-  (:require [cljsjs.react]
-            [cljsjs.react.dom]
+  (:require [react :as react]
             [cljs.test :refer-macros [deftest testing is use-fixtures]]
             [dommy.core :as dommy :refer-macros [sel1]]
             [reagent.core :as r]
@@ -94,7 +93,7 @@
     (testing "with advanced styles"
       (run-with-styles-test advanced-styles theme-primary-color theme-secondary-color))
     (testing "forwards ref to component"
-      (let [ref (.createRef js/React)
+      (let [ref (react/createRef)
             component (fn [props]
                         [:div#with-styles-test-root props])
             styled-component ((with-styles {}) component)]
@@ -138,7 +137,7 @@
                           :color     (get-in props [:theme :palette :primary :main])})
                        theme-primary-color))
     (testing "forwards ref to component"
-      (let [ref (.createRef js/React)
+      (let [ref (react/createRef)
             component (fn [props]
                         [:div#styled-test-root props])
             styled-component (styled component {})]
@@ -185,7 +184,7 @@
           (is (= font-size (.. root -dataset -fontsize)))
           (is (= text-node (dommy/text root))))))
     (testing "forwards ref to component"
-      (let [ref (.createRef js/React)
+      (let [ref (react/createRef)
             component (fn [props]
                         [:div#with-theme-test-root props])
             wrapped-component (with-theme component)]

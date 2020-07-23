@@ -1,6 +1,7 @@
 (ns reagent-material-ui.util
   (:require-macros [reagent-material-ui.macro :refer [e forward-ref]])
-  (:require [reagent.core :as r]
+  (:require [react :as react]
+            [reagent.core :as r]
             [reagent.impl.util :refer [fun-name]]
             [clojure.string :as str]
             [clojure.walk :refer [postwalk]]
@@ -85,8 +86,7 @@
             m))
 
 (defn reactify-component [component]
-  (let [^js/React.Component
-        reactified (forward-ref [props ref]
+  (let [reactified (forward-ref [props ref]
                      (let [clj-props (merge (js->clj' props false)
                                             {:ref      ref
                                              :children (obj/get props "children")})]
@@ -144,37 +144,36 @@
               (transient m)
               m)))
 
-(defn set-ref [^js/React.Ref ref value]
+(defn set-ref [ref value]
   (cond
     (fn? ref) (ref value)
     ref (set! (.-current ref) value)))
 
 (defn use-fork-ref [& refs]
-  (.useMemo js/React
-            #(when (not-every? nil? refs)
-               (fn [value]
-                 (doseq [ref refs]
-                   (set-ref ref value))))
-            (apply array refs)))
+  (react/useMemo #(when (not-every? nil? refs)
+                    (fn [value]
+                      (doseq [ref refs]
+                        (set-ref ref value))))
+                 (apply array refs)))
 
 (defn use-callback [callback props]
-  (.useCallback js/React callback props))
+  (react/useCallback callback props))
 
 (defn use-effect [effect props]
-  (.useEffect js/React effect props))
+  (react/useEffect effect props))
 
 (defn use-layout-effect [effect]
-  (.useLayoutEffect js/React effect))
+  (react/useLayoutEffect effect))
 
 (defn use-ref [value]
-  (.useRef js/React value))
+  (react/useRef value))
 
 (defn use-state [initial-state]
-  (.useState js/React initial-state))
+  (react/useState initial-state))
 
 (defn create-svg-icon [path display-name]
-  (let [component (.memo js/React (forward-ref [props ref]
-                                    (e (or (.-default SvgIcon) (.-SvgIcon SvgIcon))
-                                       (js/Object.assign #js {:ref ref} props)
-                                       path)))]
+  (let [component (react/memo (forward-ref [props ref]
+                                (e (or (.-default SvgIcon) (.-SvgIcon SvgIcon))
+                                   (js/Object.assign #js {:ref ref} props)
+                                   path)))]
     (adapt-react-class component display-name)))

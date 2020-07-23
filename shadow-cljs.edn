@@ -2,7 +2,6 @@
  :dependencies [[reagent "0.10.0"]
                 [com.andrewmcveigh/cljs-time "0.5.2"]
                 [camel-snake-kebab "0.4.1"]
-                [prismatic/dommy "1.1.0"]
-                [thheller/shadow-cljsjs "0.0.21"]]
+                [prismatic/dommy "1.1.0"]]
  :builds       {:test {:target    :karma
                        :output-to "target/test.js"}}}

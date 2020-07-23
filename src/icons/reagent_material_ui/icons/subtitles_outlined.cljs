@@ -1,7 +1,8 @@
 (ns reagent-material-ui.icons.subtitles-outlined
   "Imports @material-ui/icons/SubtitlesOutlined as a Reagent component."
   (:require-macros [reagent-material-ui.macro :refer [e]])
-  (:require [reagent-material-ui.util :refer [create-svg-icon]]))
+  (:require [react :as react]
+            [reagent-material-ui.util :refer [create-svg-icon]]))
 
 (def subtitles-outlined (create-svg-icon (e "path" #js {"d" "M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V6h16v12zM6 10h2v2H6zm0 4h8v2H6zm10 0h2v2h-2zm-6-4h8v2h-8z"})
                                          "SubtitlesOutlined"))

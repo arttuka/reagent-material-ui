@@ -1,7 +1,8 @@
 (ns reagent-material-ui.icons.dock-rounded
   "Imports @material-ui/icons/DockRounded as a Reagent component."
   (:require-macros [reagent-material-ui.macro :refer [e]])
-  (:require [reagent-material-ui.util :refer [create-svg-icon]]))
+  (:require [react :as react]
+            [reagent-material-ui.util :refer [create-svg-icon]]))
 
 (def dock-rounded (create-svg-icon (e "path" #js {"d" "M9 23h6c.55 0 1-.45 1-1s-.45-1-1-1H9c-.55 0-1 .45-1 1s.45 1 1 1zm7-21.99L8 1c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM16 15H8V5h8v10z"})
                                    "DockRounded"))

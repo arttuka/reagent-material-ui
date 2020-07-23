@@ -1,7 +1,8 @@
 (ns reagent-material-ui.icons.format-textdirection-l-to-r-two-tone
   "Imports @material-ui/icons/FormatTextdirectionLToRTwoTone as a Reagent component."
   (:require-macros [reagent-material-ui.macro :refer [e]])
-  (:require [reagent-material-ui.util :refer [create-svg-icon]]))
+  (:require [react :as react]
+            [reagent-material-ui.util :refer [create-svg-icon]]))
 
-(def format-textdirection-l-to-r-two-tone (create-svg-icon (e (.-Fragment js/React) nil (e "path" #js {"d" "M9 8V4c-1.1 0-2 .9-2 2s.9 2 2 2z", "opacity" ".3"}) (e "path" #js {"d" "M9 10v5h2V4h2v11h2V4h2V2H9C6.79 2 5 3.79 5 6s1.79 4 4 4zm0-6v4c-1.1 0-2-.9-2-2s.9-2 2-2zm12 14l-4-4v3H5v2h12v3z"}))
+(def format-textdirection-l-to-r-two-tone (create-svg-icon (e react/Fragment nil (e "path" #js {"d" "M9 8V4c-1.1 0-2 .9-2 2s.9 2 2 2z", "opacity" ".3"}) (e "path" #js {"d" "M9 10v5h2V4h2v11h2V4h2V2H9C6.79 2 5 3.79 5 6s1.79 4 4 4zm0-6v4c-1.1 0-2-.9-2-2s.9-2 2-2zm12 14l-4-4v3H5v2h12v3z"}))
                                                            "FormatTextdirectionLToRTwoTone"))
