@@ -1,5 +1,12 @@
 # Changelog
 
+## 4.11.0-0
+
+**[compare](https://github.com/arttuka/reagent-material-ui/compare/v4.9.12-0...v4.11.0-0)**
+
+- Update Material UI to v4.11.0
+- Add missing Material UI Lab components to `deps.edn`
+
 ## 4.9.12-0
 
 **[compare](https://github.com/arttuka/reagent-material-ui/compare/v4.9.8-0...v4.9.12-0)**
