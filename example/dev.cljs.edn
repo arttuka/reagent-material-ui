@@ -1,4 +1,4 @@
-^{:watch-dirs ["src/common"]}
+^{:watch-dirs ["src"]}
 {:main       example.core
  :output-to  "target/public/js/main.js"
  :output-dir "target/public/js/dev"

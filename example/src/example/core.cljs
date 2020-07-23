@@ -151,7 +151,7 @@
         :xs   6}
        [(with-custom-styles form)]]]]]])
 
-(defn ^:after-load
+(defn ^{:after-load true, :dev/after-load true}
   mount []
   (rdom/render [main] (js/document.getElementById "app")))
 
