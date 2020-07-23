@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.11.0-1
+
+**[compare](https://github.com/arttuka/reagent-material-ui/compare/v4.11.0-0...v4.11.0-1)**
+
+- Enable pure shadow-cljs usage (fixes #2)
+
 ## 4.11.0-0
 
 **[compare](https://github.com/arttuka/reagent-material-ui/compare/v4.9.12-0...v4.11.0-0)**
