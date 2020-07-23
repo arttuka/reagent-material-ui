@@ -10,7 +10,8 @@ var config = {
   externals: {
     'react': 'React',
     'react-dom': 'ReactDOM'
-  }
+  },
+  devtool: false
 };
 
 module.exports = function (env, argv) {

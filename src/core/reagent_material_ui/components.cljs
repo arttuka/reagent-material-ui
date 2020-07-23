@@ -2,7 +2,11 @@
   "Imports all components from @material-ui/core as Reagent components.
    Original documentation is at https://material-ui.com/api/ ."
   (:refer-clojure :exclude [list])
-  (:require reagent-material-ui.core.app-bar
+  (:require reagent-material-ui.core.accordion
+            reagent-material-ui.core.accordion-actions
+            reagent-material-ui.core.accordion-details
+            reagent-material-ui.core.accordion-summary
+            reagent-material-ui.core.app-bar
             reagent-material-ui.core.avatar
             reagent-material-ui.core.backdrop
             reagent-material-ui.core.badge
@@ -110,6 +114,7 @@
             reagent-material-ui.core.table-pagination
             reagent-material-ui.core.table-row
             reagent-material-ui.core.table-sort-label
+            reagent-material-ui.core.tab-scroll-button
             reagent-material-ui.core.tabs
             reagent-material-ui.core.text-field
             reagent-material-ui.core.textarea-autosize
@@ -120,6 +125,10 @@
             reagent-material-ui.core.use-media-query
             reagent-material-ui.core.use-scroll-trigger))
 
+(def accordion reagent-material-ui.core.accordion/accordion)
+(def accordion-actions reagent-material-ui.core.accordion-actions/accordion-actions)
+(def accordion-details reagent-material-ui.core.accordion-details/accordion-details)
+(def accordion-summary reagent-material-ui.core.accordion-summary/accordion-summary)
 (def app-bar reagent-material-ui.core.app-bar/app-bar)
 (def avatar reagent-material-ui.core.avatar/avatar)
 (def backdrop reagent-material-ui.core.backdrop/backdrop)
@@ -228,6 +237,7 @@
 (def table-pagination reagent-material-ui.core.table-pagination/table-pagination)
 (def table-row reagent-material-ui.core.table-row/table-row)
 (def table-sort-label reagent-material-ui.core.table-sort-label/table-sort-label)
+(def tab-scroll-button reagent-material-ui.core.tab-scroll-button/tab-scroll-button)
 (def tabs reagent-material-ui.core.tabs/tabs)
 (def text-field reagent-material-ui.core.text-field/text-field)
 (def textarea-autosize reagent-material-ui.core.textarea-autosize/textarea-autosize)

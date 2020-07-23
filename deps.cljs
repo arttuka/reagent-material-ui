@@ -1,7 +1,7 @@
 {:npm-deps
- {"@material-ui/core" "4.9.12",
+ {"@material-ui/core" "4.11.0",
   "@material-ui/pickers" "3.2.10",
-  "@material-ui/lab" "4.0.0-alpha.51"},
+  "@material-ui/lab" "4.0.0-alpha.56"},
  :foreign-libs
  [{:file "material-ui/material-ui.inc.js",
    :file-min "material-ui/material-ui.min.inc.js",
@@ -10,6 +10,10 @@
     "@material-ui/core/styles"
     "@material-ui/lab"
     "@material-ui/pickers"
+    "@material-ui/core/Accordion"
+    "@material-ui/core/AccordionActions"
+    "@material-ui/core/AccordionDetails"
+    "@material-ui/core/AccordionSummary"
     "@material-ui/core/AppBar"
     "@material-ui/core/Avatar"
     "@material-ui/core/Backdrop"
@@ -115,6 +119,7 @@
     "@material-ui/core/TablePagination"
     "@material-ui/core/TableRow"
     "@material-ui/core/TableSortLabel"
+    "@material-ui/core/TabScrollButton"
     "@material-ui/core/Tabs"
     "@material-ui/core/TextField"
     "@material-ui/core/TextareaAutosize"
@@ -135,6 +140,13 @@
     "@material-ui/lab/SpeedDial"
     "@material-ui/lab/SpeedDialAction"
     "@material-ui/lab/SpeedDialIcon"
+    "@material-ui/lab/Timeline"
+    "@material-ui/lab/TimelineConnector"
+    "@material-ui/lab/TimelineContent"
+    "@material-ui/lab/TimelineDot"
+    "@material-ui/lab/TimelineItem"
+    "@material-ui/lab/TimelineOppositeContent"
+    "@material-ui/lab/TimelineSeparator"
     "@material-ui/lab/ToggleButton"
     "@material-ui/lab/ToggleButtonGroup"
     "@material-ui/lab/TreeItem"
@@ -142,6 +154,10 @@
     "@material-ui/lab/useAutocomplete"],
    :global-exports
    {"@material-ui/core" MaterialUI,
+    "@material-ui/core/Accordion" MaterialUI,
+    "@material-ui/core/AccordionActions" MaterialUI,
+    "@material-ui/core/AccordionDetails" MaterialUI,
+    "@material-ui/core/AccordionSummary" MaterialUI,
     "@material-ui/core/AppBar" MaterialUI,
     "@material-ui/core/Avatar" MaterialUI,
     "@material-ui/core/Backdrop" MaterialUI,
@@ -238,6 +254,7 @@
     "@material-ui/core/SwipeableDrawer" MaterialUI,
     "@material-ui/core/Switch" MaterialUI,
     "@material-ui/core/Tab" MaterialUI,
+    "@material-ui/core/TabScrollButton" MaterialUI,
     "@material-ui/core/Table" MaterialUI,
     "@material-ui/core/TableBody" MaterialUI,
     "@material-ui/core/TableCell" MaterialUI,
@@ -269,6 +286,13 @@
     "@material-ui/lab/SpeedDial" MaterialUILab,
     "@material-ui/lab/SpeedDialAction" MaterialUILab,
     "@material-ui/lab/SpeedDialIcon" MaterialUILab,
+    "@material-ui/lab/Timeline" MaterialUILab,
+    "@material-ui/lab/TimelineConnector" MaterialUILab,
+    "@material-ui/lab/TimelineContent" MaterialUILab,
+    "@material-ui/lab/TimelineDot" MaterialUILab,
+    "@material-ui/lab/TimelineItem" MaterialUILab,
+    "@material-ui/lab/TimelineOppositeContent" MaterialUILab,
+    "@material-ui/lab/TimelineSeparator" MaterialUILab,
     "@material-ui/lab/ToggleButton" MaterialUILab,
     "@material-ui/lab/ToggleButtonGroup" MaterialUILab,
     "@material-ui/lab/TreeItem" MaterialUILab,
