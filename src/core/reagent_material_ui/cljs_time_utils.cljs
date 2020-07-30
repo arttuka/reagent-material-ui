@@ -6,6 +6,13 @@
   (:import (goog.date DateTime)
            (goog.i18n DateTimeFormat DateTimeParse DateTimeSymbols)))
 
+(defn ^:private to-cljs-date [value]
+  (cond
+    (undefined? value) (time/now)
+    (nil? value) nil
+    (time/date? value) value
+    :else (coerce/to-date-time value)))
+
 (defn ^:private to-start-of-day [^DateTime date]
   (doto date
     (.setHours 0)
@@ -61,6 +68,12 @@
       (time/plus (time/days 6))
       (to-end-of-day)))
 
+(defn ^:private start-of-hour [date]
+  (doto (.clone date)
+    (.setMinutes 0)
+    (.setSeconds 0)
+    (.setMilliseconds 0)))
+
 (defn ^:private date-seq [from increment]
   (iterate #(time/plus % increment) from))
 
@@ -79,14 +92,11 @@
          :time12hFormat               "hh:mm A"
          :time24hFormat               "HH:mm"
          :dateFormat                  "MMMM d"
-         :date                        (fn [value]
-                                        (cond
-                                          (undefined? value) (time/now)
-                                          (nil? value) nil
-                                          (time/date? value) value
-                                          :else (coerce/to-date-time value)))
+         :date                        to-cljs-date
+         :toJsDate                    (fn [value]
+                                        (coerce/to-date value))
          :parse                       (fn [value format-str]
-                                        (let [date (time/now)
+                                        (let [date (coerce/to-date-time 0)
                                               ^DateTimeParse parser (DateTimeParse. format-str locale)
                                               cnt (.strictParse parser value date)]
                                           (when (pos? cnt)
@@ -94,18 +104,31 @@
          :isNull                      (fn [value]
                                         (nil? value))
          :isValid                     (fn [value]
-                                        (some? (coerce/to-date-time value)))
+                                        (some? (to-cljs-date value)))
          :getDiff                     (fn [to from]
-                                        (time/in-millis (time/interval from to)))
+                                        (let [to (to-cljs-date to)
+                                              from (to-cljs-date from)]
+                                          (if (time/before? from to)
+                                            (time/in-millis (time/interval from to))
+                                            (- (time/in-millis (time/interval to from))))))
          :isEqual                     (fn [left right]
                                         (cond
                                           (and (nil? left) (nil? right)) true
                                           (or (nil? left) (nil? right)) false
-                                          :else (time/equal? (coerce/to-date-time left)
-                                                             (coerce/to-date-time right))))
+                                          :else (time/equal? (to-cljs-date left)
+                                                             (to-cljs-date right))))
+         :isSameHour                  (fn [left right]
+                                        (time/equal? (start-of-hour left)
+                                                     (start-of-hour right)))
          :isSameDay                   (fn [left right]
                                         (time/equal? (start-of-day left)
                                                      (start-of-day right)))
+         :isSameMonth                 (fn [left right]
+                                        (time/equal? (start-of-month left)
+                                                     (start-of-month right)))
+         :isSameYear                  (fn [left right]
+                                        (time/equal? (start-of-year left)
+                                                     (start-of-year right)))
          :isAfter                     (fn [this that]
                                         (time/after? this that))
          :isAfterDay                  (fn [this that]
@@ -118,12 +141,21 @@
                                         (time/before? this (start-of-day that)))
          :isBeforeYear                (fn [this that]
                                         (time/before? this (start-of-year that)))
+         :isWithinRange               (fn [date [from to]]
+                                        (or (time/within? from to date)
+                                            (time/equal? to date)))
          :startOfMonth                (fn [date]
                                         (start-of-month date))
          :endOfMonth                  (fn [date]
                                         (end-of-month date))
+         :startOfWeek                 (fn [date]
+                                        (start-of-week date locale))
+         :endOfWeek                   (fn [date]
+                                        (end-of-week date locale))
          :addDays                     (fn [date n]
                                         (time/plus date (time/days n)))
+         :addMonths                   (fn [date n]
+                                        (time/plus date (time/months n)))
          :startOfDay                  (fn [date]
                                         (start-of-day date))
          :endOfDay                    (fn [date]
@@ -167,7 +199,9 @@
          :mergeDateAndTime            (fn [^DateTime date time]
                                         (doto ^DateTime (.clone date)
                                           (.setHours (time/hour time))
-                                          (.setMinutes (time/minute time))))
+                                          (.setMinutes (time/minute time))
+                                          (.setSeconds (time/second time))
+                                          (.setMilliseconds (time/milli time))))
          :getWeekdays                 (fn []
                                         (let [weekday-names (.-STANDALONESHORTWEEKDAYS locale)
                                               first-day-of-week (mod (inc (.-FIRSTDAYOFWEEK locale)) 7)]
