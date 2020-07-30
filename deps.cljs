@@ -8,8 +8,6 @@
    :provides
    ["@material-ui/core"
     "@material-ui/core/styles"
-    "@material-ui/lab"
-    "@material-ui/pickers"
     "@material-ui/core/Accordion"
     "@material-ui/core/AccordionActions"
     "@material-ui/core/AccordionDetails"
@@ -128,30 +126,7 @@
     "@material-ui/core/Typography"
     "@material-ui/core/Zoom"
     "@material-ui/core/useMediaQuery"
-    "@material-ui/core/useScrollTrigger"
-    "@material-ui/lab/Alert"
-    "@material-ui/lab/AlertTitle"
-    "@material-ui/lab/Autocomplete"
-    "@material-ui/lab/AvatarGroup"
-    "@material-ui/lab/Pagination"
-    "@material-ui/lab/PaginationItem"
-    "@material-ui/lab/Rating"
-    "@material-ui/lab/Skeleton"
-    "@material-ui/lab/SpeedDial"
-    "@material-ui/lab/SpeedDialAction"
-    "@material-ui/lab/SpeedDialIcon"
-    "@material-ui/lab/Timeline"
-    "@material-ui/lab/TimelineConnector"
-    "@material-ui/lab/TimelineContent"
-    "@material-ui/lab/TimelineDot"
-    "@material-ui/lab/TimelineItem"
-    "@material-ui/lab/TimelineOppositeContent"
-    "@material-ui/lab/TimelineSeparator"
-    "@material-ui/lab/ToggleButton"
-    "@material-ui/lab/ToggleButtonGroup"
-    "@material-ui/lab/TreeItem"
-    "@material-ui/lab/TreeView"
-    "@material-ui/lab/useAutocomplete"],
+    "@material-ui/core/useScrollTrigger"],
    :global-exports
    {"@material-ui/core" MaterialUI,
     "@material-ui/core/Accordion" MaterialUI,
@@ -273,8 +248,37 @@
     "@material-ui/core/Zoom" MaterialUI,
     "@material-ui/core/styles" MaterialUIStyles,
     "@material-ui/core/useMediaQuery" MaterialUI,
-    "@material-ui/core/useScrollTrigger" MaterialUI,
-    "@material-ui/lab" MaterialUILab,
+    "@material-ui/core/useScrollTrigger" MaterialUI},
+   :requires ["react" "react-dom"]}
+  {:file "material-ui/material-ui-lab.inc.js",
+   :file-min "material-ui/material-ui-lab.min.inc.js",
+   :provides
+   ["@material-ui/lab"
+    "@material-ui/lab/Alert"
+    "@material-ui/lab/AlertTitle"
+    "@material-ui/lab/Autocomplete"
+    "@material-ui/lab/AvatarGroup"
+    "@material-ui/lab/Pagination"
+    "@material-ui/lab/PaginationItem"
+    "@material-ui/lab/Rating"
+    "@material-ui/lab/Skeleton"
+    "@material-ui/lab/SpeedDial"
+    "@material-ui/lab/SpeedDialAction"
+    "@material-ui/lab/SpeedDialIcon"
+    "@material-ui/lab/Timeline"
+    "@material-ui/lab/TimelineConnector"
+    "@material-ui/lab/TimelineContent"
+    "@material-ui/lab/TimelineDot"
+    "@material-ui/lab/TimelineItem"
+    "@material-ui/lab/TimelineOppositeContent"
+    "@material-ui/lab/TimelineSeparator"
+    "@material-ui/lab/ToggleButton"
+    "@material-ui/lab/ToggleButtonGroup"
+    "@material-ui/lab/TreeItem"
+    "@material-ui/lab/TreeView"
+    "@material-ui/lab/useAutocomplete"],
+   :global-exports
+   {"@material-ui/lab" MaterialUILab,
     "@material-ui/lab/Alert" MaterialUILab,
     "@material-ui/lab/AlertTitle" MaterialUILab,
     "@material-ui/lab/Autocomplete" MaterialUILab,
@@ -297,7 +301,11 @@
     "@material-ui/lab/ToggleButtonGroup" MaterialUILab,
     "@material-ui/lab/TreeItem" MaterialUILab,
     "@material-ui/lab/TreeView" MaterialUILab,
-    "@material-ui/lab/useAutocomplete" MaterialUILab,
-    "@material-ui/pickers" MaterialUIPickers},
-   :requires ["react" "react-dom"]}],
+    "@material-ui/lab/useAutocomplete" MaterialUILab},
+   :requires ["react" "react-dom" "@material-ui/core"]}
+  {:file "material-ui/material-ui-pickers.inc.js",
+   :file-min "material-ui/material-ui-pickers.min.inc.js",
+   :provides ["@material-ui/pickers"],
+   :global-exports {"@material-ui/pickers" MaterialUIPickers},
+   :requires ["react" "react-dom" "@material-ui/core"]}],
  :externs ["material-ui/material-ui.ext.js"]}

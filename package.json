@@ -9,8 +9,10 @@
     "react-dom": "^16.13.1",
     "rimraf": "^3.0.2",
     "shadow-cljs": "2.10.17",
+    "terser-webpack-plugin": "^4.2.2",
     "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.12"
+    "webpack-cli": "^3.3.12",
+    "webpack-merge": "^5.0.9"
   },
   "dependencies": {
     "@material-ui/core": "4.11.0",
