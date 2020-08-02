@@ -1,5 +1,7 @@
 (ns reagent-material-ui.util-test
+  (:require-macros [reagent-material-ui.macro :refer [e]])
   (:require [cljs.test :refer-macros [deftest testing is use-fixtures]]
+            ["react" :as react]
             [goog.object :as obj]
             [reagent-material-ui.util :refer [clj->js' js->clj']]))
 
@@ -49,4 +51,12 @@
         (is (= {:foo "foo"
                 :ref ref}
                result))
-        (is (identical? ref (:ref result)))))))
+        (is (identical? ref (:ref result)))))
+    (testing "doesn't convert React elements"
+      (let [elem (e "div" nil "foobar")
+            result (js->clj' #js {:foo "foo"
+                                  :elems #js [elem]})]
+        (is (= {:foo "foo"
+                :elems [elem]}
+               result))
+        (is (identical? elem (first (:elems result))))))))

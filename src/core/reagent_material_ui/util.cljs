@@ -3,6 +3,7 @@
   (:require [react :as react]
             [reagent.core :as r]
             [reagent.impl.util :refer [fun-name]]
+            [cljs.core :refer [MapEntry]]
             [clojure.string :as str]
             [clojure.walk :refer [postwalk]]
             [camel-snake-kebab.core :refer [->kebab-case-keyword ->camelCaseKeyword ->camelCaseString]]
@@ -49,26 +50,44 @@
                                      (key->str k)
                                      k)))))
 
+(defn ^:private js-key->clj [k]
+  (cond
+    (keyword? k) k
+    (color-key? k) (keyword k)
+    (numeric-string? k) (js/parseInt k)
+    (pascal-case? k) (keyword k)
+    :else (->kebab-case-keyword k)))
+
 (defn js->clj'
-  ([obj]
-   (js->clj' obj true))
-  ([obj pass-ref?]
-   (let [children (obj/get obj "children")
-         result (cond-> (js->clj obj)
-                  children (dissoc "children")
-                  true (convert-map-keys (fn [k]
-                                           (cond
-                                             (keyword? k) k
-                                             (color-key? k) (keyword k)
-                                             (numeric-string? k) (js/parseInt k)
-                                             (pascal-case? k) (keyword k)
-                                             :else (->kebab-case-keyword k))))
-                  children (assoc :children children))]
-     (if pass-ref?
-       (if-let [ref (obj/get obj "ref")]
-         (assoc result :ref ref)
-         result)
-       result))))
+  [obj]
+  (let [convert (fn convert [x]
+                  (cond
+                    (seq? x)
+                    (doall (map convert x))
+
+                    (map-entry? x)
+                    (MapEntry. (convert (key x)) (convert (val x)) nil)
+
+                    (coll? x)
+                    (into (empty x) (map convert) x)
+
+                    (array? x)
+                    (persistent!
+                     (reduce #(conj! %1 (convert %2))
+                             (transient []) x))
+
+                    (react/isValidElement x)
+                    x
+
+                    (identical? (type x) js/Object)
+                    (persistent!
+                     (reduce (fn [r k]
+                               (if (= "ref" k)
+                                 (assoc! r :ref (obj/get x k))
+                                 (assoc! r (js-key->clj k) (convert (obj/get x k)))))
+                             (transient {}) (js-keys x)))
+                    :else x))]
+    (convert obj)))
 
 (defn wrap-clj-function [f]
   (fn [& args]
@@ -87,9 +106,7 @@
 
 (defn reactify-component [component]
   (let [reactified (forward-ref [props ref]
-                     (let [clj-props (merge (js->clj' props false)
-                                            {:ref      ref
-                                             :children (obj/get props "children")})]
+                     (let [clj-props (assoc (js->clj' props) :ref ref)]
                        (r/as-element [component clj-props])))]
     (set! (.-displayName reactified) (fun-name component))
     reactified))

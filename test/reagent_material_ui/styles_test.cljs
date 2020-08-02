@@ -101,8 +101,8 @@
         (is (= "with-styles-test-root" (.-id (.-current ref))))))
     (testing "allows reagent components as children"
       (let [component (fn [{:keys [children]}]
-                        [:div#with-styles-test-root
-                         children])
+                        (into [:div#with-styles-test-root]
+                              children))
             styled-component ((with-styles {}) component)]
         (render [styled-component
                  [p "Some text"]
@@ -145,8 +145,8 @@
         (is (= "styled-test-root" (.-id (.-current ref))))))
     (testing "allows reagent components as children"
       (let [component (fn [{:keys [children]}]
-                        [:div#styled-test-root
-                         children])
+                        (into [:div#styled-test-root]
+                              children))
             styled-component (styled component {})]
         (render [styled-component
                  [p "Some text"]
@@ -192,8 +192,8 @@
         (is (= "with-theme-test-root" (.-id (.-current ref))))))
     (testing "allows reagent components as children"
       (let [component (fn [{:keys [children]}]
-                        [:div#with-theme-test-root
-                         children])
+                        (into [:div#with-theme-test-root]
+                              children))
             wrapped-component (with-theme component)]
         (render [wrapped-component
                  [p "Some text"]
