@@ -49,11 +49,11 @@ Namespace `reagent-material-ui.lab` contains all components from `@material-ui/l
 
 * Some components want to have a React node as a prop. A Reagent component is not good enough and will just result in
   errors about invalid React nodes. `reagent.core/as-element` can turn a Reagent component into a React node.
-* React hooks can't be used in most Reagent components. [More information](http://reagent-project.github.io/docs/master/ReactFeatures.html#hooks).
+* React hooks can't be used in most Reagent components. [More information](https://cljdoc.org/d/reagent/reagent/1.0.0-alpha2/doc/tutorials/react-features#hooks).
 * Higher order React components can only deal with components that take all their parameters
   (including children) in a single map.
   
-For more information, check out [Reagent's interop guide](http://reagent-project.github.io/docs/master/InteropWithReact.html).
+For more information, check out [Reagent's interop guide](https://cljdoc.org/d/reagent/reagent/1.0.0-alpha2/doc/tutorials/interop-with-react).
 
 ### Development
 
