@@ -45,6 +45,12 @@ This library also includes date and time picker components from [Material-UI Lab
 
 Namespace `reagent-material-ui.lab` contains all components from `@material-ui/lab`.
 
+#### Material UI component names with shadow-cljs
+
+The compiler used by shadow-cljs will remove local function names, causing most Material UI component to
+show as `Anonymous` in React Devtools. If you want to keep the names, add `:js-options {:anon-fn-naming-policy :unmapped}`
+to your build in `shadow-cljs.edn`.
+
 ### Common pitfalls in Reagent/React interop
 
 * Some components want to have a React node as a prop. A Reagent component is not good enough and will just result in
