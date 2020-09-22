@@ -1,5 +1,13 @@
 # Changelog
 
+## 4.11.0-3
+
+**[compare](https://github.com/arttuka/reagent-material-ui/compare/v4.11.0-1...v4.11.0-3)**
+
+- Split Material UI JS build into Core, Lab and Pickers to reduce build size when not using Lab and/or Pickers
+- Fix some bugs and add missing functions in `cljs-time-utils`
+- Fix bug in `reagent-material-ui.util/js->clj'` when converting React props that include refs or children
+
 ## 4.11.0-1
 
 **[compare](https://github.com/arttuka/reagent-material-ui/compare/v4.11.0-0...v4.11.0-1)**
