@@ -542,7 +542,7 @@ function _unsupportedIterableToArray(o, minLen) {
   if (typeof o === "string") return Object(_arrayLikeToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(o, minLen);
   var n = Object.prototype.toString.call(o).slice(8, -1);
   if (n === "Object" && o.constructor) n = o.constructor.name;
-  if (n === "Map" || n === "Set") return Array.from(n);
+  if (n === "Map" || n === "Set") return Array.from(o);
   if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return Object(_arrayLikeToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(o, minLen);
 }
 
@@ -4691,37 +4691,40 @@ function useUtils() {
 __webpack_require__.r(__webpack_exports__);
 function toVal(mix) {
 	var k, y, str='';
-	if (mix) {
-		if (typeof mix === 'object') {
-			if (Array.isArray(mix)) {
-				for (k=0; k < mix.length; k++) {
-					if (mix[k] && (y = toVal(mix[k]))) {
-						str && (str += ' ');
-						str += y;
-					}
-				}
-			} else {
-				for (k in mix) {
-					if (mix[k] && (y = toVal(k))) {
+
+	if (typeof mix === 'string' || typeof mix === 'number') {
+		str += mix;
+	} else if (typeof mix === 'object') {
+		if (Array.isArray(mix)) {
+			for (k=0; k < mix.length; k++) {
+				if (mix[k]) {
+					if (y = toVal(mix[k])) {
 						str && (str += ' ');
 						str += y;
 					}
 				}
 			}
-		} else if (typeof mix !== 'boolean' && !mix.call) {
-			str && (str += ' ');
-			str += mix;
+		} else {
+			for (k in mix) {
+				if (mix[k]) {
+					str && (str += ' ');
+					str += k;
+				}
+			}
 		}
 	}
+
 	return str;
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (function () {
-	var i=0, x, str='';
+	var i=0, tmp, x, str='';
 	while (i < arguments.length) {
-		if (x = toVal(arguments[i++])) {
-			str && (str += ' ');
-			str += x
+		if (tmp = arguments[i++]) {
+			if (x = toVal(tmp)) {
+				str && (str += ' ');
+				str += x
+			}
 		}
 	}
 	return str;
@@ -5914,8 +5917,8 @@ var removeClass = function removeClass(node, classes) {
 };
 /**
  * A transition component inspired by the excellent
- * [ng-animate](http://www.nganimate.org/) library, you should use it if you're
- * using CSS transitions or animations. It's built upon the
+ * [ng-animate](https://docs.angularjs.org/api/ngAnimate) library, you should
+ * use it if you're using CSS transitions or animations. It's built upon the
  * [`Transition`](https://reactcommunity.org/react-transition-group/transition)
  * component, so it inherits all of its props.
  *
@@ -5970,7 +5973,12 @@ var removeClass = function removeClass(node, classes) {
  * }
  * ```
  *
- * `*-active` classes represent which styles you want to animate **to**.
+ * `*-active` classes represent which styles you want to animate **to**, so it's
+ * important to add `transition` declaration only to them, otherwise transitions
+ * might not behave as intended! This might not be obvious when the transitions
+ * are symmetrical, i.e. when `*-enter-active` is the same as `*-exit`, like in
+ * the example above (minus `transition`), but it becomes apparent in more
+ * complex transitions.
  *
  * **Note**: If you're using the
  * [`appear`](http://reactcommunity.org/react-transition-group/transition#Transition-prop-appear)
@@ -5978,9 +5986,7 @@ var removeClass = function removeClass(node, classes) {
  */
 
 
-var CSSTransition =
-/*#__PURE__*/
-function (_React$Component) {
+var CSSTransition = /*#__PURE__*/function (_React$Component) {
   Object(_babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_2__["default"])(CSSTransition, _React$Component);
 
   function CSSTransition() {
@@ -5997,27 +6003,39 @@ function (_React$Component) {
       exit: {}
     };
 
-    _this.onEnter = function (node, appearing) {
+    _this.onEnter = function (maybeNode, maybeAppearing) {
+      var _this$resolveArgument = _this.resolveArguments(maybeNode, maybeAppearing),
+          node = _this$resolveArgument[0],
+          appearing = _this$resolveArgument[1];
+
       _this.removeClasses(node, 'exit');
 
       _this.addClass(node, appearing ? 'appear' : 'enter', 'base');
 
       if (_this.props.onEnter) {
-        _this.props.onEnter(node, appearing);
+        _this.props.onEnter(maybeNode, maybeAppearing);
       }
     };
 
-    _this.onEntering = function (node, appearing) {
+    _this.onEntering = function (maybeNode, maybeAppearing) {
+      var _this$resolveArgument2 = _this.resolveArguments(maybeNode, maybeAppearing),
+          node = _this$resolveArgument2[0],
+          appearing = _this$resolveArgument2[1];
+
       var type = appearing ? 'appear' : 'enter';
 
       _this.addClass(node, type, 'active');
 
       if (_this.props.onEntering) {
-        _this.props.onEntering(node, appearing);
+        _this.props.onEntering(maybeNode, maybeAppearing);
       }
     };
 
-    _this.onEntered = function (node, appearing) {
+    _this.onEntered = function (maybeNode, maybeAppearing) {
+      var _this$resolveArgument3 = _this.resolveArguments(maybeNode, maybeAppearing),
+          node = _this$resolveArgument3[0],
+          appearing = _this$resolveArgument3[1];
+
       var type = appearing ? 'appear' : 'enter';
 
       _this.removeClasses(node, type);
@@ -6025,11 +6043,14 @@ function (_React$Component) {
       _this.addClass(node, type, 'done');
 
       if (_this.props.onEntered) {
-        _this.props.onEntered(node, appearing);
+        _this.props.onEntered(maybeNode, maybeAppearing);
       }
     };
 
-    _this.onExit = function (node) {
+    _this.onExit = function (maybeNode) {
+      var _this$resolveArgument4 = _this.resolveArguments(maybeNode),
+          node = _this$resolveArgument4[0];
+
       _this.removeClasses(node, 'appear');
 
       _this.removeClasses(node, 'enter');
@@ -6037,26 +6058,37 @@ function (_React$Component) {
       _this.addClass(node, 'exit', 'base');
 
       if (_this.props.onExit) {
-        _this.props.onExit(node);
+        _this.props.onExit(maybeNode);
       }
     };
 
-    _this.onExiting = function (node) {
+    _this.onExiting = function (maybeNode) {
+      var _this$resolveArgument5 = _this.resolveArguments(maybeNode),
+          node = _this$resolveArgument5[0];
+
       _this.addClass(node, 'exit', 'active');
 
       if (_this.props.onExiting) {
-        _this.props.onExiting(node);
+        _this.props.onExiting(maybeNode);
       }
     };
 
-    _this.onExited = function (node) {
+    _this.onExited = function (maybeNode) {
+      var _this$resolveArgument6 = _this.resolveArguments(maybeNode),
+          node = _this$resolveArgument6[0];
+
       _this.removeClasses(node, 'exit');
 
       _this.addClass(node, 'exit', 'done');
 
       if (_this.props.onExited) {
-        _this.props.onExited(node);
+        _this.props.onExited(maybeNode);
       }
+    };
+
+    _this.resolveArguments = function (maybeNode, maybeAppearing) {
+      return _this.props.nodeRef ? [_this.props.nodeRef.current, maybeNode] // here `maybeNode` is actually `appearing`
+      : [maybeNode, maybeAppearing];
     };
 
     _this.getClassNames = function (type) {
@@ -6081,8 +6113,11 @@ function (_React$Component) {
   _proto.addClass = function addClass(node, type, phase) {
     var className = this.getClassNames(type)[phase + "ClassName"];
 
-    if (type === 'appear' && phase === 'done') {
-      className += " " + this.getClassNames('enter').doneClassName;
+    var _this$getClassNames = this.getClassNames('enter'),
+        doneClassName = _this$getClassNames.doneClassName;
+
+    if (type === 'appear' && phase === 'done' && doneClassName) {
+      className += " " + doneClassName;
     } // This is for to force a repaint,
     // which is necessary in order to transition styles when adding a class name.
 
@@ -6092,9 +6127,11 @@ function (_React$Component) {
       node && node.scrollTop;
     }
 
-    this.appliedClasses[type][phase] = className;
+    if (className) {
+      this.appliedClasses[type][phase] = className;
 
-    _addClass(node, className);
+      _addClass(node, className);
+    }
   };
 
   _proto.removeClasses = function removeClasses(node, type) {
@@ -6122,7 +6159,7 @@ function (_React$Component) {
         _ = _this$props.classNames,
         props = Object(_babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__["default"])(_this$props, ["classNames"]);
 
-    return react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_Transition__WEBPACK_IMPORTED_MODULE_7__["default"], Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, props, {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_Transition__WEBPACK_IMPORTED_MODULE_7__["default"], Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, props, {
       onEnter: this.onEnter,
       onEntered: this.onEntered,
       onEntering: this.onEntering,
@@ -6141,20 +6178,30 @@ CSSTransition.defaultProps = {
 CSSTransition.propTypes =  true ? Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, _Transition__WEBPACK_IMPORTED_MODULE_7__["default"].propTypes, {
   /**
    * The animation classNames applied to the component as it appears, enters,
-   * exits or has finished the transition. A single name can be provided and it
-   * will be suffixed for each stage: e.g.
+   * exits or has finished the transition. A single name can be provided, which
+   * will be suffixed for each stage, e.g. `classNames="fade"` applies:
    *
-   * `classNames="fade"` applies `fade-appear`, `fade-appear-active`,
-   * `fade-appear-done`, `fade-enter`, `fade-enter-active`, `fade-enter-done`,
-   * `fade-exit`, `fade-exit-active`, and `fade-exit-done`.
+   * - `fade-appear`, `fade-appear-active`, `fade-appear-done`
+   * - `fade-enter`, `fade-enter-active`, `fade-enter-done`
+   * - `fade-exit`, `fade-exit-active`, `fade-exit-done`
    *
-   * **Note**: `fade-appear-done` and `fade-enter-done` will _both_ be applied.
-   * This allows you to define different behavior for when appearing is done and
-   * when regular entering is done, using selectors like
-   * `.fade-enter-done:not(.fade-appear-done)`. For example, you could apply an
-   * epic entrance animation when element first appears in the DOM using
-   * [Animate.css](https://daneden.github.io/animate.css/). Otherwise you can
-   * simply use `fade-enter-done` for defining both cases.
+   * A few details to note about how these classes are applied:
+   *
+   * 1. They are _joined_ with the ones that are already defined on the child
+   *    component, so if you want to add some base styles, you can use
+   *    `className` without worrying that it will be overridden.
+   *
+   * 2. If the transition component mounts with `in={false}`, no classes are
+   *    applied yet. You might be expecting `*-exit-done`, but if you think
+   *    about it, a component cannot finish exiting if it hasn't entered yet.
+   *
+   * 2. `fade-appear-done` and `fade-enter-done` will _both_ be applied. This
+   *    allows you to define different behavior for when appearing is done and
+   *    when regular entering is done, using selectors like
+   *    `.fade-enter-done:not(.fade-appear-done)`. For example, you could apply
+   *    an epic entrance animation when element first appears in the DOM using
+   *    [Animate.css](https://daneden.github.io/animate.css/). Otherwise you can
+   *    simply use `fade-enter-done` for defining both cases.
    *
    * Each individual classNames can also be specified independently like:
    *
@@ -6203,6 +6250,8 @@ CSSTransition.propTypes =  true ? Object(_babel_runtime_helpers_esm_extends__WEB
    * A `<Transition>` callback fired immediately after the 'enter' or 'appear' class is
    * applied.
    *
+   * **Note**: when `nodeRef` prop is passed, `node` is not passed.
+   *
    * @type Function(node: HtmlElement, isAppearing: bool)
    */
   onEnter: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.func,
@@ -6210,6 +6259,8 @@ CSSTransition.propTypes =  true ? Object(_babel_runtime_helpers_esm_extends__WEB
   /**
    * A `<Transition>` callback fired immediately after the 'enter-active' or
    * 'appear-active' class is applied.
+   *
+   * **Note**: when `nodeRef` prop is passed, `node` is not passed.
    *
    * @type Function(node: HtmlElement, isAppearing: bool)
    */
@@ -6219,6 +6270,8 @@ CSSTransition.propTypes =  true ? Object(_babel_runtime_helpers_esm_extends__WEB
    * A `<Transition>` callback fired immediately after the 'enter' or
    * 'appear' classes are **removed** and the `done` class is added to the DOM node.
    *
+   * **Note**: when `nodeRef` prop is passed, `node` is not passed.
+   *
    * @type Function(node: HtmlElement, isAppearing: bool)
    */
   onEntered: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.func,
@@ -6227,12 +6280,16 @@ CSSTransition.propTypes =  true ? Object(_babel_runtime_helpers_esm_extends__WEB
    * A `<Transition>` callback fired immediately after the 'exit' class is
    * applied.
    *
+   * **Note**: when `nodeRef` prop is passed, `node` is not passed
+   *
    * @type Function(node: HtmlElement)
    */
   onExit: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.func,
 
   /**
    * A `<Transition>` callback fired immediately after the 'exit-active' is applied.
+   *
+   * **Note**: when `nodeRef` prop is passed, `node` is not passed
    *
    * @type Function(node: HtmlElement)
    */
@@ -6241,6 +6298,8 @@ CSSTransition.propTypes =  true ? Object(_babel_runtime_helpers_esm_extends__WEB
   /**
    * A `<Transition>` callback fired immediately after the 'exit' classes
    * are **removed** and the `exit-done` class is added to the DOM node.
+   *
+   * **Note**: when `nodeRef` prop is passed, `node` is not passed
    *
    * @type Function(node: HtmlElement)
    */
@@ -6286,9 +6345,7 @@ __webpack_require__.r(__webpack_exports__);
  * ```
  */
 
-var ReplaceTransition =
-/*#__PURE__*/
-function (_React$Component) {
+var ReplaceTransition = /*#__PURE__*/function (_React$Component) {
   Object(_babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_1__["default"])(ReplaceTransition, _React$Component);
 
   function ReplaceTransition() {
@@ -6359,7 +6416,11 @@ function (_React$Component) {
     var children = this.props.children;
     var child = react__WEBPACK_IMPORTED_MODULE_3___default.a.Children.toArray(children)[idx];
     if (child.props[handler]) (_child$props = child.props)[handler].apply(_child$props, originalArgs);
-    if (this.props[handler]) this.props[handler](react_dom__WEBPACK_IMPORTED_MODULE_4___default.a.findDOMNode(this));
+
+    if (this.props[handler]) {
+      var maybeNode = child.props.nodeRef ? undefined : react_dom__WEBPACK_IMPORTED_MODULE_4___default.a.findDOMNode(this);
+      this.props[handler](maybeNode);
+    }
   };
 
   _proto.render = function render() {
@@ -6378,7 +6439,7 @@ function (_React$Component) {
     delete props.onExit;
     delete props.onExiting;
     delete props.onExited;
-    return react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_TransitionGroup__WEBPACK_IMPORTED_MODULE_5__["default"], props, inProp ? react__WEBPACK_IMPORTED_MODULE_3___default.a.cloneElement(first, {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_TransitionGroup__WEBPACK_IMPORTED_MODULE_5__["default"], props, inProp ? react__WEBPACK_IMPORTED_MODULE_3___default.a.cloneElement(first, {
       key: 'first',
       onEnter: this.handleEnter,
       onEntering: this.handleEntering,
@@ -6512,30 +6573,54 @@ var enterRenders = (_enterRenders = {}, _enterRenders[modes.out] = function (_re
  * Based on the selected mode and the child's key which is the `Transition` or `CSSTransition` component, the `SwitchTransition` makes a consistent transition between them.
  *
  * If the `out-in` mode is selected, the `SwitchTransition` waits until the old child leaves and then inserts a new child.
- * If the `in-out` mode is selected, the `SwitchTransition` inserts a new child first, waits for the new child to enter and then removes the old child
+ * If the `in-out` mode is selected, the `SwitchTransition` inserts a new child first, waits for the new child to enter and then removes the old child.
+ *
+ * **Note**: If you want the animation to happen simultaneously
+ * (that is, to have the old child removed and a new child inserted **at the same time**),
+ * you should use
+ * [`TransitionGroup`](https://reactcommunity.org/react-transition-group/transition-group)
+ * instead.
  *
  * ```jsx
- *
  * function App() {
  *  const [state, setState] = useState(false);
  *  return (
  *    <SwitchTransition>
- *      <FadeTransition key={state ? "Goodbye, world!" : "Hello, world!"}
+ *      <CSSTransition
+ *        key={state ? "Goodbye, world!" : "Hello, world!"}
  *        addEndListener={(node, done) => node.addEventListener("transitionend", done, false)}
- *        classNames='fade' >
+ *        classNames='fade'
+ *      >
  *        <button onClick={() => setState(state => !state)}>
  *          {state ? "Goodbye, world!" : "Hello, world!"}
  *        </button>
- *      </FadeTransition>
+ *      </CSSTransition>
  *    </SwitchTransition>
- *  )
+ *  );
+ * }
+ * ```
+ *
+ * ```css
+ * .fade-enter{
+ *    opacity: 0;
+ * }
+ * .fade-exit{
+ *    opacity: 1;
+ * }
+ * .fade-enter-active{
+ *    opacity: 1;
+ * }
+ * .fade-exit-active{
+ *    opacity: 0;
+ * }
+ * .fade-enter-active,
+ * .fade-exit-active{
+ *    transition: opacity 500ms;
  * }
  * ```
  */
 
-var SwitchTransition =
-/*#__PURE__*/
-function (_React$Component) {
+var SwitchTransition = /*#__PURE__*/function (_React$Component) {
   Object(_babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_0__["default"])(SwitchTransition, _React$Component);
 
   function SwitchTransition() {
@@ -6626,7 +6711,7 @@ function (_React$Component) {
         component = current;
     }
 
-    return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_TransitionGroupContext__WEBPACK_IMPORTED_MODULE_4__["default"].Provider, {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_TransitionGroupContext__WEBPACK_IMPORTED_MODULE_4__["default"].Provider, {
       value: {
         isMounting: !this.appeared
       }
@@ -6640,14 +6725,14 @@ SwitchTransition.propTypes =  true ? {
   /**
    * Transition modes.
    * `out-in`: Current element transitions out first, then when complete, the new element transitions in.
-   * `in-out: New element transitions in first, then when complete, the current element transitions out.`
+   * `in-out`: New element transitions in first, then when complete, the current element transitions out.
    *
    * @type {'out-in'|'in-out'}
    */
   mode: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.oneOf([modes.in, modes.out]),
 
   /**
-   * Any `Transition` or `CSSTransition` component
+   * Any `Transition` or `CSSTransition` component.
    */
   children: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.element.isRequired])
 } : undefined;
@@ -6788,9 +6873,7 @@ var EXITING = 'exiting';
  * `'exiting'` to `'exited'`.
  */
 
-var Transition =
-/*#__PURE__*/
-function (_React$Component) {
+var Transition = /*#__PURE__*/function (_React$Component) {
   Object(_babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_1__["default"])(Transition, _React$Component);
 
   function Transition(props, context) {
@@ -6835,7 +6918,7 @@ function (_React$Component) {
     }
 
     return null;
-  }; // getSnapshotBeforeUpdate(prevProps) {
+  } // getSnapshotBeforeUpdate(prevProps) {
   //   let nextStatus = null
   //   if (prevProps !== this.props) {
   //     const { status } = this.state
@@ -6851,7 +6934,7 @@ function (_React$Component) {
   //   }
   //   return { nextStatus }
   // }
-
+  ;
 
   var _proto = Transition.prototype;
 
@@ -6910,12 +6993,11 @@ function (_React$Component) {
     if (nextStatus !== null) {
       // nextStatus will always be ENTERING or EXITING.
       this.cancelNextCallback();
-      var node = react_dom__WEBPACK_IMPORTED_MODULE_4___default.a.findDOMNode(this);
 
       if (nextStatus === ENTERING) {
-        this.performEnter(node, mounting);
+        this.performEnter(mounting);
       } else {
-        this.performExit(node);
+        this.performExit();
       }
     } else if (this.props.unmountOnExit && this.state.status === EXITED) {
       this.setState({
@@ -6924,11 +7006,16 @@ function (_React$Component) {
     }
   };
 
-  _proto.performEnter = function performEnter(node, mounting) {
+  _proto.performEnter = function performEnter(mounting) {
     var _this2 = this;
 
     var enter = this.props.enter;
     var appearing = this.context ? this.context.isMounting : mounting;
+
+    var _ref2 = this.props.nodeRef ? [appearing] : [react_dom__WEBPACK_IMPORTED_MODULE_4___default.a.findDOMNode(this), appearing],
+        maybeNode = _ref2[0],
+        maybeAppearing = _ref2[1];
+
     var timeouts = this.getTimeouts();
     var enterTimeout = appearing ? timeouts.appear : timeouts.enter; // no enter animation skip right to ENTERED
     // if we are mounting and running this it means appear _must_ be set
@@ -6937,53 +7024,54 @@ function (_React$Component) {
       this.safeSetState({
         status: ENTERED
       }, function () {
-        _this2.props.onEntered(node);
+        _this2.props.onEntered(maybeNode);
       });
       return;
     }
 
-    this.props.onEnter(node, appearing);
+    this.props.onEnter(maybeNode, maybeAppearing);
     this.safeSetState({
       status: ENTERING
     }, function () {
-      _this2.props.onEntering(node, appearing);
+      _this2.props.onEntering(maybeNode, maybeAppearing);
 
-      _this2.onTransitionEnd(node, enterTimeout, function () {
+      _this2.onTransitionEnd(enterTimeout, function () {
         _this2.safeSetState({
           status: ENTERED
         }, function () {
-          _this2.props.onEntered(node, appearing);
+          _this2.props.onEntered(maybeNode, maybeAppearing);
         });
       });
     });
   };
 
-  _proto.performExit = function performExit(node) {
+  _proto.performExit = function performExit() {
     var _this3 = this;
 
     var exit = this.props.exit;
-    var timeouts = this.getTimeouts(); // no exit animation skip right to EXITED
+    var timeouts = this.getTimeouts();
+    var maybeNode = this.props.nodeRef ? undefined : react_dom__WEBPACK_IMPORTED_MODULE_4___default.a.findDOMNode(this); // no exit animation skip right to EXITED
 
     if (!exit || _config__WEBPACK_IMPORTED_MODULE_5__["default"].disabled) {
       this.safeSetState({
         status: EXITED
       }, function () {
-        _this3.props.onExited(node);
+        _this3.props.onExited(maybeNode);
       });
       return;
     }
 
-    this.props.onExit(node);
+    this.props.onExit(maybeNode);
     this.safeSetState({
       status: EXITING
     }, function () {
-      _this3.props.onExiting(node);
+      _this3.props.onExiting(maybeNode);
 
-      _this3.onTransitionEnd(node, timeouts.exit, function () {
+      _this3.onTransitionEnd(timeouts.exit, function () {
         _this3.safeSetState({
           status: EXITED
         }, function () {
-          _this3.props.onExited(node);
+          _this3.props.onExited(maybeNode);
         });
       });
     });
@@ -7024,8 +7112,9 @@ function (_React$Component) {
     return this.nextCallback;
   };
 
-  _proto.onTransitionEnd = function onTransitionEnd(node, timeout, handler) {
+  _proto.onTransitionEnd = function onTransitionEnd(timeout, handler) {
     this.setNextCallback(handler);
+    var node = this.props.nodeRef ? this.props.nodeRef.current : react_dom__WEBPACK_IMPORTED_MODULE_4___default.a.findDOMNode(this);
     var doesNotHaveTimeoutOrListener = timeout == null && !this.props.addEndListener;
 
     if (!node || doesNotHaveTimeoutOrListener) {
@@ -7034,7 +7123,11 @@ function (_React$Component) {
     }
 
     if (this.props.addEndListener) {
-      this.props.addEndListener(node, this.nextCallback);
+      var _ref3 = this.props.nodeRef ? [this.nextCallback] : [node, this.nextCallback],
+          maybeNode = _ref3[0],
+          maybeNextCallback = _ref3[1];
+
+      this.props.addEndListener(maybeNode, maybeNextCallback);
     }
 
     if (timeout != null) {
@@ -7051,36 +7144,29 @@ function (_React$Component) {
 
     var _this$props = this.props,
         children = _this$props.children,
-        childProps = Object(_babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_0__["default"])(_this$props, ["children"]); // filter props for Transtition
+        _in = _this$props.in,
+        _mountOnEnter = _this$props.mountOnEnter,
+        _unmountOnExit = _this$props.unmountOnExit,
+        _appear = _this$props.appear,
+        _enter = _this$props.enter,
+        _exit = _this$props.exit,
+        _timeout = _this$props.timeout,
+        _addEndListener = _this$props.addEndListener,
+        _onEnter = _this$props.onEnter,
+        _onEntering = _this$props.onEntering,
+        _onEntered = _this$props.onEntered,
+        _onExit = _this$props.onExit,
+        _onExiting = _this$props.onExiting,
+        _onExited = _this$props.onExited,
+        _nodeRef = _this$props.nodeRef,
+        childProps = Object(_babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_0__["default"])(_this$props, ["children", "in", "mountOnEnter", "unmountOnExit", "appear", "enter", "exit", "timeout", "addEndListener", "onEnter", "onEntering", "onEntered", "onExit", "onExiting", "onExited", "nodeRef"]);
 
-
-    delete childProps.in;
-    delete childProps.mountOnEnter;
-    delete childProps.unmountOnExit;
-    delete childProps.appear;
-    delete childProps.enter;
-    delete childProps.exit;
-    delete childProps.timeout;
-    delete childProps.addEndListener;
-    delete childProps.onEnter;
-    delete childProps.onEntering;
-    delete childProps.onEntered;
-    delete childProps.onExit;
-    delete childProps.onExiting;
-    delete childProps.onExited;
-
-    if (typeof children === 'function') {
+    return (
+      /*#__PURE__*/
       // allows for nested Transitions
-      return react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_TransitionGroupContext__WEBPACK_IMPORTED_MODULE_7__["default"].Provider, {
-        value: null
-      }, children(status, childProps));
-    }
-
-    var child = react__WEBPACK_IMPORTED_MODULE_3___default.a.Children.only(children);
-    return (// allows for nested Transitions
       react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_TransitionGroupContext__WEBPACK_IMPORTED_MODULE_7__["default"].Provider, {
         value: null
-      }, react__WEBPACK_IMPORTED_MODULE_3___default.a.cloneElement(child, childProps))
+      }, typeof children === 'function' ? children(status, childProps) : react__WEBPACK_IMPORTED_MODULE_3___default.a.cloneElement(react__WEBPACK_IMPORTED_MODULE_3___default.a.Children.only(children), childProps))
     );
   };
 
@@ -7089,6 +7175,21 @@ function (_React$Component) {
 
 Transition.contextType = _TransitionGroupContext__WEBPACK_IMPORTED_MODULE_7__["default"];
 Transition.propTypes =  true ? {
+  /**
+   * A React reference to DOM element that need to transition:
+   * https://stackoverflow.com/a/51127130/4671932
+   *
+   *   - When `nodeRef` prop is used, `node` is not passed to callback functions
+   *      (e.g. `onEnter`) because user already has direct access to the node.
+   *   - When changing `key` prop of `Transition` in a `TransitionGroup` a new
+   *     `nodeRef` need to be provided to `Transition` with changed `key` prop
+   *     (see
+   *     [test/CSSTransition-test.js](https://github.com/reactjs/react-transition-group/blob/13435f897b3ab71f6e19d724f145596f5910581c/test/CSSTransition-test.js#L362-L437)).
+   */
+  nodeRef: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.shape({
+    current: typeof Element === 'undefined' ? prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.any : prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.instanceOf(Element)
+  }),
+
   /**
    * A `function` child can be used instead of a React element. This function is
    * called with the current transition status (`'entering'`, `'entered'`,
@@ -7125,10 +7226,9 @@ Transition.propTypes =  true ? {
   unmountOnExit: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.bool,
 
   /**
-   * Normally a component is not transitioned if it is shown when the
-   * `<Transition>` component mounts. If you want to transition on the first
-   * mount set `appear` to `true`, and the component will transition in as soon
-   * as the `<Transition>` mounts.
+   * By default the child component does not perform the enter transition when
+   * it first mounts, regardless of the value of `in`. If you want this
+   * behavior, set both `appear` and `in` to `true`.
    *
    * > **Note**: there are no special appear states like `appearing`/`appeared`, this prop
    * > only adds an additional enter transition. However, in the
@@ -7188,7 +7288,9 @@ Transition.propTypes =  true ? {
   /**
    * Add a custom transition end trigger. Called with the transitioning
    * DOM node and a `done` callback. Allows for more fine grained transition end
-   * logic. **Note:** Timeouts are still used as a fallback if provided.
+   * logic. Timeouts are still used as a fallback if provided.
+   *
+   * **Note**: when `nodeRef` prop is passed, `node` is not passed.
    *
    * ```jsx
    * addEndListener={(node, done) => {
@@ -7203,6 +7305,8 @@ Transition.propTypes =  true ? {
    * Callback fired before the "entering" status is applied. An extra parameter
    * `isAppearing` is supplied to indicate if the enter stage is occurring on the initial mount
    *
+   * **Note**: when `nodeRef` prop is passed, `node` is not passed.
+   *
    * @type Function(node: HtmlElement, isAppearing: bool) -> void
    */
   onEnter: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.func,
@@ -7210,6 +7314,8 @@ Transition.propTypes =  true ? {
   /**
    * Callback fired after the "entering" status is applied. An extra parameter
    * `isAppearing` is supplied to indicate if the enter stage is occurring on the initial mount
+   *
+   * **Note**: when `nodeRef` prop is passed, `node` is not passed.
    *
    * @type Function(node: HtmlElement, isAppearing: bool)
    */
@@ -7219,12 +7325,16 @@ Transition.propTypes =  true ? {
    * Callback fired after the "entered" status is applied. An extra parameter
    * `isAppearing` is supplied to indicate if the enter stage is occurring on the initial mount
    *
+   * **Note**: when `nodeRef` prop is passed, `node` is not passed.
+   *
    * @type Function(node: HtmlElement, isAppearing: bool) -> void
    */
   onEntered: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.func,
 
   /**
    * Callback fired before the "exiting" status is applied.
+   *
+   * **Note**: when `nodeRef` prop is passed, `node` is not passed.
    *
    * @type Function(node: HtmlElement) -> void
    */
@@ -7233,6 +7343,8 @@ Transition.propTypes =  true ? {
   /**
    * Callback fired after the "exiting" status is applied.
    *
+   * **Note**: when `nodeRef` prop is passed, `node` is not passed.
+   *
    * @type Function(node: HtmlElement) -> void
    */
   onExiting: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.func,
@@ -7240,11 +7352,12 @@ Transition.propTypes =  true ? {
   /**
    * Callback fired after the "exited" status is applied.
    *
+   * **Note**: when `nodeRef` prop is passed, `node` is not passed
+   *
    * @type Function(node: HtmlElement) -> void
    */
-  onExited: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.func // Name the function so it is clearer in the documentation
-
-} : undefined;
+  onExited: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.func
+} : undefined; // Name the function so it is clearer in the documentation
 
 function noop() {}
 
@@ -7262,11 +7375,11 @@ Transition.defaultProps = {
   onExiting: noop,
   onExited: noop
 };
-Transition.UNMOUNTED = 0;
-Transition.EXITED = 1;
-Transition.ENTERING = 2;
-Transition.ENTERED = 3;
-Transition.EXITING = 4;
+Transition.UNMOUNTED = UNMOUNTED;
+Transition.EXITED = EXITED;
+Transition.ENTERING = ENTERING;
+Transition.ENTERED = ENTERED;
+Transition.EXITING = EXITING;
 /* harmony default export */ __webpack_exports__["default"] = (Transition);
 
 /***/ }),
@@ -7282,8 +7395,8 @@ Transition.EXITING = 4;
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/objectWithoutPropertiesLoose */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js");
 /* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
-/* harmony import */ var _babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/esm/inheritsLoose */ "./node_modules/@babel/runtime/helpers/esm/inheritsLoose.js");
-/* harmony import */ var _babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/esm/assertThisInitialized */ "./node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js");
+/* harmony import */ var _babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/esm/assertThisInitialized */ "./node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js");
+/* harmony import */ var _babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/esm/inheritsLoose */ "./node_modules/@babel/runtime/helpers/esm/inheritsLoose.js");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "react");
@@ -7310,34 +7423,31 @@ var defaultProps = {
   childFactory: function childFactory(child) {
     return child;
   }
-  /**
-   * The `<TransitionGroup>` component manages a set of transition components
-   * (`<Transition>` and `<CSSTransition>`) in a list. Like with the transition
-   * components, `<TransitionGroup>` is a state machine for managing the mounting
-   * and unmounting of components over time.
-   *
-   * Consider the example below. As items are removed or added to the TodoList the
-   * `in` prop is toggled automatically by the `<TransitionGroup>`.
-   *
-   * Note that `<TransitionGroup>`  does not define any animation behavior!
-   * Exactly _how_ a list item animates is up to the individual transition
-   * component. This means you can mix and match animations across different list
-   * items.
-   */
-
 };
+/**
+ * The `<TransitionGroup>` component manages a set of transition components
+ * (`<Transition>` and `<CSSTransition>`) in a list. Like with the transition
+ * components, `<TransitionGroup>` is a state machine for managing the mounting
+ * and unmounting of components over time.
+ *
+ * Consider the example below. As items are removed or added to the TodoList the
+ * `in` prop is toggled automatically by the `<TransitionGroup>`.
+ *
+ * Note that `<TransitionGroup>`  does not define any animation behavior!
+ * Exactly _how_ a list item animates is up to the individual transition
+ * component. This means you can mix and match animations across different list
+ * items.
+ */
 
-var TransitionGroup =
-/*#__PURE__*/
-function (_React$Component) {
-  Object(_babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_2__["default"])(TransitionGroup, _React$Component);
+var TransitionGroup = /*#__PURE__*/function (_React$Component) {
+  Object(_babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_3__["default"])(TransitionGroup, _React$Component);
 
   function TransitionGroup(props, context) {
     var _this;
 
     _this = _React$Component.call(this, props, context) || this;
 
-    var handleExited = _this.handleExited.bind(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3__["default"])(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3__["default"])(_this))); // Initial children should all be entering, dependent on appear
+    var handleExited = _this.handleExited.bind(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__["default"])(_this)); // Initial children should all be entering, dependent on appear
 
 
     _this.state = {
@@ -7373,7 +7483,8 @@ function (_React$Component) {
       children: firstRender ? Object(_utils_ChildMapping__WEBPACK_IMPORTED_MODULE_7__["getInitialChildMapping"])(nextProps, handleExited) : Object(_utils_ChildMapping__WEBPACK_IMPORTED_MODULE_7__["getNextChildMapping"])(nextProps, prevChildMapping, handleExited),
       firstRender: false
     };
-  };
+  } // node is `undefined` when user provided `nodeRef` prop
+  ;
 
   _proto.handleExited = function handleExited(child, node) {
     var currentChildMapping = Object(_utils_ChildMapping__WEBPACK_IMPORTED_MODULE_7__["getChildMapping"])(this.props.children);
@@ -7408,14 +7519,14 @@ function (_React$Component) {
     delete props.exit;
 
     if (Component === null) {
-      return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_TransitionGroupContext__WEBPACK_IMPORTED_MODULE_6__["default"].Provider, {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_TransitionGroupContext__WEBPACK_IMPORTED_MODULE_6__["default"].Provider, {
         value: contextValue
       }, children);
     }
 
-    return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_TransitionGroupContext__WEBPACK_IMPORTED_MODULE_6__["default"].Provider, {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_TransitionGroupContext__WEBPACK_IMPORTED_MODULE_6__["default"].Provider, {
       value: contextValue
-    }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Component, props, children));
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Component, props, children));
   };
 
   return TransitionGroup;
@@ -7673,8 +7784,8 @@ function getNextChildMapping(nextProps, prevChildMapping, onExited) {
   Object.keys(children).forEach(function (key) {
     var child = children[key];
     if (!Object(react__WEBPACK_IMPORTED_MODULE_0__["isValidElement"])(child)) return;
-    var hasPrev = key in prevChildMapping;
-    var hasNext = key in nextChildMapping;
+    var hasPrev = (key in prevChildMapping);
+    var hasNext = (key in nextChildMapping);
     var prevChild = prevChildMapping[key];
     var isLeaving = Object(react__WEBPACK_IMPORTED_MODULE_0__["isValidElement"])(prevChild) && !prevChild.props.in; // item is new (entering)
 
