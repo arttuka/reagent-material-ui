@@ -6,5 +6,6 @@
                       :asset-path       "/js"
                       :modules          {:main {:entries [example.core]}}
                       :compiler-options {:infer-externs :auto}
+                      :js-options       {:anon-fn-naming-policy :unmapped}
                       :devtools         {:http-root "resources/public"
                                          :http-port 9500}}}}
