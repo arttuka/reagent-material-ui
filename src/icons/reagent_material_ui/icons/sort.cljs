@@ -1,7 +1,7 @@
 (ns reagent-material-ui.icons.sort
   "Imports @material-ui/icons/Sort as a Reagent component."
   (:refer-clojure :exclude [sort])
-  (:require-macros [reagent-material-ui.macro :refer [e]])
+  (:require-macros [reagent-material-ui.util :refer [e]])
   (:require [react :as react]
             [reagent-material-ui.util :refer [create-svg-icon]]))
 

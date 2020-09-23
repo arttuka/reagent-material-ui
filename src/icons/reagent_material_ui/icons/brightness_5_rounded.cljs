@@ -1,6 +1,6 @@
 (ns reagent-material-ui.icons.brightness-5-rounded
   "Imports @material-ui/icons/Brightness5Rounded as a Reagent component."
-  (:require-macros [reagent-material-ui.macro :refer [e]])
+  (:require-macros [reagent-material-ui.util :refer [e]])
   (:require [react :as react]
             [reagent-material-ui.util :refer [create-svg-icon]]))
 

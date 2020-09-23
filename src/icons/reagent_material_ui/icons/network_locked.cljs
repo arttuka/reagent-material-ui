@@ -1,6 +1,6 @@
 (ns reagent-material-ui.icons.network-locked
   "Imports @material-ui/icons/NetworkLocked as a Reagent component."
-  (:require-macros [reagent-material-ui.macro :refer [e]])
+  (:require-macros [reagent-material-ui.util :refer [e]])
   (:require [react :as react]
             [reagent-material-ui.util :refer [create-svg-icon]]))
 

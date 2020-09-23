@@ -1,7 +1,7 @@
 (ns reagent-material-ui.icons.print
   "Imports @material-ui/icons/Print as a Reagent component."
   (:refer-clojure :exclude [print])
-  (:require-macros [reagent-material-ui.macro :refer [e]])
+  (:require-macros [reagent-material-ui.util :refer [e]])
   (:require [react :as react]
             [reagent-material-ui.util :refer [create-svg-icon]]))
 

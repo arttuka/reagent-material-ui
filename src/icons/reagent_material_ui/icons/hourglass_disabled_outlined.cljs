@@ -1,0 +1,8 @@
+(ns reagent-material-ui.icons.hourglass-disabled-outlined
+  "Imports @material-ui/icons/HourglassDisabledOutlined as a Reagent component."
+  (:require-macros [reagent-material-ui.util :refer [e]])
+  (:require [react :as react]
+            [reagent-material-ui.util :refer [create-svg-icon]]))
+
+(def hourglass-disabled-outlined (create-svg-icon (e "path" #js {"d" "M8 4h8v3.5l-2.84 2.84 1.25 1.25L18 8.01 17.99 8H18V2H6v1.17l2 2zM2.1 2.1L.69 3.51l8.9 8.9L6 16l.01.01H6V22h12v-1.17l2.49 2.49 1.41-1.41L2.1 2.1zM16 20H8v-3.5l2.84-2.84L16 18.83V20z"})
+                                                  "HourglassDisabledOutlined"))

@@ -1,6 +1,6 @@
 (ns reagent-material-ui.icons.sports-handball
   "Imports @material-ui/icons/SportsHandball as a Reagent component."
-  (:require-macros [reagent-material-ui.macro :refer [e]])
+  (:require-macros [reagent-material-ui.util :refer [e]])
   (:require [react :as react]
             [reagent-material-ui.util :refer [create-svg-icon]]))
 

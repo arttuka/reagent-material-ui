@@ -1,6 +1,6 @@
 (ns reagent-material-ui.icons.brightness-3
   "Imports @material-ui/icons/Brightness3 as a Reagent component."
-  (:require-macros [reagent-material-ui.macro :refer [e]])
+  (:require-macros [reagent-material-ui.util :refer [e]])
   (:require [react :as react]
             [reagent-material-ui.util :refer [create-svg-icon]]))
 

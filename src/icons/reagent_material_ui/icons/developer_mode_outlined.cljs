@@ -1,6 +1,6 @@
 (ns reagent-material-ui.icons.developer-mode-outlined
   "Imports @material-ui/icons/DeveloperModeOutlined as a Reagent component."
-  (:require-macros [reagent-material-ui.macro :refer [e]])
+  (:require-macros [reagent-material-ui.util :refer [e]])
   (:require [react :as react]
             [reagent-material-ui.util :refer [create-svg-icon]]))
 

@@ -1,6 +1,6 @@
 (ns reagent-material-ui.icons.battery-80-two-tone
   "Imports @material-ui/icons/Battery80TwoTone as a Reagent component."
-  (:require-macros [reagent-material-ui.macro :refer [e]])
+  (:require-macros [reagent-material-ui.util :refer [e]])
   (:require [react :as react]
             [reagent-material-ui.util :refer [create-svg-icon]]))
 

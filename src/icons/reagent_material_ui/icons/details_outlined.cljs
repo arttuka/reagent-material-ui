@@ -1,8 +1,8 @@
 (ns reagent-material-ui.icons.details-outlined
   "Imports @material-ui/icons/DetailsOutlined as a Reagent component."
-  (:require-macros [reagent-material-ui.macro :refer [e]])
+  (:require-macros [reagent-material-ui.util :refer [e]])
   (:require [react :as react]
             [reagent-material-ui.util :refer [create-svg-icon]]))
 
-(def details-outlined (create-svg-icon (e "path" #js {"d" "M3 4l9 16 9-16H3zm3.38 2h11.25L12 16 6.38 6z"})
+(def details-outlined (create-svg-icon (e "path" #js {"d" "M12 3L2 21h20L12 3zm1 5.92L18.6 19H13V8.92zm-2 0V19H5.4L11 8.92z"})
                                        "DetailsOutlined"))

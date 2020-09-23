@@ -1,6 +1,6 @@
 (ns reagent-material-ui.icons.radio-button-unchecked-rounded
   "Imports @material-ui/icons/RadioButtonUncheckedRounded as a Reagent component."
-  (:require-macros [reagent-material-ui.macro :refer [e]])
+  (:require-macros [reagent-material-ui.util :refer [e]])
   (:require [react :as react]
             [reagent-material-ui.util :refer [create-svg-icon]]))
 

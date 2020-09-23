@@ -1,6 +1,6 @@
 (ns reagent-material-ui.icons.signal-cellular-3-bar-sharp
   "Imports @material-ui/icons/SignalCellular3BarSharp as a Reagent component."
-  (:require-macros [reagent-material-ui.macro :refer [e]])
+  (:require-macros [reagent-material-ui.util :refer [e]])
   (:require [react :as react]
             [reagent-material-ui.util :refer [create-svg-icon]]))
 

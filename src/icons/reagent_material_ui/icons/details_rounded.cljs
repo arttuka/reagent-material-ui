@@ -1,8 +1,8 @@
 (ns reagent-material-ui.icons.details-rounded
   "Imports @material-ui/icons/DetailsRounded as a Reagent component."
-  (:require-macros [reagent-material-ui.macro :refer [e]])
+  (:require-macros [reagent-material-ui.util :refer [e]])
   (:require [react :as react]
             [reagent-material-ui.util :refer [create-svg-icon]]))
 
-(def details-rounded (create-svg-icon (e "path" #js {"d" "M3.84 5.49l7.29 12.96c.38.68 1.36.68 1.74 0l7.29-12.96c.38-.67-.11-1.49-.87-1.49H4.71c-.76 0-1.25.82-.87 1.49zM6.38 6h11.25L12 16 6.38 6z"})
+(def details-rounded (create-svg-icon (e "path" #js {"d" "M11.13 4.57l-8.3 14.94c-.37.67.11 1.49.87 1.49h16.6c.76 0 1.24-.82.87-1.49l-8.3-14.94c-.38-.68-1.36-.68-1.74 0zM13 8.92L18.6 19H13V8.92zm-2 0V19H5.4L11 8.92z"})
                                       "DetailsRounded"))

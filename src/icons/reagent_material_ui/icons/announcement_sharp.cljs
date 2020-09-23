@@ -1,6 +1,6 @@
 (ns reagent-material-ui.icons.announcement-sharp
   "Imports @material-ui/icons/AnnouncementSharp as a Reagent component."
-  (:require-macros [reagent-material-ui.macro :refer [e]])
+  (:require-macros [reagent-material-ui.util :refer [e]])
   (:require [react :as react]
             [reagent-material-ui.util :refer [create-svg-icon]]))
 

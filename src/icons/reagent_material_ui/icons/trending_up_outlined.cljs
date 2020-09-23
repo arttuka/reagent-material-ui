@@ -1,6 +1,6 @@
 (ns reagent-material-ui.icons.trending-up-outlined
   "Imports @material-ui/icons/TrendingUpOutlined as a Reagent component."
-  (:require-macros [reagent-material-ui.macro :refer [e]])
+  (:require-macros [reagent-material-ui.util :refer [e]])
   (:require [react :as react]
             [reagent-material-ui.util :refer [create-svg-icon]]))
 

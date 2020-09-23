@@ -1,6 +1,6 @@
 (ns reagent-material-ui.icons.you-tube
   "Imports @material-ui/icons/YouTube as a Reagent component."
-  (:require-macros [reagent-material-ui.macro :refer [e]])
+  (:require-macros [reagent-material-ui.util :refer [e]])
   (:require [react :as react]
             [reagent-material-ui.util :refer [create-svg-icon]]))
 
