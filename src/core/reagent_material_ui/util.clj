@@ -1,4 +1,4 @@
-(ns reagent-material-ui.macro)
+(ns reagent-material-ui.util)
 
 (defmacro e
   "Wrapper for React.createElement"

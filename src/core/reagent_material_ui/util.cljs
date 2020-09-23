@@ -1,5 +1,5 @@
 (ns reagent-material-ui.util
-  (:require-macros [reagent-material-ui.macro :refer [e forward-ref]])
+  (:require-macros [reagent-material-ui.util :refer [e forward-ref]])
   (:require [react :as react]
             [reagent.core :as r]
             [reagent.impl.util :refer [fun-name]]
