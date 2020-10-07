@@ -6,6 +6,7 @@
             [reagent-material-ui.core.button :refer [button]]
             [reagent-material-ui.core.chip :refer [chip]]
             [reagent-material-ui.core.css-baseline :refer [css-baseline]]
+            [reagent-material-ui.core.input-adornment :refer [input-adornment]]
             [reagent-material-ui.core.grid :refer [grid]]
             [reagent-material-ui.core.menu-item :refer [menu-item]]
             [reagent-material-ui.core.text-field :refer [text-field]]
@@ -76,6 +77,17 @@
       :class       (:text-field classes)
       :on-change   (fn [e]
                      (reset! text-state (event-value e)))}]]
+
+   [grid {:item true}
+    [text-field
+     {:value       @text-state
+      :label       "Text with Adornment"
+      :placeholder "Placeholder"
+      :helper-text "Helper text"
+      :class       (:text-field classes)
+      :on-change   (fn [e]
+                     (reset! text-state (event-value e)))
+      :InputProps {:end-adornment (r/as-element [input-adornment {:position "end"} "Baz"])}}]]
 
    [grid {:item true}
     [text-field
