@@ -17,7 +17,8 @@
             [reagent-material-ui.icons.face :refer [face]]
             [reagent-material-ui.pickers.date-picker :refer [date-picker]]
             [reagent-material-ui.pickers.localization-provider :refer [localization-provider]]
-            [reagent-material-ui.styles :as styles])
+            [reagent-material-ui.styles :as styles]
+            [example.autocomplete :refer [autocomplete]])
   (:import (goog.i18n DateTimeSymbols_en_US)))
 
 (set! *warn-on-infer* true)
@@ -41,7 +42,9 @@
 (def with-custom-styles (styles/with-styles custom-styles))
 
 (defonce text-state (r/atom "foobar"))
+(defonce select-state (r/atom 1))
 (defonce date-picker-state (r/atom nil))
+(defonce autocomplete-state (r/atom nil))
 
 (defn form [{:keys [classes] :as props}]
   [grid
@@ -64,7 +67,11 @@
       {:variant  "outlined"
        :color    "secondary"
        :class    (:button classes)
-       :on-click #(reset! text-state "")}
+       :on-click (fn []
+                   (reset! text-state "")
+                   (reset! select-state 1)
+                   (reset! date-picker-state nil)
+                   (reset! autocomplete-state nil))}
       "Reset"
       [clear]]]]
 
@@ -115,13 +122,13 @@
 
    [grid {:item true}
     [text-field
-     {:value       @text-state
+     {:value       @select-state
       :label       "Select"
       :placeholder "Placeholder"
       :helper-text "Helper text"
       :class       (:text-field classes)
       :on-change   (fn [e]
-                     (reset! text-state (event-value e)))
+                     (reset! select-state (event-value e)))
       :select      true}
      [menu-item
       {:value 1}
@@ -146,7 +153,12 @@
                   :on-change    (fn [value]
                                   (reset! date-picker-state value))
                   :input-format "MM/dd/yyyy"
-                  :label        "Date picker"}]]])
+                  :label        "Date picker"}]]
+   [grid {:item true}
+    [autocomplete {:class (:text-field classes)
+                   :value @autocomplete-state
+                   :on-change (fn [new-value]
+                                (reset! autocomplete-state new-value))}]]])
 
 (defn main []
   ;; fragment
