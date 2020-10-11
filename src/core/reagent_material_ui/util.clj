@@ -22,7 +22,8 @@
   {:arglists '([[props] & body])}
   [bindings & body]
   (assert (vector? bindings) "react-component requires a vector for its bindings")
-  (assert (= 1 (count bindings)) "react-component requires bindings of [props]")
-  `(fn [props#]
-     (let [~@bindings (reagent-material-ui.util/js->clj' props#)]
-       (reagent.core/as-element (do ~@body)))))
+  (let [argsyms (repeatedly (count bindings) #(gensym "arg"))]
+    `(fn [~@argsyms]
+       (let [~@(interleave bindings (for [sym argsyms]
+                                      (list 'reagent-material-ui.util/js->clj' sym)))]
+         (reagent.core/as-element (do ~@body))))))
