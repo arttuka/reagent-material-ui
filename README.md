@@ -1,6 +1,6 @@
 # reagent-material-ui
 
-[![Build Status](https://travis-ci.com/arttuka/reagent-material-ui.svg?branch=master)](https://travis-ci.com/arttuka/reagent-material-ui)
+[![Actions Status](https://github.com/arttuka/reagent-material-ui/workflows/CI/badge.svg)](https://github.com/arttuka/reagent-material-ui/actions)
 
 **reagent-material-ui** is a [Reagent](http://reagent-project.github.io/) wrapper
 for [Material UI v4](https://material-ui.com/).
