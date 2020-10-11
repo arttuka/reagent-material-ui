@@ -14,3 +14,4 @@ pom.xml.asc
 /dev-resources
 node_modules
 .shadow-cljs
+/src/generated

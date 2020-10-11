@@ -1,18 +1,24 @@
 {:npm-deps
- {"@material-ui/core" "4.11.0",
-  "@material-ui/pickers" "3.2.10",
-  "@material-ui/lab" "4.0.0-alpha.56"},
+ {"@material-ui/core" "5.0.0-alpha.12",
+  "@material-ui/pickers" "4.0.0-alpha.12",
+  "@material-ui/lab" "5.0.0-alpha.12",
+  "@emotion/core" "^10.0.27",
+  "@emotion/styled" "^10.0.27"},
  :foreign-libs
  [{:file "material-ui/material-ui.inc.js",
    :file-min "material-ui/material-ui.min.inc.js",
    :provides
    ["@material-ui/core"
     "@material-ui/core/styles"
+    "@material-ui/core/utils"
     "@material-ui/core/Accordion"
     "@material-ui/core/AccordionActions"
     "@material-ui/core/AccordionDetails"
     "@material-ui/core/AccordionSummary"
+    "@material-ui/core/Alert"
+    "@material-ui/core/AlertTitle"
     "@material-ui/core/AppBar"
+    "@material-ui/core/Autocomplete"
     "@material-ui/core/Avatar"
     "@material-ui/core/Backdrop"
     "@material-ui/core/Badge"
@@ -43,10 +49,6 @@
     "@material-ui/core/DialogTitle"
     "@material-ui/core/Divider"
     "@material-ui/core/Drawer"
-    "@material-ui/core/ExpansionPanel"
-    "@material-ui/core/ExpansionPanelActions"
-    "@material-ui/core/ExpansionPanelDetails"
-    "@material-ui/core/ExpansionPanelSummary"
     "@material-ui/core/Fab"
     "@material-ui/core/Fade"
     "@material-ui/core/FilledInput"
@@ -56,13 +58,13 @@
     "@material-ui/core/FormHelperText"
     "@material-ui/core/FormLabel"
     "@material-ui/core/Grid"
-    "@material-ui/core/GridList"
-    "@material-ui/core/GridListTile"
-    "@material-ui/core/GridListTileBar"
     "@material-ui/core/Grow"
     "@material-ui/core/Hidden"
     "@material-ui/core/Icon"
     "@material-ui/core/IconButton"
+    "@material-ui/core/ImageList"
+    "@material-ui/core/ImageListItem"
+    "@material-ui/core/ImageListItemBar"
     "@material-ui/core/Input"
     "@material-ui/core/InputAdornment"
     "@material-ui/core/InputBase"
@@ -84,19 +86,25 @@
     "@material-ui/core/NativeSelect"
     "@material-ui/core/NoSsr"
     "@material-ui/core/OutlinedInput"
+    "@material-ui/core/Pagination"
+    "@material-ui/core/PaginationItem"
     "@material-ui/core/Paper"
     "@material-ui/core/Popover"
     "@material-ui/core/Popper"
     "@material-ui/core/Portal"
     "@material-ui/core/Radio"
     "@material-ui/core/RadioGroup"
-    "@material-ui/core/RootRef"
+    "@material-ui/core/Rating"
     "@material-ui/core/ScopedCssBaseline"
     "@material-ui/core/Select"
+    "@material-ui/core/Skeleton"
     "@material-ui/core/Slide"
     "@material-ui/core/Slider"
     "@material-ui/core/Snackbar"
     "@material-ui/core/SnackbarContent"
+    "@material-ui/core/SpeedDial"
+    "@material-ui/core/SpeedDialAction"
+    "@material-ui/core/SpeedDialIcon"
     "@material-ui/core/Step"
     "@material-ui/core/StepButton"
     "@material-ui/core/StepConnector"
@@ -108,6 +116,7 @@
     "@material-ui/core/SwipeableDrawer"
     "@material-ui/core/Switch"
     "@material-ui/core/Tab"
+    "@material-ui/core/TabScrollButton"
     "@material-ui/core/Table"
     "@material-ui/core/TableBody"
     "@material-ui/core/TableCell"
@@ -117,15 +126,18 @@
     "@material-ui/core/TablePagination"
     "@material-ui/core/TableRow"
     "@material-ui/core/TableSortLabel"
-    "@material-ui/core/TabScrollButton"
     "@material-ui/core/Tabs"
     "@material-ui/core/TextField"
     "@material-ui/core/TextareaAutosize"
+    "@material-ui/core/ToggleButton"
+    "@material-ui/core/ToggleButtonGroup"
     "@material-ui/core/Toolbar"
     "@material-ui/core/Tooltip"
     "@material-ui/core/Typography"
     "@material-ui/core/Zoom"
+    "@material-ui/core/useAutocomplete"
     "@material-ui/core/useMediaQuery"
+    "@material-ui/core/usePagination"
     "@material-ui/core/useScrollTrigger"],
    :global-exports
    {"@material-ui/core" MaterialUI,
@@ -133,7 +145,10 @@
     "@material-ui/core/AccordionActions" MaterialUI,
     "@material-ui/core/AccordionDetails" MaterialUI,
     "@material-ui/core/AccordionSummary" MaterialUI,
+    "@material-ui/core/Alert" MaterialUI,
+    "@material-ui/core/AlertTitle" MaterialUI,
     "@material-ui/core/AppBar" MaterialUI,
+    "@material-ui/core/Autocomplete" MaterialUI,
     "@material-ui/core/Avatar" MaterialUI,
     "@material-ui/core/Backdrop" MaterialUI,
     "@material-ui/core/Badge" MaterialUI,
@@ -164,10 +179,6 @@
     "@material-ui/core/DialogTitle" MaterialUI,
     "@material-ui/core/Divider" MaterialUI,
     "@material-ui/core/Drawer" MaterialUI,
-    "@material-ui/core/ExpansionPanel" MaterialUI,
-    "@material-ui/core/ExpansionPanelActions" MaterialUI,
-    "@material-ui/core/ExpansionPanelDetails" MaterialUI,
-    "@material-ui/core/ExpansionPanelSummary" MaterialUI,
     "@material-ui/core/Fab" MaterialUI,
     "@material-ui/core/Fade" MaterialUI,
     "@material-ui/core/FilledInput" MaterialUI,
@@ -177,13 +188,13 @@
     "@material-ui/core/FormHelperText" MaterialUI,
     "@material-ui/core/FormLabel" MaterialUI,
     "@material-ui/core/Grid" MaterialUI,
-    "@material-ui/core/GridList" MaterialUI,
-    "@material-ui/core/GridListTile" MaterialUI,
-    "@material-ui/core/GridListTileBar" MaterialUI,
     "@material-ui/core/Grow" MaterialUI,
     "@material-ui/core/Hidden" MaterialUI,
     "@material-ui/core/Icon" MaterialUI,
     "@material-ui/core/IconButton" MaterialUI,
+    "@material-ui/core/ImageList" MaterialUI,
+    "@material-ui/core/ImageListItem" MaterialUI,
+    "@material-ui/core/ImageListItemBar" MaterialUI,
     "@material-ui/core/Input" MaterialUI,
     "@material-ui/core/InputAdornment" MaterialUI,
     "@material-ui/core/InputBase" MaterialUI,
@@ -205,19 +216,25 @@
     "@material-ui/core/NativeSelect" MaterialUI,
     "@material-ui/core/NoSsr" MaterialUI,
     "@material-ui/core/OutlinedInput" MaterialUI,
+    "@material-ui/core/Pagination" MaterialUI,
+    "@material-ui/core/PaginationItem" MaterialUI,
     "@material-ui/core/Paper" MaterialUI,
     "@material-ui/core/Popover" MaterialUI,
     "@material-ui/core/Popper" MaterialUI,
     "@material-ui/core/Portal" MaterialUI,
     "@material-ui/core/Radio" MaterialUI,
     "@material-ui/core/RadioGroup" MaterialUI,
-    "@material-ui/core/RootRef" MaterialUI,
+    "@material-ui/core/Rating" MaterialUI,
     "@material-ui/core/ScopedCssBaseline" MaterialUI,
     "@material-ui/core/Select" MaterialUI,
+    "@material-ui/core/Skeleton" MaterialUI,
     "@material-ui/core/Slide" MaterialUI,
     "@material-ui/core/Slider" MaterialUI,
     "@material-ui/core/Snackbar" MaterialUI,
     "@material-ui/core/SnackbarContent" MaterialUI,
+    "@material-ui/core/SpeedDial" MaterialUI,
+    "@material-ui/core/SpeedDialAction" MaterialUI,
+    "@material-ui/core/SpeedDialIcon" MaterialUI,
     "@material-ui/core/Step" MaterialUI,
     "@material-ui/core/StepButton" MaterialUI,
     "@material-ui/core/StepConnector" MaterialUI,
@@ -242,13 +259,18 @@
     "@material-ui/core/Tabs" MaterialUI,
     "@material-ui/core/TextField" MaterialUI,
     "@material-ui/core/TextareaAutosize" MaterialUI,
+    "@material-ui/core/ToggleButton" MaterialUI,
+    "@material-ui/core/ToggleButtonGroup" MaterialUI,
     "@material-ui/core/Toolbar" MaterialUI,
     "@material-ui/core/Tooltip" MaterialUI,
     "@material-ui/core/Typography" MaterialUI,
     "@material-ui/core/Zoom" MaterialUI,
     "@material-ui/core/styles" MaterialUIStyles,
+    "@material-ui/core/useAutocomplete" MaterialUI,
     "@material-ui/core/useMediaQuery" MaterialUI,
-    "@material-ui/core/useScrollTrigger" MaterialUI},
+    "@material-ui/core/usePagination" MaterialUI,
+    "@material-ui/core/useScrollTrigger" MaterialUI,
+    "@material-ui/core/utils" MaterialUI},
    :requires ["react" "react-dom"]}
   {:file "material-ui/material-ui-lab.inc.js",
    :file-min "material-ui/material-ui-lab.min.inc.js",
@@ -258,13 +280,19 @@
     "@material-ui/lab/AlertTitle"
     "@material-ui/lab/Autocomplete"
     "@material-ui/lab/AvatarGroup"
+    "@material-ui/lab/LoadingButton"
     "@material-ui/lab/Pagination"
     "@material-ui/lab/PaginationItem"
     "@material-ui/lab/Rating"
     "@material-ui/lab/Skeleton"
+    "@material-ui/lab/SliderStyled"
+    "@material-ui/lab/SliderUnstyled"
     "@material-ui/lab/SpeedDial"
     "@material-ui/lab/SpeedDialAction"
     "@material-ui/lab/SpeedDialIcon"
+    "@material-ui/lab/TabContext"
+    "@material-ui/lab/TabList"
+    "@material-ui/lab/TabPanel"
     "@material-ui/lab/Timeline"
     "@material-ui/lab/TimelineConnector"
     "@material-ui/lab/TimelineContent"
@@ -283,13 +311,19 @@
     "@material-ui/lab/AlertTitle" MaterialUILab,
     "@material-ui/lab/Autocomplete" MaterialUILab,
     "@material-ui/lab/AvatarGroup" MaterialUILab,
+    "@material-ui/lab/LoadingButton" MaterialUILab,
     "@material-ui/lab/Pagination" MaterialUILab,
     "@material-ui/lab/PaginationItem" MaterialUILab,
     "@material-ui/lab/Rating" MaterialUILab,
     "@material-ui/lab/Skeleton" MaterialUILab,
+    "@material-ui/lab/SliderStyled" MaterialUILab,
+    "@material-ui/lab/SliderUnstyled" MaterialUILab,
     "@material-ui/lab/SpeedDial" MaterialUILab,
     "@material-ui/lab/SpeedDialAction" MaterialUILab,
     "@material-ui/lab/SpeedDialIcon" MaterialUILab,
+    "@material-ui/lab/TabContext" MaterialUILab,
+    "@material-ui/lab/TabList" MaterialUILab,
+    "@material-ui/lab/TabPanel" MaterialUILab,
     "@material-ui/lab/Timeline" MaterialUILab,
     "@material-ui/lab/TimelineConnector" MaterialUILab,
     "@material-ui/lab/TimelineContent" MaterialUILab,

@@ -39,9 +39,6 @@ const externals = [
     const re = /^@material-ui\/core\/(.*)$/
     if (re.test(request)) {
       const [_, name] = re.exec(request)
-      if (name === 'utils') {
-        return callback()
-      }
       const external = name === 'styles' ? 'MaterialUIStyles' : `MaterialUI.${name}`
       return callback(null, `root ${external}`)
     }
