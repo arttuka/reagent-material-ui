@@ -1,12 +1,13 @@
 (ns reagent-material-ui.core.textarea-autosize
   "Imports @material-ui/core/TextareaAutosize as a Reagent component.
    Original documentation is at https://material-ui.com/api/textarea-autosize/ ."
-  (:require-macros [reagent-material-ui.macro :refer [forward-ref]])
+  (:require-macros [reagent-material-ui.util :refer [forward-ref]])
   (:require ["react" :as react]
+            ["@material-ui/core/utils" :as mui-utils]
             [reagent.core :as r :refer [atom]]
             [goog.object :as obj]
-            [reagent-material-ui.util :refer [adapt-react-class debounce js->clj' remove-undefined-vals use-fork-ref
-                                              use-callback use-effect use-layout-effect use-ref use-state]]))
+            [reagent-material-ui.util :refer [adapt-react-class js->clj' remove-undefined-vals use-fork-ref
+                                              use-callback use-effect use-ref use-state set-ref swap-ref]]))
 
 ;; Converted from https://github.com/mui-org/material-ui/blob/v4.8.3/packages/material-ui/src/TextareaAutosize/TextareaAutosize.js
 ;; Original code is copyright (c) Material UI contributors. Used under the terms of the MIT License.
@@ -20,18 +21,18 @@
 (def react-textarea-autosize
   (forward-ref textarea-autosize [props ref]
     (let [props (js->clj' props)
-          {:keys [on-change placeholder rows rows-max rows-min style value]} props
-          other-props (dissoc props :input-ref :on-change :rows :rows-max :rows-min :style)
-          rows-min (or rows rows-min 1)
-          controlled? (some? value)
+          {:keys [on-change placeholder max-rows min-rows style value] :or {min-rows 1}} props
+          other-props (dissoc props :input-ref :on-change :max-rows :min-rows :style)
+          controlled? (.-current (use-ref (some? value)))
           input-ref (use-ref nil)
           shadow-ref (use-ref nil)
           renders (use-ref 0)
           handle-ref (use-fork-ref (:input-ref props) input-ref ref)
           [state set-state] (use-state {})
           sync-height (use-callback #(let [input (.-current input-ref)
+                                           container-window (mui-utils/ownerWindow input)
                                            shadow (.-current shadow-ref)
-                                           computed-style (.getComputedStyle js/window input)
+                                           computed-style (.getComputedStyle container-window input)
                                            _ (set! (.-width (.-style shadow)) (obj/get computed-style "width"))
                                            _ (set! (.-value shadow) (or (.-value input) placeholder "x"))
                                            _ (when (= (last (.-value shadow)) \newline)
@@ -45,56 +46,54 @@
                                            _ (set! (.-value shadow) "x")
                                            single-row-height (- (.-scrollHeight shadow) padding)
                                            outer-height (cond-> inner-height
-                                                          rows-min (max (* (js/Number. rows-min) single-row-height))
-                                                          rows-max (min (* (js/Number. rows-max) single-row-height))
+                                                          min-rows (max (* (js/Number. min-rows) single-row-height))
+                                                          max-rows (min (* (js/Number. max-rows) single-row-height))
                                                           true (max single-row-height))
-                                           outer-height (if (= "border-box" box-sizing)
-                                                          (+ outer-height padding border)
-                                                          outer-height)
+                                           outer-height-style (if (= "border-box" box-sizing)
+                                                                (+ outer-height padding border)
+                                                                outer-height)
                                            overflow? (not (different? outer-height inner-height))]
                                        (set-state (fn [prev-state]
                                                     (if (and (< (.-current renders) 20)
-                                                             (or (and (pos? outer-height)
-                                                                      (different? (:height prev-state) outer-height))
+                                                             (or (and (pos? outer-height-style)
+                                                                      (different? (:outer-height-style prev-state) outer-height-style))
                                                                  (not= overflow? (:overflow? prev-state))))
                                                       (do
-                                                        (set! (.-current renders) (inc (.-current renders)))
-                                                        {:overflow? overflow?
-                                                         :height    outer-height})
+                                                        (swap-ref renders inc)
+                                                        {:overflow?          overflow?
+                                                         :outer-height-style outer-height-style})
                                                       (do
                                                         (when (and (or (not (exists? js/process))
                                                                        (not= "production" (.. js/process -env -NODE_ENV)))
                                                                    (= (.-current renders) 20))
                                                           (.error js/console "Material-UI: too many re-renders. The layout is unstable.\nTextareaAutosize limits the number of renders to prevent an infinite loop"))
                                                         prev-state)))))
-                                    #js [rows-max rows-min placeholder])
+                                    #js [max-rows min-rows placeholder])
           handle-change (fn [e]
-                          (set! (.-current renders) 0)
+                          (set-ref renders 0)
                           (when-not controlled?
                             (sync-height))
                           (when on-change
                             (on-change e)))]
-      (use-effect #(let [handle-resize (debounce (fn []
-                                                   (set! (.-current renders) 0)
-                                                   (sync-height))
-                                                 166)]
-                     (.addEventListener js/window "resize" handle-resize)
+      (use-effect #(let [handle-resize (mui-utils/debounce (fn []
+                                                             (set-ref renders 0)
+                                                             (sync-height)))
+                         container-window (mui-utils/ownerWindow (.-current input-ref))]
+                     (.addEventListener container-window "resize" handle-resize)
                      (fn []
                        (.clear handle-resize)
-                       (.removeEventListener js/window "resize" handle-resize)))
+                       (.removeEventListener container-window "resize" handle-resize)))
                   #js [sync-height])
-      (use-layout-effect sync-height)
-      (use-effect (fn []
-                    (set! (.-current renders) 0)
-                    js/undefined)
+      (mui-utils/unstable_useEnhancedEffect sync-height)
+      (use-effect #(set-ref renders 0)
                   #js [value])
       (r/as-element
        [:<>
         [:textarea (remove-undefined-vals
                     (merge {:on-change handle-change
                             :ref       handle-ref
-                            :rows      rows-min
-                            :style     (merge {:height   (:height state)
+                            :rows      min-rows
+                            :style     (merge {:height   (:outer-height-style state)
                                                :overflow (when (:overflow? state) :hidden)}
                                               style)}
                            other-props))]

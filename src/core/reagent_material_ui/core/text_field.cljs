@@ -28,22 +28,17 @@
 (def ^:private mui-text-field (adapt-react-class (or (.-default MuiTextField) (.-TextField MuiTextField)) "mui-text-field"))
 
 (defn text-field [props & children]
-  (let [rows-max (get-anycase props :rows-max)
-        autosize? (and (:multiline props) rows-max)
+  (let [min-rows (get-anycase props :min-rows)
+        max-rows (get-anycase props :max-rows)
+        autosize? (and (:multiline props) (not (:rows props)))
         input-component (or (get-anycase (:InputProps props) :input-component)
                             (cond
-                              (and (:multiline props) (:rows props) (not rows-max))
-                              textarea
-
-                              autosize?
-                              react-textarea-autosize
-
-                              (:select props)
-                              nil
-
-                              :else
-                              input))
+                              autosize? react-textarea-autosize
+                              (:multiline props) textarea
+                              (:select props) nil
+                              :else input))
         props (cond-> props
                 input-component (update :InputProps #(assoc-anycase % :input-component input-component))
-                autosize? (assoc-in [:input-props :rows-max] rows-max))]
+                autosize? (update :input-props merge {:max-rows max-rows
+                                                      :min-rows min-rows}))]
     (into [mui-text-field props] children)))

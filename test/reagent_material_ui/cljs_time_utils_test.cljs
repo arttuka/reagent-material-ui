@@ -1,14 +1,18 @@
 (ns reagent-material-ui.cljs-time-utils-test
   (:require [cljs.test :refer-macros [deftest testing is use-fixtures]]
             [cljs-time.core :as time]
-            [reagent-material-ui.cljs-time-utils :refer [cljs-time-utils]]))
+            [reagent-material-ui.cljs-time-utils :refer [cljs-time-utils]])
+  (:import (goog.i18n DateTimeSymbols_fi)))
 
 (def test-date (time/date-time 2018 10 30 11 44 0 0))
 (def timestamp "2018-10-30T11:44:00.000Z")
 (def utils (cljs-time-utils #js {}))
 (def datetime-format "yyyy-MM-dd HH:mm")
-(defn format-datetime [date]
-  (.format utils date datetime-format))
+(defn format-datetime
+  ([date]
+   (format-datetime date datetime-format))
+  ([date fmt]
+   (.formatByString utils date fmt)))
 (defn equal? [this that]
   (.isEqual utils this that))
 (defn date
@@ -36,12 +40,12 @@
 
 (deftest add-days-test
   (testing "addDays"
-    (is (= "31" (.format utils (.addDays utils test-date 1) "dd")))))
+    (is (= "31" (format-datetime (.addDays utils test-date 1) "dd")))))
 
 (deftest add-months-test
   (testing "addMonths"
-    (is (= "December 2018" (.format utils (.addMonths utils test-date 2) "MMMM yyyy")))
-    (is (= "August 2018" (.format utils (.addMonths utils test-date -2) "MMMM yyyy")))))
+    (is (= "December 2018" (format-datetime (.addMonths utils test-date 2) "MMMM yyyy")))
+    (is (= "August 2018" (format-datetime (.addMonths utils test-date -2) "MMMM yyyy")))))
 
 (deftest start-of-day-test
   (testing "startOfDay"
@@ -251,3 +255,8 @@
                           (date "2019-12-01T00:00:00.000Z")
                           #js [(date "2019-09-01T00:00:00.000Z")
                                (date "2019-12-01T00:00:00.000Z")])))))
+
+(deftest get-current-locale-code-test
+  (testing "getCurrentLocaleCode"
+    (is (= "en" (.getCurrentLocaleCode (cljs-time-utils #js {}))))
+    (is (= "fi" (.getCurrentLocaleCode (cljs-time-utils #js {:locale DateTimeSymbols_fi}))))))

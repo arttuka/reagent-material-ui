@@ -144,14 +144,6 @@
        (recur ret (first kvs) (second kvs) (nnext kvs))
        ret))))
 
-(defn debounce [f ms]
-  (let [timeout (volatile! nil)
-        ret (fn [& args]
-              (js/clearTimeout @timeout)
-              (vreset! timeout (js/setTimeout #(apply f args) ms)))]
-    (set! (.-clear ret) #(js/clearTimeout @timeout))
-    ret))
-
 (defn remove-undefined-vals [m]
   (persistent!
    (reduce-kv (fn [acc k v]
@@ -164,7 +156,11 @@
 (defn set-ref [ref value]
   (cond
     (fn? ref) (ref value)
-    ref (set! (.-current ref) value)))
+    ref (set! (.-current ref) value))
+  js/undefined)
+
+(defn swap-ref [ref f & args]
+  (set! (.-current ref) (apply f (.-current ref) args)))
 
 (defn use-fork-ref [& refs]
   (react/useMemo #(when (not-every? nil? refs)

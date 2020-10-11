@@ -40,7 +40,7 @@
                         [text-field {:value     @value
                                      :input-ref ref
                                      :multiline true
-                                     :rows      4}])
+                                     :rows  4}])
             _ (render [component])
             node (.-current ref)]
         (.focus node)
@@ -52,11 +52,11 @@
     (testing "in a flexible multi line text-field"
       (let [value (r/atom "foo\nbar")
             ref (react/createRef)
-            component (fn []
+            component (fn test-component []
                         [text-field {:value     @value
                                      :input-ref ref
                                      :multiline true
-                                     :rows-max  4}])
+                                     :max-rows  4}])
             _ (render [component])
             node (.-current ref)]
         (.focus node)
@@ -74,8 +74,8 @@
                       [text-field {:value      @value
                                    :input-ref  ref
                                    :multiline  true
-                                   :rows       2
-                                   :rows-max   4
+                                   :min-rows   2
+                                   :max-rows   4
                                    :InputProps {:style {:line-height "20px"}}}])
           _ (render [component])
           node (.-current ref)]
@@ -85,7 +85,7 @@
         (reset! value "1\n2\n3")
         (r/flush)
         (is (= 60 (.-clientHeight node))))
-      (testing "doesn't grow beyond rows-max"
+      (testing "doesn't grow beyond max-rows"
         (reset! value "1\n2\n3\n4\n5")
         (r/flush)
         (is (= 80 (.-clientHeight node))))
