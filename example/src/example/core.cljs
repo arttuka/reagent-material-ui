@@ -1,4 +1,5 @@
 (ns ^:figwheel-hooks example.core
+  (:require-macros [reagent-material-ui.util :refer [react-component]])
   (:require [reagent.core :as r]
             [reagent.dom :as rdom]
             [reagent-material-ui.cljs-time-utils :refer [cljs-time-utils]]
@@ -10,20 +11,19 @@
             [reagent-material-ui.core.grid :refer [grid]]
             [reagent-material-ui.core.menu-item :refer [menu-item]]
             [reagent-material-ui.core.text-field :refer [text-field]]
-            [reagent-material-ui.core.textarea-autosize :refer [textarea-autosize]]
             [reagent-material-ui.core.toolbar :refer [toolbar]]
             [reagent-material-ui.icons.add-box :refer [add-box]]
             [reagent-material-ui.icons.clear :refer [clear]]
             [reagent-material-ui.icons.face :refer [face]]
             [reagent-material-ui.pickers.date-picker :refer [date-picker]]
-            [reagent-material-ui.pickers.mui-pickers-utils-provider :refer [mui-pickers-utils-provider]]
+            [reagent-material-ui.pickers.localization-provider :refer [localization-provider]]
             [reagent-material-ui.styles :as styles])
   (:import (goog.i18n DateTimeSymbols_en_US)))
 
 (set! *warn-on-infer* true)
 
 (defn event-value
-  [^js/Event e]
+  [e]
   (.. e -target -value))
 
 ;; Example
@@ -102,13 +102,16 @@
       :rows        10}]]
 
    [grid {:item true}
-    [textarea-autosize
+    [text-field
      {:id        :textarea-autosize
       :value     @text-state
+      :label     "Autosized textarea"
       :class     (:text-field classes)
       :on-change (fn [e]
                    (reset! text-state (event-value e)))
-      :rows-max  10}]]
+      :multiline true
+      :min-rows  2
+      :max-rows  10}]]
 
    [grid {:item true}
     [text-field
@@ -137,13 +140,13 @@
        :label "Icon element example, r/as-element"}]]]
 
    [grid {:item true}
-    [date-picker {:value       @date-picker-state
-                  :on-change   (fn [value]
-                                 (reset! date-picker-state value))
-                  :format      "MM/dd/yyyy"
-                  :placeholder "Select a date"
-                  :helper-text "Helper text"
-                  :auto-ok     true}]]])
+    [date-picker {:value        @date-picker-state
+                  :render-input (react-component [props]
+                                  [text-field props])
+                  :on-change    (fn [value]
+                                  (reset! date-picker-state value))
+                  :input-format "MM/dd/yyyy"
+                  :label        "Date picker"}]]])
 
 (defn main []
   ;; fragment
@@ -151,13 +154,13 @@
    [css-baseline]
    ;; mui-pickers-utils-provider provides date handling utils to date and time pickers.
    ;; cljs-time-utils is an utility package that allows you to use cljs-time / goog.date date objects.
-   [mui-pickers-utils-provider {:utils  cljs-time-utils
-                                :locale DateTimeSymbols_en_US}
+   [localization-provider {:date-adapter cljs-time-utils
+                           :locale       DateTimeSymbols_en_US}
     [styles/theme-provider (styles/create-mui-theme custom-theme)
      [grid
-      {:container true
-       :direction "row"
-       :justify   "center"}
+      {:container       true
+       :direction       "row"
+       :justify-content "center"}
       [grid
        {:item true
         :xs   6}
