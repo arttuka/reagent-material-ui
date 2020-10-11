@@ -69,7 +69,7 @@ Bug reports, pull requests and ideas for improvement are very welcome. No extern
 
 ### Tests
 
-Run tests with `npm test`.
+Run tests on the command line with `npm test`, or in the browser with `npm test:browser`. The browser test runner will start at [localhost:9500](http://localhost:9500).
 
 The build process also includes `lein cljfmt`. 
 

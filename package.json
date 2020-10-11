@@ -26,6 +26,7 @@
     "build:dev": "webpack --mode development",
     "build:prod": "webpack --mode production",
     "clean": "rimraf './src/generated/material-ui/material-ui.{inc,min.inc}.js' .shadow-cljs",
-    "test": "shadow-cljs compile test && karma start --single-run"
+    "test": "shadow-cljs compile test && karma start --single-run",
+    "test:browser": "shadow-cljs watch browser-test"
   }
 }

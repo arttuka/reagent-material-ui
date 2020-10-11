@@ -3,5 +3,10 @@
                 [com.andrewmcveigh/cljs-time "0.5.2"]
                 [camel-snake-kebab "0.4.1"]
                 [prismatic/dommy "1.1.0"]]
- :builds       {:test {:target    :karma
-                       :output-to "target/test.js"}}}
+ :builds       {:test         {:target    :karma
+                               :output-to "target/test.js"}
+                :browser-test {:target    :browser-test
+                               :test-dir  "target/test"
+                               :ns-regexp "-test$"
+                               :devtools  {:http-port 9500
+                                           :http-root "target/test"}}}}
