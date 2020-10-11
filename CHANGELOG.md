@@ -1,5 +1,14 @@
 # Changelog
 
+## 5.0.0-alpha.12-0
+
+**[compare](https://github.com/arttuka/reagent-material-ui/compare/v4.11.0-3...v5.0.0-alpha.12-0)**
+
+- Update Material UI to v5.0.0-alpha.12. See [Material UI migration guide](https://next--material-ui.netlify.app/guides/migration-v4/) for a list of breaking changes.
+- Add browser test runner
+- **BREAKING**: Move utility macros from `reagent-material-ui.macro` to `reagent-material-ui.util`
+- Add utility macro for creating React components. See the [example project](./example/src/example/core.cljs) for a simple usage example with `date-picker`.
+
 ## 4.11.0-3
 
 **[compare](https://github.com/arttuka/reagent-material-ui/compare/v4.11.0-1...v4.11.0-3)**
