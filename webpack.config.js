@@ -35,7 +35,7 @@ const production = {
 }
 
 const externals = [
-  function(context, request, callback) {
+  function({context, request}, callback) {
     const re = /^@material-ui\/core\/(.*)$/
     if (re.test(request)) {
       const [_, name] = re.exec(request)
