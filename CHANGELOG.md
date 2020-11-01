@@ -1,5 +1,11 @@
 # Changelog
 
+## 5.0.0-alpha.14-0
+
+**[compare](https://github.com/arttuka/reagent-material-ui/compare/v5.0.0-alpha.12-0...v5.0.0-alpha.14-0)**
+
+- Update Material UI to v5.0.0-alpha.14
+
 ## 5.0.0-alpha.12-0
 
 **[compare](https://github.com/arttuka/reagent-material-ui/compare/v4.11.0-3...v5.0.0-alpha.12-0)**
