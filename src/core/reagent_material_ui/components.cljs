@@ -12,6 +12,7 @@
             reagent-material-ui.core.autocomplete
             reagent-material-ui.core.create-filter-options
             reagent-material-ui.core.avatar
+            reagent-material-ui.core.avatar-group
             reagent-material-ui.core.backdrop
             reagent-material-ui.core.badge
             reagent-material-ui.core.bottom-navigation
@@ -145,6 +146,7 @@
 (def autocomplete reagent-material-ui.core.autocomplete/autocomplete)
 (def create-filter-options reagent-material-ui.core.create-filter-options/create-filter-options)
 (def avatar reagent-material-ui.core.avatar/avatar)
+(def avatar-group reagent-material-ui.core.avatar-group/avatar-group)
 (def backdrop reagent-material-ui.core.backdrop/backdrop)
 (def badge reagent-material-ui.core.badge/badge)
 (def bottom-navigation reagent-material-ui.core.bottom-navigation/bottom-navigation)

@@ -1,8 +1,8 @@
 {:npm-deps
- {"@material-ui/core" "5.0.0-alpha.12",
+ {"@material-ui/core" "5.0.0-alpha.14",
   "@material-ui/pickers" "4.0.0-alpha.12",
-  "@material-ui/lab" "5.0.0-alpha.12",
-  "@emotion/core" "^10.0.27",
+  "@material-ui/lab" "5.0.0-alpha.14",
+  "@emotion/core" "^10.1.0",
   "@emotion/styled" "^10.0.27"},
  :foreign-libs
  [{:file "material-ui/material-ui.inc.js",
@@ -20,6 +20,7 @@
     "@material-ui/core/AppBar"
     "@material-ui/core/Autocomplete"
     "@material-ui/core/Avatar"
+    "@material-ui/core/AvatarGroup"
     "@material-ui/core/Backdrop"
     "@material-ui/core/Badge"
     "@material-ui/core/BottomNavigation"
@@ -150,6 +151,7 @@
     "@material-ui/core/AppBar" MaterialUI,
     "@material-ui/core/Autocomplete" MaterialUI,
     "@material-ui/core/Avatar" MaterialUI,
+    "@material-ui/core/AvatarGroup" MaterialUI,
     "@material-ui/core/Backdrop" MaterialUI,
     "@material-ui/core/Badge" MaterialUI,
     "@material-ui/core/BottomNavigation" MaterialUI,
@@ -279,7 +281,6 @@
     "@material-ui/lab/Alert"
     "@material-ui/lab/AlertTitle"
     "@material-ui/lab/Autocomplete"
-    "@material-ui/lab/AvatarGroup"
     "@material-ui/lab/LoadingButton"
     "@material-ui/lab/Pagination"
     "@material-ui/lab/PaginationItem"
@@ -310,7 +311,6 @@
     "@material-ui/lab/Alert" MaterialUILab,
     "@material-ui/lab/AlertTitle" MaterialUILab,
     "@material-ui/lab/Autocomplete" MaterialUILab,
-    "@material-ui/lab/AvatarGroup" MaterialUILab,
     "@material-ui/lab/LoadingButton" MaterialUILab,
     "@material-ui/lab/Pagination" MaterialUILab,
     "@material-ui/lab/PaginationItem" MaterialUILab,

@@ -1,29 +1,23 @@
 (ns reagent-material-ui.core.text-field
   "Imports @material-ui/core/TextField as a Reagent component.
    Original documentation is at https://material-ui.com/api/text-field/ ."
-  (:require [reagent.core :as r]
+  (:require-macros [reagent-material-ui.util :refer [forward-ref]])
+  (:require [react :as react]
+            [reagent.core :as r]
             ["@material-ui/core/TextField" :as MuiTextField]
             [reagent-material-ui.core.textarea-autosize :refer [react-textarea-autosize]]
-            [reagent-material-ui.util :refer [adapt-react-class get-anycase assoc-anycase remove-undefined-vals]]))
+            [reagent-material-ui.util :refer [adapt-react-class get-anycase assoc-anycase js->clj']]))
 
 ;; Fix cursor positioning for Reagent
 ;; https://github.com/reagent-project/reagent/blob/master/doc/examples/material-ui.md
 
-(defn ^:private input-props [props]
-  (-> props
-      (assoc :ref (:inputRef props))
-      (dissoc :inputRef)
-      (remove-undefined-vals)))
-
 (def ^:private input
-  (r/reactify-component
-   (fn input [props]
-     [:input (input-props props)])))
+  (forward-ref input [props ref]
+    (r/as-element [:input (assoc (js->clj' props) :ref ref)])))
 
 (def ^:private textarea
-  (r/reactify-component
-   (fn textarea [props]
-     [:textarea (input-props props)])))
+  (forward-ref textarea [props ref]
+    (r/as-element [:textarea (assoc (js->clj' props) :ref ref)])))
 
 (def ^:private mui-text-field (adapt-react-class (or (.-default MuiTextField) (.-TextField MuiTextField)) "mui-text-field"))
 
