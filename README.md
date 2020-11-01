@@ -5,7 +5,7 @@
 **reagent-material-ui** is a [Reagent](http://reagent-project.github.io/) wrapper
 for [Material UI v4](https://material-ui.com/).
 
-Alpha versions for Material UI v5 can be found on branch [next](/arttuka/reagent-material-ui/tree/next).
+Alpha versions for Material UI v5 can be found on branch [next](https://github.com/arttuka/reagent-material-ui/tree/next).
 
 The purpose of this library is to help ClojureScript/Reagent developers use a modern React UI library
 without the hassle that Reagent/React interop usually is. It is meant to be comprehensive and up to date.
