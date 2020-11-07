@@ -130,6 +130,7 @@
             reagent-material-ui.core.toolbar
             reagent-material-ui.core.tooltip
             reagent-material-ui.core.typography
+            reagent-material-ui.core.unstable-trap-focus
             reagent-material-ui.core.zoom
             reagent-material-ui.core.use-autocomplete
             reagent-material-ui.core.use-media-query
@@ -264,6 +265,7 @@
 (def toolbar reagent-material-ui.core.toolbar/toolbar)
 (def tooltip reagent-material-ui.core.tooltip/tooltip)
 (def typography reagent-material-ui.core.typography/typography)
+(def unstable-trap-focus reagent-material-ui.core.unstable-trap-focus/unstable-trap-focus)
 (def zoom reagent-material-ui.core.zoom/zoom)
 (def use-autocomplete reagent-material-ui.core.use-autocomplete/use-autocomplete)
 (def use-media-query reagent-material-ui.core.use-media-query/use-media-query)

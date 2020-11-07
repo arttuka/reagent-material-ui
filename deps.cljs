@@ -1,8 +1,8 @@
 {:npm-deps
- {"@material-ui/core" "5.0.0-alpha.14",
+ {"@material-ui/core" "5.0.0-alpha.15",
   "@material-ui/pickers" "4.0.0-alpha.12",
-  "@material-ui/lab" "5.0.0-alpha.14",
-  "@emotion/core" "^10.1.0",
+  "@material-ui/lab" "5.0.0-alpha.15",
+  "@emotion/core" "^10.1.1",
   "@emotion/styled" "^10.0.27"},
  :foreign-libs
  [{:file "material-ui/material-ui.inc.js",
@@ -135,6 +135,7 @@
     "@material-ui/core/Toolbar"
     "@material-ui/core/Tooltip"
     "@material-ui/core/Typography"
+    "@material-ui/core/Unstable_TrapFocus"
     "@material-ui/core/Zoom"
     "@material-ui/core/useAutocomplete"
     "@material-ui/core/useMediaQuery"
@@ -266,31 +267,21 @@
     "@material-ui/core/Toolbar" MaterialUI,
     "@material-ui/core/Tooltip" MaterialUI,
     "@material-ui/core/Typography" MaterialUI,
+    "@material-ui/core/Unstable_TrapFocus" MaterialUI,
     "@material-ui/core/Zoom" MaterialUI,
-    "@material-ui/core/styles" MaterialUIStyles,
+    "@material-ui/core/styles" MaterialUI,
     "@material-ui/core/useAutocomplete" MaterialUI,
     "@material-ui/core/useMediaQuery" MaterialUI,
     "@material-ui/core/usePagination" MaterialUI,
     "@material-ui/core/useScrollTrigger" MaterialUI,
     "@material-ui/core/utils" MaterialUI},
-   :requires ["react" "react-dom"]}
+   :requires
+   ["react" "react-dom" "@material-ui/styles" "@material-ui/utils"]}
   {:file "material-ui/material-ui-lab.inc.js",
    :file-min "material-ui/material-ui-lab.min.inc.js",
    :provides
    ["@material-ui/lab"
-    "@material-ui/lab/Alert"
-    "@material-ui/lab/AlertTitle"
-    "@material-ui/lab/Autocomplete"
-    "@material-ui/lab/LoadingButton"
-    "@material-ui/lab/Pagination"
-    "@material-ui/lab/PaginationItem"
-    "@material-ui/lab/Rating"
-    "@material-ui/lab/Skeleton"
     "@material-ui/lab/SliderStyled"
-    "@material-ui/lab/SliderUnstyled"
-    "@material-ui/lab/SpeedDial"
-    "@material-ui/lab/SpeedDialAction"
-    "@material-ui/lab/SpeedDialIcon"
     "@material-ui/lab/TabContext"
     "@material-ui/lab/TabList"
     "@material-ui/lab/TabPanel"
@@ -301,26 +292,11 @@
     "@material-ui/lab/TimelineItem"
     "@material-ui/lab/TimelineOppositeContent"
     "@material-ui/lab/TimelineSeparator"
-    "@material-ui/lab/ToggleButton"
-    "@material-ui/lab/ToggleButtonGroup"
     "@material-ui/lab/TreeItem"
-    "@material-ui/lab/TreeView"
-    "@material-ui/lab/useAutocomplete"],
+    "@material-ui/lab/TreeView"],
    :global-exports
    {"@material-ui/lab" MaterialUILab,
-    "@material-ui/lab/Alert" MaterialUILab,
-    "@material-ui/lab/AlertTitle" MaterialUILab,
-    "@material-ui/lab/Autocomplete" MaterialUILab,
-    "@material-ui/lab/LoadingButton" MaterialUILab,
-    "@material-ui/lab/Pagination" MaterialUILab,
-    "@material-ui/lab/PaginationItem" MaterialUILab,
-    "@material-ui/lab/Rating" MaterialUILab,
-    "@material-ui/lab/Skeleton" MaterialUILab,
     "@material-ui/lab/SliderStyled" MaterialUILab,
-    "@material-ui/lab/SliderUnstyled" MaterialUILab,
-    "@material-ui/lab/SpeedDial" MaterialUILab,
-    "@material-ui/lab/SpeedDialAction" MaterialUILab,
-    "@material-ui/lab/SpeedDialIcon" MaterialUILab,
     "@material-ui/lab/TabContext" MaterialUILab,
     "@material-ui/lab/TabList" MaterialUILab,
     "@material-ui/lab/TabPanel" MaterialUILab,
@@ -331,15 +307,24 @@
     "@material-ui/lab/TimelineItem" MaterialUILab,
     "@material-ui/lab/TimelineOppositeContent" MaterialUILab,
     "@material-ui/lab/TimelineSeparator" MaterialUILab,
-    "@material-ui/lab/ToggleButton" MaterialUILab,
-    "@material-ui/lab/ToggleButtonGroup" MaterialUILab,
     "@material-ui/lab/TreeItem" MaterialUILab,
-    "@material-ui/lab/TreeView" MaterialUILab,
-    "@material-ui/lab/useAutocomplete" MaterialUILab},
-   :requires ["react" "react-dom" "@material-ui/core"]}
+    "@material-ui/lab/TreeView" MaterialUILab},
+   :requires
+   ["react" "react-dom" "@material-ui/core" "@material-ui/utils"]}
   {:file "material-ui/material-ui-pickers.inc.js",
    :file-min "material-ui/material-ui-pickers.min.inc.js",
    :provides ["@material-ui/pickers"],
    :global-exports {"@material-ui/pickers" MaterialUIPickers},
-   :requires ["react" "react-dom" "@material-ui/core"]}],
+   :requires
+   ["react" "react-dom" "@material-ui/core" "@material-ui/styles"]}
+  {:file "material-ui/material-ui-styles.inc.js",
+   :file-min "material-ui/material-ui-styles.min.inc.js",
+   :provides ["@material-ui/styles"],
+   :global-exports {"@material-ui/styles" MaterialUIStyles},
+   :requires ["react" "react-dom" "@material-ui/utils"]}
+  {:file "material-ui/material-ui-utils.inc.js",
+   :file-min "material-ui/material-ui-utils.min.inc.js",
+   :provides ["@material-ui/utils"],
+   :global-exports {"@material-ui/utils" MaterialUIUtils},
+   :requires ["react" "react-dom"]}],
  :externs ["material-ui/material-ui.ext.js"]}
