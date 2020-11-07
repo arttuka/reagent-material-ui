@@ -15,7 +15,7 @@ Their examples are very good. and this library tries to follow the original idea
 
 To add Material UI to an existing Reagent project, just add this library to your dependencies:
 ```
-[arttuka/reagent-material-ui "5.0.0-alpha.14-0"]
+[arttuka/reagent-material-ui "5.0.0-alpha.15-0"]
 ```
 
 Most of the library is in the form of regular Reagent components. Each component is contained in a namespace that mirrors
@@ -75,10 +75,10 @@ The build process also includes `lein cljfmt`.
 
 The project follows Material UI's version numbering.
 
-* Current `@material-ui/core` version: `5.0.0-alpha.14`
-* Current `@material-ui/icons` version: `5.0.0-alpha.14`
+* Current `@material-ui/core` version: `5.0.0-alpha.15`
+* Current `@material-ui/icons` version: `5.0.0-alpha.15`
 * Current `@material-ui/pickers` version: `4.0.0-alpha.12`
-* Current `@material-ui/lab` version: `5.0.0-alpha.14`
+* Current `@material-ui/lab` version: `5.0.0-alpha.15`
 
 ### License
 
