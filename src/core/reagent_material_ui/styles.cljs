@@ -38,6 +38,15 @@
      (util/adapt-react-class
       (styled-component (util/wrap-jss-styles styles) (clj->js opts))))))
 
+(defn responsive-font-sizes
+  "Takes a theme object and enhances it with responsive font options
+   Options may optionally be passed in to override the defaults provided by Material-UI
+   See: https://material-ui.com/customization/theming/#responsivefontsizes-theme-options-theme"
+  ([theme]
+   (responsive-font-sizes theme {}))
+  ([theme options]
+   (util/js->clj' (mui-styles/responsiveFontSizes (util/clj->js' theme) (util/clj->js' options)))))
+
 (defn use-theme
   "React hook that returns the theme object.
    Note: React hooks can't be used in regular Reagent components: https://cljdoc.org/d/reagent/reagent/1.0.0-alpha2/doc/tutorials/react-features#hooks"
@@ -61,3 +70,4 @@
   "Takes an incomplete theme object and adds the missing parts"
   [options]
   (util/js->clj' (mui-styles/createMuiTheme (util/clj->js' options))))
+
