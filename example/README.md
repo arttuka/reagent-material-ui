@@ -9,4 +9,4 @@ Example project demonstrating `arttuka/reagent-material-ui`. Server will run at 
 ### Run with shadow-cljs
 
     npm install
-    npx shadow-cljs watch dev
+    npm run watch
