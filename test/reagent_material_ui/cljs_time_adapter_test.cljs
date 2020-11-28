@@ -1,12 +1,12 @@
-(ns reagent-material-ui.cljs-time-utils-test
+(ns reagent-material-ui.cljs-time-adapter-test
   (:require [cljs.test :refer-macros [deftest testing is use-fixtures]]
             [cljs-time.core :as time]
-            [reagent-material-ui.cljs-time-utils :refer [cljs-time-utils]])
+            [reagent-material-ui.cljs-time-adapter :refer [cljs-time-adapter]])
   (:import (goog.i18n DateTimeSymbols_fi)))
 
 (def test-date (time/date-time 2018 10 30 11 44 0 0))
 (def timestamp "2018-10-30T11:44:00.000Z")
-(def utils (cljs-time-utils #js {}))
+(def utils (cljs-time-adapter #js {}))
 (def datetime-format "yyyy-MM-dd HH:mm")
 (defn format-datetime
   ([date]
@@ -258,5 +258,5 @@
 
 (deftest get-current-locale-code-test
   (testing "getCurrentLocaleCode"
-    (is (= "en" (.getCurrentLocaleCode (cljs-time-utils #js {}))))
-    (is (= "fi" (.getCurrentLocaleCode (cljs-time-utils #js {:locale DateTimeSymbols_fi}))))))
+    (is (= "en" (.getCurrentLocaleCode (cljs-time-adapter #js {}))))
+    (is (= "fi" (.getCurrentLocaleCode (cljs-time-adapter #js {:locale DateTimeSymbols_fi}))))))

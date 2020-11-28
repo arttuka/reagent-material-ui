@@ -1,5 +1,5 @@
-(ns reagent-material-ui.cljs-time-utils
-  "Interface for using cljs-time with Material UI Pickers"
+(ns reagent-material-ui.cljs-time-adapter
+  "Adapter for using cljs-time with reagent-material-ui.lab.localization-provider"
   (:require [cljs-time.core :as time]
             [cljs-time.coerce :as coerce]
             [goog.object :as obj])
@@ -221,8 +221,8 @@
     goog.i18n.DateTimeSymbols_zu "zu"
     "en"))
 
-(defn cljs-time-utils
-  "Interface for using cljs-time with Material UI Pickers"
+(defn cljs-time-adapter
+  "Adapter for using cljs-time with reagent-material-ui.lab.localization-provider"
   [opts]
   (let [^DateTimeSymbols locale (obj/get opts "locale" DateTimeSymbols)
         formats (or (js->clj (obj/get opts "formats")) default-formats)

@@ -29,21 +29,19 @@ The colors are organized in a single namespace, so `@material-ui/core/colors/red
 
 Namespace `reagent-material-ui.styles` contains helper functions and components from `@material-ui/core/styles`.
 
-#### material-ui-pickers
+#### material-ui-lab
 
-This library also includes date and time picker components from [Material-UI Pickers](https://material-ui-pickers.dev/).
+This library also includes components from [Material-UI Lab](https://material-ui.com/components/about-the-lab/).
 
-Namespace `reagent-material-ui.pickers` contains all components from `@material-ui/pickers`.
+Namespace `reagent-material-ui.lab` contains all components from `@material-ui/lab`.
 
-Namespace `reagent-material-ui.cljs-time-utils` contains an utility package that lets you use the pickers with `cljs-time` (`goog.date`) date objects.
+Namespace `reagent-material-ui.cljs-time-adapter` contains an adapter that lets you use the date pickers with `cljs-time` (`goog.date`) date objects.
+`reagent-material-ui.lab.localization-provider` accepts this adapter as its `date-adapter` property.
 The locale prop must be an instance of `goog.i18n.DateTimeSymbols`. The default locale is used if no locale prop is given.
 See the example project for a usage example.
 
-#### material-ui-lab
-
-This library also includes date and time picker components from [Material-UI Lab](https://material-ui.com/components/about-the-lab/).
-
-Namespace `reagent-material-ui.lab` contains all components from `@material-ui/lab`.
+If you want to use another date library, you can use [date-fns](https://date-fns.org/) adapters.
+The adapters from Material-UI Lab are not included in this library.
 
 #### Material UI component names with shadow-cljs
 
