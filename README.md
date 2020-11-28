@@ -3,7 +3,7 @@
 [![Actions Status](https://github.com/arttuka/reagent-material-ui/workflows/CI/badge.svg)](https://github.com/arttuka/reagent-material-ui/actions)
 
 **reagent-material-ui** is a [Reagent](http://reagent-project.github.io/) wrapper
-for [Material UI v5 alpha](https://next--material-ui.netlify.app/).
+for [Material UI v5 alpha](https://next.material-ui.com/).
 
 The purpose of this library is to help ClojureScript/Reagent developers use a modern React UI library
 without the hassle that Reagent/React interop usually is. It is meant to be comprehensive and up to date.
@@ -15,7 +15,7 @@ Their examples are very good. and this library tries to follow the original idea
 
 To add Material UI to an existing Reagent project, just add this library to your dependencies:
 ```
-[arttuka/reagent-material-ui "5.0.0-alpha.15-0"]
+[arttuka/reagent-material-ui "5.0.0-alpha.17-0"]
 ```
 
 Most of the library is in the form of regular Reagent components. Each component is contained in a namespace that mirrors
@@ -73,10 +73,9 @@ The build process also includes `lein cljfmt`.
 
 The project follows Material UI's version numbering.
 
-* Current `@material-ui/core` version: `5.0.0-alpha.15`
+* Current `@material-ui/core` version: `5.0.0-alpha.17`
 * Current `@material-ui/icons` version: `5.0.0-alpha.15`
-* Current `@material-ui/pickers` version: `4.0.0-alpha.12`
-* Current `@material-ui/lab` version: `5.0.0-alpha.15`
+* Current `@material-ui/lab` version: `5.0.0-alpha.17`
 
 ### License
 

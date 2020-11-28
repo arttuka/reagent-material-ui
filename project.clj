@@ -1,5 +1,5 @@
-(defproject arttuka/reagent-material-ui "5.0.0-alpha.15-0"
-  :description "Reagent wrapper library for Material UI v4"
+(defproject arttuka/reagent-material-ui "5.0.0-alpha.17-0"
+  :description "Reagent wrapper library for Material UI v5 alpha"
   :url "https://github.com/arttuka/reagent-material-ui"
   :license {:name "Eclipse Public License 2.0"
             :url  "https://www.eclipse.org/legal/epl-2.0/"}

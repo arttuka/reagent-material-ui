@@ -1,6 +1,18 @@
 # Changelog
 
-## 5.0.0-alpha.14-0
+See [Material UI changelog](https://github.com/mui-org/material-ui/blob/next/CHANGELOG.md) for changes in Material UI.
+
+## 5.0.0-alpha.17-0
+
+**[compare](https://github.com/arttuka/reagent-material-ui/compare/v5.0.0-alpha.15-0...v5.0.0-alpha.17-0)**
+
+- Update Material UI to v5.0.0-alpha.17
+- **BREAKING** `material-ui-pickers` have been moved to `material-ui-lab`
+- **BREAKING** `cljs-time-utils` has been renamed to `cljs-time-adapter` to use the same terminology as Material UI
+- Added support for responsive font sizes (#9) @wkok
+- Fix bug in `reagent-material-ui.core.text-field` when used as uncontrolled
+
+## 5.0.0-alpha.15-0
 
 **[compare](https://github.com/arttuka/reagent-material-ui/compare/v5.0.0-alpha.14-0...v5.0.0-alpha.15-0)**
 
