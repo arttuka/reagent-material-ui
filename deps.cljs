@@ -1,9 +1,8 @@
 {:npm-deps
- {"@material-ui/core" "5.0.0-alpha.15",
-  "@material-ui/pickers" "4.0.0-alpha.12",
-  "@material-ui/lab" "5.0.0-alpha.15",
-  "@emotion/core" "^10.1.1",
-  "@emotion/styled" "^10.0.27"},
+ {"@material-ui/core" "5.0.0-alpha.17",
+  "@material-ui/lab" "5.0.0-alpha.17",
+  "@emotion/react" "^11.0.0",
+  "@emotion/styled" "^11.0.0"},
  :foreign-libs
  [{:file "material-ui/material-ui.inc.js",
    :file-min "material-ui/material-ui.min.inc.js",
@@ -281,10 +280,34 @@
    :file-min "material-ui/material-ui-lab.min.inc.js",
    :provides
    ["@material-ui/lab"
-    "@material-ui/lab/SliderStyled"
+    "@material-ui/lab/ClockPicker"
+    "@material-ui/lab/DatePicker"
+    "@material-ui/lab/DateRangeDelimiter"
+    "@material-ui/lab/DateRangePicker"
+    "@material-ui/lab/DateRangePickerDay"
+    "@material-ui/lab/DateTimePicker"
+    "@material-ui/lab/DayPicker"
+    "@material-ui/lab/DesktopDatePicker"
+    "@material-ui/lab/DesktopDateRangePicker"
+    "@material-ui/lab/DesktopDateTimePicker"
+    "@material-ui/lab/DesktopTimePicker"
+    "@material-ui/lab/LoadingButton"
+    "@material-ui/lab/LocalizationProvider"
+    "@material-ui/lab/MobileDatePicker"
+    "@material-ui/lab/MobileDateRangePicker"
+    "@material-ui/lab/MobileDateTimePicker"
+    "@material-ui/lab/MobileTimePicker"
+    "@material-ui/lab/MonthPicker"
+    "@material-ui/lab/PickersCalendarSkeleton"
+    "@material-ui/lab/PickersDay"
+    "@material-ui/lab/StaticDatePicker"
+    "@material-ui/lab/StaticDateRangePicker"
+    "@material-ui/lab/StaticDateTimePicker"
+    "@material-ui/lab/StaticTimePicker"
     "@material-ui/lab/TabContext"
     "@material-ui/lab/TabList"
     "@material-ui/lab/TabPanel"
+    "@material-ui/lab/TimePicker"
     "@material-ui/lab/Timeline"
     "@material-ui/lab/TimelineConnector"
     "@material-ui/lab/TimelineContent"
@@ -293,13 +316,38 @@
     "@material-ui/lab/TimelineOppositeContent"
     "@material-ui/lab/TimelineSeparator"
     "@material-ui/lab/TreeItem"
-    "@material-ui/lab/TreeView"],
+    "@material-ui/lab/TreeView"
+    "@material-ui/lab/YearPicker"],
    :global-exports
    {"@material-ui/lab" MaterialUILab,
-    "@material-ui/lab/SliderStyled" MaterialUILab,
+    "@material-ui/lab/ClockPicker" MaterialUILab,
+    "@material-ui/lab/DatePicker" MaterialUILab,
+    "@material-ui/lab/DateRangeDelimiter" MaterialUILab,
+    "@material-ui/lab/DateRangePicker" MaterialUILab,
+    "@material-ui/lab/DateRangePickerDay" MaterialUILab,
+    "@material-ui/lab/DateTimePicker" MaterialUILab,
+    "@material-ui/lab/DayPicker" MaterialUILab,
+    "@material-ui/lab/DesktopDatePicker" MaterialUILab,
+    "@material-ui/lab/DesktopDateRangePicker" MaterialUILab,
+    "@material-ui/lab/DesktopDateTimePicker" MaterialUILab,
+    "@material-ui/lab/DesktopTimePicker" MaterialUILab,
+    "@material-ui/lab/LoadingButton" MaterialUILab,
+    "@material-ui/lab/LocalizationProvider" MaterialUILab,
+    "@material-ui/lab/MobileDatePicker" MaterialUILab,
+    "@material-ui/lab/MobileDateRangePicker" MaterialUILab,
+    "@material-ui/lab/MobileDateTimePicker" MaterialUILab,
+    "@material-ui/lab/MobileTimePicker" MaterialUILab,
+    "@material-ui/lab/MonthPicker" MaterialUILab,
+    "@material-ui/lab/PickersCalendarSkeleton" MaterialUILab,
+    "@material-ui/lab/PickersDay" MaterialUILab,
+    "@material-ui/lab/StaticDatePicker" MaterialUILab,
+    "@material-ui/lab/StaticDateRangePicker" MaterialUILab,
+    "@material-ui/lab/StaticDateTimePicker" MaterialUILab,
+    "@material-ui/lab/StaticTimePicker" MaterialUILab,
     "@material-ui/lab/TabContext" MaterialUILab,
     "@material-ui/lab/TabList" MaterialUILab,
     "@material-ui/lab/TabPanel" MaterialUILab,
+    "@material-ui/lab/TimePicker" MaterialUILab,
     "@material-ui/lab/Timeline" MaterialUILab,
     "@material-ui/lab/TimelineConnector" MaterialUILab,
     "@material-ui/lab/TimelineContent" MaterialUILab,
@@ -308,15 +356,10 @@
     "@material-ui/lab/TimelineOppositeContent" MaterialUILab,
     "@material-ui/lab/TimelineSeparator" MaterialUILab,
     "@material-ui/lab/TreeItem" MaterialUILab,
-    "@material-ui/lab/TreeView" MaterialUILab},
+    "@material-ui/lab/TreeView" MaterialUILab,
+    "@material-ui/lab/YearPicker" MaterialUILab},
    :requires
    ["react" "react-dom" "@material-ui/core" "@material-ui/utils"]}
-  {:file "material-ui/material-ui-pickers.inc.js",
-   :file-min "material-ui/material-ui-pickers.min.inc.js",
-   :provides ["@material-ui/pickers"],
-   :global-exports {"@material-ui/pickers" MaterialUIPickers},
-   :requires
-   ["react" "react-dom" "@material-ui/core" "@material-ui/styles"]}
   {:file "material-ui/material-ui-styles.inc.js",
    :file-min "material-ui/material-ui-styles.min.inc.js",
    :provides ["@material-ui/styles"],

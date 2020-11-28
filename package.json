@@ -15,11 +15,10 @@
     "webpack-merge": "^5.3.0"
   },
   "dependencies": {
-    "@emotion/core": "^10.1.1",
-    "@emotion/styled": "^10.0.27",
-    "@material-ui/core": "5.0.0-alpha.15",
-    "@material-ui/lab": "5.0.0-alpha.15",
-    "@material-ui/pickers": "4.0.0-alpha.12"
+    "@emotion/react": "^11.0.0",
+    "@emotion/styled": "^11.0.0",
+    "@material-ui/core": "5.0.0-alpha.17",
+    "@material-ui/lab": "5.0.0-alpha.17"
   },
   "scripts": {
     "build": "npm run clean && npm run build:dev && npm run build:prod",

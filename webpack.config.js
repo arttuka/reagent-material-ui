@@ -97,19 +97,6 @@ const entries = [{
   ]
 }, {
   entry: {
-    'material-ui-pickers': './node_modules/@material-ui/pickers/index.js'
-  },
-  output: {
-    library: {
-      root: 'MaterialUIPickers'
-    }
-  },
-  externals: [
-    ...externals.core,
-    externals.styles
-  ]
-}, {
-  entry: {
     'material-ui-styles': './node_modules/@material-ui/styles/index.js'
   },
   output: {
