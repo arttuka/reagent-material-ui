@@ -1,5 +1,13 @@
 # Changelog
 
+See [Material UI changelog](https://github.com/mui-org/material-ui/blob/master/CHANGELOG.md) for changes in Material UI.
+
+## 4.11.0-4
+
+**[compare](https://github.com/arttuka/reagent-material-ui/compare/v4.11.0-3...v4.11.0-4)**
+
+- Added support for responsive font sizes (#9) @wkok
+
 ## 4.11.0-3
 
 **[compare](https://github.com/arttuka/reagent-material-ui/compare/v4.11.0-1...v4.11.0-3)**
