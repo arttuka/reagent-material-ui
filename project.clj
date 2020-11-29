@@ -17,4 +17,8 @@
                                        [prismatic/dommy "1.1.0"]]}}
   :clean-targets ^{:protect false} ["target" ".shadow-cljs"]
   :cljfmt {:indents {forward-ref [[:inner 0]]}
-           :paths   ["src/core"]})
+           :paths   ["src/core"]}
+  :deploy-repositories [["releases" {:url           "https://repo.clojars.org"
+                                     :sign-releases false
+                                     :username      :env/clojars_username
+                                     :password      :env/clojars_password}]])

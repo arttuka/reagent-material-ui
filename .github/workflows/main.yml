@@ -1,14 +1,25 @@
 name: CI
 
-on: [push]
+on:
+  # push:
+  #   branches:
+  #     - master
+  #     - next
+  # pull_request:
+  #   branches:
+  #     - master
+  #     - next
+  release:
+    types:
+      - created
 
 env:
-  NODE_VERSION: 12.19.0
-  JAVA_VERSION: 12
+  NODE_VERSION: 14.15.1
+  JAVA_VERSION: 15
   LEIN_VERSION: 2.9.4
 
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -40,3 +51,16 @@ jobs:
       - run: npm ci
       - run: npm run test
       - run: lein cljfmt check
+
+      - name: Build JS
+        if: github.event_name == 'release'
+        run: |
+          lein clean
+          npm run build
+
+      - name: Deploy to Clojars
+        if: github.event_name == 'release'
+        env:
+          CLOJARS_USERNAME: ${{ secrets.CLOJARS_USERNAME }}
+          CLOJARS_PASSWORD: ${{ secrets.CLOJARS_PASSWORD }}
+        run: lein deploy
