@@ -1,7 +1,7 @@
 {:npm-deps
- {"@material-ui/core" "5.0.0-alpha.18",
-  "@material-ui/lab" "5.0.0-alpha.18",
-  "@emotion/react" "^11.1.2",
+ {"@material-ui/core" "5.0.0-alpha.20",
+  "@material-ui/lab" "5.0.0-alpha.20",
+  "@emotion/react" "^11.1.4",
   "@emotion/styled" "^11.0.0"},
  :foreign-libs
  [{:file "material-ui/material-ui.inc.js",
