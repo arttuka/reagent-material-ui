@@ -1,7 +1,7 @@
 {:source-paths ["src/core" "test"]
- :dependencies [[reagent "0.10.0"]
+ :dependencies [[reagent "1.0.0"]
                 [com.andrewmcveigh/cljs-time "0.5.2"]
-                [camel-snake-kebab "0.4.1"]
+                [camel-snake-kebab "0.4.2"]
                 [prismatic/dommy "1.1.0"]]
  :builds       {:test {:target    :karma
                        :output-to "target/test.js"}}}

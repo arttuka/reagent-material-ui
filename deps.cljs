@@ -1,7 +1,7 @@
 {:npm-deps
- {"@material-ui/core" "4.11.0",
+ {"@material-ui/core" "4.11.2",
   "@material-ui/pickers" "3.2.10",
-  "@material-ui/lab" "4.0.0-alpha.56"},
+  "@material-ui/lab" "4.0.0-alpha.57"},
  :foreign-libs
  [{:file "material-ui/material-ui.inc.js",
    :file-min "material-ui/material-ui.min.inc.js",

@@ -4,10 +4,10 @@
   :license {:name "Eclipse Public License 2.0"
             :url  "https://www.eclipse.org/legal/epl-2.0/"}
   :dependencies [[org.clojure/clojure "1.10.1"]
-                 [reagent "0.10.0"]
+                 [reagent "1.0.0"]
                  [com.andrewmcveigh/cljs-time "0.5.2"]
-                 [camel-snake-kebab "0.4.1"]]
-  :plugins [[lein-cljfmt "0.6.8"]]
+                 [camel-snake-kebab "0.4.2"]]
+  :plugins [[lein-cljfmt "0.7.0"]]
   :source-paths ["src/core" "src/icons" "src/generated"]
   :resource-paths ["deps.cljs"]
   :profiles {:dev      {:source-paths   ["dev"]
