@@ -2,6 +2,13 @@
 
 See [Material UI changelog](https://github.com/mui-org/material-ui/blob/next/CHANGELOG.md) for changes in Material UI.
 
+## 5.0.0-alpha.20-0
+
+**[compare](https://github.com/arttuka/reagent-material-ui/compare/v5.0.0-alpha.18-0...v5.0.0-alpha.20-0)**
+
+- Update Material UI to v5.0.0-alpha.20
+- Update Reagent to v1.0.0
+
 ## 5.0.0-alpha.18-0
 
 **[compare](https://github.com/arttuka/reagent-material-ui/compare/v5.0.0-alpha.17-0...v5.0.0-alpha.18-0)**
