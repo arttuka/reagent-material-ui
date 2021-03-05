@@ -1,6 +1,6 @@
 {:npm-deps
- {"@material-ui/core" "5.0.0-alpha.20",
-  "@material-ui/lab" "5.0.0-alpha.20",
+ {"@material-ui/core" "5.0.0-alpha.22",
+  "@material-ui/lab" "5.0.0-alpha.22",
   "@emotion/react" "^11.1.4",
   "@emotion/styled" "^11.0.0"},
  :foreign-libs
