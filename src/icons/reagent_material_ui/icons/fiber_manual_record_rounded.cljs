@@ -4,5 +4,5 @@
   (:require [react :as react]
             [reagent-material-ui.util :refer [create-svg-icon]]))
 
-(def fiber-manual-record-rounded (create-svg-icon (e "circle" #js {"cy" "12", "r" "8", "cx" "12"})
+(def fiber-manual-record-rounded (create-svg-icon (e "circle" #js {"cy" "12", "r" "7", "cx" "12"})
                                                   "FiberManualRecordRounded"))

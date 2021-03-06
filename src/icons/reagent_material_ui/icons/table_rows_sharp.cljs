@@ -4,5 +4,5 @@
   (:require [react :as react]
             [reagent-material-ui.util :refer [create-svg-icon]]))
 
-(def table-rows-sharp (create-svg-icon (e "path" #js {"d" "M22 7H2V2h20v5zm0 2.5H2v5h20v-5zm0 7.5H2v5h20v-5z"})
+(def table-rows-sharp (create-svg-icon (e "path" #js {"d" "M21 8H3V4h18v4zm0 2H3v4h18v-4zm0 6H3v4h18v-4z"})
                                        "TableRowsSharp"))

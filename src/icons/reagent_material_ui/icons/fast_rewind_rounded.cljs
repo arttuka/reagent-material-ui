@@ -4,5 +4,5 @@
   (:require [react :as react]
             [reagent-material-ui.util :refer [create-svg-icon]]))
 
-(def fast-rewind-rounded (create-svg-icon (e "path" #js {"d" "M11 16.07V7.93c0-.81-.91-1.28-1.58-.82l-5.77 4.07c-.56.4-.56 1.24 0 1.63l5.77 4.07c.67.47 1.58 0 1.58-.81zm1.66-3.25l5.77 4.07c.66.47 1.58-.01 1.58-.82V7.93c0-.81-.91-1.28-1.58-.82l-5.77 4.07c-.57.4-.57 1.24 0 1.64z"})
+(def fast-rewind-rounded (create-svg-icon (e "path" #js {"d" "M19.45 7.04l-6.2 4.13c-.59.4-.59 1.27 0 1.66l6.2 4.13c.66.44 1.55-.03 1.55-.83V7.87c0-.8-.89-1.28-1.55-.83zM11 16.13V7.87c0-.8-.89-1.28-1.55-.83l-6.2 4.13c-.59.4-.59 1.27 0 1.66l6.2 4.13c.66.45 1.55-.03 1.55-.83z"})
                                           "FastRewindRounded"))

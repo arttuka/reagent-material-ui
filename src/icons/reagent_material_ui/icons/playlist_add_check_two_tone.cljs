@@ -4,5 +4,5 @@
   (:require [react :as react]
             [reagent-material-ui.util :refer [create-svg-icon]]))
 
-(def playlist-add-check-two-tone (create-svg-icon (e "path" #js {"d" "M2 6h12v2H2zm0 4h12v2H2zm0 4h8v2H2zm14.01 3L13 14l-1.5 1.5 4.51 4.5L23 13l-1.5-1.5z"})
+(def playlist-add-check-two-tone (create-svg-icon (e "path" #js {"d" "M3 10h11v2H3zm0-4h11v2H3zm0 8h7v2H3zm17.59-2.07l-4.25 4.24-2.12-2.12-1.41 1.41L16.34 19 22 13.34z"})
                                                   "PlaylistAddCheckTwoTone"))

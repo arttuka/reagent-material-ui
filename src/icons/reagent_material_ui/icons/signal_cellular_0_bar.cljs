@@ -4,5 +4,5 @@
   (:require [react :as react]
             [reagent-material-ui.util :refer [create-svg-icon]]))
 
-(def signal-cellular-0-bar (create-svg-icon (e "path" #js {"d" "M2 22h20V2z", "fillOpacity" ".3"})
+(def signal-cellular-0-bar (create-svg-icon (e "path" #js {"d" "M20 6.83V20H6.83L20 6.83M22 2L2 22h20V2z"})
                                             "SignalCellular0Bar"))

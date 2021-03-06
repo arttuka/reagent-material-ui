@@ -4,5 +4,5 @@
   (:require [react :as react]
             [reagent-material-ui.util :refer [create-svg-icon]]))
 
-(def border-color-sharp (create-svg-icon (e react/Fragment nil (e "path" #js {"d" "M17.75 8L14 4.25l-10 10V18h3.75l10-10zm3.66-3.66L17.66.59 15 3.25 18.75 7l2.66-2.66z"}) (e "path" #js {"d" "M0 20h24v4H0v-4z", "fillOpacity" ".36"}))
+(def border-color-sharp (create-svg-icon (e "path" #js {"d" "M22 24H2v-4h20v4zM13.06 5.19l3.75 3.75L7.75 18H4v-3.75l9.06-9.06zm4.82 2.68l-3.75-3.75 2.53-2.54 3.75 3.75-2.53 2.54z"})
                                          "BorderColorSharp"))

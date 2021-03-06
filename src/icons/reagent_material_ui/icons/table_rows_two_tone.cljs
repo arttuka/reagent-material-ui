@@ -4,5 +4,5 @@
   (:require [react :as react]
             [reagent-material-ui.util :refer [create-svg-icon]]))
 
-(def table-rows-two-tone (create-svg-icon (e react/Fragment nil (e "path" #js {"d" "M20 4v4H4V4h16zm0 6v4H4v-4h16zM4 20v-4h16v4H4z", "opacity" ".3"}) (e "path" #js {"d" "M2 2v20h20V2H2zm18 2v4H4V4h16zm0 6v4H4v-4h16zM4 20v-4h16v4H4z"}))
+(def table-rows-two-tone (create-svg-icon (e react/Fragment nil (e "path" #js {"d" "M19 5v3H5V5h14zm0 5v4H5v-4h14zM5 19v-3h14v3H5z", "opacity" ".3"}) (e "path" #js {"d" "M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 2v3H5V5h14zm0 5v4H5v-4h14zM5 19v-3h14v3H5z"}))
                                           "TableRowsTwoTone"))

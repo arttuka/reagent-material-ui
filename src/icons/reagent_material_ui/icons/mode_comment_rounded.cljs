@@ -4,5 +4,5 @@
   (:require [react :as react]
             [reagent-material-ui.util :refer [create-svg-icon]]))
 
-(def mode-comment-rounded (create-svg-icon (e "path" #js {"d" "M22 4c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14l4 4V4z"})
+(def mode-comment-rounded (create-svg-icon (e "path" #js {"d" "M22 4c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14l2.29 2.29c.63.63 1.71.18 1.71-.71V4z"})
                                            "ModeCommentRounded"))

@@ -4,5 +4,5 @@
   (:require [react :as react]
             [reagent-material-ui.util :refer [create-svg-icon]]))
 
-(def arrow-forward-ios (create-svg-icon (e "path" #js {"d" "M5.88 4.12L13.76 12l-7.88 7.88L8 22l10-10L8 2z"})
+(def arrow-forward-ios (create-svg-icon (e "path" #js {"d" "M6.23 20.23L8 22l10-10L8 2 6.23 3.77 14.46 12z"})
                                         "ArrowForwardIos"))
