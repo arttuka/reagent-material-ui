@@ -15,3 +15,5 @@ pom.xml.asc
 node_modules
 .shadow-cljs
 /src/generated
+.cpcache
+.java-version

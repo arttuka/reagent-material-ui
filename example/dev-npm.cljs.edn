@@ -1,0 +1,7 @@
+^{:watch-dirs      ["src"]
+  :final-output-to "resources/public/js/main.js"}
+{:main       example.core
+ :target     :bundle
+ :bundle-cmd {:none ["npx" "webpack" "--mode=development" :output-to
+                     "--output-path" :final-output-dir
+                     "--output-filename" :final-output-filename]}}
