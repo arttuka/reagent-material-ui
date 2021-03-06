@@ -5,7 +5,8 @@
             ["@material-ui/core/styles" :as mui-styles]
             [reagent-material-ui.util :as util]))
 
-(def ^:private theme-provider* (util/adapt-react-class mui-styles/MuiThemeProvider "mui-theme-provider"))
+(def ^:private styles-provider* (util/adapt-react-class mui-styles/StylesProvider "mui-styles-provider"))
+(def ^:private theme-provider* (util/adapt-react-class mui-styles/ThemeProvider "mui-theme-provider"))
 
 (defn make-styles
   "Takes a styles-generating function or a styles object.
@@ -58,6 +59,13 @@
    Note: input component has to take all its props (including children) in a single map."
   [component]
   (util/apply-hoc mui-styles/withTheme component))
+
+(defn styles-provider
+  "This component allows you to change the behavior of the styling solution. It makes the options available down the React tree thanks to the context.
+  It should preferably be used at the root of your component tree."
+  [opts & children]
+  (into [styles-provider* opts]
+        (map r/as-element children)))
 
 (defn theme-provider
   "Component that takes a theme object and makes it available in child components.

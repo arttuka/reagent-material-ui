@@ -48,6 +48,7 @@ var MaterialUI = {
   FormGroup: function () {},
   FormHelperText: function () {},
   FormLabel: function () {},
+  GlobalStyles: function () {},
   Grid: function () {},
   Grow: function () {},
   Hidden: function () {},
@@ -105,6 +106,7 @@ var MaterialUI = {
   StepIcon: function () {},
   StepLabel: function () {},
   Stepper: function () {},
+  StyledEngineProvider: function () {},
   SvgIcon: function () {},
   SwipeableDrawer: function () {},
   Switch: function () {},
@@ -164,8 +166,8 @@ var MaterialUI = {
     unstable_createMuiStrictModeTheme: function () {},
     unstable_getUnit: function () {},
     unstable_toUnitless: function () {},
+    unstable_useThemeProps: function () {},
     useTheme: function () {},
-    useThemeProps: function () {},
     useThemeVariants: function () {},
     withStyles: function () {},
     withTheme: function () {}
@@ -194,7 +196,6 @@ var MaterialUI = {
 var MaterialUILab = {
   ClockPicker: function () {},
   DatePicker: function () {},
-  DateRangeDelimiter: function () {},
   DateRangePicker: function () {},
   DateRangePickerDay: function () {},
   DateTimePicker: function () {},
@@ -284,5 +285,7 @@ var MaterialUIUtils = {
   unstable_useEventCallback: function () {},
   unstable_useForkRef: function () {},
   unstable_useId: function () {},
-  unstable_useIsFocusVisible: function () {}
+  unstable_useIsFocusVisible: function () {},
+  usePreviousProps: function () {},
+  visuallyHidden: function () {}
 };

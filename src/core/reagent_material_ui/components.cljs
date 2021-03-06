@@ -51,6 +51,7 @@
             reagent-material-ui.core.form-group
             reagent-material-ui.core.form-helper-text
             reagent-material-ui.core.form-label
+            reagent-material-ui.core.global-styles
             reagent-material-ui.core.grid
             reagent-material-ui.core.grow
             reagent-material-ui.core.hidden
@@ -108,6 +109,7 @@
             reagent-material-ui.core.step-icon
             reagent-material-ui.core.step-label
             reagent-material-ui.core.stepper
+            reagent-material-ui.core.styled-engine-provider
             reagent-material-ui.core.svg-icon
             reagent-material-ui.core.swipeable-drawer
             reagent-material-ui.core.switch-component
@@ -186,6 +188,7 @@
 (def form-group reagent-material-ui.core.form-group/form-group)
 (def form-helper-text reagent-material-ui.core.form-helper-text/form-helper-text)
 (def form-label reagent-material-ui.core.form-label/form-label)
+(def global-styles reagent-material-ui.core.global-styles/global-styles)
 (def grid reagent-material-ui.core.grid/grid)
 (def grow reagent-material-ui.core.grow/grow)
 (def hidden reagent-material-ui.core.hidden/hidden)
@@ -243,6 +246,7 @@
 (def step-icon reagent-material-ui.core.step-icon/step-icon)
 (def step-label reagent-material-ui.core.step-label/step-label)
 (def stepper reagent-material-ui.core.stepper/stepper)
+(def styled-engine-provider reagent-material-ui.core.styled-engine-provider/styled-engine-provider)
 (def svg-icon reagent-material-ui.core.svg-icon/svg-icon)
 (def swipeable-drawer reagent-material-ui.core.swipeable-drawer/swipeable-drawer)
 (def switch reagent-material-ui.core.switch-component/switch)

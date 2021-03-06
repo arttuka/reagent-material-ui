@@ -1,8 +1,8 @@
 {:npm-deps
- {"@material-ui/core" "5.0.0-alpha.20",
-  "@material-ui/lab" "5.0.0-alpha.20",
-  "@emotion/react" "^11.1.4",
-  "@emotion/styled" "^11.0.0"},
+ {"@material-ui/core" "5.0.0-alpha.27",
+  "@material-ui/lab" "5.0.0-alpha.27",
+  "@emotion/react" "^11.1.5",
+  "@emotion/styled" "^11.1.5"},
  :foreign-libs
  [{:file "material-ui/material-ui.inc.js",
    :file-min "material-ui/material-ui.min.inc.js",
@@ -57,6 +57,7 @@
     "@material-ui/core/FormGroup"
     "@material-ui/core/FormHelperText"
     "@material-ui/core/FormLabel"
+    "@material-ui/core/GlobalStyles"
     "@material-ui/core/Grid"
     "@material-ui/core/Grow"
     "@material-ui/core/Hidden"
@@ -112,6 +113,7 @@
     "@material-ui/core/StepIcon"
     "@material-ui/core/StepLabel"
     "@material-ui/core/Stepper"
+    "@material-ui/core/StyledEngineProvider"
     "@material-ui/core/SvgIcon"
     "@material-ui/core/SwipeableDrawer"
     "@material-ui/core/Switch"
@@ -189,6 +191,7 @@
     "@material-ui/core/FormGroup" MaterialUI,
     "@material-ui/core/FormHelperText" MaterialUI,
     "@material-ui/core/FormLabel" MaterialUI,
+    "@material-ui/core/GlobalStyles" MaterialUI,
     "@material-ui/core/Grid" MaterialUI,
     "@material-ui/core/Grow" MaterialUI,
     "@material-ui/core/Hidden" MaterialUI,
@@ -244,6 +247,7 @@
     "@material-ui/core/StepIcon" MaterialUI,
     "@material-ui/core/StepLabel" MaterialUI,
     "@material-ui/core/Stepper" MaterialUI,
+    "@material-ui/core/StyledEngineProvider" MaterialUI,
     "@material-ui/core/SvgIcon" MaterialUI,
     "@material-ui/core/SwipeableDrawer" MaterialUI,
     "@material-ui/core/Switch" MaterialUI,
@@ -282,7 +286,6 @@
    ["@material-ui/lab"
     "@material-ui/lab/ClockPicker"
     "@material-ui/lab/DatePicker"
-    "@material-ui/lab/DateRangeDelimiter"
     "@material-ui/lab/DateRangePicker"
     "@material-ui/lab/DateRangePickerDay"
     "@material-ui/lab/DateTimePicker"
@@ -322,7 +325,6 @@
    {"@material-ui/lab" MaterialUILab,
     "@material-ui/lab/ClockPicker" MaterialUILab,
     "@material-ui/lab/DatePicker" MaterialUILab,
-    "@material-ui/lab/DateRangeDelimiter" MaterialUILab,
     "@material-ui/lab/DateRangePicker" MaterialUILab,
     "@material-ui/lab/DateRangePickerDay" MaterialUILab,
     "@material-ui/lab/DateTimePicker" MaterialUILab,
