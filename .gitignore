@@ -14,3 +14,5 @@ pom.xml.asc
 /dev-resources
 node_modules
 .shadow-cljs
+.lsp
+.java-version
