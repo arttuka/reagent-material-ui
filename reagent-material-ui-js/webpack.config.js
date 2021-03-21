@@ -12,7 +12,7 @@ const makeExternal = (root, lib) => ({
 const common = {
   output: {
     filename: '[name].inc.js',
-    path: path.resolve(__dirname, 'src/generated/material-ui'),
+    path: path.resolve(__dirname, 'src/material-ui'),
     libraryTarget: 'umd',
     library: {
       amd: '[name]',
@@ -23,8 +23,11 @@ const common = {
   externals: [{
     'react': makeExternal('React', 'react'),
     'react-dom': makeExternal('ReactDOM', 'react-dom')
-  }],
-  devtool: false
+  }]
+}
+
+const dev = {
+  devtool: 'eval-source-map'
 }
 
 const production = {
@@ -71,7 +74,7 @@ const externals = {
 
 const entries = [{
   entry: {
-    'material-ui': './src/js/material-ui.js'
+    'material-ui': path.resolve(__dirname, 'entries/material-ui.js')
   },
   output: {
     library: {
@@ -84,7 +87,7 @@ const entries = [{
   ]
 }, {
   entry: {
-    'material-ui-lab': './node_modules/@material-ui/lab/index.js'
+    'material-ui-lab': path.resolve(__dirname, '../node_modules/@material-ui/lab/index.js')
   },
   output: {
     library: {
@@ -97,7 +100,7 @@ const entries = [{
   ]
 }, {
   entry: {
-    'material-ui-styles': './node_modules/@material-ui/styles/index.js'
+    'material-ui-styles': path.resolve(__dirname, '../node_modules/@material-ui/styles/index.js')
   },
   output: {
     library: {
@@ -109,7 +112,7 @@ const entries = [{
   ]
 }, {
   entry: {
-    'material-ui-utils': './node_modules/@material-ui/utils/index.js'
+    'material-ui-utils': path.resolve(__dirname, '../node_modules/@material-ui/utils/index.js')
   },
   output: {
     library: {
@@ -119,6 +122,6 @@ const entries = [{
 }]
 
 module.exports = function (env, argv) {
-  const base = argv.mode === 'production' ? merge(common, production) : common
+  const base = merge(common, argv.mode === 'production' ? production : dev)
   return entries.map(entry => merge(base, entry))
 }

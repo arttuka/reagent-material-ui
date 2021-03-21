@@ -1,4 +1,4 @@
-{:paths ["src/core" "src/icons" "src/generated"]
+{:paths ["src/core" "src/icons"]
  :deps  {reagent/reagent                     {:mvn/version "1.0.0"}
          com.andrewmcveigh/cljs-time         {:mvn/version "0.5.2"}
          camel-snake-kebab/camel-snake-kebab {:mvn/version "0.4.2"}}}
