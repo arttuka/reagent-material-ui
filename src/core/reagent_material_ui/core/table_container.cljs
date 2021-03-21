@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/TableContainer" :as MuiTableContainer]))
 
-(def table-container (adapt-react-class (or (.-default MuiTableContainer) (.-TableContainer MuiTableContainer)) "mui-table-container"))
+(def table-container (adapt-react-class (.-default MuiTableContainer) "mui-table-container"))

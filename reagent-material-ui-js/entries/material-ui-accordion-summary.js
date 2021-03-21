@@ -1,0 +1,1 @@
+export { AccordionSummary as default } from '@material-ui/core'

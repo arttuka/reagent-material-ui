@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/ButtonGroup" :as MuiButtonGroup]))
 
-(def button-group (adapt-react-class (or (.-default MuiButtonGroup) (.-ButtonGroup MuiButtonGroup)) "mui-button-group"))
+(def button-group (adapt-react-class (.-default MuiButtonGroup) "mui-button-group"))

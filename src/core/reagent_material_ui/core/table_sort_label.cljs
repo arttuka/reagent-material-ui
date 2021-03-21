@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/TableSortLabel" :as MuiTableSortLabel]))
 
-(def table-sort-label (adapt-react-class (or (.-default MuiTableSortLabel) (.-TableSortLabel MuiTableSortLabel)) "mui-table-sort-label"))
+(def table-sort-label (adapt-react-class (.-default MuiTableSortLabel) "mui-table-sort-label"))

@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/ToggleButtonGroup" :as MuiToggleButtonGroup]))
 
-(def toggle-button-group (adapt-react-class (or (.-default MuiToggleButtonGroup) (.-ToggleButtonGroup MuiToggleButtonGroup)) "mui-toggle-button-group"))
+(def toggle-button-group (adapt-react-class (.-default MuiToggleButtonGroup) "mui-toggle-button-group"))

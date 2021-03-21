@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/lab/YearPicker" :as MuiYearPicker]))
 
-(def year-picker (adapt-react-class (or (.-default MuiYearPicker) (.-YearPicker MuiYearPicker)) "mui-year-picker"))
+(def year-picker (adapt-react-class (.-default MuiYearPicker) "mui-year-picker"))

@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/Modal" :as MuiModal]))
 
-(def modal (adapt-react-class (or (.-default MuiModal) (.-Modal MuiModal)) "mui-modal"))
+(def modal (adapt-react-class (.-default MuiModal) "mui-modal"))

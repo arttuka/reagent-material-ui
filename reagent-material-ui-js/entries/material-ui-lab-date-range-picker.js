@@ -1,0 +1,1 @@
+export { DateRangePicker as default } from '@material-ui/lab'

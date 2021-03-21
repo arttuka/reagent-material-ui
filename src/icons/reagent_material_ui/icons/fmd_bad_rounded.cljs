@@ -1,8 +1,9 @@
 (ns reagent-material-ui.icons.fmd-bad-rounded
   "Imports @material-ui/icons/FmdBadRounded as a Reagent component."
-  (:require-macros [reagent-material-ui.util :refer [e]])
+  (:require-macros [reagent-material-ui.util :refer [create-svg-icon e]])
   (:require [react :as react]
-            [reagent-material-ui.util :refer [create-svg-icon]]))
+            ["@material-ui/core/SvgIcon" :as SvgIcon]
+            [reagent-material-ui.util]))
 
 (def fmd-bad-rounded (create-svg-icon (e "path" #js {"d" "M12 2c-4.2 0-8 3.22-8 8.2 0 3.18 2.45 6.92 7.34 11.23.38.33.95.33 1.33 0C17.55 17.12 20 13.38 20 10.2 20 5.22 16.2 2 12 2zm0 13c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm0-4c-.55 0-1-.45-1-1V7c0-.55.45-1 1-1s1 .45 1 1v3c0 .55-.45 1-1 1z"})
                                       "FmdBadRounded"))

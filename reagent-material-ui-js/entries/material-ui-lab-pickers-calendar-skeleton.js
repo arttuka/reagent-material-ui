@@ -1,0 +1,1 @@
+export { PickersCalendarSkeleton as default } from '@material-ui/lab'

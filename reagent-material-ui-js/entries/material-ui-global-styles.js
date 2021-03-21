@@ -1,0 +1,1 @@
+export { GlobalStyles as default } from '@material-ui/core'

@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/GlobalStyles" :as MuiGlobalStyles]))
 
-(def global-styles (adapt-react-class (or (.-default MuiGlobalStyles) (.-GlobalStyles MuiGlobalStyles)) "mui-global-styles"))
+(def global-styles (adapt-react-class (.-default MuiGlobalStyles) "mui-global-styles"))

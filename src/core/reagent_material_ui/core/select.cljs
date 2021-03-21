@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/Select" :as MuiSelect]))
 
-(def select (adapt-react-class (or (.-default MuiSelect) (.-Select MuiSelect)) "mui-select"))
+(def select (adapt-react-class (.-default MuiSelect) "mui-select"))

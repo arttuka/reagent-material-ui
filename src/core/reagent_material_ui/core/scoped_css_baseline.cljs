@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/ScopedCssBaseline" :as MuiScopedCssBaseline]))
 
-(def scoped-css-baseline (adapt-react-class (or (.-default MuiScopedCssBaseline) (.-ScopedCssBaseline MuiScopedCssBaseline)) "mui-scoped-css-baseline"))
+(def scoped-css-baseline (adapt-react-class (.-default MuiScopedCssBaseline) "mui-scoped-css-baseline"))

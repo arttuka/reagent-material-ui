@@ -5,4 +5,4 @@
   (:require [reagent-material-ui.util :refer [wrap-js-function]]
             ["@material-ui/core/useAutocomplete" :as MuiuseAutocomplete]))
 
-(def use-autocomplete (wrap-js-function (or (.-default MuiuseAutocomplete) (.-useAutocomplete MuiuseAutocomplete))))
+(def use-autocomplete (wrap-js-function (.-default MuiuseAutocomplete)))

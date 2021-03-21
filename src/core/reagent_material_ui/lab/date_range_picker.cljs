@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/lab/DateRangePicker" :as MuiDateRangePicker]))
 
-(def date-range-picker (adapt-react-class (or (.-default MuiDateRangePicker) (.-DateRangePicker MuiDateRangePicker)) "mui-date-range-picker"))
+(def date-range-picker (adapt-react-class (.-default MuiDateRangePicker) "mui-date-range-picker"))

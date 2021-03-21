@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/CssBaseline" :as MuiCssBaseline]))
 
-(def css-baseline (adapt-react-class (or (.-default MuiCssBaseline) (.-CssBaseline MuiCssBaseline)) "mui-css-baseline"))
+(def css-baseline (adapt-react-class (.-default MuiCssBaseline) "mui-css-baseline"))

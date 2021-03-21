@@ -1,8 +1,9 @@
 (ns reagent-material-ui.icons.import-export-sharp
   "Imports @material-ui/icons/ImportExportSharp as a Reagent component."
-  (:require-macros [reagent-material-ui.util :refer [e]])
+  (:require-macros [reagent-material-ui.util :refer [create-svg-icon e]])
   (:require [react :as react]
-            [reagent-material-ui.util :refer [create-svg-icon]]))
+            ["@material-ui/core/SvgIcon" :as SvgIcon]
+            [reagent-material-ui.util]))
 
 (def import-export-sharp (create-svg-icon (e "path" #js {"d" "M9 3L5 6.99h3V14h2V6.99h3L9 3zm7 14.01V10h-2v7.01h-3L15 21l4-3.99h-3z"})
                                           "ImportExportSharp"))

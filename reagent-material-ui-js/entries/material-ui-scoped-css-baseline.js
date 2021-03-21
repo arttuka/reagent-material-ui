@@ -1,0 +1,1 @@
+export { ScopedCssBaseline as default } from '@material-ui/core'

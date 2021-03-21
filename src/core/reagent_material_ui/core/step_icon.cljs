@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/StepIcon" :as MuiStepIcon]))
 
-(def step-icon (adapt-react-class (or (.-default MuiStepIcon) (.-StepIcon MuiStepIcon)) "mui-step-icon"))
+(def step-icon (adapt-react-class (.-default MuiStepIcon) "mui-step-icon"))

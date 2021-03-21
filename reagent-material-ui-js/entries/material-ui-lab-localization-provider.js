@@ -1,0 +1,1 @@
+export { LocalizationProvider as default } from '@material-ui/lab'

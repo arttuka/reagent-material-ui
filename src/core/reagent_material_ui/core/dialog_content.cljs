@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/DialogContent" :as MuiDialogContent]))
 
-(def dialog-content (adapt-react-class (or (.-default MuiDialogContent) (.-DialogContent MuiDialogContent)) "mui-dialog-content"))
+(def dialog-content (adapt-react-class (.-default MuiDialogContent) "mui-dialog-content"))

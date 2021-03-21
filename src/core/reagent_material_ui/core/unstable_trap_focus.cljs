@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/Unstable_TrapFocus" :as MuiUnstable_TrapFocus]))
 
-(def unstable-trap-focus (adapt-react-class (or (.-default MuiUnstable_TrapFocus) (.-Unstable_TrapFocus MuiUnstable_TrapFocus)) "mui-unstable-trap-focus"))
+(def unstable-trap-focus (adapt-react-class (.-default MuiUnstable_TrapFocus) "mui-unstable-trap-focus"))

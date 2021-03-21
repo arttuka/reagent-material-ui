@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/PaginationItem" :as MuiPaginationItem]))
 
-(def pagination-item (adapt-react-class (or (.-default MuiPaginationItem) (.-PaginationItem MuiPaginationItem)) "mui-pagination-item"))
+(def pagination-item (adapt-react-class (.-default MuiPaginationItem) "mui-pagination-item"))

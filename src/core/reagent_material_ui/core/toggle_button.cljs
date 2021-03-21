@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/ToggleButton" :as MuiToggleButton]))
 
-(def toggle-button (adapt-react-class (or (.-default MuiToggleButton) (.-ToggleButton MuiToggleButton)) "mui-toggle-button"))
+(def toggle-button (adapt-react-class (.-default MuiToggleButton) "mui-toggle-button"))

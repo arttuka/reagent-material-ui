@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/lab/DayPicker" :as MuiDayPicker]))
 
-(def day-picker (adapt-react-class (or (.-default MuiDayPicker) (.-DayPicker MuiDayPicker)) "mui-day-picker"))
+(def day-picker (adapt-react-class (.-default MuiDayPicker) "mui-day-picker"))

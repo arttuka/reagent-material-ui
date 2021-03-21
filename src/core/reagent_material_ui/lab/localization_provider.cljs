@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/lab/LocalizationProvider" :as MuiLocalizationProvider]))
 
-(def localization-provider (adapt-react-class (or (.-default MuiLocalizationProvider) (.-LocalizationProvider MuiLocalizationProvider)) "mui-localization-provider"))
+(def localization-provider (adapt-react-class (.-default MuiLocalizationProvider) "mui-localization-provider"))

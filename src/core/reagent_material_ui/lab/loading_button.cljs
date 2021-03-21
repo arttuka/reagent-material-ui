@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/lab/LoadingButton" :as MuiLoadingButton]))
 
-(def loading-button (adapt-react-class (or (.-default MuiLoadingButton) (.-LoadingButton MuiLoadingButton)) "mui-loading-button"))
+(def loading-button (adapt-react-class (.-default MuiLoadingButton) "mui-loading-button"))

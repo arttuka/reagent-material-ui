@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/Skeleton" :as MuiSkeleton]))
 
-(def skeleton (adapt-react-class (or (.-default MuiSkeleton) (.-Skeleton MuiSkeleton)) "mui-skeleton"))
+(def skeleton (adapt-react-class (.-default MuiSkeleton) "mui-skeleton"))

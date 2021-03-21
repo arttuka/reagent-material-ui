@@ -24,7 +24,7 @@
   (forward-ref textarea [props ref]
     (r/as-element [:textarea (input-props props ref)])))
 
-(def ^:private mui-text-field (adapt-react-class (or (.-default MuiTextField) (.-TextField MuiTextField)) "mui-text-field"))
+(def ^:private mui-text-field (adapt-react-class (.-default MuiTextField) "mui-text-field"))
 
 (defn text-field [props & children]
   (let [min-rows (get-anycase props :min-rows)

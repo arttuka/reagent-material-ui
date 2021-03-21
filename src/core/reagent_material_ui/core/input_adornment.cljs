@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/InputAdornment" :as MuiInputAdornment]))
 
-(def input-adornment (adapt-react-class (or (.-default MuiInputAdornment) (.-InputAdornment MuiInputAdornment)) "mui-input-adornment"))
+(def input-adornment (adapt-react-class (.-default MuiInputAdornment) "mui-input-adornment"))

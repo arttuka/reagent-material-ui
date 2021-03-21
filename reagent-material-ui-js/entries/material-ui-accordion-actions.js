@@ -1,0 +1,1 @@
+export { AccordionActions as default } from '@material-ui/core'

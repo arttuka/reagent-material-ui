@@ -1,0 +1,1 @@
+export { Rating as default } from '@material-ui/core'

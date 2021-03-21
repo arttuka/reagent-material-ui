@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/lab/MobileTimePicker" :as MuiMobileTimePicker]))
 
-(def mobile-time-picker (adapt-react-class (or (.-default MuiMobileTimePicker) (.-MobileTimePicker MuiMobileTimePicker)) "mui-mobile-time-picker"))
+(def mobile-time-picker (adapt-react-class (.-default MuiMobileTimePicker) "mui-mobile-time-picker"))

@@ -1,0 +1,1 @@
+export { TableRow as default } from '@material-ui/core'

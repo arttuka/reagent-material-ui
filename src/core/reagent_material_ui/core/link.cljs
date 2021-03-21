@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/Link" :as MuiLink]))
 
-(def link (adapt-react-class (or (.-default MuiLink) (.-Link MuiLink)) "mui-link"))
+(def link (adapt-react-class (.-default MuiLink) "mui-link"))

@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/NoSsr" :as MuiNoSsr]))
 
-(def no-ssr (adapt-react-class (or (.-default MuiNoSsr) (.-NoSsr MuiNoSsr)) "mui-no-ssr"))
+(def no-ssr (adapt-react-class (.-default MuiNoSsr) "mui-no-ssr"))

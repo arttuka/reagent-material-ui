@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/Snackbar" :as MuiSnackbar]))
 
-(def snackbar (adapt-react-class (or (.-default MuiSnackbar) (.-Snackbar MuiSnackbar)) "mui-snackbar"))
+(def snackbar (adapt-react-class (.-default MuiSnackbar) "mui-snackbar"))

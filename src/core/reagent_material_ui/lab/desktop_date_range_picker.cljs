@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/lab/DesktopDateRangePicker" :as MuiDesktopDateRangePicker]))
 
-(def desktop-date-range-picker (adapt-react-class (or (.-default MuiDesktopDateRangePicker) (.-DesktopDateRangePicker MuiDesktopDateRangePicker)) "mui-desktop-date-range-picker"))
+(def desktop-date-range-picker (adapt-react-class (.-default MuiDesktopDateRangePicker) "mui-desktop-date-range-picker"))

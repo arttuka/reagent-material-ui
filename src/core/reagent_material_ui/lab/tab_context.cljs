@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/lab/TabContext" :as MuiTabContext]))
 
-(def tab-context (adapt-react-class (or (.-default MuiTabContext) (.-TabContext MuiTabContext)) "mui-tab-context"))
+(def tab-context (adapt-react-class (.-default MuiTabContext) "mui-tab-context"))

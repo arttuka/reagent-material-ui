@@ -1,0 +1,1 @@
+export { CssBaseline as default } from '@material-ui/core'

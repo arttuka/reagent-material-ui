@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/Portal" :as MuiPortal]))
 
-(def portal (adapt-react-class (or (.-default MuiPortal) (.-Portal MuiPortal)) "mui-portal"))
+(def portal (adapt-react-class (.-default MuiPortal) "mui-portal"))

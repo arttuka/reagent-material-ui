@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/Tooltip" :as MuiTooltip]))
 
-(def tooltip (adapt-react-class (or (.-default MuiTooltip) (.-Tooltip MuiTooltip)) "mui-tooltip"))
+(def tooltip (adapt-react-class (.-default MuiTooltip) "mui-tooltip"))

@@ -5,4 +5,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/List" :as MuiList]))
 
-(def list (adapt-react-class (or (.-default MuiList) (.-List MuiList)) "mui-list"))
+(def list (adapt-react-class (.-default MuiList) "mui-list"))

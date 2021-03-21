@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/lab/TimelineDot" :as MuiTimelineDot]))
 
-(def timeline-dot (adapt-react-class (or (.-default MuiTimelineDot) (.-TimelineDot MuiTimelineDot)) "mui-timeline-dot"))
+(def timeline-dot (adapt-react-class (.-default MuiTimelineDot) "mui-timeline-dot"))

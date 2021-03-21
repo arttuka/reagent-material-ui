@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/Grid" :as MuiGrid]))
 
-(def grid (adapt-react-class (or (.-default MuiGrid) (.-Grid MuiGrid)) "mui-grid"))
+(def grid (adapt-react-class (.-default MuiGrid) "mui-grid"))

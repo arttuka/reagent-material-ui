@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/ImageList" :as MuiImageList]))
 
-(def image-list (adapt-react-class (or (.-default MuiImageList) (.-ImageList MuiImageList)) "mui-image-list"))
+(def image-list (adapt-react-class (.-default MuiImageList) "mui-image-list"))

@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/SpeedDialIcon" :as MuiSpeedDialIcon]))
 
-(def speed-dial-icon (adapt-react-class (or (.-default MuiSpeedDialIcon) (.-SpeedDialIcon MuiSpeedDialIcon)) "mui-speed-dial-icon"))
+(def speed-dial-icon (adapt-react-class (.-default MuiSpeedDialIcon) "mui-speed-dial-icon"))

@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/LinearProgress" :as MuiLinearProgress]))
 
-(def linear-progress (adapt-react-class (or (.-default MuiLinearProgress) (.-LinearProgress MuiLinearProgress)) "mui-linear-progress"))
+(def linear-progress (adapt-react-class (.-default MuiLinearProgress) "mui-linear-progress"))

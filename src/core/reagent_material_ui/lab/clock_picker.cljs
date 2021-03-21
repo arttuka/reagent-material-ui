@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/lab/ClockPicker" :as MuiClockPicker]))
 
-(def clock-picker (adapt-react-class (or (.-default MuiClockPicker) (.-ClockPicker MuiClockPicker)) "mui-clock-picker"))
+(def clock-picker (adapt-react-class (.-default MuiClockPicker) "mui-clock-picker"))

@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/lab/DesktopDatePicker" :as MuiDesktopDatePicker]))
 
-(def desktop-date-picker (adapt-react-class (or (.-default MuiDesktopDatePicker) (.-DesktopDatePicker MuiDesktopDatePicker)) "mui-desktop-date-picker"))
+(def desktop-date-picker (adapt-react-class (.-default MuiDesktopDatePicker) "mui-desktop-date-picker"))

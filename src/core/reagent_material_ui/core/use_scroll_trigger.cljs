@@ -5,4 +5,4 @@
   (:require [reagent-material-ui.util :refer [wrap-js-function]]
             ["@material-ui/core/useScrollTrigger" :as MuiuseScrollTrigger]))
 
-(def use-scroll-trigger (wrap-js-function (or (.-default MuiuseScrollTrigger) (.-useScrollTrigger MuiuseScrollTrigger))))
+(def use-scroll-trigger (wrap-js-function (.-default MuiuseScrollTrigger)))

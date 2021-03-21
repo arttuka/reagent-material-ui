@@ -1,8 +1,9 @@
 (ns reagent-material-ui.icons.blur-on-two-tone
   "Imports @material-ui/icons/BlurOnTwoTone as a Reagent component."
-  (:require-macros [reagent-material-ui.util :refer [e]])
+  (:require-macros [reagent-material-ui.util :refer [create-svg-icon e]])
   (:require [react :as react]
-            [reagent-material-ui.util :refer [create-svg-icon]]))
+            ["@material-ui/core/SvgIcon" :as SvgIcon]
+            [reagent-material-ui.util]))
 
 (def blur-on-two-tone (create-svg-icon (e react/Fragment nil (e "circle" #js {"cy" "10", "r" "1.5", "cx" "14"}) (e "circle" #js {"cy" "18", "r" "1", "cx" "14"}) (e "circle" #js {"cy" "14", "r" "1.5", "cx" "14"}) (e "circle" #js {"cy" "6", "r" "1", "cx" "14"}) (e "path" #js {"d" "M3 9.5c-.28 0-.5.22-.5.5s.22.5.5.5.5-.22.5-.5-.22-.5-.5-.5zM14.5 3c0-.28-.22-.5-.5-.5s-.5.22-.5.5.22.5.5.5.5-.22.5-.5zM21 14.5c.28 0 .5-.22.5-.5s-.22-.5-.5-.5-.5.22-.5.5.22.5.5.5z"}) (e "circle" #js {"cy" "18", "r" "1", "cx" "18"}) (e "path" #js {"d" "M13.5 21c0 .28.22.5.5.5s.5-.22.5-.5-.22-.5-.5-.5-.5.22-.5.5zM21 10.5c.28 0 .5-.22.5-.5s-.22-.5-.5-.5-.5.22-.5.5.22.5.5.5z"}) (e "circle" #js {"cy" "14", "r" "1", "cx" "18"}) (e "circle" #js {"cy" "6", "r" "1", "cx" "18"}) (e "circle" #js {"cy" "18", "r" "1", "cx" "6"}) (e "circle" #js {"cy" "14", "r" "1", "cx" "6"}) (e "path" #js {"d" "M3.5 14c0-.28-.22-.5-.5-.5s-.5.22-.5.5.22.5.5.5.5-.22.5-.5z"}) (e "circle" #js {"cy" "6", "r" "1", "cx" "10"}) (e "circle" #js {"cy" "10", "r" "1", "cx" "6"}) (e "circle" #js {"cy" "6", "r" "1", "cx" "6"}) (e "path" #js {"d" "M9.5 21c0 .28.22.5.5.5s.5-.22.5-.5-.22-.5-.5-.5-.5.22-.5.5z"}) (e "circle" #js {"cy" "18", "r" "1", "cx" "10"}) (e "path" #js {"d" "M10.5 3c0-.28-.22-.5-.5-.5s-.5.22-.5.5.22.5.5.5.5-.22.5-.5z"}) (e "circle" #js {"cy" "14", "r" "1.5", "cx" "10"}) (e "circle" #js {"cy" "10", "r" "1.5", "cx" "10"}) (e "circle" #js {"cy" "10", "r" "1", "cx" "18"}))
                                        "BlurOnTwoTone"))

@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/Typography" :as MuiTypography]))
 
-(def typography (adapt-react-class (or (.-default MuiTypography) (.-Typography MuiTypography)) "mui-typography"))
+(def typography (adapt-react-class (.-default MuiTypography) "mui-typography"))

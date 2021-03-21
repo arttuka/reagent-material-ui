@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/Hidden" :as MuiHidden]))
 
-(def hidden (adapt-react-class (or (.-default MuiHidden) (.-Hidden MuiHidden)) "mui-hidden"))
+(def hidden (adapt-react-class (.-default MuiHidden) "mui-hidden"))

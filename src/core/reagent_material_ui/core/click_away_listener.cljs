@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/ClickAwayListener" :as MuiClickAwayListener]))
 
-(def click-away-listener (adapt-react-class (or (.-default MuiClickAwayListener) (.-ClickAwayListener MuiClickAwayListener)) "mui-click-away-listener"))
+(def click-away-listener (adapt-react-class (.-default MuiClickAwayListener) "mui-click-away-listener"))

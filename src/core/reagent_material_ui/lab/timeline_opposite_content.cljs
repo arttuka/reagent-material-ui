@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/lab/TimelineOppositeContent" :as MuiTimelineOppositeContent]))
 
-(def timeline-opposite-content (adapt-react-class (or (.-default MuiTimelineOppositeContent) (.-TimelineOppositeContent MuiTimelineOppositeContent)) "mui-timeline-opposite-content"))
+(def timeline-opposite-content (adapt-react-class (.-default MuiTimelineOppositeContent) "mui-timeline-opposite-content"))

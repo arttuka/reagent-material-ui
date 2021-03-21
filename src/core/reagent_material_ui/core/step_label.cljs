@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/StepLabel" :as MuiStepLabel]))
 
-(def step-label (adapt-react-class (or (.-default MuiStepLabel) (.-StepLabel MuiStepLabel)) "mui-step-label"))
+(def step-label (adapt-react-class (.-default MuiStepLabel) "mui-step-label"))

@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/lab/TimelineConnector" :as MuiTimelineConnector]))
 
-(def timeline-connector (adapt-react-class (or (.-default MuiTimelineConnector) (.-TimelineConnector MuiTimelineConnector)) "mui-timeline-connector"))
+(def timeline-connector (adapt-react-class (.-default MuiTimelineConnector) "mui-timeline-connector"))

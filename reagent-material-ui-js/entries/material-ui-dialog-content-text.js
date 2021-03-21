@@ -1,0 +1,1 @@
+export { DialogContentText as default } from '@material-ui/core'

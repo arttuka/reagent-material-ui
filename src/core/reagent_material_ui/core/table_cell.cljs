@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/TableCell" :as MuiTableCell]))
 
-(def table-cell (adapt-react-class (or (.-default MuiTableCell) (.-TableCell MuiTableCell)) "mui-table-cell"))
+(def table-cell (adapt-react-class (.-default MuiTableCell) "mui-table-cell"))

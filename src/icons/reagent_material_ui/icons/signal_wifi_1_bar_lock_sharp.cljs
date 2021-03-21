@@ -1,8 +1,9 @@
 (ns reagent-material-ui.icons.signal-wifi-1-bar-lock-sharp
   "Imports @material-ui/icons/SignalWifi1BarLockSharp as a Reagent component."
-  (:require-macros [reagent-material-ui.util :refer [e]])
+  (:require-macros [reagent-material-ui.util :refer [create-svg-icon e]])
   (:require [react :as react]
-            [reagent-material-ui.util :refer [create-svg-icon]]))
+            ["@material-ui/core/SvgIcon" :as SvgIcon]
+            [reagent-material-ui.util]))
 
 (def signal-wifi-1-bar-lock-sharp (create-svg-icon (e react/Fragment nil (e "path" #js {"d" "M23 16v-1.34c0-1.47-1.2-2.75-2.66-2.66-1.33.09-2.34 1.16-2.34 2.5V16h-1v6h7v-6h-1zm-1 0h-3v-1.5c0-.8.7-1.5 1.5-1.5s1.5.7 1.5 1.5V16z"}) (e "path" #js {"d" "M15.5 14.5c0-2.8 2.2-5 5-5 .36 0 .71.04 1.05.11L23.64 7c-.45-.34-4.93-4-11.64-4C5.28 3 .81 6.66.36 7L12 21.5l3.5-4.36V14.5z", "fillOpacity" ".3"}) (e "path" #js {"d" "M15.5 14.5c0-.23.04-.46.07-.68-.92-.43-2.14-.82-3.57-.82-3 0-5.1 1.7-5.3 1.9l5.3 6.6 3.5-4.36V14.5z"}))
                                                    "SignalWifi1BarLockSharp"))

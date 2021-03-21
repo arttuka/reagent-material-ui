@@ -1,0 +1,1 @@
+export { useMediaQuery as default } from '@material-ui/core'

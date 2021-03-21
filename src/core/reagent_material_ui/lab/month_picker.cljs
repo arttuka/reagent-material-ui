@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/lab/MonthPicker" :as MuiMonthPicker]))
 
-(def month-picker (adapt-react-class (or (.-default MuiMonthPicker) (.-MonthPicker MuiMonthPicker)) "mui-month-picker"))
+(def month-picker (adapt-react-class (.-default MuiMonthPicker) "mui-month-picker"))

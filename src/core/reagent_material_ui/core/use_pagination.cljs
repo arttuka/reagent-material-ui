@@ -5,4 +5,4 @@
   (:require [reagent-material-ui.util :refer [wrap-js-function]]
             ["@material-ui/core/usePagination" :as MuiusePagination]))
 
-(def use-pagination (wrap-js-function (or (.-default MuiusePagination) (.-usePagination MuiusePagination))))
+(def use-pagination (wrap-js-function (.-default MuiusePagination)))

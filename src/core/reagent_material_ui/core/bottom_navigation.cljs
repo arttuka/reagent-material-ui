@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/BottomNavigation" :as MuiBottomNavigation]))
 
-(def bottom-navigation (adapt-react-class (or (.-default MuiBottomNavigation) (.-BottomNavigation MuiBottomNavigation)) "mui-bottom-navigation"))
+(def bottom-navigation (adapt-react-class (.-default MuiBottomNavigation) "mui-bottom-navigation"))

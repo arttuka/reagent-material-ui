@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/TableBody" :as MuiTableBody]))
 
-(def table-body (adapt-react-class (or (.-default MuiTableBody) (.-TableBody MuiTableBody)) "mui-table-body"))
+(def table-body (adapt-react-class (.-default MuiTableBody) "mui-table-body"))

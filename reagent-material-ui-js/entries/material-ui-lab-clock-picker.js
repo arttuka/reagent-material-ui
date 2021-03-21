@@ -1,0 +1,1 @@
+export { ClockPicker as default } from '@material-ui/lab'

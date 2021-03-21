@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/ListItemAvatar" :as MuiListItemAvatar]))
 
-(def list-item-avatar (adapt-react-class (or (.-default MuiListItemAvatar) (.-ListItemAvatar MuiListItemAvatar)) "mui-list-item-avatar"))
+(def list-item-avatar (adapt-react-class (.-default MuiListItemAvatar) "mui-list-item-avatar"))

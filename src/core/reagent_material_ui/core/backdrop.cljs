@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/Backdrop" :as MuiBackdrop]))
 
-(def backdrop (adapt-react-class (or (.-default MuiBackdrop) (.-Backdrop MuiBackdrop)) "mui-backdrop"))
+(def backdrop (adapt-react-class (.-default MuiBackdrop) "mui-backdrop"))

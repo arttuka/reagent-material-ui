@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/Radio" :as MuiRadio]))
 
-(def radio (adapt-react-class (or (.-default MuiRadio) (.-Radio MuiRadio)) "mui-radio"))
+(def radio (adapt-react-class (.-default MuiRadio) "mui-radio"))

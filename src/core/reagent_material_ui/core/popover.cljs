@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/Popover" :as MuiPopover]))
 
-(def popover (adapt-react-class (or (.-default MuiPopover) (.-Popover MuiPopover)) "mui-popover"))
+(def popover (adapt-react-class (.-default MuiPopover) "mui-popover"))

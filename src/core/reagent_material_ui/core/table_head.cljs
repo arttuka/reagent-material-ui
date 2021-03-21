@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/TableHead" :as MuiTableHead]))
 
-(def table-head (adapt-react-class (or (.-default MuiTableHead) (.-TableHead MuiTableHead)) "mui-table-head"))
+(def table-head (adapt-react-class (.-default MuiTableHead) "mui-table-head"))

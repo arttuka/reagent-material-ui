@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/Slide" :as MuiSlide]))
 
-(def slide (adapt-react-class (or (.-default MuiSlide) (.-Slide MuiSlide)) "mui-slide"))
+(def slide (adapt-react-class (.-default MuiSlide) "mui-slide"))

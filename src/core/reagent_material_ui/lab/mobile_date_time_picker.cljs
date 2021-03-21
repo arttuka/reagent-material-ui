@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/lab/MobileDateTimePicker" :as MuiMobileDateTimePicker]))
 
-(def mobile-date-time-picker (adapt-react-class (or (.-default MuiMobileDateTimePicker) (.-MobileDateTimePicker MuiMobileDateTimePicker)) "mui-mobile-date-time-picker"))
+(def mobile-date-time-picker (adapt-react-class (.-default MuiMobileDateTimePicker) "mui-mobile-date-time-picker"))

@@ -1,8 +1,9 @@
 (ns reagent-material-ui.icons.drafts-rounded
   "Imports @material-ui/icons/DraftsRounded as a Reagent component."
-  (:require-macros [reagent-material-ui.util :refer [e]])
+  (:require-macros [reagent-material-ui.util :refer [create-svg-icon e]])
   (:require [react :as react]
-            [reagent-material-ui.util :refer [create-svg-icon]]))
+            ["@material-ui/core/SvgIcon" :as SvgIcon]
+            [reagent-material-ui.util]))
 
 (def drafts-rounded (create-svg-icon (e "path" #js {"d" "M22 8c0-.72-.38-1.35-.95-1.7l-8.04-4.71c-.62-.37-1.4-.37-2.02 0L2.95 6.3C2.38 6.65 2 7.28 2 8v11c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8zm-11.06 4.34l-7.2-4.5 7.75-4.54c.31-.18.7-.18 1.01 0l7.75 4.54-7.2 4.5c-.64.4-1.46.4-2.11 0z"})
                                      "DraftsRounded"))

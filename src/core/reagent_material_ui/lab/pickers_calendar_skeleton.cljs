@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/lab/PickersCalendarSkeleton" :as MuiPickersCalendarSkeleton]))
 
-(def pickers-calendar-skeleton (adapt-react-class (or (.-default MuiPickersCalendarSkeleton) (.-PickersCalendarSkeleton MuiPickersCalendarSkeleton)) "mui-pickers-calendar-skeleton"))
+(def pickers-calendar-skeleton (adapt-react-class (.-default MuiPickersCalendarSkeleton) "mui-pickers-calendar-skeleton"))

@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/TabScrollButton" :as MuiTabScrollButton]))
 
-(def tab-scroll-button (adapt-react-class (or (.-default MuiTabScrollButton) (.-TabScrollButton MuiTabScrollButton)) "mui-tab-scroll-button"))
+(def tab-scroll-button (adapt-react-class (.-default MuiTabScrollButton) "mui-tab-scroll-button"))

@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/FormControlLabel" :as MuiFormControlLabel]))
 
-(def form-control-label (adapt-react-class (or (.-default MuiFormControlLabel) (.-FormControlLabel MuiFormControlLabel)) "mui-form-control-label"))
+(def form-control-label (adapt-react-class (.-default MuiFormControlLabel) "mui-form-control-label"))

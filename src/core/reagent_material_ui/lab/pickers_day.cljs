@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/lab/PickersDay" :as MuiPickersDay]))
 
-(def pickers-day (adapt-react-class (or (.-default MuiPickersDay) (.-PickersDay MuiPickersDay)) "mui-pickers-day"))
+(def pickers-day (adapt-react-class (.-default MuiPickersDay) "mui-pickers-day"))

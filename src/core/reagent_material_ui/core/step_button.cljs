@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/StepButton" :as MuiStepButton]))
 
-(def step-button (adapt-react-class (or (.-default MuiStepButton) (.-StepButton MuiStepButton)) "mui-step-button"))
+(def step-button (adapt-react-class (.-default MuiStepButton) "mui-step-button"))

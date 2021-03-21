@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/Fade" :as MuiFade]))
 
-(def fade (adapt-react-class (or (.-default MuiFade) (.-Fade MuiFade)) "mui-fade"))
+(def fade (adapt-react-class (.-default MuiFade) "mui-fade"))

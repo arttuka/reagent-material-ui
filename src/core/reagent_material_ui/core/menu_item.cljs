@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/MenuItem" :as MuiMenuItem]))
 
-(def menu-item (adapt-react-class (or (.-default MuiMenuItem) (.-MenuItem MuiMenuItem)) "mui-menu-item"))
+(def menu-item (adapt-react-class (.-default MuiMenuItem) "mui-menu-item"))

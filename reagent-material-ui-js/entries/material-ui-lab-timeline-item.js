@@ -1,0 +1,1 @@
+export { TimelineItem as default } from '@material-ui/lab'

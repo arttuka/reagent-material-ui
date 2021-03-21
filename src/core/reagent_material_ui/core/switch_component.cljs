@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/Switch" :as MuiSwitch]))
 
-(def switch (adapt-react-class (or (.-default MuiSwitch) (.-Switch MuiSwitch)) "mui-switch"))
+(def switch (adapt-react-class (.-default MuiSwitch) "mui-switch"))

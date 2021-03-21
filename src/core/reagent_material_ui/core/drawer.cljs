@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/Drawer" :as MuiDrawer]))
 
-(def drawer (adapt-react-class (or (.-default MuiDrawer) (.-Drawer MuiDrawer)) "mui-drawer"))
+(def drawer (adapt-react-class (.-default MuiDrawer) "mui-drawer"))

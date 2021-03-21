@@ -1,0 +1,1 @@
+export { DialogTitle as default } from '@material-ui/core'

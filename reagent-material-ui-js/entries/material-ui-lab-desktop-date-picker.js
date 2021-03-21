@@ -1,0 +1,1 @@
+export { DesktopDatePicker as default } from '@material-ui/lab'

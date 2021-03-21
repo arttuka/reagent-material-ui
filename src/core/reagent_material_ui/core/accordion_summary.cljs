@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/AccordionSummary" :as MuiAccordionSummary]))
 
-(def accordion-summary (adapt-react-class (or (.-default MuiAccordionSummary) (.-AccordionSummary MuiAccordionSummary)) "mui-accordion-summary"))
+(def accordion-summary (adapt-react-class (.-default MuiAccordionSummary) "mui-accordion-summary"))

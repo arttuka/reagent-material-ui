@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/lab/TreeItem" :as MuiTreeItem]))
 
-(def tree-item (adapt-react-class (or (.-default MuiTreeItem) (.-TreeItem MuiTreeItem)) "mui-tree-item"))
+(def tree-item (adapt-react-class (.-default MuiTreeItem) "mui-tree-item"))

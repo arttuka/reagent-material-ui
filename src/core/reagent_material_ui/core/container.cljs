@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/Container" :as MuiContainer]))
 
-(def container (adapt-react-class (or (.-default MuiContainer) (.-Container MuiContainer)) "mui-container"))
+(def container (adapt-react-class (.-default MuiContainer) "mui-container"))

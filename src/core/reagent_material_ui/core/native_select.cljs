@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/NativeSelect" :as MuiNativeSelect]))
 
-(def native-select (adapt-react-class (or (.-default MuiNativeSelect) (.-NativeSelect MuiNativeSelect)) "mui-native-select"))
+(def native-select (adapt-react-class (.-default MuiNativeSelect) "mui-native-select"))

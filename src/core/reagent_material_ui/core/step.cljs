@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/Step" :as MuiStep]))
 
-(def step (adapt-react-class (or (.-default MuiStep) (.-Step MuiStep)) "mui-step"))
+(def step (adapt-react-class (.-default MuiStep) "mui-step"))

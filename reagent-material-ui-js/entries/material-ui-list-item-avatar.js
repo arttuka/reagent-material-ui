@@ -1,0 +1,1 @@
+export { ListItemAvatar as default } from '@material-ui/core'

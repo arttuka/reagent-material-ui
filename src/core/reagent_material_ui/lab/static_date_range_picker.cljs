@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/lab/StaticDateRangePicker" :as MuiStaticDateRangePicker]))
 
-(def static-date-range-picker (adapt-react-class (or (.-default MuiStaticDateRangePicker) (.-StaticDateRangePicker MuiStaticDateRangePicker)) "mui-static-date-range-picker"))
+(def static-date-range-picker (adapt-react-class (.-default MuiStaticDateRangePicker) "mui-static-date-range-picker"))

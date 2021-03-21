@@ -1,0 +1,1 @@
+export { usePagination as default } from '@material-ui/core'

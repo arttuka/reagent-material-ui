@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/ImageListItemBar" :as MuiImageListItemBar]))
 
-(def image-list-item-bar (adapt-react-class (or (.-default MuiImageListItemBar) (.-ImageListItemBar MuiImageListItemBar)) "mui-image-list-item-bar"))
+(def image-list-item-bar (adapt-react-class (.-default MuiImageListItemBar) "mui-image-list-item-bar"))

@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/lab/TabPanel" :as MuiTabPanel]))
 
-(def tab-panel (adapt-react-class (or (.-default MuiTabPanel) (.-TabPanel MuiTabPanel)) "mui-tab-panel"))
+(def tab-panel (adapt-react-class (.-default MuiTabPanel) "mui-tab-panel"))

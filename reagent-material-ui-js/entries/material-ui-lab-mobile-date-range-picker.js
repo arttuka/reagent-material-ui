@@ -1,0 +1,1 @@
+export { MobileDateRangePicker as default } from '@material-ui/lab'

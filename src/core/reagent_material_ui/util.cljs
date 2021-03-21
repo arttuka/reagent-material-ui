@@ -183,10 +183,3 @@
 
 (defn use-state [initial-state]
   (react/useState initial-state))
-
-(defn create-svg-icon [path display-name]
-  (let [component (react/memo (forward-ref [props ref]
-                                (e (or (.-default SvgIcon) (.-SvgIcon SvgIcon))
-                                   (js/Object.assign #js {:ref ref} props)
-                                   path)))]
-    (adapt-react-class component display-name)))

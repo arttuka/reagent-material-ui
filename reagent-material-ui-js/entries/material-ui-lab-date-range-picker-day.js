@@ -1,0 +1,1 @@
+export { DateRangePickerDay as default } from '@material-ui/lab'

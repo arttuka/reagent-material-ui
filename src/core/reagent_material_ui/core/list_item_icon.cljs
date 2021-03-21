@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/ListItemIcon" :as MuiListItemIcon]))
 
-(def list-item-icon (adapt-react-class (or (.-default MuiListItemIcon) (.-ListItemIcon MuiListItemIcon)) "mui-list-item-icon"))
+(def list-item-icon (adapt-react-class (.-default MuiListItemIcon) "mui-list-item-icon"))

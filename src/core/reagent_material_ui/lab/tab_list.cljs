@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/lab/TabList" :as MuiTabList]))
 
-(def tab-list (adapt-react-class (or (.-default MuiTabList) (.-TabList MuiTabList)) "mui-tab-list"))
+(def tab-list (adapt-react-class (.-default MuiTabList) "mui-tab-list"))
