@@ -1,0 +1,5 @@
+^{:watch-dirs      ["src"]
+  :auto-bundle     :webpack
+  :bundle-freq     :smart
+  :final-output-to "target/public/js/app.js"}
+{:main example.core}

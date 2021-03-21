@@ -4,7 +4,16 @@ Example project demonstrating `arttuka/reagent-material-ui`. Server will run at 
 
 ### Run with Figwheel Main
 
-    lein run
+#### Using CLJSJS
+
+    lein run:dev
+
+#### Using npm-deps
+
+Uncomment the dependency exclusions in `project.clj` for `arttuka/reagent-material-ui`, then
+
+    npm install
+    lein run:npm
     
 ### Run with shadow-cljs
 
