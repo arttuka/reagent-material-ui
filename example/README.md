@@ -6,18 +6,22 @@ Example project demonstrating `arttuka/reagent-material-ui`. Server will run at 
 
 #### Leiningen + CLJSJS deps
 
-    lein run
+    lein run:dev
 
 #### Leiningen + NPM deps
 
+Uncomment the dependency exclusions in `project.clj` for `arttuka/reagent-material-ui`, then
+
     npm install
-    lein run-npm
+    lein run:npm
 
 #### Clojure CLI + CLJSJS deps
 
-    clj -M:run
+    clj -M:run-dev
 
 #### Clojure CLI + NPM deps
+
+Uncomment the dependency exclusions in `project.clj` for `arttuka/reagent-material-ui`, then
 
     npm install
     clj -M:run-npm

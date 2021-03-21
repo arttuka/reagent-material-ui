@@ -1,5 +1,5 @@
 ^{:watch-dirs ["src"]}
 {:main       example.core
- :output-to  "resources/public/js/main.js"
+ :output-to  "resources/public/js/app.js"
  :output-dir "resources/public/js/dev"
  :npm-deps   false}
