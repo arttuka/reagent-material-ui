@@ -2,6 +2,14 @@
 
 See [Material UI changelog](https://github.com/mui-org/material-ui/blob/next/CHANGELOG.md) for changes in Material UI.
 
+## 5.0.0-alpha.27-1
+
+**[compare](https://github.com/arttuka/reagent-material-ui/compare/v5.0.0-alpha.27-0...v5.0.0-alpha.27-1)**
+
+- Move packaged Material UI to a separate dependency so it can be excluded
+- Add source maps to dev versions of packaged Material UI
+- Remove optional dependency of `@material-ui/lab` from `deps.cljs`
+
 ## 5.0.0-alpha.27-0
 
 **[compare](https://github.com/arttuka/reagent-material-ui/compare/v5.0.0-alpha.20-0...v5.0.0-alpha.27-0)**
