@@ -2,6 +2,14 @@
 
 See [Material UI changelog](https://github.com/mui-org/material-ui/blob/master/CHANGELOG.md) for changes in Material UI.
 
+## 4.11.3-1
+
+**[compare](https://github.com/arttuka/reagent-material-ui/compare/v4.11.3-0...v4.11.3-1)**
+
+- Move packaged Material UI to a separate dependency so it can be excluded
+- Add source maps to dev versions of packaged Material UI
+- Remove optional dependencies (`@material-ui/pickers` and `@material-ui/lab` from `deps.cljs`)
+
 ## 4.11.3-0
 
 **[compare](https://github.com/arttuka/reagent-material-ui/compare/v4.11.2-0...v4.11.3-0)**

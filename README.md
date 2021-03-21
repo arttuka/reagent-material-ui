@@ -17,7 +17,7 @@ Their examples are very good. and this library tries to follow the original idea
 
 To add Material UI to an existing Reagent project, just add this library to your dependencies:
 ```
-[arttuka/reagent-material-ui "4.11.3-0"]
+[arttuka/reagent-material-ui "4.11.3-1"]
 ```
 
 Most of the library is in the form of regular Reagent components. Each component is contained in a namespace that mirrors
@@ -46,6 +46,13 @@ See the example project for a usage example.
 This library also includes date and time picker components from [Material-UI Lab](https://material-ui.com/components/about-the-lab/).
 
 Namespace `reagent-material-ui.lab` contains all components from `@material-ui/lab`.
+
+#### Using npm dependencies with Figwheel Main
+
+To use npm dependencies with Figwheel Main, you need to exclude prebuilt JS files (React from CLJSJS and Material UI from this library).
+To do so, add these exclusions to your dependency. See the example project for working configuration.
+
+    [arttuka/reagent-material-ui "4.11.3-1" :exclusions [cljsjs/react cljsjs/react-dom cljsjs/react-dom-server arttuka/reagent-material-ui-js]]
 
 #### Material UI component names with shadow-cljs
 
