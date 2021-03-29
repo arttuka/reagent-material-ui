@@ -59,4 +59,13 @@
         (is (= {:foo "foo"
                 :elems [elem]}
                result))
-        (is (identical? elem (first (:elems result))))))))
+        (is (identical? elem (first (:elems result))))))
+    (testing "doesn't convert strings with non-keyword characters"
+      (is (= {"@media (min-width: 600px)" 0
+              "div + span"                1
+              "div::before"               2
+              ".MuiButton-core"           3}
+             (js->clj' #js {"@media (min-width: 600px)" 0
+                            "div + span"                1
+                            "div::before"               2
+                            ".MuiButton-core"           3}))))))
