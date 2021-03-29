@@ -26,6 +26,8 @@
   (and (string? s)
        (contains? #{\A \B \C \D \E \F \G \H \I \J \K \L \M \N \O \P \Q \R \S \T \U \V \W \X \Y \Z}
                   (first s))))
+(defn ^:private keyword-safe? [s]
+  (some? (re-matches #"[-*+!?<>='&$%#|\w]+" s)))
 
 (defn ^:private key->str [k]
   (let [n (name k)]
@@ -55,8 +57,10 @@
     (keyword? k) k
     (color-key? k) (keyword k)
     (numeric-string? k) (js/parseInt k)
-    (pascal-case? k) (keyword k)
-    :else (->kebab-case-keyword k)))
+    (keyword-safe? k) (if (pascal-case? k)
+                        (keyword k)
+                        (->kebab-case-keyword k))
+    :else k))
 
 (defn js->clj'
   [obj]
