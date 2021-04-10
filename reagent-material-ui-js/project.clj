@@ -1,4 +1,4 @@
-(defproject arttuka/reagent-material-ui-js "4.11.3-1"
+(defproject arttuka/reagent-material-ui-js "4.11.3-2"
   :description "Packaged Javascript files for reagent-material-ui"
   :url "https://github.com/arttuka/reagent-material-ui"
   :license {:name "Eclipse Public License 2.0"

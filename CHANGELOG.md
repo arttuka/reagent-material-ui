@@ -2,6 +2,15 @@
 
 See [Material UI changelog](https://github.com/mui-org/material-ui/blob/master/CHANGELOG.md) for changes in Material UI.
 
+## 4.11.3-2
+
+**[compare](https://github.com/arttuka/reagent-material-ui/compare/v4.11.3-1...v4.11.3-2)**
+
+- **BREAKING**: Move utility macros from `reagent-material-ui.macro` to `reagent-material-ui.util`
+- Fix bug in `reagent-material-ui/js-clj'` when converting keys with non-keyword characters (#15) @adrsm108
+- Fix broken requires when packaging with shadow-cljs umd target
+- Support React v17
+
 ## 4.11.3-1
 
 **[compare](https://github.com/arttuka/reagent-material-ui/compare/v4.11.3-0...v4.11.3-1)**
