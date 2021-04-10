@@ -1,0 +1,6 @@
+{:paths   ["src" "target" "resources"]
+ :deps    {arttuka/reagent-material-ui {:mvn/version "4.11.3-2"
+                                        #_#_ :exclusions [cljsjs/react cljsjs/react-dom cljsjs/react-dom-server arttuka/reagent-material-ui-js]}
+           com.bhauman/figwheel-main   {:mvn/version "0.2.12"}}
+ :aliases {:run-dev {:main-opts ["-m" "figwheel.main" "-b" "dev" "-r"]}
+           :run-npm {:main-opts ["-m" "figwheel.main" "-b" "npm" "-r"]}}}
