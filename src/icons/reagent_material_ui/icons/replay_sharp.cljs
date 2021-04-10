@@ -1,8 +1,9 @@
 (ns reagent-material-ui.icons.replay-sharp
   "Imports @material-ui/icons/ReplaySharp as a Reagent component."
-  (:require-macros [reagent-material-ui.macro :refer [e]])
+  (:require-macros [reagent-material-ui.util :refer [create-svg-icon e]])
   (:require [react :as react]
-            [reagent-material-ui.util :refer [create-svg-icon]]))
+            ["@material-ui/core/SvgIcon" :as SvgIcon]
+            [reagent-material-ui.util]))
 
 (def replay-sharp (create-svg-icon (e "path" #js {"d" "M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"})
                                    "ReplaySharp"))

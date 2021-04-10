@@ -1,8 +1,9 @@
 (ns reagent-material-ui.icons.hourglass-full-outlined
   "Imports @material-ui/icons/HourglassFullOutlined as a Reagent component."
-  (:require-macros [reagent-material-ui.macro :refer [e]])
+  (:require-macros [reagent-material-ui.util :refer [create-svg-icon e]])
   (:require [react :as react]
-            [reagent-material-ui.util :refer [create-svg-icon]]))
+            ["@material-ui/core/SvgIcon" :as SvgIcon]
+            [reagent-material-ui.util]))
 
 (def hourglass-full-outlined (create-svg-icon (e "path" #js {"d" "M6 2v6h.01L6 8.01 10 12l-4 4 .01.01H6V22h12v-5.99h-.01L18 16l-4-4 4-3.99-.01-.01H18V2H6z"})
                                               "HourglassFullOutlined"))

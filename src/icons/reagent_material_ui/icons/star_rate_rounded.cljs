@@ -1,8 +1,9 @@
 (ns reagent-material-ui.icons.star-rate-rounded
   "Imports @material-ui/icons/StarRateRounded as a Reagent component."
-  (:require-macros [reagent-material-ui.macro :refer [e]])
+  (:require-macros [reagent-material-ui.util :refer [create-svg-icon e]])
   (:require [react :as react]
-            [reagent-material-ui.util :refer [create-svg-icon]]))
+            ["@material-ui/core/SvgIcon" :as SvgIcon]
+            [reagent-material-ui.util]))
 
 (def star-rate-rounded (create-svg-icon (e "path" #js {"d" "M9 11.3l2.46 1.79c.39.29.92-.1.77-.56l-.94-2.89 2.43-1.73c.4-.28.2-.91-.29-.91h-2.98l-.97-3.02c-.15-.46-.8-.46-.95 0L7.55 7H4.57c-.49 0-.69.63-.29.91l2.43 1.73-.94 2.89c-.15.46.38.84.77.56L9 11.3z", "transform" "scale(1.33, 1.33)"})
                                         "StarRateRounded"))
