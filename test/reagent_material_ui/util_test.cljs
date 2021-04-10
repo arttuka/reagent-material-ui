@@ -1,5 +1,5 @@
 (ns reagent-material-ui.util-test
-  (:require-macros [reagent-material-ui.macro :refer [e]])
+  (:require-macros [reagent-material-ui.util :refer [e]])
   (:require [cljs.test :refer-macros [deftest testing is use-fixtures]]
             ["react" :as react]
             [goog.object :as obj]

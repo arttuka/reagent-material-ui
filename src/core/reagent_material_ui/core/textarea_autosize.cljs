@@ -1,7 +1,7 @@
 (ns reagent-material-ui.core.textarea-autosize
   "Imports @material-ui/core/TextareaAutosize as a Reagent component.
    Original documentation is at https://material-ui.com/api/textarea-autosize/ ."
-  (:require-macros [reagent-material-ui.macro :refer [forward-ref]])
+  (:require-macros [reagent-material-ui.util :refer [forward-ref]])
   (:require ["react" :as react]
             [reagent.core :as r :refer [atom]]
             [goog.object :as obj]

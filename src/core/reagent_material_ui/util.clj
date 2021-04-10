@@ -1,4 +1,4 @@
-(ns reagent-material-ui.macro)
+(ns reagent-material-ui.util)
 
 (defmacro e
   "Wrapper for React.createElement"
@@ -19,7 +19,7 @@
 
 (defmacro create-svg-icon [path display-name]
   `(let [component# (react/memo (forward-ref ~(symbol display-name) [props# ref#]
-                                             (e (.-default ~'SvgIcon)
-                                                (js/Object.assign (cljs.core/js-obj "ref" ref#) props#)
-                                                ~path)))]
+                                  (e (.-default ~'SvgIcon)
+                                     (js/Object.assign (cljs.core/js-obj "ref" ref#) props#)
+                                     ~path)))]
      (reagent-material-ui.util/adapt-react-class component# ~display-name)))
