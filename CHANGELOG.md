@@ -2,6 +2,13 @@
 
 See [Material UI changelog](https://github.com/mui-org/material-ui/blob/next/CHANGELOG.md) for changes in Material UI.
 
+## 5.0.0-alpha.29-0
+
+**[compare](https://github.com/arttuka/reagent-material-ui/compare/v5.0.0-alpha.27-1...v5.0.0-alpha.29-0)**
+
+- Update Material UI to v5.0.0-alpha.29
+- Fix bug in `reagent-material-ui/js-clj'` when converting keys with non-keyword characters (#15) @adrsm108
+
 ## 5.0.0-alpha.27-1
 
 **[compare](https://github.com/arttuka/reagent-material-ui/compare/v5.0.0-alpha.27-0...v5.0.0-alpha.27-1)**
