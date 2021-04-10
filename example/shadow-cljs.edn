@@ -1,5 +1,5 @@
 {:dependencies [[reagent "1.0.0"]
-                [arttuka/reagent-material-ui "5.0.0-alpha.27-1"]]
+                [arttuka/reagent-material-ui "5.0.0-alpha.29-0"]]
  :source-paths ["src"]
  :builds       {:dev {:target           :browser
                       :output-dir       "resources/public/js"
