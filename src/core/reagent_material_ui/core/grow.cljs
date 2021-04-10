@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/Grow" :as MuiGrow]))
 
-(def grow (adapt-react-class (or (.-default MuiGrow) (.-Grow MuiGrow)) "mui-grow"))
+(def grow (adapt-react-class (.-default MuiGrow) "mui-grow"))

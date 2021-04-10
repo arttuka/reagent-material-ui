@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/IconButton" :as MuiIconButton]))
 
-(def icon-button (adapt-react-class (or (.-default MuiIconButton) (.-IconButton MuiIconButton)) "mui-icon-button"))
+(def icon-button (adapt-react-class (.-default MuiIconButton) "mui-icon-button"))

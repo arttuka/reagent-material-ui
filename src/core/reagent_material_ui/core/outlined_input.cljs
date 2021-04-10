@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/OutlinedInput" :as MuiOutlinedInput]))
 
-(def outlined-input (adapt-react-class (or (.-default MuiOutlinedInput) (.-OutlinedInput MuiOutlinedInput)) "mui-outlined-input"))
+(def outlined-input (adapt-react-class (.-default MuiOutlinedInput) "mui-outlined-input"))

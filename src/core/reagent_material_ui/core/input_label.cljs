@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/InputLabel" :as MuiInputLabel]))
 
-(def input-label (adapt-react-class (or (.-default MuiInputLabel) (.-InputLabel MuiInputLabel)) "mui-input-label"))
+(def input-label (adapt-react-class (.-default MuiInputLabel) "mui-input-label"))

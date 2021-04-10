@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/Stepper" :as MuiStepper]))
 
-(def stepper (adapt-react-class (or (.-default MuiStepper) (.-Stepper MuiStepper)) "mui-stepper"))
+(def stepper (adapt-react-class (.-default MuiStepper) "mui-stepper"))

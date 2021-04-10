@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/FormGroup" :as MuiFormGroup]))
 
-(def form-group (adapt-react-class (or (.-default MuiFormGroup) (.-FormGroup MuiFormGroup)) "mui-form-group"))
+(def form-group (adapt-react-class (.-default MuiFormGroup) "mui-form-group"))

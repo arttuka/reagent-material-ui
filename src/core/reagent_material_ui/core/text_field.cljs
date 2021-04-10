@@ -25,7 +25,7 @@
    (fn textarea [props]
      [:textarea (input-props props)])))
 
-(def ^:private mui-text-field (adapt-react-class (or (.-default MuiTextField) (.-TextField MuiTextField)) "mui-text-field"))
+(def ^:private mui-text-field (adapt-react-class (.-default MuiTextField) "mui-text-field"))
 
 (defn text-field [props & children]
   (let [rows-max (get-anycase props :rows-max)

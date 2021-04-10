@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/lab/Timeline" :as MuiTimeline]))
 
-(def timeline (adapt-react-class (or (.-default MuiTimeline) (.-Timeline MuiTimeline)) "mui-timeline"))
+(def timeline (adapt-react-class (.-default MuiTimeline) "mui-timeline"))

@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/ExpansionPanelDetails" :as MuiExpansionPanelDetails]))
 
-(def expansion-panel-details (adapt-react-class (or (.-default MuiExpansionPanelDetails) (.-ExpansionPanelDetails MuiExpansionPanelDetails)) "mui-expansion-panel-details"))
+(def expansion-panel-details (adapt-react-class (.-default MuiExpansionPanelDetails) "mui-expansion-panel-details"))

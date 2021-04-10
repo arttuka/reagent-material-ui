@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/Badge" :as MuiBadge]))
 
-(def badge (adapt-react-class (or (.-default MuiBadge) (.-Badge MuiBadge)) "mui-badge"))
+(def badge (adapt-react-class (.-default MuiBadge) "mui-badge"))

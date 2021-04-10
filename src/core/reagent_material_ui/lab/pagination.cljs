@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/lab/Pagination" :as MuiPagination]))
 
-(def pagination (adapt-react-class (or (.-default MuiPagination) (.-Pagination MuiPagination)) "mui-pagination"))
+(def pagination (adapt-react-class (.-default MuiPagination) "mui-pagination"))

@@ -1,0 +1,1 @@
+export { BottomNavigationAction as default } from '@material-ui/core'

@@ -1,0 +1,1 @@
+export { GridListTileBar as default } from '@material-ui/core'

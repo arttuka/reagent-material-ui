@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/Chip" :as MuiChip]))
 
-(def chip (adapt-react-class (or (.-default MuiChip) (.-Chip MuiChip)) "mui-chip"))
+(def chip (adapt-react-class (.-default MuiChip) "mui-chip"))

@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/FilledInput" :as MuiFilledInput]))
 
-(def filled-input (adapt-react-class (or (.-default MuiFilledInput) (.-FilledInput MuiFilledInput)) "mui-filled-input"))
+(def filled-input (adapt-react-class (.-default MuiFilledInput) "mui-filled-input"))

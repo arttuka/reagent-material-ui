@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/TableFooter" :as MuiTableFooter]))
 
-(def table-footer (adapt-react-class (or (.-default MuiTableFooter) (.-TableFooter MuiTableFooter)) "mui-table-footer"))
+(def table-footer (adapt-react-class (.-default MuiTableFooter) "mui-table-footer"))

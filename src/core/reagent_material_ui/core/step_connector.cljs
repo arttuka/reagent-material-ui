@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/StepConnector" :as MuiStepConnector]))
 
-(def step-connector (adapt-react-class (or (.-default MuiStepConnector) (.-StepConnector MuiStepConnector)) "mui-step-connector"))
+(def step-connector (adapt-react-class (.-default MuiStepConnector) "mui-step-connector"))

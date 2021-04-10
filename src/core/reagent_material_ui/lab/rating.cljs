@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/lab/Rating" :as MuiRating]))
 
-(def rating (adapt-react-class (or (.-default MuiRating) (.-Rating MuiRating)) "mui-rating"))
+(def rating (adapt-react-class (.-default MuiRating) "mui-rating"))

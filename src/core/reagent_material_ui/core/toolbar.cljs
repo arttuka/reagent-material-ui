@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/Toolbar" :as MuiToolbar]))
 
-(def toolbar (adapt-react-class (or (.-default MuiToolbar) (.-Toolbar MuiToolbar)) "mui-toolbar"))
+(def toolbar (adapt-react-class (.-default MuiToolbar) "mui-toolbar"))

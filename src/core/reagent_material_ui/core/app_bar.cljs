@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/AppBar" :as MuiAppBar]))
 
-(def app-bar (adapt-react-class (or (.-default MuiAppBar) (.-AppBar MuiAppBar)) "mui-app-bar"))
+(def app-bar (adapt-react-class (.-default MuiAppBar) "mui-app-bar"))

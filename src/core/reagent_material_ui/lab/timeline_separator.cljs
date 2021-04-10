@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/lab/TimelineSeparator" :as MuiTimelineSeparator]))
 
-(def timeline-separator (adapt-react-class (or (.-default MuiTimelineSeparator) (.-TimelineSeparator MuiTimelineSeparator)) "mui-timeline-separator"))
+(def timeline-separator (adapt-react-class (.-default MuiTimelineSeparator) "mui-timeline-separator"))

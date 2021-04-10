@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/FormHelperText" :as MuiFormHelperText]))
 
-(def form-helper-text (adapt-react-class (or (.-default MuiFormHelperText) (.-FormHelperText MuiFormHelperText)) "mui-form-helper-text"))
+(def form-helper-text (adapt-react-class (.-default MuiFormHelperText) "mui-form-helper-text"))

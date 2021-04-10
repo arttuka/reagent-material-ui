@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/RootRef" :as MuiRootRef]))
 
-(def root-ref (adapt-react-class (or (.-default MuiRootRef) (.-RootRef MuiRootRef)) "mui-root-ref"))
+(def root-ref (adapt-react-class (.-default MuiRootRef) "mui-root-ref"))

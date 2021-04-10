@@ -16,3 +16,10 @@
     (assert (= 2 (count bindings)) "forward-ref requires bindings of [props ref]")
     `(react/forwardRef (fn ~@name ~bindings
                          ~@body))))
+
+(defmacro create-svg-icon [path display-name]
+  `(let [component# (react/memo (forward-ref ~(symbol display-name) [props# ref#]
+                                             (e (.-default ~'SvgIcon)
+                                                (js/Object.assign (cljs.core/js-obj "ref" ref#) props#)
+                                                ~path)))]
+     (reagent-material-ui.util/adapt-react-class component# ~display-name)))

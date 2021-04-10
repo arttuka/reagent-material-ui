@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/lab/SpeedDial" :as MuiSpeedDial]))
 
-(def speed-dial (adapt-react-class (or (.-default MuiSpeedDial) (.-SpeedDial MuiSpeedDial)) "mui-speed-dial"))
+(def speed-dial (adapt-react-class (.-default MuiSpeedDial) "mui-speed-dial"))

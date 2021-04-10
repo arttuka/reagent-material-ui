@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/GridListTileBar" :as MuiGridListTileBar]))
 
-(def grid-list-tile-bar (adapt-react-class (or (.-default MuiGridListTileBar) (.-GridListTileBar MuiGridListTileBar)) "mui-grid-list-tile-bar"))
+(def grid-list-tile-bar (adapt-react-class (.-default MuiGridListTileBar) "mui-grid-list-tile-bar"))

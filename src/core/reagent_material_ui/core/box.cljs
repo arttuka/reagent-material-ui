@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/Box" :as MuiBox]))
 
-(def box (adapt-react-class (or (.-default MuiBox) (.-Box MuiBox)) "mui-box"))
+(def box (adapt-react-class (.-default MuiBox) "mui-box"))

@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/Breadcrumbs" :as MuiBreadcrumbs]))
 
-(def breadcrumbs (adapt-react-class (or (.-default MuiBreadcrumbs) (.-Breadcrumbs MuiBreadcrumbs)) "mui-breadcrumbs"))
+(def breadcrumbs (adapt-react-class (.-default MuiBreadcrumbs) "mui-breadcrumbs"))

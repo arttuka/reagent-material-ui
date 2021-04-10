@@ -5,4 +5,4 @@
   (:require [reagent-material-ui.util :refer [wrap-js-function]]
             ["@material-ui/core/useMediaQuery" :as MuiuseMediaQuery]))
 
-(def use-media-query (wrap-js-function (or (.-default MuiuseMediaQuery) (.-useMediaQuery MuiuseMediaQuery))))
+(def use-media-query (wrap-js-function (.-default MuiuseMediaQuery)))

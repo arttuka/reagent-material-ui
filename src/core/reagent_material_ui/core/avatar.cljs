@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/Avatar" :as MuiAvatar]))
 
-(def avatar (adapt-react-class (or (.-default MuiAvatar) (.-Avatar MuiAvatar)) "mui-avatar"))
+(def avatar (adapt-react-class (.-default MuiAvatar) "mui-avatar"))

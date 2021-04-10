@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/lab/Alert" :as MuiAlert]))
 
-(def alert (adapt-react-class (or (.-default MuiAlert) (.-Alert MuiAlert)) "mui-alert"))
+(def alert (adapt-react-class (.-default MuiAlert) "mui-alert"))

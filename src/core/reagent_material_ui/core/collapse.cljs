@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/Collapse" :as MuiCollapse]))
 
-(def collapse (adapt-react-class (or (.-default MuiCollapse) (.-Collapse MuiCollapse)) "mui-collapse"))
+(def collapse (adapt-react-class (.-default MuiCollapse) "mui-collapse"))

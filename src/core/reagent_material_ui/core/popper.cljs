@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/Popper" :as MuiPopper]))
 
-(def popper (adapt-react-class (or (.-default MuiPopper) (.-Popper MuiPopper)) "mui-popper"))
+(def popper (adapt-react-class (.-default MuiPopper) "mui-popper"))

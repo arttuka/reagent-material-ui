@@ -1,0 +1,1 @@
+export { SnackbarContent as default } from '@material-ui/core'

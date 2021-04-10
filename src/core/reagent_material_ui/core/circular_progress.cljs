@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/CircularProgress" :as MuiCircularProgress]))
 
-(def circular-progress (adapt-react-class (or (.-default MuiCircularProgress) (.-CircularProgress MuiCircularProgress)) "mui-circular-progress"))
+(def circular-progress (adapt-react-class (.-default MuiCircularProgress) "mui-circular-progress"))

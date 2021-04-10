@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/RadioGroup" :as MuiRadioGroup]))
 
-(def radio-group (adapt-react-class (or (.-default MuiRadioGroup) (.-RadioGroup MuiRadioGroup)) "mui-radio-group"))
+(def radio-group (adapt-react-class (.-default MuiRadioGroup) "mui-radio-group"))

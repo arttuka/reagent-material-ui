@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/AccordionActions" :as MuiAccordionActions]))
 
-(def accordion-actions (adapt-react-class (or (.-default MuiAccordionActions) (.-AccordionActions MuiAccordionActions)) "mui-accordion-actions"))
+(def accordion-actions (adapt-react-class (.-default MuiAccordionActions) "mui-accordion-actions"))

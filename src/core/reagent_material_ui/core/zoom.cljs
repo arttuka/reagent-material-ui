@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/Zoom" :as MuiZoom]))
 
-(def zoom (adapt-react-class (or (.-default MuiZoom) (.-Zoom MuiZoom)) "mui-zoom"))
+(def zoom (adapt-react-class (.-default MuiZoom) "mui-zoom"))

@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/Divider" :as MuiDivider]))
 
-(def divider (adapt-react-class (or (.-default MuiDivider) (.-Divider MuiDivider)) "mui-divider"))
+(def divider (adapt-react-class (.-default MuiDivider) "mui-divider"))

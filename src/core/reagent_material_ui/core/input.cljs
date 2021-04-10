@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/Input" :as MuiInput]))
 
-(def input (adapt-react-class (or (.-default MuiInput) (.-Input MuiInput)) "mui-input"))
+(def input (adapt-react-class (.-default MuiInput) "mui-input"))

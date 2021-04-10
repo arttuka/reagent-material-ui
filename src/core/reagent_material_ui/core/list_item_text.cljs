@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/ListItemText" :as MuiListItemText]))
 
-(def list-item-text (adapt-react-class (or (.-default MuiListItemText) (.-ListItemText MuiListItemText)) "mui-list-item-text"))
+(def list-item-text (adapt-react-class (.-default MuiListItemText) "mui-list-item-text"))

@@ -1,0 +1,1 @@
+export { NativeSelect as default } from '@material-ui/core'

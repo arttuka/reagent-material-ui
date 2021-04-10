@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/CardActionArea" :as MuiCardActionArea]))
 
-(def card-action-area (adapt-react-class (or (.-default MuiCardActionArea) (.-CardActionArea MuiCardActionArea)) "mui-card-action-area"))
+(def card-action-area (adapt-react-class (.-default MuiCardActionArea) "mui-card-action-area"))

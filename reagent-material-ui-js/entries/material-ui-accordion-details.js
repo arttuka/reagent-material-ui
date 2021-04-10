@@ -1,0 +1,1 @@
+export { AccordionDetails as default } from '@material-ui/core'

@@ -105,6 +105,7 @@
             reagent-material-ui.core.swipeable-drawer
             reagent-material-ui.core.switch-component
             reagent-material-ui.core.tab
+            reagent-material-ui.core.tab-scroll-button
             reagent-material-ui.core.table
             reagent-material-ui.core.table-body
             reagent-material-ui.core.table-cell
@@ -114,7 +115,6 @@
             reagent-material-ui.core.table-pagination
             reagent-material-ui.core.table-row
             reagent-material-ui.core.table-sort-label
-            reagent-material-ui.core.tab-scroll-button
             reagent-material-ui.core.tabs
             reagent-material-ui.core.text-field
             reagent-material-ui.core.textarea-autosize
@@ -228,6 +228,7 @@
 (def swipeable-drawer reagent-material-ui.core.swipeable-drawer/swipeable-drawer)
 (def switch reagent-material-ui.core.switch-component/switch)
 (def tab reagent-material-ui.core.tab/tab)
+(def tab-scroll-button reagent-material-ui.core.tab-scroll-button/tab-scroll-button)
 (def table reagent-material-ui.core.table/table)
 (def table-body reagent-material-ui.core.table-body/table-body)
 (def table-cell reagent-material-ui.core.table-cell/table-cell)
@@ -237,7 +238,6 @@
 (def table-pagination reagent-material-ui.core.table-pagination/table-pagination)
 (def table-row reagent-material-ui.core.table-row/table-row)
 (def table-sort-label reagent-material-ui.core.table-sort-label/table-sort-label)
-(def tab-scroll-button reagent-material-ui.core.tab-scroll-button/tab-scroll-button)
 (def tabs reagent-material-ui.core.tabs/tabs)
 (def text-field reagent-material-ui.core.text-field/text-field)
 (def textarea-autosize reagent-material-ui.core.textarea-autosize/textarea-autosize)

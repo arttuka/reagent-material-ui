@@ -1,0 +1,1 @@
+export { Portal as default } from '@material-ui/core'

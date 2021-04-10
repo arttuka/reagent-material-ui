@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/SvgIcon" :as MuiSvgIcon]))
 
-(def svg-icon (adapt-react-class (or (.-default MuiSvgIcon) (.-SvgIcon MuiSvgIcon)) "mui-svg-icon"))
+(def svg-icon (adapt-react-class (.-default MuiSvgIcon) "mui-svg-icon"))

@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/lab/Autocomplete" :as MuiAutocomplete]))
 
-(def autocomplete (adapt-react-class (or (.-default MuiAutocomplete) (.-Autocomplete MuiAutocomplete)) "mui-autocomplete"))
+(def autocomplete (adapt-react-class (.-default MuiAutocomplete) "mui-autocomplete"))

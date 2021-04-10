@@ -1,0 +1,1 @@
+export { Alert as default } from '@material-ui/lab'

@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/ListSubheader" :as MuiListSubheader]))
 
-(def list-subheader (adapt-react-class (or (.-default MuiListSubheader) (.-ListSubheader MuiListSubheader)) "mui-list-subheader"))
+(def list-subheader (adapt-react-class (.-default MuiListSubheader) "mui-list-subheader"))

@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/lab/AvatarGroup" :as MuiAvatarGroup]))
 
-(def avatar-group (adapt-react-class (or (.-default MuiAvatarGroup) (.-AvatarGroup MuiAvatarGroup)) "mui-avatar-group"))
+(def avatar-group (adapt-react-class (.-default MuiAvatarGroup) "mui-avatar-group"))

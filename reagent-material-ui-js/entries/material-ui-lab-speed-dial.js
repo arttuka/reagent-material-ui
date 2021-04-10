@@ -1,0 +1,1 @@
+export { SpeedDial as default } from '@material-ui/lab'

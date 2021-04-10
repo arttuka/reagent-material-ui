@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/Fab" :as MuiFab]))
 
-(def fab (adapt-react-class (or (.-default MuiFab) (.-Fab MuiFab)) "mui-fab"))
+(def fab (adapt-react-class (.-default MuiFab) "mui-fab"))

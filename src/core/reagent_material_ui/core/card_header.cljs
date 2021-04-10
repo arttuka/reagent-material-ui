@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/CardHeader" :as MuiCardHeader]))
 
-(def card-header (adapt-react-class (or (.-default MuiCardHeader) (.-CardHeader MuiCardHeader)) "mui-card-header"))
+(def card-header (adapt-react-class (.-default MuiCardHeader) "mui-card-header"))

@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/ListItemSecondaryAction" :as MuiListItemSecondaryAction]))
 
-(def list-item-secondary-action (adapt-react-class (or (.-default MuiListItemSecondaryAction) (.-ListItemSecondaryAction MuiListItemSecondaryAction)) "mui-list-item-secondary-action"))
+(def list-item-secondary-action (adapt-react-class (.-default MuiListItemSecondaryAction) "mui-list-item-secondary-action"))

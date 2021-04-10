@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/Paper" :as MuiPaper]))
 
-(def paper (adapt-react-class (or (.-default MuiPaper) (.-Paper MuiPaper)) "mui-paper"))
+(def paper (adapt-react-class (.-default MuiPaper) "mui-paper"))

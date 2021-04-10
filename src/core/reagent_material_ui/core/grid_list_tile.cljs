@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/GridListTile" :as MuiGridListTile]))
 
-(def grid-list-tile (adapt-react-class (or (.-default MuiGridListTile) (.-GridListTile MuiGridListTile)) "mui-grid-list-tile"))
+(def grid-list-tile (adapt-react-class (.-default MuiGridListTile) "mui-grid-list-tile"))

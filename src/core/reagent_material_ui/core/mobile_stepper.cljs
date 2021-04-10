@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/MobileStepper" :as MuiMobileStepper]))
 
-(def mobile-stepper (adapt-react-class (or (.-default MuiMobileStepper) (.-MobileStepper MuiMobileStepper)) "mui-mobile-stepper"))
+(def mobile-stepper (adapt-react-class (.-default MuiMobileStepper) "mui-mobile-stepper"))

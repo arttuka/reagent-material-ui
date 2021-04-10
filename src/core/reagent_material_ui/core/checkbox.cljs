@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/Checkbox" :as MuiCheckbox]))
 
-(def checkbox (adapt-react-class (or (.-default MuiCheckbox) (.-Checkbox MuiCheckbox)) "mui-checkbox"))
+(def checkbox (adapt-react-class (.-default MuiCheckbox) "mui-checkbox"))

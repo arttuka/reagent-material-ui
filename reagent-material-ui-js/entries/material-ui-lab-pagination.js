@@ -1,0 +1,1 @@
+export { Pagination as default, usePagination } from '@material-ui/lab'

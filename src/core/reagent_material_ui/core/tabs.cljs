@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/Tabs" :as MuiTabs]))
 
-(def tabs (adapt-react-class (or (.-default MuiTabs) (.-Tabs MuiTabs)) "mui-tabs"))
+(def tabs (adapt-react-class (.-default MuiTabs) "mui-tabs"))

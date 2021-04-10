@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/DialogTitle" :as MuiDialogTitle]))
 
-(def dialog-title (adapt-react-class (or (.-default MuiDialogTitle) (.-DialogTitle MuiDialogTitle)) "mui-dialog-title"))
+(def dialog-title (adapt-react-class (.-default MuiDialogTitle) "mui-dialog-title"))

@@ -4,4 +4,4 @@
   (:require [reagent-material-ui.util :refer [adapt-react-class]]
             ["@material-ui/core/TablePagination" :as MuiTablePagination]))
 
-(def table-pagination (adapt-react-class (or (.-default MuiTablePagination) (.-TablePagination MuiTablePagination)) "mui-table-pagination"))
+(def table-pagination (adapt-react-class (.-default MuiTablePagination) "mui-table-pagination"))
