@@ -43,9 +43,9 @@
                                                           (get-style-value computed-style "padding-top"))
                                                border (+ (get-style-value computed-style "border-bottom-width")
                                                          (get-style-value computed-style "border-top-width"))
-                                               inner-height (- (.-scrollHeight shadow) padding)
+                                               inner-height (.-scrollHeight shadow)
                                                _ (set! (.-value shadow) "x")
-                                               single-row-height (- (.-scrollHeight shadow) padding)
+                                               single-row-height (.-scrollHeight shadow)
                                                outer-height (cond-> inner-height
                                                               min-rows (max (* (js/Number. min-rows) single-row-height))
                                                               max-rows (min (* (js/Number. max-rows) single-row-height))
@@ -110,6 +110,7 @@
                                          :top        0
                                          :left       0
                                          :transform  "translateZ(0)"}
-                                        style)}]]))))
+                                        style
+                                        {:padding 0})}]]))))
 
 (def textarea-autosize (adapt-react-class react-textarea-autosize))

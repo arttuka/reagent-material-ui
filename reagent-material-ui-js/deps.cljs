@@ -1,5 +1,5 @@
 {:foreign-libs
- ({:file "material-ui/material-ui.inc.js",
+ [{:file "material-ui/material-ui.inc.js",
    :file-min "material-ui/material-ui.min.inc.js",
    :provides
    ["@material-ui/core"
@@ -559,6 +559,11 @@
    :global-exports
    {"@material-ui/core/SpeedDialIcon" MaterialUISpeedDialIcon},
    :requires ["@material-ui/core"]}
+  {:file "material-ui/material-ui-stack.inc.js",
+   :file-min "material-ui/material-ui-stack.min.inc.js",
+   :provides ["@material-ui/core/Stack"],
+   :global-exports {"@material-ui/core/Stack" MaterialUIStack},
+   :requires ["@material-ui/core"]}
   {:file "material-ui/material-ui-step.inc.js",
    :file-min "material-ui/material-ui-step.min.inc.js",
    :provides ["@material-ui/core/Step"],
@@ -1013,5 +1018,5 @@
    :provides ["@material-ui/lab/YearPicker"],
    :global-exports
    {"@material-ui/lab/YearPicker" MaterialUILabYearPicker},
-   :requires ["@material-ui/lab"]}),
+   :requires ["@material-ui/lab"]}],
  :externs ["material-ui/material-ui.ext.js"]}

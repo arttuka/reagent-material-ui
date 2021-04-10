@@ -102,6 +102,7 @@
             reagent-material-ui.core.speed-dial
             reagent-material-ui.core.speed-dial-action
             reagent-material-ui.core.speed-dial-icon
+            reagent-material-ui.core.stack
             reagent-material-ui.core.step
             reagent-material-ui.core.step-button
             reagent-material-ui.core.step-connector
@@ -239,6 +240,7 @@
 (def speed-dial reagent-material-ui.core.speed-dial/speed-dial)
 (def speed-dial-action reagent-material-ui.core.speed-dial-action/speed-dial-action)
 (def speed-dial-icon reagent-material-ui.core.speed-dial-icon/speed-dial-icon)
+(def stack reagent-material-ui.core.stack/stack)
 (def step reagent-material-ui.core.step/step)
 (def step-button reagent-material-ui.core.step-button/step-button)
 (def step-connector reagent-material-ui.core.step-connector/step-connector)

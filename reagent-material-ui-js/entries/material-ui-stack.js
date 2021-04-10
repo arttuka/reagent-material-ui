@@ -1,0 +1,1 @@
+export { Stack as default } from '@material-ui/core'

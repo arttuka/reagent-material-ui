@@ -288,6 +288,9 @@
     "entry": "material-ui-speed-dial-icon",
     "root": "MaterialUISpeedDialIcon"
   }, {
+    "entry": "material-ui-stack",
+    "root": "MaterialUIStack"
+  }, {
     "entry": "material-ui-step",
     "root": "MaterialUIStep"
   }, {
