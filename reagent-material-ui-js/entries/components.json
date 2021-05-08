@@ -399,6 +399,12 @@
     "entry": "material-ui-use-scroll-trigger",
     "root": "MaterialUIUseScrollTrigger"
   }, {
+    "entry": "material-ui-lab-calendar-picker",
+    "root": "MaterialUILabCalendarPicker"
+  }, {
+    "entry": "material-ui-lab-calendar-picker-skeleton",
+    "root": "MaterialUILabCalendarPickerSkeleton"
+  }, {
     "entry": "material-ui-lab-clock-picker",
     "root": "MaterialUILabClockPicker"
   }, {
@@ -413,9 +419,6 @@
   }, {
     "entry": "material-ui-lab-date-time-picker",
     "root": "MaterialUILabDateTimePicker"
-  }, {
-    "entry": "material-ui-lab-day-picker",
-    "root": "MaterialUILabDayPicker"
   }, {
     "entry": "material-ui-lab-desktop-date-picker",
     "root": "MaterialUILabDesktopDatePicker"
@@ -449,9 +452,6 @@
   }, {
     "entry": "material-ui-lab-month-picker",
     "root": "MaterialUILabMonthPicker"
-  }, {
-    "entry": "material-ui-lab-pickers-calendar-skeleton",
-    "root": "MaterialUILabPickersCalendarSkeleton"
   }, {
     "entry": "material-ui-lab-pickers-day",
     "root": "MaterialUILabPickersDay"

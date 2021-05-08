@@ -14,7 +14,6 @@ pom.xml.asc
 /dev-resources
 node_modules
 .shadow-cljs
-reagent-material-ui-js/src/material-ui/*.inc.js
 .cpcache
 .java-version
 .lsp

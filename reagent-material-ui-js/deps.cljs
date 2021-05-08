@@ -766,6 +766,20 @@
    :global-exports
    {"@material-ui/core/useScrollTrigger" MaterialUIUseScrollTrigger},
    :requires ["@material-ui/core"]}
+  {:file "material-ui/material-ui-lab-calendar-picker.inc.js",
+   :file-min "material-ui/material-ui-lab-calendar-picker.min.inc.js",
+   :provides ["@material-ui/lab/CalendarPicker"],
+   :global-exports
+   {"@material-ui/lab/CalendarPicker" MaterialUILabCalendarPicker},
+   :requires ["@material-ui/lab"]}
+  {:file "material-ui/material-ui-lab-calendar-picker-skeleton.inc.js",
+   :file-min
+   "material-ui/material-ui-lab-calendar-picker-skeleton.min.inc.js",
+   :provides ["@material-ui/lab/CalendarPickerSkeleton"],
+   :global-exports
+   {"@material-ui/lab/CalendarPickerSkeleton"
+    MaterialUILabCalendarPickerSkeleton},
+   :requires ["@material-ui/lab"]}
   {:file "material-ui/material-ui-lab-clock-picker.inc.js",
    :file-min "material-ui/material-ui-lab-clock-picker.min.inc.js",
    :provides ["@material-ui/lab/ClockPicker"],
@@ -798,12 +812,6 @@
    :provides ["@material-ui/lab/DateTimePicker"],
    :global-exports
    {"@material-ui/lab/DateTimePicker" MaterialUILabDateTimePicker},
-   :requires ["@material-ui/lab"]}
-  {:file "material-ui/material-ui-lab-day-picker.inc.js",
-   :file-min "material-ui/material-ui-lab-day-picker.min.inc.js",
-   :provides ["@material-ui/lab/DayPicker"],
-   :global-exports
-   {"@material-ui/lab/DayPicker" MaterialUILabDayPicker},
    :requires ["@material-ui/lab"]}
   {:file "material-ui/material-ui-lab-desktop-date-picker.inc.js",
    :file-min
@@ -887,15 +895,6 @@
    :provides ["@material-ui/lab/MonthPicker"],
    :global-exports
    {"@material-ui/lab/MonthPicker" MaterialUILabMonthPicker},
-   :requires ["@material-ui/lab"]}
-  {:file
-   "material-ui/material-ui-lab-pickers-calendar-skeleton.inc.js",
-   :file-min
-   "material-ui/material-ui-lab-pickers-calendar-skeleton.min.inc.js",
-   :provides ["@material-ui/lab/PickersCalendarSkeleton"],
-   :global-exports
-   {"@material-ui/lab/PickersCalendarSkeleton"
-    MaterialUILabPickersCalendarSkeleton},
    :requires ["@material-ui/lab"]}
   {:file "material-ui/material-ui-lab-pickers-day.inc.js",
    :file-min "material-ui/material-ui-lab-pickers-day.min.inc.js",
