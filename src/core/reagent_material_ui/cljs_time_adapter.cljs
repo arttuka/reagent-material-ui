@@ -224,7 +224,7 @@
 (defn cljs-time-adapter
   "Adapter for using cljs-time with reagent-material-ui.lab.localization-provider"
   [opts]
-  (let [^DateTimeSymbols locale (obj/get opts "locale" DateTimeSymbols)
+  (let [^DateTimeSymbols locale (or (obj/get opts "locale") DateTimeSymbols)
         formats (or (js->clj (obj/get opts "formats")) default-formats)
         format (fn [date format-str]
                  (let [^DateTimeFormat formatter (DateTimeFormat. format-str locale)]
