@@ -69,6 +69,7 @@
             reagent-material-ui.core.list
             reagent-material-ui.core.list-item
             reagent-material-ui.core.list-item-avatar
+            reagent-material-ui.core.list-item-button
             reagent-material-ui.core.list-item-icon
             reagent-material-ui.core.list-item-secondary-action
             reagent-material-ui.core.list-item-text
@@ -138,7 +139,8 @@
             reagent-material-ui.core.use-autocomplete
             reagent-material-ui.core.use-media-query
             reagent-material-ui.core.use-pagination
-            reagent-material-ui.core.use-scroll-trigger))
+            reagent-material-ui.core.use-scroll-trigger
+            reagent-material-ui.core.use-touch-ripple))
 
 (def accordion reagent-material-ui.core.accordion/accordion)
 (def accordion-actions reagent-material-ui.core.accordion-actions/accordion-actions)
@@ -207,6 +209,7 @@
 (def list reagent-material-ui.core.list/list)
 (def list-item reagent-material-ui.core.list-item/list-item)
 (def list-item-avatar reagent-material-ui.core.list-item-avatar/list-item-avatar)
+(def list-item-button reagent-material-ui.core.list-item-button/list-item-button)
 (def list-item-icon reagent-material-ui.core.list-item-icon/list-item-icon)
 (def list-item-secondary-action reagent-material-ui.core.list-item-secondary-action/list-item-secondary-action)
 (def list-item-text reagent-material-ui.core.list-item-text/list-item-text)
@@ -277,3 +280,4 @@
 (def use-media-query reagent-material-ui.core.use-media-query/use-media-query)
 (def use-pagination reagent-material-ui.core.use-pagination/use-pagination)
 (def use-scroll-trigger reagent-material-ui.core.use-scroll-trigger/use-scroll-trigger)
+(def use-touch-ripple reagent-material-ui.core.use-touch-ripple/use-touch-ripple)

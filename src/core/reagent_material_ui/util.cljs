@@ -115,14 +115,14 @@
     (set! (.-displayName reactified) (fun-name component))
     reactified))
 
-(defn wrap-jss-styles [styles]
+(defn wrap-styles [styles]
   (if (fn? styles)
     (fn [theme]
       (-> (js->clj' theme)
           (styles)
           (wrap-all-clj-functions)
           (clj->js')))
-    (clj->js (wrap-all-clj-functions styles))))
+    (clj->js' (wrap-all-clj-functions styles))))
 
 (defn apply-hoc [hoc component]
   (-> component

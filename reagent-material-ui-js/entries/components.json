@@ -195,6 +195,9 @@
     "entry": "material-ui-list-item-avatar",
     "root": "MaterialUIListItemAvatar"
   }, {
+    "entry": "material-ui-list-item-button",
+    "root": "MaterialUIListItemButton"
+  }, {
     "entry": "material-ui-list-item-icon",
     "root": "MaterialUIListItemIcon"
   }, {
@@ -398,6 +401,9 @@
   }, {
     "entry": "material-ui-use-scroll-trigger",
     "root": "MaterialUIUseScrollTrigger"
+  }, {
+    "entry": "material-ui-use-touch-ripple",
+    "root": "MaterialUIUseTouchRipple"
   }, {
     "entry": "material-ui-lab-calendar-picker",
     "root": "MaterialUILabCalendarPicker"

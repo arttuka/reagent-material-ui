@@ -4,7 +4,8 @@
             [cljs.test :refer-macros [deftest testing is use-fixtures]]
             [dommy.core :as dommy :refer-macros [sel1]]
             [reagent.core :as r]
-            [reagent-material-ui.styles :refer [with-styles styled with-theme]]
+            [reagent-material-ui.jss-styles :refer [with-styles with-theme]]
+            [reagent-material-ui.styles :refer [styled]]
             [reagent-material-ui.test-util :refer [unmount-fixture render]]))
 
 (use-fixtures :each unmount-fixture)

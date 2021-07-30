@@ -9,9 +9,10 @@
 
 (deftest cljsjs-test
   (testing "build succeeds with CLJSJS sources"
-    (let [item (styled (fn [{:keys [class-name children]}]
-                         [:div.item {:class class-name}
-                          children])
+    (let [component (fn [{:keys [class-name children]}]
+                      [:div.item {:class class-name}
+                       children])
+          item (styled component
                        {:color     "rgb(255, 0, 0)"
                         :font-size 20})]
       (render [stack {:direction :column}

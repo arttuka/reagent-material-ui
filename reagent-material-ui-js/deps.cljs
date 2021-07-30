@@ -1,32 +1,66 @@
 {:foreign-libs
  [{:file "material-ui/material-ui.inc.js",
    :file-min "material-ui/material-ui.min.inc.js",
-   :provides
-   ["@material-ui/core"
-    "@material-ui/core/styles"
-    "@material-ui/core/utils"],
-   :global-exports
-   {"@material-ui/core" MaterialUI,
-    "@material-ui/core/styles" MaterialUI,
-    "@material-ui/core/utils" MaterialUI},
+   :provides ["@material-ui/core"],
+   :global-exports {"@material-ui/core" MaterialUI},
    :requires
-   ["react" "react-dom" "@material-ui/styles" "@material-ui/utils"]}
+   ["@material-ui/unstyled"
+    "@material-ui/unstyled/BackdropUnstyled"
+    "@material-ui/unstyled/BadgeUnstyled"
+    "@material-ui/unstyled/ModalUnstyled"
+    "@material-ui/unstyled/NoSsr"
+    "@material-ui/unstyled/Portal"
+    "@material-ui/unstyled/SliderUnstyled"
+    "@material-ui/utils"
+    "react"
+    "react-dom"]}
+  {:file "material-ui/material-ui-core-styles.inc.js",
+   :file-min "material-ui/material-ui-core-styles.min.inc.js",
+   :provides ["@material-ui/core/styles"],
+   :global-exports {"@material-ui/core/styles" MaterialUICoreStyles},
+   :requires ["@material-ui/core"]}
+  {:file "material-ui/material-ui-core-utils.inc.js",
+   :file-min "material-ui/material-ui-core-utils.min.inc.js",
+   :provides ["@material-ui/core/utils"],
+   :global-exports {"@material-ui/core/utils" MaterialUICoreUtils},
+   :requires ["@material-ui/core"]}
   {:file "material-ui/material-ui-lab.inc.js",
    :file-min "material-ui/material-ui-lab.min.inc.js",
    :provides ["@material-ui/lab"],
    :global-exports {"@material-ui/lab" MaterialUILab},
    :requires
-   ["react" "react-dom" "@material-ui/core" "@material-ui/utils"]}
+   ["@material-ui/core"
+    "@material-ui/unstyled"
+    "@material-ui/utils"
+    "react"
+    "react-dom"]}
+  {:file "material-ui/material-ui-unstyled.inc.js",
+   :file-min "material-ui/material-ui-unstyled.min.inc.js",
+   :provides ["@material-ui/unstyled"],
+   :global-exports {"@material-ui/unstyled" MaterialUIUnstyled},
+   :requires
+   ["@material-ui/unstyled/BackdropUnstyled"
+    "@material-ui/unstyled/BadgeUnstyled"
+    "@material-ui/unstyled/ModalUnstyled"
+    "@material-ui/unstyled/NoSsr"
+    "@material-ui/unstyled/Portal"
+    "@material-ui/unstyled/SliderUnstyled"
+    "@material-ui/unstyled/SwitchUnstyled"
+    "@material-ui/unstyled/Unstable_TrapFocus"
+    "@material-ui/unstyled/composeClasses"
+    "@material-ui/unstyled/generateUtilityClass"
+    "@material-ui/unstyled/generateUtilityClasses"
+    "@material-ui/unstyled/utils"]}
   {:file "material-ui/material-ui-styles.inc.js",
    :file-min "material-ui/material-ui-styles.min.inc.js",
    :provides ["@material-ui/styles"],
    :global-exports {"@material-ui/styles" MaterialUIStyles},
-   :requires ["react" "react-dom" "@material-ui/utils"]}
+   :requires ["@material-ui/utils" "react"]}
   {:file "material-ui/material-ui-utils.inc.js",
    :file-min "material-ui/material-ui-utils.min.inc.js",
    :provides ["@material-ui/utils"],
    :global-exports {"@material-ui/utils" MaterialUIUtils},
-   :requires ["react" "react-dom"]}
+   :requires ["react"]}
   {:file "material-ui/material-ui-accordion.inc.js",
    :file-min "material-ui/material-ui-accordion.min.inc.js",
    :provides ["@material-ui/core/Accordion"],
@@ -387,6 +421,12 @@
    :provides ["@material-ui/core/ListItemAvatar"],
    :global-exports
    {"@material-ui/core/ListItemAvatar" MaterialUIListItemAvatar},
+   :requires ["@material-ui/core"]}
+  {:file "material-ui/material-ui-list-item-button.inc.js",
+   :file-min "material-ui/material-ui-list-item-button.min.inc.js",
+   :provides ["@material-ui/core/ListItemButton"],
+   :global-exports
+   {"@material-ui/core/ListItemButton" MaterialUIListItemButton},
    :requires ["@material-ui/core"]}
   {:file "material-ui/material-ui-list-item-icon.inc.js",
    :file-min "material-ui/material-ui-list-item-icon.min.inc.js",
@@ -766,6 +806,12 @@
    :global-exports
    {"@material-ui/core/useScrollTrigger" MaterialUIUseScrollTrigger},
    :requires ["@material-ui/core"]}
+  {:file "material-ui/material-ui-use-touch-ripple.inc.js",
+   :file-min "material-ui/material-ui-use-touch-ripple.min.inc.js",
+   :provides ["@material-ui/core/useTouchRipple"],
+   :global-exports
+   {"@material-ui/core/useTouchRipple" MaterialUIUseTouchRipple},
+   :requires ["@material-ui/core"]}
   {:file "material-ui/material-ui-lab-calendar-picker.inc.js",
    :file-min "material-ui/material-ui-lab-calendar-picker.min.inc.js",
    :provides ["@material-ui/lab/CalendarPicker"],
@@ -1017,5 +1063,127 @@
    :provides ["@material-ui/lab/YearPicker"],
    :global-exports
    {"@material-ui/lab/YearPicker" MaterialUILabYearPicker},
-   :requires ["@material-ui/lab"]}],
+   :requires ["@material-ui/lab"]}
+  {:file "material-ui/material-ui-unstyled-backdrop-unstyled.inc.js",
+   :file-min
+   "material-ui/material-ui-unstyled-backdrop-unstyled.min.inc.js",
+   :provides ["@material-ui/unstyled/BackdropUnstyled"],
+   :global-exports
+   {"@material-ui/unstyled/BackdropUnstyled"
+    MaterialUIUnstyledBackdropUnstyled},
+   :requires
+   ["@material-ui/unstyled/composeClasses"
+    "@material-ui/unstyled/generateUtilityClass"
+    "@material-ui/unstyled/generateUtilityClasses"
+    "@material-ui/unstyled/utils"
+    "react"]}
+  {:file "material-ui/material-ui-unstyled-badge-unstyled.inc.js",
+   :file-min
+   "material-ui/material-ui-unstyled-badge-unstyled.min.inc.js",
+   :provides ["@material-ui/unstyled/BadgeUnstyled"],
+   :global-exports
+   {"@material-ui/unstyled/BadgeUnstyled"
+    MaterialUIUnstyledBadgeUnstyled},
+   :requires
+   ["@material-ui/unstyled/composeClasses"
+    "@material-ui/unstyled/generateUtilityClass"
+    "@material-ui/unstyled/generateUtilityClasses"
+    "@material-ui/unstyled/utils"
+    "@material-ui/utils"
+    "react"]}
+  {:file "material-ui/material-ui-unstyled-modal-unstyled.inc.js",
+   :file-min
+   "material-ui/material-ui-unstyled-modal-unstyled.min.inc.js",
+   :provides ["@material-ui/unstyled/ModalUnstyled"],
+   :global-exports
+   {"@material-ui/unstyled/ModalUnstyled"
+    MaterialUIUnstyledModalUnstyled},
+   :requires
+   ["@material-ui/unstyled/Portal"
+    "@material-ui/unstyled/Unstable_TrapFocus"
+    "@material-ui/unstyled/composeClasses"
+    "@material-ui/unstyled/generateUtilityClass"
+    "@material-ui/unstyled/generateUtilityClasses"
+    "@material-ui/unstyled/utils"
+    "@material-ui/utils"
+    "react"]}
+  {:file "material-ui/material-ui-unstyled-no-ssr.inc.js",
+   :file-min "material-ui/material-ui-unstyled-no-ssr.min.inc.js",
+   :provides ["@material-ui/unstyled/NoSsr"],
+   :global-exports
+   {"@material-ui/unstyled/NoSsr" MaterialUIUnstyledNoSsr},
+   :requires ["@material-ui/utils" "react"]}
+  {:file "material-ui/material-ui-unstyled-portal.inc.js",
+   :file-min "material-ui/material-ui-unstyled-portal.min.inc.js",
+   :provides ["@material-ui/unstyled/Portal"],
+   :global-exports
+   {"@material-ui/unstyled/Portal" MaterialUIUnstyledPortal},
+   :requires ["@material-ui/utils" "react" "react-dom"]}
+  {:file "material-ui/material-ui-unstyled-slider-unstyled.inc.js",
+   :file-min
+   "material-ui/material-ui-unstyled-slider-unstyled.min.inc.js",
+   :provides ["@material-ui/unstyled/SliderUnstyled"],
+   :global-exports
+   {"@material-ui/unstyled/SliderUnstyled"
+    MaterialUIUnstyledSliderUnstyled},
+   :requires
+   ["@material-ui/unstyled/composeClasses"
+    "@material-ui/unstyled/generateUtilityClass"
+    "@material-ui/unstyled/generateUtilityClasses"
+    "@material-ui/unstyled/utils"
+    "@material-ui/utils"
+    "react"]}
+  {:file "material-ui/material-ui-unstyled-switch-unstyled.inc.js",
+   :file-min
+   "material-ui/material-ui-unstyled-switch-unstyled.min.inc.js",
+   :provides ["@material-ui/unstyled/SwitchUnstyled"],
+   :global-exports
+   {"@material-ui/unstyled/SwitchUnstyled"
+    MaterialUIUnstyledSwitchUnstyled},
+   :requires
+   ["@material-ui/unstyled/generateUtilityClass"
+    "@material-ui/unstyled/generateUtilityClasses"
+    "@material-ui/unstyled/utils"
+    "@material-ui/utils"
+    "react"]}
+  {:file "material-ui/material-ui-unstyled-unstable-trap-focus.inc.js",
+   :file-min
+   "material-ui/material-ui-unstyled-unstable-trap-focus.min.inc.js",
+   :provides ["@material-ui/unstyled/Unstable_TrapFocus"],
+   :global-exports
+   {"@material-ui/unstyled/Unstable_TrapFocus"
+    MaterialUIUnstyledUnstableTrapFocus},
+   :requires ["@material-ui/utils" "react"]}
+  {:file "material-ui/material-ui-unstyled-compose-classes.inc.js",
+   :file-min
+   "material-ui/material-ui-unstyled-compose-classes.min.inc.js",
+   :provides ["@material-ui/unstyled/composeClasses"],
+   :global-exports
+   {"@material-ui/unstyled/composeClasses"
+    MaterialUIUnstyledComposeClasses},
+   :requires []}
+  {:file
+   "material-ui/material-ui-unstyled-generate-utility-class.inc.js",
+   :file-min
+   "material-ui/material-ui-unstyled-generate-utility-class.min.inc.js",
+   :provides ["@material-ui/unstyled/generateUtilityClass"],
+   :global-exports
+   {"@material-ui/unstyled/generateUtilityClass"
+    MaterialUIUnstyledGenerateUtilityClass},
+   :requires []}
+  {:file
+   "material-ui/material-ui-unstyled-generate-utility-classes.inc.js",
+   :file-min
+   "material-ui/material-ui-unstyled-generate-utility-classes.min.inc.js",
+   :provides ["@material-ui/unstyled/generateUtilityClasses"],
+   :global-exports
+   {"@material-ui/unstyled/generateUtilityClasses"
+    MaterialUIUnstyledGenerateUtilityClasses},
+   :requires ["@material-ui/unstyled/generateUtilityClass"]}
+  {:file "material-ui/material-ui-unstyled-utils.inc.js",
+   :file-min "material-ui/material-ui-unstyled-utils.min.inc.js",
+   :provides ["@material-ui/unstyled/utils"],
+   :global-exports
+   {"@material-ui/unstyled/utils" MaterialUIUnstyledUtils},
+   :requires []}],
  :externs ["material-ui/material-ui.ext.js"]}
