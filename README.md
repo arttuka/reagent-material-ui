@@ -3,7 +3,7 @@
 [![Actions Status](https://github.com/arttuka/reagent-material-ui/workflows/CI/badge.svg)](https://github.com/arttuka/reagent-material-ui/actions)
 
 **reagent-material-ui** is a [Reagent](http://reagent-project.github.io/) wrapper
-for [Material UI v5 alpha](https://next.material-ui.com/).
+for [Material UI v5 beta](https://next.material-ui.com/).
 
 The purpose of this library is to help ClojureScript/Reagent developers use a modern React UI library
 without the hassle that Reagent/React interop usually is. It is meant to be comprehensive and up to date.
@@ -15,7 +15,7 @@ Their examples are very good. and this library tries to follow the original idea
 
 To add Material UI to an existing Reagent project, just add this library to your dependencies:
 ```
-[arttuka/reagent-material-ui "5.0.0-alpha.32-0"]
+[arttuka/reagent-material-ui "5.0.0-beta.2-0"]
 ```
 
 Most of the library is in the form of regular Reagent components. Each component is contained in a namespace that mirrors
@@ -28,6 +28,10 @@ Namespace `reagent-material-ui.colors` contains all color definitions from `@mat
 The colors are organized in a single namespace, so `@material-ui/core/colors/red` becomes `reagent-material-ui.colors/red`.
 
 Namespace `reagent-material-ui.styles` contains helper functions and components from `@material-ui/core/styles`.
+
+Namespace `reagent-material-ui.jss-styles` contains helper functions and components from `@material-ui/styles`.
+
+Namespace `reagent-material-ui.unstyled` contains all components from `@material-ui/unstyled`.
 
 #### material-ui-lab
 
@@ -48,7 +52,7 @@ The adapters from Material-UI Lab are not included in this library.
 To use npm dependencies with Figwheel Main, you need to exclude prebuilt JS files (React from CLJSJS and Material UI from this library).
 To do so, add these exclusions to your dependency. See the example project for working configuration.
 
-    [arttuka/reagent-material-ui "5.0.0-alpha.32-0" :exclusions [cljsjs/react cljsjs/react-dom cljsjs/react-dom-server arttuka/reagent-material-ui-js]]
+    [arttuka/reagent-material-ui "5.0.0-beta.2-0" :exclusions [arttuka/reagent-material-ui-js]]
 
 #### Material UI component names with shadow-cljs
 
@@ -80,9 +84,9 @@ The build process also includes `lein cljfmt`.
 
 The project follows Material UI's version numbering.
 
-* Current `@material-ui/core` version: `5.0.0-alpha.32`
-* Current `@material-ui/icons` version: `5.0.0-alpha.32`
-* Current `@material-ui/lab` version: `5.0.0-alpha.32`
+* Current `@material-ui/core` version: `5.0.0-beta.2-0`
+* Current `@material-ui/icons` version: `5.0.0-beta.2-0`
+* Current `@material-ui/lab` version: `5.0.0-alpha.41`
 
 ### License
 
