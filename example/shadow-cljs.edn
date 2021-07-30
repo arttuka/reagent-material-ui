@@ -1,12 +1,12 @@
-{:dependencies [[reagent "1.0.0"]
-                [arttuka/reagent-material-ui "5.0.0-alpha.32-0"]]
+{:dependencies [[reagent "1.1.0"]
+                [arttuka/reagent-material-ui "5.0.0-beta.2-0"]]
  :source-paths ["src"]
  :builds       {:dev {:target           :browser
                       :output-dir       "resources/public/js"
                       :asset-path       "/js"
                       :modules          {:app {:entries [example.core]}}
-                      :compiler-options {:infer-externs :auto}
-                      :js-options       {:anon-fn-naming-policy :unmapped
-                                         :js-package-dirs       ["node_modules" "node_modules/@material-ui/lab/node_modules"]}
+                      :compiler-options {:infer-externs :auto
+                                         :output-feature-set :es5}
+                      :js-options       {:anon-fn-naming-policy :unmapped}
                       :devtools         {:http-root "resources/public"
                                          :http-port 9500}}}}

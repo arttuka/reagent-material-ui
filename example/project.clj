@@ -1,8 +1,10 @@
 (defproject reagent-material-ui-example "1.0.0"
   :dependencies [[org.clojure/clojure "1.10.3"]
-                 [org.clojure/clojurescript "1.10.844"]
-                 [arttuka/reagent-material-ui "5.0.0-alpha.32-0"
-                  #_#_ :exclusions [cljsjs/react cljsjs/react-dom cljsjs/react-dom-server arttuka/reagent-material-ui-js]]]
+                 [org.clojure/clojurescript "1.10.879"]
+                 [arttuka/reagent-material-ui "5.0.0-beta.2-0"
+                  #_#_ :exclusions [arttuka/reagent-material-ui-js]]
+                 [cljsjs/react "17.0.2-0"]
+                 [cljsjs/react-dom "17.0.2-0"]]
   :source-paths ["src"]
   :profiles {:dev {:dependencies   [[com.bhauman/figwheel-main "0.2.13" :exclusions [org.clojure/clojurescript]]]
                    :resource-paths ["target"]}}

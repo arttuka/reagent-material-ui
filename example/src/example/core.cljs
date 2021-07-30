@@ -35,25 +35,29 @@
   {:palette {:primary   colors/purple
              :secondary colors/green}})
 
-(defn custom-styles [{:keys [spacing] :as theme}]
-  {:container  {:margin-left (spacing 8)
-                :align-items :flex-start}
-   :button     {:margin (spacing 1)}
-   :text-field {:width        200
-                :margin-left  (spacing 1)
-                :margin-right (spacing 1)}})
+(def classes (let [prefix "rmui-example"]
+               {:root       (str prefix "-root")
+                :button     (str prefix "-button")
+                :text-field (str prefix "-text-field")}))
 
-(def with-custom-styles (styles/with-styles custom-styles))
+(defn custom-styles [{:keys [theme]}]
+  (let [spacing (:spacing theme)]
+    {(str "&." (:root classes))        {:margin-left (spacing 8)
+                                        :align-items :flex-start}
+     (str "& ." (:button classes))     {:margin (spacing 1)}
+     (str "& ." (:text-field classes)) {:width        200
+                                        :margin-left  (spacing 1)
+                                        :margin-right (spacing 1)}}))
 
 (defonce text-state (r/atom "foobar"))
 (defonce select-state (r/atom 1))
 (defonce date-picker-state (r/atom nil))
 (defonce autocomplete-state (r/atom nil))
 
-(defn form* [{:keys [classes] :as props}]
+(defn form* [{:keys [class-name]}]
   [stack {:direction "column"
           :spacing   2
-          :class     (:container classes)}
+          :class     [class-name (:root classes)]}
 
    [toolbar {:disable-gutters true}
     [button
@@ -155,7 +159,7 @@
                   :on-change (fn [new-value]
                                (reset! autocomplete-state new-value))}]])
 
-(def form (with-custom-styles form*))
+(def form (styles/styled form* custom-styles))
 
 (defn main []
   ;; fragment
@@ -166,7 +170,7 @@
    ;; styled-engine-provider is needed to ensure correct order of CSS injection until Material UI has completely migrated to emotion
    [localization-provider {:date-adapter cljs-time-adapter
                            :locale       DateTimeSymbols_en_US}
-    [styles/theme-provider (styles/create-mui-theme custom-theme)
+    [styles/theme-provider (styles/create-theme custom-theme)
      [styled-engine-provider {:inject-first true}
       [form]]]]])
 
