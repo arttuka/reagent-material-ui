@@ -5,5 +5,5 @@
             ["@material-ui/core/SvgIcon" :as SvgIcon]
             [reagent-material-ui.util]))
 
-(def arrow-right-two-tone (create-svg-icon (e "path" #js {"d" "M10 17l5-5-5-5v10z"})
+(def arrow-right-two-tone (create-svg-icon (e "path" #js {"d" "m10 17 5-5-5-5v10z"})
                                            "ArrowRightTwoTone"))

@@ -5,5 +5,5 @@
             ["@material-ui/core/SvgIcon" :as SvgIcon]
             [reagent-material-ui.util]))
 
-(def view-column (create-svg-icon (e "path" #js {"d" "M10 18h5V5h-5v13zm-6 0h5V5H4v13zM16 5v13h5V5h-5z"})
+(def view-column (create-svg-icon (e "path" #js {"d" "M14.67 5v14H9.33V5h5.34zm1 14H21V5h-5.33v14zm-7.34 0V5H3v14h5.33z"})
                                   "ViewColumn"))

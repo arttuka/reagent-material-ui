@@ -5,5 +5,5 @@
             ["@material-ui/core/SvgIcon" :as SvgIcon]
             [reagent-material-ui.util]))
 
-(def scatter-plot-sharp (create-svg-icon (e react/Fragment nil (e "circle" #js {"cy" "14", "r" "3", "cx" "7"}) (e "circle" #js {"cy" "6", "r" "3", "cx" "11"}) (e "circle" #js {"cy" "17.6", "r" "3", "cx" "16.6"}))
+(def scatter-plot-sharp (create-svg-icon [(e "circle" #js {"cx" "7", "cy" "14", "r" "3"}) (e "circle" #js {"cx" "11", "cy" "6", "r" "3"}) (e "circle" #js {"cx" "16.6", "cy" "17.6", "r" "3"})]
                                          "ScatterPlotSharp"))

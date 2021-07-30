@@ -5,5 +5,5 @@
             ["@material-ui/core/SvgIcon" :as SvgIcon]
             [reagent-material-ui.util]))
 
-(def fiber-manual-record-rounded (create-svg-icon (e "circle" #js {"cy" "12", "r" "7", "cx" "12"})
+(def fiber-manual-record-rounded (create-svg-icon (e "circle" #js {"cx" "12", "cy" "12", "r" "8"})
                                                   "FiberManualRecordRounded"))

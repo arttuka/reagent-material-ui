@@ -5,5 +5,5 @@
             ["@material-ui/core/SvgIcon" :as SvgIcon]
             [reagent-material-ui.util]))
 
-(def change-history (create-svg-icon (e "path" #js {"d" "M12 7.77L18.39 18H5.61L12 7.77M12 4L2 20h20L12 4z"})
+(def change-history (create-svg-icon (e "path" #js {"d" "M12 7.77 18.39 18H5.61L12 7.77M12 4 2 20h20L12 4z"})
                                      "ChangeHistory"))

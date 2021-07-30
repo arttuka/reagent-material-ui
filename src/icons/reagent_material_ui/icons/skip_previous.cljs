@@ -5,5 +5,5 @@
             ["@material-ui/core/SvgIcon" :as SvgIcon]
             [reagent-material-ui.util]))
 
-(def skip-previous (create-svg-icon (e "path" #js {"d" "M6 6h2v12H6zm3.5 6l8.5 6V6z"})
+(def skip-previous (create-svg-icon (e "path" #js {"d" "M6 6h2v12H6zm3.5 6 8.5 6V6z"})
                                     "SkipPrevious"))

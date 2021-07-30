@@ -5,5 +5,5 @@
             ["@material-ui/core/SvgIcon" :as SvgIcon]
             [reagent-material-ui.util]))
 
-(def keyboard-arrow-up (create-svg-icon (e "path" #js {"d" "M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"})
+(def keyboard-arrow-up (create-svg-icon (e "path" #js {"d" "M7.41 15.41 12 10.83l4.59 4.58L18 14l-6-6-6 6z"})
                                         "KeyboardArrowUp"))

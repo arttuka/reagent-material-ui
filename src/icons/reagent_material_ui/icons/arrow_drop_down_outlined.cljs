@@ -5,5 +5,5 @@
             ["@material-ui/core/SvgIcon" :as SvgIcon]
             [reagent-material-ui.util]))
 
-(def arrow-drop-down-outlined (create-svg-icon (e "path" #js {"d" "M7 10l5 5 5-5H7z"})
+(def arrow-drop-down-outlined (create-svg-icon (e "path" #js {"d" "m7 10 5 5 5-5H7z"})
                                                "ArrowDropDownOutlined"))

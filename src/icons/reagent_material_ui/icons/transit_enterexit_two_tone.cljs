@@ -5,5 +5,5 @@
             ["@material-ui/core/SvgIcon" :as SvgIcon]
             [reagent-material-ui.util]))
 
-(def transit-enterexit-two-tone (create-svg-icon (e "path" #js {"d" "M15.98 6L9 12.77V8H6v10h10v-3h-4.85L18 8.03z"})
+(def transit-enterexit-two-tone (create-svg-icon (e "path" #js {"d" "M15.98 6 9 12.77V8H6v10h10v-3h-4.85L18 8.03z"})
                                                  "TransitEnterexitTwoTone"))

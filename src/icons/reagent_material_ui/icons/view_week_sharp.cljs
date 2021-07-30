@@ -5,5 +5,5 @@
             ["@material-ui/core/SvgIcon" :as SvgIcon]
             [reagent-material-ui.util]))
 
-(def view-week-sharp (create-svg-icon (e "path" #js {"d" "M7 5H2v14h5V5zm14 0h-5v14h5V5zm-7 0H9v14h5V5z"})
+(def view-week-sharp (create-svg-icon (e "path" #js {"d" "M7.33 20H2V4h5.33v16zM22 20V4h-5.33v16H22zm-7.33 0V4H9.33v16h5.34z"})
                                       "ViewWeekSharp"))

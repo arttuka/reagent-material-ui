@@ -5,5 +5,5 @@
             ["@material-ui/core/SvgIcon" :as SvgIcon]
             [reagent-material-ui.util]))
 
-(def arrow-forward-ios-two-tone (create-svg-icon (e "path" #js {"d" "M6.23 20.23L8 22l10-10L8 2 6.23 3.77 14.46 12z"})
+(def arrow-forward-ios-two-tone (create-svg-icon (e "path" #js {"d" "M6.23 20.23 8 22l10-10L8 2 6.23 3.77 14.46 12z"})
                                                  "ArrowForwardIosTwoTone"))

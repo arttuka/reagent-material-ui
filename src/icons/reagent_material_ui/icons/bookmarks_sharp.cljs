@@ -5,5 +5,5 @@
             ["@material-ui/core/SvgIcon" :as SvgIcon]
             [reagent-material-ui.util]))
 
-(def bookmarks-sharp (create-svg-icon (e "path" #js {"d" "M19 18l2 1V1H7v2h12v15zM17 5H3v18l7-3 7 3V5z"})
+(def bookmarks-sharp (create-svg-icon (e "path" #js {"d" "m19 18 2 1V1H7v2h12v15zM17 5H3v18l7-3 7 3V5z"})
                                       "BookmarksSharp"))

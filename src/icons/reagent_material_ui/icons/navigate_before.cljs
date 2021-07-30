@@ -5,5 +5,5 @@
             ["@material-ui/core/SvgIcon" :as SvgIcon]
             [reagent-material-ui.util]))
 
-(def navigate-before (create-svg-icon (e "path" #js {"d" "M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"})
+(def navigate-before (create-svg-icon (e "path" #js {"d" "M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"})
                                       "NavigateBefore"))

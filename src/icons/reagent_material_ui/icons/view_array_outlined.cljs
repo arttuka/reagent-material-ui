@@ -5,5 +5,5 @@
             ["@material-ui/core/SvgIcon" :as SvgIcon]
             [reagent-material-ui.util]))
 
-(def view-array-outlined (create-svg-icon (e "path" #js {"d" "M15 7v9h-5V7h5m6-2h-3v13h3V5zm-4 0H8v13h9V5zM7 5H4v13h3V5z"})
+(def view-array-outlined (create-svg-icon (e "path" #js {"d" "M15 7v10H9V7h6zm6-2h-3v14h3V5zm-4 0H7v14h10V5zM6 5H3v14h3V5z"})
                                           "ViewArrayOutlined"))

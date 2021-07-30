@@ -5,5 +5,5 @@
             ["@material-ui/core/SvgIcon" :as SvgIcon]
             [reagent-material-ui.util]))
 
-(def call-missed-outgoing (create-svg-icon (e "path" #js {"d" "M3 8.41l9 9 7-7V15h2V7h-8v2h4.59L12 14.59 4.41 7 3 8.41z"})
+(def call-missed-outgoing (create-svg-icon (e "path" #js {"d" "m3 8.41 9 9 7-7V15h2V7h-8v2h4.59L12 14.59 4.41 7 3 8.41z"})
                                            "CallMissedOutgoing"))

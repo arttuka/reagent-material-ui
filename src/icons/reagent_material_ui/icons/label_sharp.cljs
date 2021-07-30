@@ -5,5 +5,5 @@
             ["@material-ui/core/SvgIcon" :as SvgIcon]
             [reagent-material-ui.util]))
 
-(def label-sharp (create-svg-icon (e "path" #js {"d" "M17.03 5L3 5.01v13.98l14.03.01L22 12l-4.97-7z"})
+(def label-sharp (create-svg-icon (e "path" #js {"d" "M17.03 5 3 5.01v13.98l14.03.01L22 12l-4.97-7z"})
                                   "LabelSharp"))

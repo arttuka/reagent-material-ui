@@ -5,5 +5,5 @@
             ["@material-ui/core/SvgIcon" :as SvgIcon]
             [reagent-material-ui.util]))
 
-(def bedroom-child-sharp (create-svg-icon (e react/Fragment nil (e "path" #js {"d" "M9 8.5h6v2H9zM7.51 12h9v2h-9z"}) (e "path" #js {"d" "M22 2H2v20h20V2zm-4 15h-1.5v-1.5h-9V17H6v-6.32l1.5-.01V7h9v3.67H18V17z"}))
+(def bedroom-child-sharp (create-svg-icon [(e "path" #js {"d" "M9 8.5h6v2H9zM7.51 12h9v2h-9z"}) (e "path" #js {"d" "M22 2H2v20h20V2zm-4 15h-1.5v-1.5h-9V17H6v-6.32l1.5-.01V7h9v3.67H18V17z"})]
                                           "BedroomChildSharp"))

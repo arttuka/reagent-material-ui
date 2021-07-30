@@ -5,5 +5,5 @@
             ["@material-ui/core/SvgIcon" :as SvgIcon]
             [reagent-material-ui.util]))
 
-(def view-array-two-tone (create-svg-icon (e react/Fragment nil (e "path" #js {"d" "M4 5h3v13H4zm14 0h3v13h-3zM8 18h9V5H8v13zm2-11h5v9h-5V7z"}) (e "path" #js {"d" "M10 7h5v9h-5z", "opacity" ".3"}))
+(def view-array-two-tone (create-svg-icon [(e "path" #js {"d" "M9 7h6v10H9z", "opacity" ".3"}) (e "path" #js {"d" "M15 7v10H9V7h6zm6-2h-3v14h3V5zm-4 0H7v14h10V5zM6 5H3v14h3V5z"})]
                                           "ViewArrayTwoTone"))

@@ -5,5 +5,5 @@
             ["@material-ui/core/SvgIcon" :as SvgIcon]
             [reagent-material-ui.util]))
 
-(def arrow-left-outlined (create-svg-icon (e "path" #js {"d" "M14 7l-5 5 5 5V7z"})
+(def arrow-left-outlined (create-svg-icon (e "path" #js {"d" "m14 7-5 5 5 5V7z"})
                                           "ArrowLeftOutlined"))

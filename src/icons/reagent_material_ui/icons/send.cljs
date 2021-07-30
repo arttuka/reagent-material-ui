@@ -5,5 +5,5 @@
             ["@material-ui/core/SvgIcon" :as SvgIcon]
             [reagent-material-ui.util]))
 
-(def send (create-svg-icon (e "path" #js {"d" "M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"})
+(def send (create-svg-icon (e "path" #js {"d" "M2.01 21 23 12 2.01 3 2 10l15 2-15 2z"})
                            "Send"))

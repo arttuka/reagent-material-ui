@@ -5,5 +5,5 @@
             ["@material-ui/core/SvgIcon" :as SvgIcon]
             [reagent-material-ui.util]))
 
-(def brightness-1-rounded (create-svg-icon (e "circle" #js {"cy" "12", "r" "10", "cx" "12"})
+(def brightness-1-rounded (create-svg-icon (e "circle" #js {"cx" "12", "cy" "12", "r" "10"})
                                            "Brightness1Rounded"))

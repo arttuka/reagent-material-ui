@@ -5,5 +5,5 @@
             ["@material-ui/core/SvgIcon" :as SvgIcon]
             [reagent-material-ui.util]))
 
-(def arrow-drop-up (create-svg-icon (e "path" #js {"d" "M7 14l5-5 5 5z"})
+(def arrow-drop-up (create-svg-icon (e "path" #js {"d" "m7 14 5-5 5 5z"})
                                     "ArrowDropUp"))

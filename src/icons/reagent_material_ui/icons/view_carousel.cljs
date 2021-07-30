@@ -5,5 +5,5 @@
             ["@material-ui/core/SvgIcon" :as SvgIcon]
             [reagent-material-ui.util]))
 
-(def view-carousel (create-svg-icon (e "path" #js {"d" "M7 19h10V4H7v15zm-5-2h4V6H2v11zM18 6v11h4V6h-4z"})
+(def view-carousel (create-svg-icon (e "path" #js {"d" "M2 7h4v10H2V7zm5 12h10V5H7v14zM18 7h4v10h-4V7z"})
                                     "ViewCarousel"))
