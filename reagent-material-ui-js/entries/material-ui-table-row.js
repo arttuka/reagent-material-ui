@@ -1,1 +1,1 @@
-export { TableRow as default } from '@material-ui/core'
+export { TableRow as default, tableRowClasses } from '@material-ui/core'

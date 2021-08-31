@@ -1,1 +1,1 @@
-export { PaginationItem as default } from '@material-ui/core'
+export { PaginationItem as default, paginationItemClasses } from '@material-ui/core'

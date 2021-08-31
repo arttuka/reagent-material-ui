@@ -1,1 +1,1 @@
-export { Tab as default } from '@material-ui/core'
+export { Tab as default, tabClasses } from '@material-ui/core'

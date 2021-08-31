@@ -14,9 +14,9 @@ const makeExternal = (root, lib) => ({
   umd: lib
 })
 
-const makeUnstyledExternal = (name) => makeExternal(
-  'MaterialUIUnstyled' + toPascalCase(name),
-  'material-ui-unstyled-' + toKebabCase(name)
+const makeComponentExternal = (name, isUnstyled = false) => makeExternal(
+  'MaterialUI' + (isUnstyled ? 'Unstyled' : '') + toPascalCase(name),
+  'material-ui-' + (isUnstyled ? 'unstyled-' : '') + toKebabCase(name)
 )
 
 const getName = (re, request) => {
@@ -34,7 +34,9 @@ const makeEntry = (externals) => ({entry, root}) => ({
   },
   output: {
     library: {
-      root
+      name: {
+        root
+      }
     }
   },
   externals
@@ -44,12 +46,15 @@ const common = {
   output: {
     filename: '[name].inc.js',
     path: path.resolve(__dirname, 'src/material-ui'),
-    libraryTarget: 'umd',
     library: {
-      amd: '[name]',
-      commonjs: '[name]'
+      name: {
+        amd: '[name]',
+        commonjs: '[name]'
+      },
+      type: 'umd',
+      umdNamedDefine: true
     },
-    umdNamedDefine: true
+    globalObject: `(typeof self !== 'undefined' ? self : global)`
   },
   externals: [{
     'react': makeExternal('React', 'react'),
@@ -84,8 +89,10 @@ const production = {
 const externals = {
   components: function ({request}, callback) {
     const name = getName(/^@material-ui\/core\/(.*)$/, request)
-    if (name) {
+    if (name === 'styles' || name === 'utils') {
       return callback(null, makeExternal(['MaterialUI', name], ['material-ui', name]))
+    } else if (name) {
+      return callback(null, makeComponentExternal(name))
     }
     callback()
   },
@@ -96,11 +103,10 @@ const externals = {
     const name = getName(/^@material-ui\/unstyled\/(.*)$/, request)
     if (isUnstyled(context)) {
       return callback()
-    }
-    if (request === '@material-ui/unstyled') {
+    } else if (request === '@material-ui/unstyled') {
       return callback(null, makeExternal('MaterialUIUnstyled', 'material-ui-unstyled'))
     } else if (name) {
-      return callback(null, makeUnstyledExternal(name))
+      return callback(null, makeComponentExternal(name, true))
     }
     callback()
   },
@@ -110,15 +116,17 @@ const externals = {
       return callback()
     } else if (request === '../utils/isHostComponent') {
       return callback(null, makeExternal(['MaterialUIUnstyledUtils', 'isHostComponent'], ['material-ui-unstyled-utils', 'isHostComponent']))
+    } else if (request === '../utils/appendOwnerState') {
+      return callback()
     } else if (name) {
-      return callback(null, makeUnstyledExternal(name))
+      return callback(null, makeComponentExternal(name, true))
     }
     callback()
   },
   unstyledIndex: function ({request}, callback) {
     const name = getName(/^\.\/(.*)$/, request)
     if (name) {
-      return callback(null, makeUnstyledExternal(name))
+      return callback(null, makeComponentExternal(name, true))
     }
     callback()
   },
@@ -136,7 +144,9 @@ const entries = [{
   },
   output: {
     library: {
-      root: 'MaterialUI'
+      name: {
+        root: 'MaterialUI'
+      }
     }
   },
   externals: [
@@ -149,7 +159,9 @@ const entries = [{
   },
   output: {
     library: {
-      root: 'MaterialUICoreStyles'
+      name: {
+        root: 'MaterialUICoreStyles'
+      }
     }
   },
   externals: [{
@@ -161,7 +173,9 @@ const entries = [{
   },
   output: {
     library: {
-      root: 'MaterialUICoreUtils'
+      name: {
+        root: 'MaterialUICoreUtils'
+      }
     }
   },
   externals: [{
@@ -173,7 +187,9 @@ const entries = [{
   },
   output: {
     library: {
-      root: 'MaterialUILab'
+      name: {
+        root: 'MaterialUILab'
+      }
     }
   },
   externals: [
@@ -188,7 +204,9 @@ const entries = [{
   },
   output: {
     library: {
-      root: 'MaterialUIStyles'
+      name: {
+        root: 'MaterialUIStyles'
+      }
     }
   },
   externals: [
@@ -200,7 +218,9 @@ const entries = [{
   },
   output: {
     library: {
-      root: 'MaterialUIUtils'
+      name: {
+        root: 'MaterialUIUtils'
+      }
     }
   },
 }, {
@@ -209,7 +229,9 @@ const entries = [{
   },
   output: {
     library: {
-      root: 'MaterialUIUnstyled'
+      name: {
+        root: 'MaterialUIUnstyled'
+      }
     }
   },
   externals: [
@@ -218,7 +240,8 @@ const entries = [{
 }].concat(components.map(makeEntry([
   externals.core,
   externals.lab,
-  externals.unstyled
+  externals.unstyled,
+  externals.utils
 ]))).concat(unstyledComponents.map(makeEntry([
   externals.unstyledInternal,
   externals.utils

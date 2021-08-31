@@ -1,1 +1,1 @@
-export { MenuItem as default } from '@material-ui/core'
+export { MenuItem as default, menuItemClasses } from '@material-ui/core'

@@ -1,1 +1,1 @@
-export { SpeedDial as default } from '@material-ui/core'
+export { SpeedDial as default, speedDialClasses } from '@material-ui/core'

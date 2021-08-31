@@ -1,1 +1,1 @@
-export { Stepper as default } from '@material-ui/core'
+export { Stepper as default, stepperClasses } from '@material-ui/core'

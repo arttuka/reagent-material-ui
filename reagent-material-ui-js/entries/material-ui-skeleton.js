@@ -1,1 +1,1 @@
-export { Skeleton as default } from '@material-ui/core'
+export { Skeleton as default, skeletonClasses } from '@material-ui/core'

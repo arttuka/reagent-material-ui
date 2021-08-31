@@ -1,1 +1,1 @@
-export { Pagination as default } from '@material-ui/core'
+export { Pagination as default, paginationClasses } from '@material-ui/core'

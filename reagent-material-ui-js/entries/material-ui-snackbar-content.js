@@ -1,1 +1,1 @@
-export { SnackbarContent as default } from '@material-ui/core'
+export { SnackbarContent as default, snackbarContentClasses } from '@material-ui/core'

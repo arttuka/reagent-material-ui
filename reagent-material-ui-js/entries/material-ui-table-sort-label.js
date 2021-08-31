@@ -1,1 +1,1 @@
-export { TableSortLabel as default } from '@material-ui/core'
+export { TableSortLabel as default, tableSortLabelClasses } from '@material-ui/core'

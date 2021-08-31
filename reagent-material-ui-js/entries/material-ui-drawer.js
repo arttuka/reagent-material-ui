@@ -1,1 +1,1 @@
-export { Drawer as default } from '@material-ui/core'
+export { Drawer as default, drawerClasses } from '@material-ui/core'

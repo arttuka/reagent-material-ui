@@ -1,1 +1,1 @@
-export { DialogContentText as default } from '@material-ui/core'
+export { DialogContentText as default, dialogContentTextClasses } from '@material-ui/core'

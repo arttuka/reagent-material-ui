@@ -1,1 +1,1 @@
-export { Avatar as default } from '@material-ui/core'
+export { Avatar as default, avatarClasses } from '@material-ui/core'

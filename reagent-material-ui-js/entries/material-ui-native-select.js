@@ -1,1 +1,1 @@
-export { NativeSelect as default } from '@material-ui/core'
+export { NativeSelect as default, nativeSelectClasses } from '@material-ui/core'

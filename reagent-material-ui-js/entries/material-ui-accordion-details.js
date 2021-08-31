@@ -1,1 +1,1 @@
-export { AccordionDetails as default } from '@material-ui/core'
+export { AccordionDetails as default, accordionDetailsClasses } from '@material-ui/core'

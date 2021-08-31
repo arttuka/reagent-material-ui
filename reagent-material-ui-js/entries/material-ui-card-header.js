@@ -1,1 +1,1 @@
-export { CardHeader as default } from '@material-ui/core'
+export { CardHeader as default, cardHeaderClasses } from '@material-ui/core'

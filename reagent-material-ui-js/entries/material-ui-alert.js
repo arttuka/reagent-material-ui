@@ -1,1 +1,1 @@
-export { Alert as default } from '@material-ui/core'
+export { Alert as default, alertClasses } from '@material-ui/core'

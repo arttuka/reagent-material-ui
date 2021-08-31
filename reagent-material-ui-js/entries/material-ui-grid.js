@@ -1,1 +1,1 @@
-export { Grid as default } from '@material-ui/core'
+export { Grid as default, gridClasses } from '@material-ui/core'

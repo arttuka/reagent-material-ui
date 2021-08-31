@@ -1,1 +1,1 @@
-export { ButtonBase as default } from '@material-ui/core'
+export { ButtonBase as default, buttonBaseClasses } from '@material-ui/core'

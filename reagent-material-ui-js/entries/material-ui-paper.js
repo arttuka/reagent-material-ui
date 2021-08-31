@@ -1,1 +1,1 @@
-export { Paper as default } from '@material-ui/core'
+export { Paper as default, paperClasses } from '@material-ui/core'

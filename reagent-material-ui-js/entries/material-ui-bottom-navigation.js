@@ -1,1 +1,1 @@
-export { BottomNavigation as default } from '@material-ui/core'
+export { BottomNavigation as default, bottomNavigationClasses } from '@material-ui/core'

@@ -1,1 +1,1 @@
-export { FormControl as default, useFormControl } from '@material-ui/core'
+export { FormControl as default, useFormControl, formControlClasses } from '@material-ui/core'

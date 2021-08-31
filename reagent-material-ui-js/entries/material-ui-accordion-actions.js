@@ -1,1 +1,1 @@
-export { AccordionActions as default } from '@material-ui/core'
+export { AccordionActions as default, accordionActionsClasses } from '@material-ui/core'

@@ -1,1 +1,1 @@
-export { InputLabel as default } from '@material-ui/core'
+export { InputLabel as default, inputLabelClasses } from '@material-ui/core'

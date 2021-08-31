@@ -1,1 +1,1 @@
-export { Switch as default } from '@material-ui/core'
+export { Switch as default, switchClasses } from '@material-ui/core'

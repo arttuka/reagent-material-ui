@@ -1,1 +1,1 @@
-export { StepLabel as default } from '@material-ui/core'
+export { StepLabel as default, stepLabelClasses } from '@material-ui/core'

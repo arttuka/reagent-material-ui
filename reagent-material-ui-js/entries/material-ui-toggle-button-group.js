@@ -1,1 +1,1 @@
-export { ToggleButtonGroup as default } from '@material-ui/core'
+export { ToggleButtonGroup as default, toggleButtonGroupClasses } from '@material-ui/core'

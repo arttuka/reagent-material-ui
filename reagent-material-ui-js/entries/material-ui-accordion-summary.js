@@ -1,1 +1,1 @@
-export { AccordionSummary as default } from '@material-ui/core'
+export { AccordionSummary as default, accordionSummaryClasses } from '@material-ui/core'

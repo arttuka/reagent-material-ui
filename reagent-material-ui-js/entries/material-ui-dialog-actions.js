@@ -1,1 +1,1 @@
-export { DialogActions as default } from '@material-ui/core'
+export { DialogActions as default, dialogActionsClasses } from '@material-ui/core'

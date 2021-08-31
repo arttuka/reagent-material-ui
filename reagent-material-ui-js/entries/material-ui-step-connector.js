@@ -1,1 +1,1 @@
-export { StepConnector as default } from '@material-ui/core'
+export { StepConnector as default, stepConnectorClasses } from '@material-ui/core'

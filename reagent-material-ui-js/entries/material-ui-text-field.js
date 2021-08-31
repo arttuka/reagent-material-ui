@@ -1,1 +1,1 @@
-export { TextField as default } from '@material-ui/core'
+export { TextField as default, textFieldClasses } from '@material-ui/core'

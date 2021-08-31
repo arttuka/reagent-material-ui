@@ -1,1 +1,1 @@
-export { Radio as default } from '@material-ui/core'
+export { Radio as default, radioClasses } from '@material-ui/core'

@@ -1,1 +1,1 @@
-export { ListItem as default } from '@material-ui/core'
+export { ListItem as default, listItemClasses } from '@material-ui/core'

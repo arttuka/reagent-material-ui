@@ -1,1 +1,1 @@
-export { FormHelperText as default } from '@material-ui/core'
+export { FormHelperText as default, formHelperTextClasses } from '@material-ui/core'

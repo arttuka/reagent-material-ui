@@ -1,1 +1,1 @@
-export { TablePagination as default } from '@material-ui/core'
+export { TablePagination as default, tablePaginationClasses } from '@material-ui/core'

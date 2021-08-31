@@ -1,1 +1,1 @@
-export { AvatarGroup as default } from '@material-ui/core'
+export { AvatarGroup as default, avatarGroupClasses } from '@material-ui/core'

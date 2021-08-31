@@ -1,1 +1,1 @@
-export { Fab as default } from '@material-ui/core'
+export { Fab as default, fabClasses } from '@material-ui/core'

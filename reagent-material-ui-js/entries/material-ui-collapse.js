@@ -1,1 +1,1 @@
-export { Collapse as default } from '@material-ui/core'
+export { Collapse as default, collapseClasses } from '@material-ui/core'

@@ -1,1 +1,1 @@
-export { MobileStepper as default } from '@material-ui/core'
+export { MobileStepper as default, mobileStepperClasses } from '@material-ui/core'

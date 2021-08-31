@@ -1,1 +1,1 @@
-export { ButtonGroup as default } from '@material-ui/core'
+export { ButtonGroup as default, buttonGroupClasses } from '@material-ui/core'

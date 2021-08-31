@@ -1,1 +1,1 @@
-export { Popover as default } from '@material-ui/core'
+export { Popover as default, popoverClasses } from '@material-ui/core'

@@ -1,1 +1,1 @@
-export { LinearProgress as default } from '@material-ui/core'
+export { LinearProgress as default, linearProgressClasses } from '@material-ui/core'

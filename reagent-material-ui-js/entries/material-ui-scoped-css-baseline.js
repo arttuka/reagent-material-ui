@@ -1,1 +1,1 @@
-export { ScopedCssBaseline as default } from '@material-ui/core'
+export { ScopedCssBaseline as default, scopedCssBaselineClasses } from '@material-ui/core'

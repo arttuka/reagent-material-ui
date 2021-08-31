@@ -1,1 +1,1 @@
-export { CardContent as default } from '@material-ui/core'
+export { CardContent as default, cardContentClasses } from '@material-ui/core'

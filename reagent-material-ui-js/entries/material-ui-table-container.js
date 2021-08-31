@@ -1,1 +1,1 @@
-export { TableContainer as default } from '@material-ui/core'
+export { TableContainer as default, tableContainerClasses } from '@material-ui/core'

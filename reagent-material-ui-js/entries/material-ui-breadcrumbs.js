@@ -1,1 +1,1 @@
-export { Breadcrumbs as default } from '@material-ui/core'
+export { Breadcrumbs as default, breadcrumbsClasses } from '@material-ui/core'

@@ -1,1 +1,1 @@
-export { Container as default } from '@material-ui/core'
+export { Container as default, containerClasses } from '@material-ui/core'

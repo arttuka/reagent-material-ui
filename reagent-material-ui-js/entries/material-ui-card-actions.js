@@ -1,1 +1,1 @@
-export { CardActions as default } from '@material-ui/core'
+export { CardActions as default, cardActionsClasses } from '@material-ui/core'

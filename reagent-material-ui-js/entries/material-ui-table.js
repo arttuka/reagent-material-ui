@@ -1,1 +1,1 @@
-export { Table as default } from '@material-ui/core'
+export { Table as default, tableClasses } from '@material-ui/core'

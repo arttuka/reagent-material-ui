@@ -6,6 +6,9 @@
     "entry": "material-ui-unstyled-badge-unstyled",
     "root": "MaterialUIUnstyledBadgeUnstyled"
   }, {
+    "entry": "material-ui-unstyled-form-control-unstyled",
+    "root": "MaterialUIUnstyledFormControlUnstyled"
+  }, {
     "entry": "material-ui-unstyled-modal-unstyled",
     "root": "MaterialUIUnstyledModalUnstyled"
   }, {
@@ -35,5 +38,8 @@
   }, {
     "entry": "material-ui-unstyled-utils",
     "root": "MaterialUIUnstyledUtils"
+  }, {
+    "entry": "material-ui-unstyled-autocomplete-unstyled",
+    "root": "MaterialUIUnstyledAutocompleteUnstyled"
   }
 ]

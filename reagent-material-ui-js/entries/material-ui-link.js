@@ -1,1 +1,1 @@
-export { Link as default } from '@material-ui/core'
+export { Link as default, linkClasses } from '@material-ui/core'

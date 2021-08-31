@@ -1,1 +1,1 @@
-export { FormLabel as default } from '@material-ui/core'
+export { FormLabel as default, formLabelClasses } from '@material-ui/core'

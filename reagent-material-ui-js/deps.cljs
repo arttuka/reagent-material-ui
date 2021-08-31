@@ -5,6 +5,7 @@
    :global-exports {"@material-ui/core" MaterialUI},
    :requires
    ["@material-ui/unstyled"
+    "@material-ui/unstyled/AutocompleteUnstyled"
     "@material-ui/unstyled/BackdropUnstyled"
     "@material-ui/unstyled/BadgeUnstyled"
     "@material-ui/unstyled/ModalUnstyled"
@@ -30,6 +31,39 @@
    :global-exports {"@material-ui/lab" MaterialUILab},
    :requires
    ["@material-ui/core"
+    "@material-ui/core/Alert"
+    "@material-ui/core/AlertTitle"
+    "@material-ui/core/Autocomplete"
+    "@material-ui/core/AvatarGroup"
+    "@material-ui/core/Button"
+    "@material-ui/core/ButtonBase"
+    "@material-ui/core/CircularProgress"
+    "@material-ui/core/Collapse"
+    "@material-ui/core/Dialog"
+    "@material-ui/core/DialogActions"
+    "@material-ui/core/DialogContent"
+    "@material-ui/core/Fade"
+    "@material-ui/core/Grid"
+    "@material-ui/core/Grow"
+    "@material-ui/core/IconButton"
+    "@material-ui/core/InputAdornment"
+    "@material-ui/core/Pagination"
+    "@material-ui/core/PaginationItem"
+    "@material-ui/core/Paper"
+    "@material-ui/core/Popper"
+    "@material-ui/core/Rating"
+    "@material-ui/core/Skeleton"
+    "@material-ui/core/SpeedDial"
+    "@material-ui/core/SpeedDialAction"
+    "@material-ui/core/SpeedDialIcon"
+    "@material-ui/core/Tab"
+    "@material-ui/core/Tabs"
+    "@material-ui/core/ToggleButton"
+    "@material-ui/core/ToggleButtonGroup"
+    "@material-ui/core/Typography"
+    "@material-ui/core/Unstable_TrapFocus"
+    "@material-ui/core/useMediaQuery"
+    "@material-ui/core/usePagination"
     "@material-ui/unstyled"
     "@material-ui/utils"
     "react"
@@ -39,8 +73,10 @@
    :provides ["@material-ui/unstyled"],
    :global-exports {"@material-ui/unstyled" MaterialUIUnstyled},
    :requires
-   ["@material-ui/unstyled/BackdropUnstyled"
+   ["@material-ui/unstyled/AutocompleteUnstyled"
+    "@material-ui/unstyled/BackdropUnstyled"
     "@material-ui/unstyled/BadgeUnstyled"
+    "@material-ui/unstyled/FormControlUnstyled"
     "@material-ui/unstyled/ModalUnstyled"
     "@material-ui/unstyled/NoSsr"
     "@material-ui/unstyled/Portal"
@@ -1091,6 +1127,19 @@
     "@material-ui/unstyled/utils"
     "@material-ui/utils"
     "react"]}
+  {:file
+   "material-ui/material-ui-unstyled-form-control-unstyled.inc.js",
+   :file-min
+   "material-ui/material-ui-unstyled-form-control-unstyled.min.inc.js",
+   :provides ["@material-ui/unstyled/FormControlUnstyled"],
+   :global-exports
+   {"@material-ui/unstyled/FormControlUnstyled"
+    MaterialUIUnstyledFormControlUnstyled},
+   :requires
+   ["@material-ui/unstyled/generateUtilityClass"
+    "@material-ui/unstyled/generateUtilityClasses"
+    "@material-ui/utils"
+    "react"]}
   {:file "material-ui/material-ui-unstyled-modal-unstyled.inc.js",
    :file-min
    "material-ui/material-ui-unstyled-modal-unstyled.min.inc.js",
@@ -1143,7 +1192,6 @@
    :requires
    ["@material-ui/unstyled/generateUtilityClass"
     "@material-ui/unstyled/generateUtilityClasses"
-    "@material-ui/unstyled/utils"
     "@material-ui/utils"
     "react"]}
   {:file "material-ui/material-ui-unstyled-unstable-trap-focus.inc.js",
@@ -1185,5 +1233,14 @@
    :provides ["@material-ui/unstyled/utils"],
    :global-exports
    {"@material-ui/unstyled/utils" MaterialUIUnstyledUtils},
-   :requires []}],
+   :requires []}
+  {:file
+   "material-ui/material-ui-unstyled-autocomplete-unstyled.inc.js",
+   :file-min
+   "material-ui/material-ui-unstyled-autocomplete-unstyled.min.inc.js",
+   :provides ["@material-ui/unstyled/AutocompleteUnstyled"],
+   :global-exports
+   {"@material-ui/unstyled/AutocompleteUnstyled"
+    MaterialUIUnstyledAutocompleteUnstyled},
+   :requires ["@material-ui/utils" "react"]}],
  :externs ["material-ui/material-ui.ext.js"]}

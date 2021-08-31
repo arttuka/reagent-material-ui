@@ -1,1 +1,1 @@
-export { DialogTitle as default } from '@material-ui/core'
+export { DialogTitle as default, dialogTitleClasses } from '@material-ui/core'

@@ -1,1 +1,1 @@
-export { CardMedia as default } from '@material-ui/core'
+export { CardMedia as default, cardMediaClasses } from '@material-ui/core'

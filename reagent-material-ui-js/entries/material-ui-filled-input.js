@@ -1,1 +1,1 @@
-export { FilledInput as default } from '@material-ui/core'
+export { FilledInput as default, filledInputClasses } from '@material-ui/core'

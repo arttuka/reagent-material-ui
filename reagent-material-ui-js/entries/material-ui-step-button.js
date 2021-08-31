@@ -1,1 +1,1 @@
-export { StepButton as default } from '@material-ui/core'
+export { StepButton as default, stepButtonClasses } from '@material-ui/core'

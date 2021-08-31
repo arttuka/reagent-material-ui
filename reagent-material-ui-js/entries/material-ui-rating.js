@@ -1,1 +1,1 @@
-export { Rating as default } from '@material-ui/core'
+export { Rating as default, ratingClasses } from '@material-ui/core'

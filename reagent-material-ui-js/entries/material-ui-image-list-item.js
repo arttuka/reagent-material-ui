@@ -1,1 +1,1 @@
-export { ImageListItem as default } from '@material-ui/core'
+export { ImageListItem as default, imageListItemClasses } from '@material-ui/core'

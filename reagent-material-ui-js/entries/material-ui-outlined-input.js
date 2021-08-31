@@ -1,1 +1,1 @@
-export { OutlinedInput as default } from '@material-ui/core'
+export { OutlinedInput as default, outlinedInputClasses } from '@material-ui/core'

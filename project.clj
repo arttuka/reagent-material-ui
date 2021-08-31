@@ -32,13 +32,13 @@
                                        :npm-deps      false}}
                        {:id           "test-adv"
                         :source-paths ["src/core" "test"]
-                        :compiler     {:output-to     "target/public/js/test-main.js"
-                                       :output-dir    "target/public/js/out"
+                        :compiler     {:output-to     "target/public/js/test-main-adv.js"
+                                       :output-dir    "target/public/js/out-adv"
                                        :main          reagent-material-ui.test-runner
                                        :optimizations :advanced
                                        :npm-deps      false}}]}
   :doo {:paths {:karma "./node_modules/karma/bin/karma"}}
-  :aliases {"test"         ["do" ["clean"] ["doo:test"] ["clean"] ["doo:test-adv"]]
+  :aliases {"test"         ["do" ["clean"] ["doo:test"] ["doo:test-adv"]]
             "doo:test"     ["doo" "chrome-headless" "test" "once"]
             "doo:test-adv" ["doo" "chrome-headless" "test-adv" "once"]}
   :deploy-repositories [["releases" {:url           "https://repo.clojars.org"

@@ -1,1 +1,1 @@
-export { TableBody as default } from '@material-ui/core'
+export { TableBody as default, tableBodyClasses } from '@material-ui/core'
