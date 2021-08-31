@@ -2,11 +2,18 @@
 
 See [Material UI changelog](https://github.com/mui-org/material-ui/blob/next/CHANGELOG.md) for changes in Material UI.
 
+## 5.0.0-beta.5-0
+
+**[compare](https://github.com/arttuka/reagent-material-ui/compare/v5.0.0-beta.2-0...v5.0.0-beta.5-0)**
+
+- Update Material UI to v5.0.0-beta.5
+- Fix require bug when using `@material-ui/lab` with CLJSJS packages
+
 ## 5.0.0-beta.2-0
 
 **[compare](https://github.com/arttuka/reagent-material-ui/compare/v5.0.0-alpha.32-0...v5.0.0-beta.2-0)**
 
-- Update Material UI to v5.0.0-beta.2-0
+- Update Material UI to v5.0.0-beta.2
 - Add components from `@material-ui/unstyled`
 - Move functions from `@material-ui/core/styles` and `@material-ui/styles` to separate namespaces
 - Fix default locale in `localization-provider` (#19) @alenkralj
