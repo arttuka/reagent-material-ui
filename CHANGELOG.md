@@ -2,6 +2,16 @@
 
 See [MUI changelog](https://github.com/mui-org/material-ui/blob/master/CHANGELOG.md) for changes in MUI.
 
+## 5.0.0-0
+
+**[compare](https://github.com/arttuka/reagent-material-ui/compare/v5.0.0-beta.5-0...v5.0.0-0)**
+
+- Update MUI to v5.0.0
+- **BREAKING** Rename packages according to new MUI packages:
+  - `reagent-material-ui.core` becomes `reagent-mui.material`
+  - `reagent-material-ui.unstyled` becomes `reagent-mui.core`
+  - Other packages starting with `reagent-material-ui` are renamed to start with `reagent-mui`
+
 ## 5.0.0-beta.5-0
 
 **[compare](https://github.com/arttuka/reagent-material-ui/compare/v5.0.0-beta.2-0...v5.0.0-beta.5-0)**

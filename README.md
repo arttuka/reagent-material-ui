@@ -15,7 +15,7 @@ Their examples are very good. and this library tries to follow the original idea
 
 To add MUI to an existing Reagent project, just add this library to your dependencies:
 ```
-[arttuka/reagent-material-ui "5.0.0-beta.5-0"]
+[arttuka/reagent-material-ui "5.0.0-0"]
 ```
 
 Most of the library is in the form of regular Reagent components. Each component is contained in a namespace that mirrors
@@ -52,7 +52,7 @@ The adapters from MUI Lab are not included in this library.
 To use npm dependencies with Figwheel Main, you need to exclude prebuilt JS files (React from CLJSJS and MUI from this library).
 To do so, add these exclusions to your dependency. See the example project for working configuration.
 
-    [arttuka/reagent-material-ui "5.0.0-beta.5-0" :exclusions [arttuka/reagent-material-ui-js]]
+    [arttuka/reagent-material-ui "5.0.0-0" :exclusions [arttuka/reagent-material-ui-js]]
 
 #### MUI component names with shadow-cljs
 
