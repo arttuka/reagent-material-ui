@@ -1,1 +1,0 @@
-export { Select as default, selectClasses } from '@material-ui/core'

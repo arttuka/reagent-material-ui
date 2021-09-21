@@ -1,1 +1,0 @@
-export { AppBar as default, appBarClasses } from '@material-ui/core'

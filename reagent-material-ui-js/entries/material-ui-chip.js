@@ -1,1 +1,0 @@
-export { Chip as default, chipClasses } from '@material-ui/core'

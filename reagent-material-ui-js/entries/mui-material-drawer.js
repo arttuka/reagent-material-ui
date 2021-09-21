@@ -1,0 +1,1 @@
+export { Drawer as default, drawerClasses } from '@mui/material'

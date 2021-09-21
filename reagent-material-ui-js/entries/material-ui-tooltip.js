@@ -1,1 +1,0 @@
-export { Tooltip as default, tooltipClasses } from '@material-ui/core'

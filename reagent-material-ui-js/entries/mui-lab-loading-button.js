@@ -1,0 +1,1 @@
+export { LoadingButton as default } from '@mui/lab'

@@ -1,0 +1,1 @@
+export { Typography as default, typographyClasses } from '@mui/material'

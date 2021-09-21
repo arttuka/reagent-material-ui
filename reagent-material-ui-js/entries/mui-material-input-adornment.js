@@ -1,0 +1,1 @@
+export { InputAdornment as default, inputAdornmentClasses } from '@mui/material'

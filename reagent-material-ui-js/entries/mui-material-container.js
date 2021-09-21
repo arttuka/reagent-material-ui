@@ -1,0 +1,1 @@
+export { Container as default, containerClasses } from '@mui/material'

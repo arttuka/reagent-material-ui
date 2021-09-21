@@ -1,1 +1,0 @@
-export { FilledInput as default, filledInputClasses } from '@material-ui/core'

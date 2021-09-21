@@ -1,0 +1,1 @@
+export { Unstable_TrapFocus as default } from '@mui/material'

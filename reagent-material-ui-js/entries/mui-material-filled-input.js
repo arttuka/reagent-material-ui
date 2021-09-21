@@ -1,0 +1,1 @@
+export { FilledInput as default, filledInputClasses } from '@mui/material'

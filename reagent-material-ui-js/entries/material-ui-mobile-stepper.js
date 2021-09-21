@@ -1,1 +1,0 @@
-export { MobileStepper as default, mobileStepperClasses } from '@material-ui/core'

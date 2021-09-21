@@ -1,0 +1,1 @@
+export { ScopedCssBaseline as default, scopedCssBaselineClasses } from '@mui/material'

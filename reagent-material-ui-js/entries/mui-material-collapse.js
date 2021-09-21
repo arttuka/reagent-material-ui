@@ -1,0 +1,1 @@
+export { Collapse as default, collapseClasses } from '@mui/material'

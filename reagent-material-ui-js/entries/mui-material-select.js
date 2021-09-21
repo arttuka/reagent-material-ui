@@ -1,0 +1,1 @@
+export { Select as default, selectClasses } from '@mui/material'

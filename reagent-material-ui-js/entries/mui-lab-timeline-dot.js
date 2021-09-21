@@ -1,0 +1,1 @@
+export { TimelineDot as default } from '@mui/lab'

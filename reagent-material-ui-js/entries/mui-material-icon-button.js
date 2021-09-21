@@ -1,0 +1,1 @@
+export { IconButton as default, iconButtonClasses } from '@mui/material'

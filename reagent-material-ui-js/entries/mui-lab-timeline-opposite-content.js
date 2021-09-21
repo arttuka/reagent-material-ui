@@ -1,0 +1,1 @@
+export { TimelineOppositeContent as default } from '@mui/lab'

@@ -1,0 +1,1 @@
+export { TimelineItem as default } from '@mui/lab'

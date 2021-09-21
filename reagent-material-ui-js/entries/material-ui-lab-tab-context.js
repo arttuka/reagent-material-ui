@@ -1,1 +1,0 @@
-export { TabContext as default, useTabContext } from '@material-ui/lab'

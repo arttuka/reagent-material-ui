@@ -1,0 +1,1 @@
+export { TabScrollButton as default, tabScrollButtonClasses } from '@mui/material'

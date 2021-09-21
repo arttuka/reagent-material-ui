@@ -1,1 +1,0 @@
-export { Tab as default, tabClasses } from '@material-ui/core'

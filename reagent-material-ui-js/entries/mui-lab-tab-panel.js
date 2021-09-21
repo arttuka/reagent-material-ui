@@ -1,0 +1,1 @@
+export { TabPanel as default } from '@mui/lab'

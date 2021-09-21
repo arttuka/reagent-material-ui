@@ -1,0 +1,1 @@
+export { Icon as default, iconClasses } from '@mui/material'

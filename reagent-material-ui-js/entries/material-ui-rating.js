@@ -1,1 +1,0 @@
-export { Rating as default, ratingClasses } from '@material-ui/core'

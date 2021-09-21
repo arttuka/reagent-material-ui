@@ -1,1 +1,0 @@
-export { Typography as default, typographyClasses } from '@material-ui/core'

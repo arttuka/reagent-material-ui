@@ -1,0 +1,1 @@
+export { TableBody as default, tableBodyClasses } from '@mui/material'

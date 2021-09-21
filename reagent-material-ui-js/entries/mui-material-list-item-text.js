@@ -1,0 +1,1 @@
+export { ListItemText as default, listItemTextClasses } from '@mui/material'

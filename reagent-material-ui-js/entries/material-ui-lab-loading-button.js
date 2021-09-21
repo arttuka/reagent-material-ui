@@ -1,1 +1,0 @@
-export { LoadingButton as default } from '@material-ui/lab'

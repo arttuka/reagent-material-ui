@@ -1,1 +1,0 @@
-export { DialogActions as default, dialogActionsClasses } from '@material-ui/core'

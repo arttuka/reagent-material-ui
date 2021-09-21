@@ -1,0 +1,1 @@
+export { CardMedia as default, cardMediaClasses } from '@mui/material'

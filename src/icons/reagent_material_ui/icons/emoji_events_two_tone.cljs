@@ -1,9 +1,0 @@
-(ns reagent-material-ui.icons.emoji-events-two-tone
-  "Imports @material-ui/icons/EmojiEventsTwoTone as a Reagent component."
-  (:require-macros [reagent-material-ui.util :refer [create-svg-icon e]])
-  (:require [react :as react]
-            ["@material-ui/core/SvgIcon" :as SvgIcon]
-            [reagent-material-ui.util]))
-
-(def emoji-events-two-tone (create-svg-icon [(e "path" #js {"d" "M12 14c-1.65 0-3-1.35-3-3V5h6v6c0 1.65-1.35 3-3 3z", "opacity" ".3"}) (e "path" #js {"d" "M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm7 6c-1.65 0-3-1.35-3-3V5h6v6c0 1.65-1.35 3-3 3zm7-6c0 1.3-.84 2.4-2 2.82V7h2v1z"})]
-                                            "EmojiEventsTwoTone"))

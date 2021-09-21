@@ -1,0 +1,1 @@
+export { AccordionActions as default, accordionActionsClasses } from '@mui/material'

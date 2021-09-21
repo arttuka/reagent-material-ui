@@ -1,1 +1,0 @@
-export { ListSubheader as default, listSubheaderClasses } from '@material-ui/core'

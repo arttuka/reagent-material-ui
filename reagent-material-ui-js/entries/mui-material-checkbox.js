@@ -1,0 +1,1 @@
+export { Checkbox as default, checkboxClasses } from '@mui/material'

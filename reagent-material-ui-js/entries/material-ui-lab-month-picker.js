@@ -1,1 +1,0 @@
-export { MonthPicker as default } from '@material-ui/lab'

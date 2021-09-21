@@ -1,1 +1,0 @@
-export { Modal as default, ModalManager } from '@material-ui/core'

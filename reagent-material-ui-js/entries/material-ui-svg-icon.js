@@ -1,1 +1,0 @@
-export { SvgIcon as default, svgIconClasses } from '@material-ui/core'

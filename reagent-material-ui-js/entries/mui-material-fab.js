@@ -1,0 +1,1 @@
+export { Fab as default, fabClasses } from '@mui/material'

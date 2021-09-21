@@ -1,1 +1,0 @@
-export { YearPicker as default } from '@material-ui/lab'

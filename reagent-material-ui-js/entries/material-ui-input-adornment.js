@@ -1,1 +1,0 @@
-export { InputAdornment as default, inputAdornmentClasses } from '@material-ui/core'

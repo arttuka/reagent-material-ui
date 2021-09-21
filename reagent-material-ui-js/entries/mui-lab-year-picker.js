@@ -1,0 +1,1 @@
+export { YearPicker as default } from '@mui/lab'

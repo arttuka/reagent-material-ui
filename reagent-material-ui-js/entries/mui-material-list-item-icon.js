@@ -1,0 +1,1 @@
+export { ListItemIcon as default, listItemIconClasses } from '@mui/material'

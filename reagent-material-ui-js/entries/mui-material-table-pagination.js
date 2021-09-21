@@ -1,0 +1,1 @@
+export { TablePagination as default, tablePaginationClasses } from '@mui/material'

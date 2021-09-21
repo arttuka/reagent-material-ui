@@ -1,1 +1,0 @@
-export { TextareaAutosize as default } from '@material-ui/core'

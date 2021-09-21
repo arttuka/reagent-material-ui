@@ -1,1 +1,0 @@
-export { IconButton as default, iconButtonClasses } from '@material-ui/core'

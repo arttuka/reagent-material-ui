@@ -1,1 +1,0 @@
-export { StaticTimePicker as default } from '@material-ui/lab'

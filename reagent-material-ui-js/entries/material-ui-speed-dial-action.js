@@ -1,1 +1,0 @@
-export { SpeedDialAction as default, speedDialActionClasses } from '@material-ui/core'

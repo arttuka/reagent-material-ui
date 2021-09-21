@@ -1,0 +1,1 @@
+export { ButtonBase as default, buttonBaseClasses } from '@mui/material'

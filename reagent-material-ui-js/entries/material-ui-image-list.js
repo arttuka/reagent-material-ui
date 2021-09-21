@@ -1,1 +1,0 @@
-export { ImageList as default, imageListClasses } from '@material-ui/core'

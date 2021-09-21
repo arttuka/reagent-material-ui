@@ -1,0 +1,1 @@
+export { TableSortLabel as default, tableSortLabelClasses } from '@mui/material'

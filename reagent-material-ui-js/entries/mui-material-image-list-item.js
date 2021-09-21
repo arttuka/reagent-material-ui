@@ -1,0 +1,1 @@
+export { ImageListItem as default, imageListItemClasses } from '@mui/material'

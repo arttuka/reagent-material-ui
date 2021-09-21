@@ -1,1 +1,0 @@
-export { ListItemText as default, listItemTextClasses } from '@material-ui/core'

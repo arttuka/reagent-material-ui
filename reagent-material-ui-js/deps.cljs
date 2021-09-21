@@ -1,1246 +1,1173 @@
 {:foreign-libs
- [{:file "material-ui/material-ui.inc.js",
-   :file-min "material-ui/material-ui.min.inc.js",
-   :provides ["@material-ui/core"],
-   :global-exports {"@material-ui/core" MaterialUI},
+ [{:file "mui/mui-material.inc.js",
+   :file-min "mui/mui-material.min.inc.js",
+   :provides ["@mui/material"],
+   :global-exports {"@mui/material" MuiMaterial},
    :requires
-   ["@material-ui/unstyled"
-    "@material-ui/unstyled/AutocompleteUnstyled"
-    "@material-ui/unstyled/BackdropUnstyled"
-    "@material-ui/unstyled/BadgeUnstyled"
-    "@material-ui/unstyled/ModalUnstyled"
-    "@material-ui/unstyled/NoSsr"
-    "@material-ui/unstyled/Portal"
-    "@material-ui/unstyled/SliderUnstyled"
-    "@material-ui/utils"
+   ["@mui/core"
+    "@mui/core/AutocompleteUnstyled"
+    "@mui/core/BackdropUnstyled"
+    "@mui/core/BadgeUnstyled"
+    "@mui/core/ModalUnstyled"
+    "@mui/core/NoSsr"
+    "@mui/core/Portal"
+    "@mui/core/SliderUnstyled"
+    "@mui/core/composeClasses"
+    "@mui/utils"
     "react"
     "react-dom"]}
-  {:file "material-ui/material-ui-core-styles.inc.js",
-   :file-min "material-ui/material-ui-core-styles.min.inc.js",
-   :provides ["@material-ui/core/styles"],
-   :global-exports {"@material-ui/core/styles" MaterialUICoreStyles},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-core-utils.inc.js",
-   :file-min "material-ui/material-ui-core-utils.min.inc.js",
-   :provides ["@material-ui/core/utils"],
-   :global-exports {"@material-ui/core/utils" MaterialUICoreUtils},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-lab.inc.js",
-   :file-min "material-ui/material-ui-lab.min.inc.js",
-   :provides ["@material-ui/lab"],
-   :global-exports {"@material-ui/lab" MaterialUILab},
+  {:file "mui/mui-material-styles.inc.js",
+   :file-min "mui/mui-material-styles.min.inc.js",
+   :provides ["@mui/material/styles"],
+   :global-exports {"@mui/material/styles" MuiMaterialStyles},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-utils.inc.js",
+   :file-min "mui/mui-material-utils.min.inc.js",
+   :provides ["@mui/material/utils"],
+   :global-exports {"@mui/material/utils" MuiMaterialUtils},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-lab.inc.js",
+   :file-min "mui/mui-lab.min.inc.js",
+   :provides ["@mui/lab"],
+   :global-exports {"@mui/lab" MuiLab},
    :requires
-   ["@material-ui/core"
-    "@material-ui/core/Alert"
-    "@material-ui/core/AlertTitle"
-    "@material-ui/core/Autocomplete"
-    "@material-ui/core/AvatarGroup"
-    "@material-ui/core/Button"
-    "@material-ui/core/ButtonBase"
-    "@material-ui/core/CircularProgress"
-    "@material-ui/core/Collapse"
-    "@material-ui/core/Dialog"
-    "@material-ui/core/DialogActions"
-    "@material-ui/core/DialogContent"
-    "@material-ui/core/Fade"
-    "@material-ui/core/Grid"
-    "@material-ui/core/Grow"
-    "@material-ui/core/IconButton"
-    "@material-ui/core/InputAdornment"
-    "@material-ui/core/Pagination"
-    "@material-ui/core/PaginationItem"
-    "@material-ui/core/Paper"
-    "@material-ui/core/Popper"
-    "@material-ui/core/Rating"
-    "@material-ui/core/Skeleton"
-    "@material-ui/core/SpeedDial"
-    "@material-ui/core/SpeedDialAction"
-    "@material-ui/core/SpeedDialIcon"
-    "@material-ui/core/Tab"
-    "@material-ui/core/Tabs"
-    "@material-ui/core/ToggleButton"
-    "@material-ui/core/ToggleButtonGroup"
-    "@material-ui/core/Typography"
-    "@material-ui/core/Unstable_TrapFocus"
-    "@material-ui/core/useMediaQuery"
-    "@material-ui/core/usePagination"
-    "@material-ui/unstyled"
-    "@material-ui/utils"
+   ["@mui/core"
+    "@mui/material"
+    "@mui/material/Alert"
+    "@mui/material/AlertTitle"
+    "@mui/material/Autocomplete"
+    "@mui/material/AvatarGroup"
+    "@mui/material/Button"
+    "@mui/material/ButtonBase"
+    "@mui/material/CircularProgress"
+    "@mui/material/Collapse"
+    "@mui/material/Dialog"
+    "@mui/material/DialogActions"
+    "@mui/material/DialogContent"
+    "@mui/material/Fade"
+    "@mui/material/Grid"
+    "@mui/material/Grow"
+    "@mui/material/IconButton"
+    "@mui/material/InputAdornment"
+    "@mui/material/Pagination"
+    "@mui/material/PaginationItem"
+    "@mui/material/Paper"
+    "@mui/material/Popper"
+    "@mui/material/Rating"
+    "@mui/material/Skeleton"
+    "@mui/material/SpeedDial"
+    "@mui/material/SpeedDialAction"
+    "@mui/material/SpeedDialIcon"
+    "@mui/material/Tab"
+    "@mui/material/Tabs"
+    "@mui/material/ToggleButton"
+    "@mui/material/ToggleButtonGroup"
+    "@mui/material/Typography"
+    "@mui/material/Unstable_TrapFocus"
+    "@mui/material/useMediaQuery"
+    "@mui/material/usePagination"
+    "@mui/utils"
     "react"
     "react-dom"]}
-  {:file "material-ui/material-ui-unstyled.inc.js",
-   :file-min "material-ui/material-ui-unstyled.min.inc.js",
-   :provides ["@material-ui/unstyled"],
-   :global-exports {"@material-ui/unstyled" MaterialUIUnstyled},
+  {:file "mui/mui-core.inc.js",
+   :file-min "mui/mui-core.min.inc.js",
+   :provides ["@mui/core"],
+   :global-exports {"@mui/core" MuiCore},
    :requires
-   ["@material-ui/unstyled/AutocompleteUnstyled"
-    "@material-ui/unstyled/BackdropUnstyled"
-    "@material-ui/unstyled/BadgeUnstyled"
-    "@material-ui/unstyled/FormControlUnstyled"
-    "@material-ui/unstyled/ModalUnstyled"
-    "@material-ui/unstyled/NoSsr"
-    "@material-ui/unstyled/Portal"
-    "@material-ui/unstyled/SliderUnstyled"
-    "@material-ui/unstyled/SwitchUnstyled"
-    "@material-ui/unstyled/Unstable_TrapFocus"
-    "@material-ui/unstyled/composeClasses"
-    "@material-ui/unstyled/generateUtilityClass"
-    "@material-ui/unstyled/generateUtilityClasses"
-    "@material-ui/unstyled/utils"]}
-  {:file "material-ui/material-ui-styles.inc.js",
-   :file-min "material-ui/material-ui-styles.min.inc.js",
-   :provides ["@material-ui/styles"],
-   :global-exports {"@material-ui/styles" MaterialUIStyles},
-   :requires ["@material-ui/utils" "react"]}
-  {:file "material-ui/material-ui-utils.inc.js",
-   :file-min "material-ui/material-ui-utils.min.inc.js",
-   :provides ["@material-ui/utils"],
-   :global-exports {"@material-ui/utils" MaterialUIUtils},
+   ["@mui/core/AutocompleteUnstyled"
+    "@mui/core/BackdropUnstyled"
+    "@mui/core/BadgeUnstyled"
+    "@mui/core/ButtonUnstyled"
+    "@mui/core/FormControlUnstyled"
+    "@mui/core/ModalUnstyled"
+    "@mui/core/NoSsr"
+    "@mui/core/Portal"
+    "@mui/core/SliderUnstyled"
+    "@mui/core/SwitchUnstyled"
+    "@mui/core/Unstable_TrapFocus"
+    "@mui/core/composeClasses"
+    "@mui/core/generateUtilityClass"
+    "@mui/core/generateUtilityClasses"
+    "@mui/core/utils"]}
+  {:file "mui/mui-styles.inc.js",
+   :file-min "mui/mui-styles.min.inc.js",
+   :provides ["@mui/styles"],
+   :global-exports {"@mui/styles" MuiStyles},
+   :requires ["@mui/utils" "react"]}
+  {:file "mui/mui-utils.inc.js",
+   :file-min "mui/mui-utils.min.inc.js",
+   :provides ["@mui/utils"],
+   :global-exports {"@mui/utils" MuiUtils},
    :requires ["react"]}
-  {:file "material-ui/material-ui-accordion.inc.js",
-   :file-min "material-ui/material-ui-accordion.min.inc.js",
-   :provides ["@material-ui/core/Accordion"],
-   :global-exports {"@material-ui/core/Accordion" MaterialUIAccordion},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-accordion-actions.inc.js",
-   :file-min "material-ui/material-ui-accordion-actions.min.inc.js",
-   :provides ["@material-ui/core/AccordionActions"],
-   :global-exports
-   {"@material-ui/core/AccordionActions" MaterialUIAccordionActions},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-accordion-details.inc.js",
-   :file-min "material-ui/material-ui-accordion-details.min.inc.js",
-   :provides ["@material-ui/core/AccordionDetails"],
-   :global-exports
-   {"@material-ui/core/AccordionDetails" MaterialUIAccordionDetails},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-accordion-summary.inc.js",
-   :file-min "material-ui/material-ui-accordion-summary.min.inc.js",
-   :provides ["@material-ui/core/AccordionSummary"],
-   :global-exports
-   {"@material-ui/core/AccordionSummary" MaterialUIAccordionSummary},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-alert.inc.js",
-   :file-min "material-ui/material-ui-alert.min.inc.js",
-   :provides ["@material-ui/core/Alert"],
-   :global-exports {"@material-ui/core/Alert" MaterialUIAlert},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-alert-title.inc.js",
-   :file-min "material-ui/material-ui-alert-title.min.inc.js",
-   :provides ["@material-ui/core/AlertTitle"],
-   :global-exports
-   {"@material-ui/core/AlertTitle" MaterialUIAlertTitle},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-app-bar.inc.js",
-   :file-min "material-ui/material-ui-app-bar.min.inc.js",
-   :provides ["@material-ui/core/AppBar"],
-   :global-exports {"@material-ui/core/AppBar" MaterialUIAppBar},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-autocomplete.inc.js",
-   :file-min "material-ui/material-ui-autocomplete.min.inc.js",
-   :provides ["@material-ui/core/Autocomplete"],
-   :global-exports
-   {"@material-ui/core/Autocomplete" MaterialUIAutocomplete},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-avatar.inc.js",
-   :file-min "material-ui/material-ui-avatar.min.inc.js",
-   :provides ["@material-ui/core/Avatar"],
-   :global-exports {"@material-ui/core/Avatar" MaterialUIAvatar},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-avatar-group.inc.js",
-   :file-min "material-ui/material-ui-avatar-group.min.inc.js",
-   :provides ["@material-ui/core/AvatarGroup"],
-   :global-exports
-   {"@material-ui/core/AvatarGroup" MaterialUIAvatarGroup},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-backdrop.inc.js",
-   :file-min "material-ui/material-ui-backdrop.min.inc.js",
-   :provides ["@material-ui/core/Backdrop"],
-   :global-exports {"@material-ui/core/Backdrop" MaterialUIBackdrop},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-badge.inc.js",
-   :file-min "material-ui/material-ui-badge.min.inc.js",
-   :provides ["@material-ui/core/Badge"],
-   :global-exports {"@material-ui/core/Badge" MaterialUIBadge},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-bottom-navigation.inc.js",
-   :file-min "material-ui/material-ui-bottom-navigation.min.inc.js",
-   :provides ["@material-ui/core/BottomNavigation"],
-   :global-exports
-   {"@material-ui/core/BottomNavigation" MaterialUIBottomNavigation},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-bottom-navigation-action.inc.js",
-   :file-min
-   "material-ui/material-ui-bottom-navigation-action.min.inc.js",
-   :provides ["@material-ui/core/BottomNavigationAction"],
-   :global-exports
-   {"@material-ui/core/BottomNavigationAction"
-    MaterialUIBottomNavigationAction},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-box.inc.js",
-   :file-min "material-ui/material-ui-box.min.inc.js",
-   :provides ["@material-ui/core/Box"],
-   :global-exports {"@material-ui/core/Box" MaterialUIBox},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-breadcrumbs.inc.js",
-   :file-min "material-ui/material-ui-breadcrumbs.min.inc.js",
-   :provides ["@material-ui/core/Breadcrumbs"],
-   :global-exports
-   {"@material-ui/core/Breadcrumbs" MaterialUIBreadcrumbs},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-button.inc.js",
-   :file-min "material-ui/material-ui-button.min.inc.js",
-   :provides ["@material-ui/core/Button"],
-   :global-exports {"@material-ui/core/Button" MaterialUIButton},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-button-base.inc.js",
-   :file-min "material-ui/material-ui-button-base.min.inc.js",
-   :provides ["@material-ui/core/ButtonBase"],
-   :global-exports
-   {"@material-ui/core/ButtonBase" MaterialUIButtonBase},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-button-group.inc.js",
-   :file-min "material-ui/material-ui-button-group.min.inc.js",
-   :provides ["@material-ui/core/ButtonGroup"],
-   :global-exports
-   {"@material-ui/core/ButtonGroup" MaterialUIButtonGroup},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-card.inc.js",
-   :file-min "material-ui/material-ui-card.min.inc.js",
-   :provides ["@material-ui/core/Card"],
-   :global-exports {"@material-ui/core/Card" MaterialUICard},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-card-action-area.inc.js",
-   :file-min "material-ui/material-ui-card-action-area.min.inc.js",
-   :provides ["@material-ui/core/CardActionArea"],
-   :global-exports
-   {"@material-ui/core/CardActionArea" MaterialUICardActionArea},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-card-actions.inc.js",
-   :file-min "material-ui/material-ui-card-actions.min.inc.js",
-   :provides ["@material-ui/core/CardActions"],
-   :global-exports
-   {"@material-ui/core/CardActions" MaterialUICardActions},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-card-content.inc.js",
-   :file-min "material-ui/material-ui-card-content.min.inc.js",
-   :provides ["@material-ui/core/CardContent"],
-   :global-exports
-   {"@material-ui/core/CardContent" MaterialUICardContent},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-card-header.inc.js",
-   :file-min "material-ui/material-ui-card-header.min.inc.js",
-   :provides ["@material-ui/core/CardHeader"],
-   :global-exports
-   {"@material-ui/core/CardHeader" MaterialUICardHeader},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-card-media.inc.js",
-   :file-min "material-ui/material-ui-card-media.min.inc.js",
-   :provides ["@material-ui/core/CardMedia"],
-   :global-exports {"@material-ui/core/CardMedia" MaterialUICardMedia},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-checkbox.inc.js",
-   :file-min "material-ui/material-ui-checkbox.min.inc.js",
-   :provides ["@material-ui/core/Checkbox"],
-   :global-exports {"@material-ui/core/Checkbox" MaterialUICheckbox},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-chip.inc.js",
-   :file-min "material-ui/material-ui-chip.min.inc.js",
-   :provides ["@material-ui/core/Chip"],
-   :global-exports {"@material-ui/core/Chip" MaterialUIChip},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-circular-progress.inc.js",
-   :file-min "material-ui/material-ui-circular-progress.min.inc.js",
-   :provides ["@material-ui/core/CircularProgress"],
-   :global-exports
-   {"@material-ui/core/CircularProgress" MaterialUICircularProgress},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-click-away-listener.inc.js",
-   :file-min "material-ui/material-ui-click-away-listener.min.inc.js",
-   :provides ["@material-ui/core/ClickAwayListener"],
-   :global-exports
-   {"@material-ui/core/ClickAwayListener" MaterialUIClickAwayListener},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-collapse.inc.js",
-   :file-min "material-ui/material-ui-collapse.min.inc.js",
-   :provides ["@material-ui/core/Collapse"],
-   :global-exports {"@material-ui/core/Collapse" MaterialUICollapse},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-container.inc.js",
-   :file-min "material-ui/material-ui-container.min.inc.js",
-   :provides ["@material-ui/core/Container"],
-   :global-exports {"@material-ui/core/Container" MaterialUIContainer},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-css-baseline.inc.js",
-   :file-min "material-ui/material-ui-css-baseline.min.inc.js",
-   :provides ["@material-ui/core/CssBaseline"],
-   :global-exports
-   {"@material-ui/core/CssBaseline" MaterialUICssBaseline},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-dialog.inc.js",
-   :file-min "material-ui/material-ui-dialog.min.inc.js",
-   :provides ["@material-ui/core/Dialog"],
-   :global-exports {"@material-ui/core/Dialog" MaterialUIDialog},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-dialog-actions.inc.js",
-   :file-min "material-ui/material-ui-dialog-actions.min.inc.js",
-   :provides ["@material-ui/core/DialogActions"],
-   :global-exports
-   {"@material-ui/core/DialogActions" MaterialUIDialogActions},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-dialog-content.inc.js",
-   :file-min "material-ui/material-ui-dialog-content.min.inc.js",
-   :provides ["@material-ui/core/DialogContent"],
-   :global-exports
-   {"@material-ui/core/DialogContent" MaterialUIDialogContent},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-dialog-content-text.inc.js",
-   :file-min "material-ui/material-ui-dialog-content-text.min.inc.js",
-   :provides ["@material-ui/core/DialogContentText"],
-   :global-exports
-   {"@material-ui/core/DialogContentText" MaterialUIDialogContentText},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-dialog-title.inc.js",
-   :file-min "material-ui/material-ui-dialog-title.min.inc.js",
-   :provides ["@material-ui/core/DialogTitle"],
-   :global-exports
-   {"@material-ui/core/DialogTitle" MaterialUIDialogTitle},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-divider.inc.js",
-   :file-min "material-ui/material-ui-divider.min.inc.js",
-   :provides ["@material-ui/core/Divider"],
-   :global-exports {"@material-ui/core/Divider" MaterialUIDivider},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-drawer.inc.js",
-   :file-min "material-ui/material-ui-drawer.min.inc.js",
-   :provides ["@material-ui/core/Drawer"],
-   :global-exports {"@material-ui/core/Drawer" MaterialUIDrawer},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-fab.inc.js",
-   :file-min "material-ui/material-ui-fab.min.inc.js",
-   :provides ["@material-ui/core/Fab"],
-   :global-exports {"@material-ui/core/Fab" MaterialUIFab},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-fade.inc.js",
-   :file-min "material-ui/material-ui-fade.min.inc.js",
-   :provides ["@material-ui/core/Fade"],
-   :global-exports {"@material-ui/core/Fade" MaterialUIFade},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-filled-input.inc.js",
-   :file-min "material-ui/material-ui-filled-input.min.inc.js",
-   :provides ["@material-ui/core/FilledInput"],
-   :global-exports
-   {"@material-ui/core/FilledInput" MaterialUIFilledInput},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-form-control.inc.js",
-   :file-min "material-ui/material-ui-form-control.min.inc.js",
-   :provides ["@material-ui/core/FormControl"],
-   :global-exports
-   {"@material-ui/core/FormControl" MaterialUIFormControl},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-form-control-label.inc.js",
-   :file-min "material-ui/material-ui-form-control-label.min.inc.js",
-   :provides ["@material-ui/core/FormControlLabel"],
-   :global-exports
-   {"@material-ui/core/FormControlLabel" MaterialUIFormControlLabel},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-form-group.inc.js",
-   :file-min "material-ui/material-ui-form-group.min.inc.js",
-   :provides ["@material-ui/core/FormGroup"],
-   :global-exports {"@material-ui/core/FormGroup" MaterialUIFormGroup},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-form-helper-text.inc.js",
-   :file-min "material-ui/material-ui-form-helper-text.min.inc.js",
-   :provides ["@material-ui/core/FormHelperText"],
-   :global-exports
-   {"@material-ui/core/FormHelperText" MaterialUIFormHelperText},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-form-label.inc.js",
-   :file-min "material-ui/material-ui-form-label.min.inc.js",
-   :provides ["@material-ui/core/FormLabel"],
-   :global-exports {"@material-ui/core/FormLabel" MaterialUIFormLabel},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-global-styles.inc.js",
-   :file-min "material-ui/material-ui-global-styles.min.inc.js",
-   :provides ["@material-ui/core/GlobalStyles"],
-   :global-exports
-   {"@material-ui/core/GlobalStyles" MaterialUIGlobalStyles},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-grid.inc.js",
-   :file-min "material-ui/material-ui-grid.min.inc.js",
-   :provides ["@material-ui/core/Grid"],
-   :global-exports {"@material-ui/core/Grid" MaterialUIGrid},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-grow.inc.js",
-   :file-min "material-ui/material-ui-grow.min.inc.js",
-   :provides ["@material-ui/core/Grow"],
-   :global-exports {"@material-ui/core/Grow" MaterialUIGrow},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-hidden.inc.js",
-   :file-min "material-ui/material-ui-hidden.min.inc.js",
-   :provides ["@material-ui/core/Hidden"],
-   :global-exports {"@material-ui/core/Hidden" MaterialUIHidden},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-icon.inc.js",
-   :file-min "material-ui/material-ui-icon.min.inc.js",
-   :provides ["@material-ui/core/Icon"],
-   :global-exports {"@material-ui/core/Icon" MaterialUIIcon},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-icon-button.inc.js",
-   :file-min "material-ui/material-ui-icon-button.min.inc.js",
-   :provides ["@material-ui/core/IconButton"],
-   :global-exports
-   {"@material-ui/core/IconButton" MaterialUIIconButton},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-image-list.inc.js",
-   :file-min "material-ui/material-ui-image-list.min.inc.js",
-   :provides ["@material-ui/core/ImageList"],
-   :global-exports {"@material-ui/core/ImageList" MaterialUIImageList},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-image-list-item.inc.js",
-   :file-min "material-ui/material-ui-image-list-item.min.inc.js",
-   :provides ["@material-ui/core/ImageListItem"],
-   :global-exports
-   {"@material-ui/core/ImageListItem" MaterialUIImageListItem},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-image-list-item-bar.inc.js",
-   :file-min "material-ui/material-ui-image-list-item-bar.min.inc.js",
-   :provides ["@material-ui/core/ImageListItemBar"],
-   :global-exports
-   {"@material-ui/core/ImageListItemBar" MaterialUIImageListItemBar},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-input.inc.js",
-   :file-min "material-ui/material-ui-input.min.inc.js",
-   :provides ["@material-ui/core/Input"],
-   :global-exports {"@material-ui/core/Input" MaterialUIInput},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-input-adornment.inc.js",
-   :file-min "material-ui/material-ui-input-adornment.min.inc.js",
-   :provides ["@material-ui/core/InputAdornment"],
-   :global-exports
-   {"@material-ui/core/InputAdornment" MaterialUIInputAdornment},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-input-base.inc.js",
-   :file-min "material-ui/material-ui-input-base.min.inc.js",
-   :provides ["@material-ui/core/InputBase"],
-   :global-exports {"@material-ui/core/InputBase" MaterialUIInputBase},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-input-label.inc.js",
-   :file-min "material-ui/material-ui-input-label.min.inc.js",
-   :provides ["@material-ui/core/InputLabel"],
-   :global-exports
-   {"@material-ui/core/InputLabel" MaterialUIInputLabel},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-linear-progress.inc.js",
-   :file-min "material-ui/material-ui-linear-progress.min.inc.js",
-   :provides ["@material-ui/core/LinearProgress"],
-   :global-exports
-   {"@material-ui/core/LinearProgress" MaterialUILinearProgress},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-link.inc.js",
-   :file-min "material-ui/material-ui-link.min.inc.js",
-   :provides ["@material-ui/core/Link"],
-   :global-exports {"@material-ui/core/Link" MaterialUILink},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-list.inc.js",
-   :file-min "material-ui/material-ui-list.min.inc.js",
-   :provides ["@material-ui/core/List"],
-   :global-exports {"@material-ui/core/List" MaterialUIList},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-list-item.inc.js",
-   :file-min "material-ui/material-ui-list-item.min.inc.js",
-   :provides ["@material-ui/core/ListItem"],
-   :global-exports {"@material-ui/core/ListItem" MaterialUIListItem},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-list-item-avatar.inc.js",
-   :file-min "material-ui/material-ui-list-item-avatar.min.inc.js",
-   :provides ["@material-ui/core/ListItemAvatar"],
-   :global-exports
-   {"@material-ui/core/ListItemAvatar" MaterialUIListItemAvatar},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-list-item-button.inc.js",
-   :file-min "material-ui/material-ui-list-item-button.min.inc.js",
-   :provides ["@material-ui/core/ListItemButton"],
-   :global-exports
-   {"@material-ui/core/ListItemButton" MaterialUIListItemButton},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-list-item-icon.inc.js",
-   :file-min "material-ui/material-ui-list-item-icon.min.inc.js",
-   :provides ["@material-ui/core/ListItemIcon"],
-   :global-exports
-   {"@material-ui/core/ListItemIcon" MaterialUIListItemIcon},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-list-item-secondary-action.inc.js",
-   :file-min
-   "material-ui/material-ui-list-item-secondary-action.min.inc.js",
-   :provides ["@material-ui/core/ListItemSecondaryAction"],
-   :global-exports
-   {"@material-ui/core/ListItemSecondaryAction"
-    MaterialUIListItemSecondaryAction},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-list-item-text.inc.js",
-   :file-min "material-ui/material-ui-list-item-text.min.inc.js",
-   :provides ["@material-ui/core/ListItemText"],
-   :global-exports
-   {"@material-ui/core/ListItemText" MaterialUIListItemText},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-list-subheader.inc.js",
-   :file-min "material-ui/material-ui-list-subheader.min.inc.js",
-   :provides ["@material-ui/core/ListSubheader"],
-   :global-exports
-   {"@material-ui/core/ListSubheader" MaterialUIListSubheader},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-menu.inc.js",
-   :file-min "material-ui/material-ui-menu.min.inc.js",
-   :provides ["@material-ui/core/Menu"],
-   :global-exports {"@material-ui/core/Menu" MaterialUIMenu},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-menu-item.inc.js",
-   :file-min "material-ui/material-ui-menu-item.min.inc.js",
-   :provides ["@material-ui/core/MenuItem"],
-   :global-exports {"@material-ui/core/MenuItem" MaterialUIMenuItem},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-menu-list.inc.js",
-   :file-min "material-ui/material-ui-menu-list.min.inc.js",
-   :provides ["@material-ui/core/MenuList"],
-   :global-exports {"@material-ui/core/MenuList" MaterialUIMenuList},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-mobile-stepper.inc.js",
-   :file-min "material-ui/material-ui-mobile-stepper.min.inc.js",
-   :provides ["@material-ui/core/MobileStepper"],
-   :global-exports
-   {"@material-ui/core/MobileStepper" MaterialUIMobileStepper},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-modal.inc.js",
-   :file-min "material-ui/material-ui-modal.min.inc.js",
-   :provides ["@material-ui/core/Modal"],
-   :global-exports {"@material-ui/core/Modal" MaterialUIModal},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-native-select.inc.js",
-   :file-min "material-ui/material-ui-native-select.min.inc.js",
-   :provides ["@material-ui/core/NativeSelect"],
-   :global-exports
-   {"@material-ui/core/NativeSelect" MaterialUINativeSelect},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-no-ssr.inc.js",
-   :file-min "material-ui/material-ui-no-ssr.min.inc.js",
-   :provides ["@material-ui/core/NoSsr"],
-   :global-exports {"@material-ui/core/NoSsr" MaterialUINoSsr},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-outlined-input.inc.js",
-   :file-min "material-ui/material-ui-outlined-input.min.inc.js",
-   :provides ["@material-ui/core/OutlinedInput"],
-   :global-exports
-   {"@material-ui/core/OutlinedInput" MaterialUIOutlinedInput},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-pagination.inc.js",
-   :file-min "material-ui/material-ui-pagination.min.inc.js",
-   :provides ["@material-ui/core/Pagination"],
-   :global-exports
-   {"@material-ui/core/Pagination" MaterialUIPagination},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-pagination-item.inc.js",
-   :file-min "material-ui/material-ui-pagination-item.min.inc.js",
-   :provides ["@material-ui/core/PaginationItem"],
-   :global-exports
-   {"@material-ui/core/PaginationItem" MaterialUIPaginationItem},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-paper.inc.js",
-   :file-min "material-ui/material-ui-paper.min.inc.js",
-   :provides ["@material-ui/core/Paper"],
-   :global-exports {"@material-ui/core/Paper" MaterialUIPaper},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-popover.inc.js",
-   :file-min "material-ui/material-ui-popover.min.inc.js",
-   :provides ["@material-ui/core/Popover"],
-   :global-exports {"@material-ui/core/Popover" MaterialUIPopover},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-popper.inc.js",
-   :file-min "material-ui/material-ui-popper.min.inc.js",
-   :provides ["@material-ui/core/Popper"],
-   :global-exports {"@material-ui/core/Popper" MaterialUIPopper},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-portal.inc.js",
-   :file-min "material-ui/material-ui-portal.min.inc.js",
-   :provides ["@material-ui/core/Portal"],
-   :global-exports {"@material-ui/core/Portal" MaterialUIPortal},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-radio.inc.js",
-   :file-min "material-ui/material-ui-radio.min.inc.js",
-   :provides ["@material-ui/core/Radio"],
-   :global-exports {"@material-ui/core/Radio" MaterialUIRadio},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-radio-group.inc.js",
-   :file-min "material-ui/material-ui-radio-group.min.inc.js",
-   :provides ["@material-ui/core/RadioGroup"],
-   :global-exports
-   {"@material-ui/core/RadioGroup" MaterialUIRadioGroup},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-rating.inc.js",
-   :file-min "material-ui/material-ui-rating.min.inc.js",
-   :provides ["@material-ui/core/Rating"],
-   :global-exports {"@material-ui/core/Rating" MaterialUIRating},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-scoped-css-baseline.inc.js",
-   :file-min "material-ui/material-ui-scoped-css-baseline.min.inc.js",
-   :provides ["@material-ui/core/ScopedCssBaseline"],
-   :global-exports
-   {"@material-ui/core/ScopedCssBaseline" MaterialUIScopedCssBaseline},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-select.inc.js",
-   :file-min "material-ui/material-ui-select.min.inc.js",
-   :provides ["@material-ui/core/Select"],
-   :global-exports {"@material-ui/core/Select" MaterialUISelect},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-skeleton.inc.js",
-   :file-min "material-ui/material-ui-skeleton.min.inc.js",
-   :provides ["@material-ui/core/Skeleton"],
-   :global-exports {"@material-ui/core/Skeleton" MaterialUISkeleton},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-slide.inc.js",
-   :file-min "material-ui/material-ui-slide.min.inc.js",
-   :provides ["@material-ui/core/Slide"],
-   :global-exports {"@material-ui/core/Slide" MaterialUISlide},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-slider.inc.js",
-   :file-min "material-ui/material-ui-slider.min.inc.js",
-   :provides ["@material-ui/core/Slider"],
-   :global-exports {"@material-ui/core/Slider" MaterialUISlider},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-snackbar.inc.js",
-   :file-min "material-ui/material-ui-snackbar.min.inc.js",
-   :provides ["@material-ui/core/Snackbar"],
-   :global-exports {"@material-ui/core/Snackbar" MaterialUISnackbar},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-snackbar-content.inc.js",
-   :file-min "material-ui/material-ui-snackbar-content.min.inc.js",
-   :provides ["@material-ui/core/SnackbarContent"],
-   :global-exports
-   {"@material-ui/core/SnackbarContent" MaterialUISnackbarContent},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-speed-dial.inc.js",
-   :file-min "material-ui/material-ui-speed-dial.min.inc.js",
-   :provides ["@material-ui/core/SpeedDial"],
-   :global-exports {"@material-ui/core/SpeedDial" MaterialUISpeedDial},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-speed-dial-action.inc.js",
-   :file-min "material-ui/material-ui-speed-dial-action.min.inc.js",
-   :provides ["@material-ui/core/SpeedDialAction"],
-   :global-exports
-   {"@material-ui/core/SpeedDialAction" MaterialUISpeedDialAction},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-speed-dial-icon.inc.js",
-   :file-min "material-ui/material-ui-speed-dial-icon.min.inc.js",
-   :provides ["@material-ui/core/SpeedDialIcon"],
-   :global-exports
-   {"@material-ui/core/SpeedDialIcon" MaterialUISpeedDialIcon},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-stack.inc.js",
-   :file-min "material-ui/material-ui-stack.min.inc.js",
-   :provides ["@material-ui/core/Stack"],
-   :global-exports {"@material-ui/core/Stack" MaterialUIStack},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-step.inc.js",
-   :file-min "material-ui/material-ui-step.min.inc.js",
-   :provides ["@material-ui/core/Step"],
-   :global-exports {"@material-ui/core/Step" MaterialUIStep},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-step-button.inc.js",
-   :file-min "material-ui/material-ui-step-button.min.inc.js",
-   :provides ["@material-ui/core/StepButton"],
-   :global-exports
-   {"@material-ui/core/StepButton" MaterialUIStepButton},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-step-connector.inc.js",
-   :file-min "material-ui/material-ui-step-connector.min.inc.js",
-   :provides ["@material-ui/core/StepConnector"],
-   :global-exports
-   {"@material-ui/core/StepConnector" MaterialUIStepConnector},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-step-content.inc.js",
-   :file-min "material-ui/material-ui-step-content.min.inc.js",
-   :provides ["@material-ui/core/StepContent"],
-   :global-exports
-   {"@material-ui/core/StepContent" MaterialUIStepContent},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-step-icon.inc.js",
-   :file-min "material-ui/material-ui-step-icon.min.inc.js",
-   :provides ["@material-ui/core/StepIcon"],
-   :global-exports {"@material-ui/core/StepIcon" MaterialUIStepIcon},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-step-label.inc.js",
-   :file-min "material-ui/material-ui-step-label.min.inc.js",
-   :provides ["@material-ui/core/StepLabel"],
-   :global-exports {"@material-ui/core/StepLabel" MaterialUIStepLabel},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-stepper.inc.js",
-   :file-min "material-ui/material-ui-stepper.min.inc.js",
-   :provides ["@material-ui/core/Stepper"],
-   :global-exports {"@material-ui/core/Stepper" MaterialUIStepper},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-styled-engine-provider.inc.js",
-   :file-min
-   "material-ui/material-ui-styled-engine-provider.min.inc.js",
-   :provides ["@material-ui/core/StyledEngineProvider"],
-   :global-exports
-   {"@material-ui/core/StyledEngineProvider"
-    MaterialUIStyledEngineProvider},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-svg-icon.inc.js",
-   :file-min "material-ui/material-ui-svg-icon.min.inc.js",
-   :provides ["@material-ui/core/SvgIcon"],
-   :global-exports {"@material-ui/core/SvgIcon" MaterialUISvgIcon},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-swipeable-drawer.inc.js",
-   :file-min "material-ui/material-ui-swipeable-drawer.min.inc.js",
-   :provides ["@material-ui/core/SwipeableDrawer"],
-   :global-exports
-   {"@material-ui/core/SwipeableDrawer" MaterialUISwipeableDrawer},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-switch.inc.js",
-   :file-min "material-ui/material-ui-switch.min.inc.js",
-   :provides ["@material-ui/core/Switch"],
-   :global-exports {"@material-ui/core/Switch" MaterialUISwitch},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-tab.inc.js",
-   :file-min "material-ui/material-ui-tab.min.inc.js",
-   :provides ["@material-ui/core/Tab"],
-   :global-exports {"@material-ui/core/Tab" MaterialUITab},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-tab-scroll-button.inc.js",
-   :file-min "material-ui/material-ui-tab-scroll-button.min.inc.js",
-   :provides ["@material-ui/core/TabScrollButton"],
-   :global-exports
-   {"@material-ui/core/TabScrollButton" MaterialUITabScrollButton},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-table.inc.js",
-   :file-min "material-ui/material-ui-table.min.inc.js",
-   :provides ["@material-ui/core/Table"],
-   :global-exports {"@material-ui/core/Table" MaterialUITable},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-table-body.inc.js",
-   :file-min "material-ui/material-ui-table-body.min.inc.js",
-   :provides ["@material-ui/core/TableBody"],
-   :global-exports {"@material-ui/core/TableBody" MaterialUITableBody},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-table-cell.inc.js",
-   :file-min "material-ui/material-ui-table-cell.min.inc.js",
-   :provides ["@material-ui/core/TableCell"],
-   :global-exports {"@material-ui/core/TableCell" MaterialUITableCell},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-table-container.inc.js",
-   :file-min "material-ui/material-ui-table-container.min.inc.js",
-   :provides ["@material-ui/core/TableContainer"],
-   :global-exports
-   {"@material-ui/core/TableContainer" MaterialUITableContainer},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-table-footer.inc.js",
-   :file-min "material-ui/material-ui-table-footer.min.inc.js",
-   :provides ["@material-ui/core/TableFooter"],
-   :global-exports
-   {"@material-ui/core/TableFooter" MaterialUITableFooter},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-table-head.inc.js",
-   :file-min "material-ui/material-ui-table-head.min.inc.js",
-   :provides ["@material-ui/core/TableHead"],
-   :global-exports {"@material-ui/core/TableHead" MaterialUITableHead},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-table-pagination.inc.js",
-   :file-min "material-ui/material-ui-table-pagination.min.inc.js",
-   :provides ["@material-ui/core/TablePagination"],
-   :global-exports
-   {"@material-ui/core/TablePagination" MaterialUITablePagination},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-table-row.inc.js",
-   :file-min "material-ui/material-ui-table-row.min.inc.js",
-   :provides ["@material-ui/core/TableRow"],
-   :global-exports {"@material-ui/core/TableRow" MaterialUITableRow},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-table-sort-label.inc.js",
-   :file-min "material-ui/material-ui-table-sort-label.min.inc.js",
-   :provides ["@material-ui/core/TableSortLabel"],
-   :global-exports
-   {"@material-ui/core/TableSortLabel" MaterialUITableSortLabel},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-tabs.inc.js",
-   :file-min "material-ui/material-ui-tabs.min.inc.js",
-   :provides ["@material-ui/core/Tabs"],
-   :global-exports {"@material-ui/core/Tabs" MaterialUITabs},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-text-field.inc.js",
-   :file-min "material-ui/material-ui-text-field.min.inc.js",
-   :provides ["@material-ui/core/TextField"],
-   :global-exports {"@material-ui/core/TextField" MaterialUITextField},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-textarea-autosize.inc.js",
-   :file-min "material-ui/material-ui-textarea-autosize.min.inc.js",
-   :provides ["@material-ui/core/TextareaAutosize"],
-   :global-exports
-   {"@material-ui/core/TextareaAutosize" MaterialUITextareaAutosize},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-toggle-button.inc.js",
-   :file-min "material-ui/material-ui-toggle-button.min.inc.js",
-   :provides ["@material-ui/core/ToggleButton"],
-   :global-exports
-   {"@material-ui/core/ToggleButton" MaterialUIToggleButton},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-toggle-button-group.inc.js",
-   :file-min "material-ui/material-ui-toggle-button-group.min.inc.js",
-   :provides ["@material-ui/core/ToggleButtonGroup"],
-   :global-exports
-   {"@material-ui/core/ToggleButtonGroup" MaterialUIToggleButtonGroup},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-toolbar.inc.js",
-   :file-min "material-ui/material-ui-toolbar.min.inc.js",
-   :provides ["@material-ui/core/Toolbar"],
-   :global-exports {"@material-ui/core/Toolbar" MaterialUIToolbar},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-tooltip.inc.js",
-   :file-min "material-ui/material-ui-tooltip.min.inc.js",
-   :provides ["@material-ui/core/Tooltip"],
-   :global-exports {"@material-ui/core/Tooltip" MaterialUITooltip},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-typography.inc.js",
-   :file-min "material-ui/material-ui-typography.min.inc.js",
-   :provides ["@material-ui/core/Typography"],
-   :global-exports
-   {"@material-ui/core/Typography" MaterialUITypography},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-unstable-trap-focus.inc.js",
-   :file-min "material-ui/material-ui-unstable-trap-focus.min.inc.js",
-   :provides ["@material-ui/core/Unstable_TrapFocus"],
-   :global-exports
-   {"@material-ui/core/Unstable_TrapFocus"
-    MaterialUIUnstableTrapFocus},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-zoom.inc.js",
-   :file-min "material-ui/material-ui-zoom.min.inc.js",
-   :provides ["@material-ui/core/Zoom"],
-   :global-exports {"@material-ui/core/Zoom" MaterialUIZoom},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-use-autocomplete.inc.js",
-   :file-min "material-ui/material-ui-use-autocomplete.min.inc.js",
-   :provides ["@material-ui/core/useAutocomplete"],
-   :global-exports
-   {"@material-ui/core/useAutocomplete" MaterialUIUseAutocomplete},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-use-media-query.inc.js",
-   :file-min "material-ui/material-ui-use-media-query.min.inc.js",
-   :provides ["@material-ui/core/useMediaQuery"],
-   :global-exports
-   {"@material-ui/core/useMediaQuery" MaterialUIUseMediaQuery},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-use-pagination.inc.js",
-   :file-min "material-ui/material-ui-use-pagination.min.inc.js",
-   :provides ["@material-ui/core/usePagination"],
-   :global-exports
-   {"@material-ui/core/usePagination" MaterialUIUsePagination},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-use-scroll-trigger.inc.js",
-   :file-min "material-ui/material-ui-use-scroll-trigger.min.inc.js",
-   :provides ["@material-ui/core/useScrollTrigger"],
-   :global-exports
-   {"@material-ui/core/useScrollTrigger" MaterialUIUseScrollTrigger},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-use-touch-ripple.inc.js",
-   :file-min "material-ui/material-ui-use-touch-ripple.min.inc.js",
-   :provides ["@material-ui/core/useTouchRipple"],
-   :global-exports
-   {"@material-ui/core/useTouchRipple" MaterialUIUseTouchRipple},
-   :requires ["@material-ui/core"]}
-  {:file "material-ui/material-ui-lab-calendar-picker.inc.js",
-   :file-min "material-ui/material-ui-lab-calendar-picker.min.inc.js",
-   :provides ["@material-ui/lab/CalendarPicker"],
-   :global-exports
-   {"@material-ui/lab/CalendarPicker" MaterialUILabCalendarPicker},
-   :requires ["@material-ui/lab"]}
-  {:file "material-ui/material-ui-lab-calendar-picker-skeleton.inc.js",
-   :file-min
-   "material-ui/material-ui-lab-calendar-picker-skeleton.min.inc.js",
-   :provides ["@material-ui/lab/CalendarPickerSkeleton"],
-   :global-exports
-   {"@material-ui/lab/CalendarPickerSkeleton"
-    MaterialUILabCalendarPickerSkeleton},
-   :requires ["@material-ui/lab"]}
-  {:file "material-ui/material-ui-lab-clock-picker.inc.js",
-   :file-min "material-ui/material-ui-lab-clock-picker.min.inc.js",
-   :provides ["@material-ui/lab/ClockPicker"],
-   :global-exports
-   {"@material-ui/lab/ClockPicker" MaterialUILabClockPicker},
-   :requires ["@material-ui/lab"]}
-  {:file "material-ui/material-ui-lab-date-picker.inc.js",
-   :file-min "material-ui/material-ui-lab-date-picker.min.inc.js",
-   :provides ["@material-ui/lab/DatePicker"],
-   :global-exports
-   {"@material-ui/lab/DatePicker" MaterialUILabDatePicker},
-   :requires ["@material-ui/lab"]}
-  {:file "material-ui/material-ui-lab-date-range-picker.inc.js",
-   :file-min
-   "material-ui/material-ui-lab-date-range-picker.min.inc.js",
-   :provides ["@material-ui/lab/DateRangePicker"],
-   :global-exports
-   {"@material-ui/lab/DateRangePicker" MaterialUILabDateRangePicker},
-   :requires ["@material-ui/lab"]}
-  {:file "material-ui/material-ui-lab-date-range-picker-day.inc.js",
-   :file-min
-   "material-ui/material-ui-lab-date-range-picker-day.min.inc.js",
-   :provides ["@material-ui/lab/DateRangePickerDay"],
-   :global-exports
-   {"@material-ui/lab/DateRangePickerDay"
-    MaterialUILabDateRangePickerDay},
-   :requires ["@material-ui/lab"]}
-  {:file "material-ui/material-ui-lab-date-time-picker.inc.js",
-   :file-min "material-ui/material-ui-lab-date-time-picker.min.inc.js",
-   :provides ["@material-ui/lab/DateTimePicker"],
-   :global-exports
-   {"@material-ui/lab/DateTimePicker" MaterialUILabDateTimePicker},
-   :requires ["@material-ui/lab"]}
-  {:file "material-ui/material-ui-lab-desktop-date-picker.inc.js",
-   :file-min
-   "material-ui/material-ui-lab-desktop-date-picker.min.inc.js",
-   :provides ["@material-ui/lab/DesktopDatePicker"],
-   :global-exports
-   {"@material-ui/lab/DesktopDatePicker"
-    MaterialUILabDesktopDatePicker},
-   :requires ["@material-ui/lab"]}
-  {:file
-   "material-ui/material-ui-lab-desktop-date-range-picker.inc.js",
-   :file-min
-   "material-ui/material-ui-lab-desktop-date-range-picker.min.inc.js",
-   :provides ["@material-ui/lab/DesktopDateRangePicker"],
-   :global-exports
-   {"@material-ui/lab/DesktopDateRangePicker"
-    MaterialUILabDesktopDateRangePicker},
-   :requires ["@material-ui/lab"]}
-  {:file "material-ui/material-ui-lab-desktop-date-time-picker.inc.js",
-   :file-min
-   "material-ui/material-ui-lab-desktop-date-time-picker.min.inc.js",
-   :provides ["@material-ui/lab/DesktopDateTimePicker"],
-   :global-exports
-   {"@material-ui/lab/DesktopDateTimePicker"
-    MaterialUILabDesktopDateTimePicker},
-   :requires ["@material-ui/lab"]}
-  {:file "material-ui/material-ui-lab-desktop-time-picker.inc.js",
-   :file-min
-   "material-ui/material-ui-lab-desktop-time-picker.min.inc.js",
-   :provides ["@material-ui/lab/DesktopTimePicker"],
-   :global-exports
-   {"@material-ui/lab/DesktopTimePicker"
-    MaterialUILabDesktopTimePicker},
-   :requires ["@material-ui/lab"]}
-  {:file "material-ui/material-ui-lab-loading-button.inc.js",
-   :file-min "material-ui/material-ui-lab-loading-button.min.inc.js",
-   :provides ["@material-ui/lab/LoadingButton"],
-   :global-exports
-   {"@material-ui/lab/LoadingButton" MaterialUILabLoadingButton},
-   :requires ["@material-ui/lab"]}
-  {:file "material-ui/material-ui-lab-localization-provider.inc.js",
-   :file-min
-   "material-ui/material-ui-lab-localization-provider.min.inc.js",
-   :provides ["@material-ui/lab/LocalizationProvider"],
-   :global-exports
-   {"@material-ui/lab/LocalizationProvider"
-    MaterialUILabLocalizationProvider},
-   :requires ["@material-ui/lab"]}
-  {:file "material-ui/material-ui-lab-mobile-date-picker.inc.js",
-   :file-min
-   "material-ui/material-ui-lab-mobile-date-picker.min.inc.js",
-   :provides ["@material-ui/lab/MobileDatePicker"],
-   :global-exports
-   {"@material-ui/lab/MobileDatePicker" MaterialUILabMobileDatePicker},
-   :requires ["@material-ui/lab"]}
-  {:file "material-ui/material-ui-lab-mobile-date-range-picker.inc.js",
-   :file-min
-   "material-ui/material-ui-lab-mobile-date-range-picker.min.inc.js",
-   :provides ["@material-ui/lab/MobileDateRangePicker"],
-   :global-exports
-   {"@material-ui/lab/MobileDateRangePicker"
-    MaterialUILabMobileDateRangePicker},
-   :requires ["@material-ui/lab"]}
-  {:file "material-ui/material-ui-lab-mobile-date-time-picker.inc.js",
-   :file-min
-   "material-ui/material-ui-lab-mobile-date-time-picker.min.inc.js",
-   :provides ["@material-ui/lab/MobileDateTimePicker"],
-   :global-exports
-   {"@material-ui/lab/MobileDateTimePicker"
-    MaterialUILabMobileDateTimePicker},
-   :requires ["@material-ui/lab"]}
-  {:file "material-ui/material-ui-lab-mobile-time-picker.inc.js",
-   :file-min
-   "material-ui/material-ui-lab-mobile-time-picker.min.inc.js",
-   :provides ["@material-ui/lab/MobileTimePicker"],
-   :global-exports
-   {"@material-ui/lab/MobileTimePicker" MaterialUILabMobileTimePicker},
-   :requires ["@material-ui/lab"]}
-  {:file "material-ui/material-ui-lab-month-picker.inc.js",
-   :file-min "material-ui/material-ui-lab-month-picker.min.inc.js",
-   :provides ["@material-ui/lab/MonthPicker"],
-   :global-exports
-   {"@material-ui/lab/MonthPicker" MaterialUILabMonthPicker},
-   :requires ["@material-ui/lab"]}
-  {:file "material-ui/material-ui-lab-pickers-day.inc.js",
-   :file-min "material-ui/material-ui-lab-pickers-day.min.inc.js",
-   :provides ["@material-ui/lab/PickersDay"],
-   :global-exports
-   {"@material-ui/lab/PickersDay" MaterialUILabPickersDay},
-   :requires ["@material-ui/lab"]}
-  {:file "material-ui/material-ui-lab-static-date-picker.inc.js",
-   :file-min
-   "material-ui/material-ui-lab-static-date-picker.min.inc.js",
-   :provides ["@material-ui/lab/StaticDatePicker"],
-   :global-exports
-   {"@material-ui/lab/StaticDatePicker" MaterialUILabStaticDatePicker},
-   :requires ["@material-ui/lab"]}
-  {:file "material-ui/material-ui-lab-static-date-range-picker.inc.js",
-   :file-min
-   "material-ui/material-ui-lab-static-date-range-picker.min.inc.js",
-   :provides ["@material-ui/lab/StaticDateRangePicker"],
-   :global-exports
-   {"@material-ui/lab/StaticDateRangePicker"
-    MaterialUILabStaticDateRangePicker},
-   :requires ["@material-ui/lab"]}
-  {:file "material-ui/material-ui-lab-static-date-time-picker.inc.js",
-   :file-min
-   "material-ui/material-ui-lab-static-date-time-picker.min.inc.js",
-   :provides ["@material-ui/lab/StaticDateTimePicker"],
-   :global-exports
-   {"@material-ui/lab/StaticDateTimePicker"
-    MaterialUILabStaticDateTimePicker},
-   :requires ["@material-ui/lab"]}
-  {:file "material-ui/material-ui-lab-static-time-picker.inc.js",
-   :file-min
-   "material-ui/material-ui-lab-static-time-picker.min.inc.js",
-   :provides ["@material-ui/lab/StaticTimePicker"],
-   :global-exports
-   {"@material-ui/lab/StaticTimePicker" MaterialUILabStaticTimePicker},
-   :requires ["@material-ui/lab"]}
-  {:file "material-ui/material-ui-lab-tab-context.inc.js",
-   :file-min "material-ui/material-ui-lab-tab-context.min.inc.js",
-   :provides ["@material-ui/lab/TabContext"],
-   :global-exports
-   {"@material-ui/lab/TabContext" MaterialUILabTabContext},
-   :requires ["@material-ui/lab"]}
-  {:file "material-ui/material-ui-lab-tab-list.inc.js",
-   :file-min "material-ui/material-ui-lab-tab-list.min.inc.js",
-   :provides ["@material-ui/lab/TabList"],
-   :global-exports {"@material-ui/lab/TabList" MaterialUILabTabList},
-   :requires ["@material-ui/lab"]}
-  {:file "material-ui/material-ui-lab-tab-panel.inc.js",
-   :file-min "material-ui/material-ui-lab-tab-panel.min.inc.js",
-   :provides ["@material-ui/lab/TabPanel"],
-   :global-exports {"@material-ui/lab/TabPanel" MaterialUILabTabPanel},
-   :requires ["@material-ui/lab"]}
-  {:file "material-ui/material-ui-lab-time-picker.inc.js",
-   :file-min "material-ui/material-ui-lab-time-picker.min.inc.js",
-   :provides ["@material-ui/lab/TimePicker"],
-   :global-exports
-   {"@material-ui/lab/TimePicker" MaterialUILabTimePicker},
-   :requires ["@material-ui/lab"]}
-  {:file "material-ui/material-ui-lab-timeline.inc.js",
-   :file-min "material-ui/material-ui-lab-timeline.min.inc.js",
-   :provides ["@material-ui/lab/Timeline"],
-   :global-exports {"@material-ui/lab/Timeline" MaterialUILabTimeline},
-   :requires ["@material-ui/lab"]}
-  {:file "material-ui/material-ui-lab-timeline-connector.inc.js",
-   :file-min
-   "material-ui/material-ui-lab-timeline-connector.min.inc.js",
-   :provides ["@material-ui/lab/TimelineConnector"],
-   :global-exports
-   {"@material-ui/lab/TimelineConnector"
-    MaterialUILabTimelineConnector},
-   :requires ["@material-ui/lab"]}
-  {:file "material-ui/material-ui-lab-timeline-content.inc.js",
-   :file-min "material-ui/material-ui-lab-timeline-content.min.inc.js",
-   :provides ["@material-ui/lab/TimelineContent"],
-   :global-exports
-   {"@material-ui/lab/TimelineContent" MaterialUILabTimelineContent},
-   :requires ["@material-ui/lab"]}
-  {:file "material-ui/material-ui-lab-timeline-dot.inc.js",
-   :file-min "material-ui/material-ui-lab-timeline-dot.min.inc.js",
-   :provides ["@material-ui/lab/TimelineDot"],
-   :global-exports
-   {"@material-ui/lab/TimelineDot" MaterialUILabTimelineDot},
-   :requires ["@material-ui/lab"]}
-  {:file "material-ui/material-ui-lab-timeline-item.inc.js",
-   :file-min "material-ui/material-ui-lab-timeline-item.min.inc.js",
-   :provides ["@material-ui/lab/TimelineItem"],
-   :global-exports
-   {"@material-ui/lab/TimelineItem" MaterialUILabTimelineItem},
-   :requires ["@material-ui/lab"]}
-  {:file
-   "material-ui/material-ui-lab-timeline-opposite-content.inc.js",
-   :file-min
-   "material-ui/material-ui-lab-timeline-opposite-content.min.inc.js",
-   :provides ["@material-ui/lab/TimelineOppositeContent"],
-   :global-exports
-   {"@material-ui/lab/TimelineOppositeContent"
-    MaterialUILabTimelineOppositeContent},
-   :requires ["@material-ui/lab"]}
-  {:file "material-ui/material-ui-lab-timeline-separator.inc.js",
-   :file-min
-   "material-ui/material-ui-lab-timeline-separator.min.inc.js",
-   :provides ["@material-ui/lab/TimelineSeparator"],
-   :global-exports
-   {"@material-ui/lab/TimelineSeparator"
-    MaterialUILabTimelineSeparator},
-   :requires ["@material-ui/lab"]}
-  {:file "material-ui/material-ui-lab-tree-item.inc.js",
-   :file-min "material-ui/material-ui-lab-tree-item.min.inc.js",
-   :provides ["@material-ui/lab/TreeItem"],
-   :global-exports {"@material-ui/lab/TreeItem" MaterialUILabTreeItem},
-   :requires ["@material-ui/lab"]}
-  {:file "material-ui/material-ui-lab-tree-view.inc.js",
-   :file-min "material-ui/material-ui-lab-tree-view.min.inc.js",
-   :provides ["@material-ui/lab/TreeView"],
-   :global-exports {"@material-ui/lab/TreeView" MaterialUILabTreeView},
-   :requires ["@material-ui/lab"]}
-  {:file "material-ui/material-ui-lab-year-picker.inc.js",
-   :file-min "material-ui/material-ui-lab-year-picker.min.inc.js",
-   :provides ["@material-ui/lab/YearPicker"],
-   :global-exports
-   {"@material-ui/lab/YearPicker" MaterialUILabYearPicker},
-   :requires ["@material-ui/lab"]}
-  {:file "material-ui/material-ui-unstyled-backdrop-unstyled.inc.js",
-   :file-min
-   "material-ui/material-ui-unstyled-backdrop-unstyled.min.inc.js",
-   :provides ["@material-ui/unstyled/BackdropUnstyled"],
-   :global-exports
-   {"@material-ui/unstyled/BackdropUnstyled"
-    MaterialUIUnstyledBackdropUnstyled},
+  {:file "mui/mui-material-accordion.inc.js",
+   :file-min "mui/mui-material-accordion.min.inc.js",
+   :provides ["@mui/material/Accordion"],
+   :global-exports {"@mui/material/Accordion" MuiMaterialAccordion},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-accordion-actions.inc.js",
+   :file-min "mui/mui-material-accordion-actions.min.inc.js",
+   :provides ["@mui/material/AccordionActions"],
+   :global-exports
+   {"@mui/material/AccordionActions" MuiMaterialAccordionActions},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-accordion-details.inc.js",
+   :file-min "mui/mui-material-accordion-details.min.inc.js",
+   :provides ["@mui/material/AccordionDetails"],
+   :global-exports
+   {"@mui/material/AccordionDetails" MuiMaterialAccordionDetails},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-accordion-summary.inc.js",
+   :file-min "mui/mui-material-accordion-summary.min.inc.js",
+   :provides ["@mui/material/AccordionSummary"],
+   :global-exports
+   {"@mui/material/AccordionSummary" MuiMaterialAccordionSummary},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-alert.inc.js",
+   :file-min "mui/mui-material-alert.min.inc.js",
+   :provides ["@mui/material/Alert"],
+   :global-exports {"@mui/material/Alert" MuiMaterialAlert},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-alert-title.inc.js",
+   :file-min "mui/mui-material-alert-title.min.inc.js",
+   :provides ["@mui/material/AlertTitle"],
+   :global-exports {"@mui/material/AlertTitle" MuiMaterialAlertTitle},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-app-bar.inc.js",
+   :file-min "mui/mui-material-app-bar.min.inc.js",
+   :provides ["@mui/material/AppBar"],
+   :global-exports {"@mui/material/AppBar" MuiMaterialAppBar},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-autocomplete.inc.js",
+   :file-min "mui/mui-material-autocomplete.min.inc.js",
+   :provides ["@mui/material/Autocomplete"],
+   :global-exports
+   {"@mui/material/Autocomplete" MuiMaterialAutocomplete},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-avatar.inc.js",
+   :file-min "mui/mui-material-avatar.min.inc.js",
+   :provides ["@mui/material/Avatar"],
+   :global-exports {"@mui/material/Avatar" MuiMaterialAvatar},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-avatar-group.inc.js",
+   :file-min "mui/mui-material-avatar-group.min.inc.js",
+   :provides ["@mui/material/AvatarGroup"],
+   :global-exports
+   {"@mui/material/AvatarGroup" MuiMaterialAvatarGroup},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-backdrop.inc.js",
+   :file-min "mui/mui-material-backdrop.min.inc.js",
+   :provides ["@mui/material/Backdrop"],
+   :global-exports {"@mui/material/Backdrop" MuiMaterialBackdrop},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-badge.inc.js",
+   :file-min "mui/mui-material-badge.min.inc.js",
+   :provides ["@mui/material/Badge"],
+   :global-exports {"@mui/material/Badge" MuiMaterialBadge},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-bottom-navigation.inc.js",
+   :file-min "mui/mui-material-bottom-navigation.min.inc.js",
+   :provides ["@mui/material/BottomNavigation"],
+   :global-exports
+   {"@mui/material/BottomNavigation" MuiMaterialBottomNavigation},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-bottom-navigation-action.inc.js",
+   :file-min "mui/mui-material-bottom-navigation-action.min.inc.js",
+   :provides ["@mui/material/BottomNavigationAction"],
+   :global-exports
+   {"@mui/material/BottomNavigationAction"
+    MuiMaterialBottomNavigationAction},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-box.inc.js",
+   :file-min "mui/mui-material-box.min.inc.js",
+   :provides ["@mui/material/Box"],
+   :global-exports {"@mui/material/Box" MuiMaterialBox},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-breadcrumbs.inc.js",
+   :file-min "mui/mui-material-breadcrumbs.min.inc.js",
+   :provides ["@mui/material/Breadcrumbs"],
+   :global-exports
+   {"@mui/material/Breadcrumbs" MuiMaterialBreadcrumbs},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-button.inc.js",
+   :file-min "mui/mui-material-button.min.inc.js",
+   :provides ["@mui/material/Button"],
+   :global-exports {"@mui/material/Button" MuiMaterialButton},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-button-base.inc.js",
+   :file-min "mui/mui-material-button-base.min.inc.js",
+   :provides ["@mui/material/ButtonBase"],
+   :global-exports {"@mui/material/ButtonBase" MuiMaterialButtonBase},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-button-group.inc.js",
+   :file-min "mui/mui-material-button-group.min.inc.js",
+   :provides ["@mui/material/ButtonGroup"],
+   :global-exports
+   {"@mui/material/ButtonGroup" MuiMaterialButtonGroup},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-card.inc.js",
+   :file-min "mui/mui-material-card.min.inc.js",
+   :provides ["@mui/material/Card"],
+   :global-exports {"@mui/material/Card" MuiMaterialCard},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-card-action-area.inc.js",
+   :file-min "mui/mui-material-card-action-area.min.inc.js",
+   :provides ["@mui/material/CardActionArea"],
+   :global-exports
+   {"@mui/material/CardActionArea" MuiMaterialCardActionArea},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-card-actions.inc.js",
+   :file-min "mui/mui-material-card-actions.min.inc.js",
+   :provides ["@mui/material/CardActions"],
+   :global-exports
+   {"@mui/material/CardActions" MuiMaterialCardActions},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-card-content.inc.js",
+   :file-min "mui/mui-material-card-content.min.inc.js",
+   :provides ["@mui/material/CardContent"],
+   :global-exports
+   {"@mui/material/CardContent" MuiMaterialCardContent},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-card-header.inc.js",
+   :file-min "mui/mui-material-card-header.min.inc.js",
+   :provides ["@mui/material/CardHeader"],
+   :global-exports {"@mui/material/CardHeader" MuiMaterialCardHeader},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-card-media.inc.js",
+   :file-min "mui/mui-material-card-media.min.inc.js",
+   :provides ["@mui/material/CardMedia"],
+   :global-exports {"@mui/material/CardMedia" MuiMaterialCardMedia},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-checkbox.inc.js",
+   :file-min "mui/mui-material-checkbox.min.inc.js",
+   :provides ["@mui/material/Checkbox"],
+   :global-exports {"@mui/material/Checkbox" MuiMaterialCheckbox},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-chip.inc.js",
+   :file-min "mui/mui-material-chip.min.inc.js",
+   :provides ["@mui/material/Chip"],
+   :global-exports {"@mui/material/Chip" MuiMaterialChip},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-circular-progress.inc.js",
+   :file-min "mui/mui-material-circular-progress.min.inc.js",
+   :provides ["@mui/material/CircularProgress"],
+   :global-exports
+   {"@mui/material/CircularProgress" MuiMaterialCircularProgress},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-click-away-listener.inc.js",
+   :file-min "mui/mui-material-click-away-listener.min.inc.js",
+   :provides ["@mui/material/ClickAwayListener"],
+   :global-exports
+   {"@mui/material/ClickAwayListener" MuiMaterialClickAwayListener},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-collapse.inc.js",
+   :file-min "mui/mui-material-collapse.min.inc.js",
+   :provides ["@mui/material/Collapse"],
+   :global-exports {"@mui/material/Collapse" MuiMaterialCollapse},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-container.inc.js",
+   :file-min "mui/mui-material-container.min.inc.js",
+   :provides ["@mui/material/Container"],
+   :global-exports {"@mui/material/Container" MuiMaterialContainer},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-css-baseline.inc.js",
+   :file-min "mui/mui-material-css-baseline.min.inc.js",
+   :provides ["@mui/material/CssBaseline"],
+   :global-exports
+   {"@mui/material/CssBaseline" MuiMaterialCssBaseline},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-dialog.inc.js",
+   :file-min "mui/mui-material-dialog.min.inc.js",
+   :provides ["@mui/material/Dialog"],
+   :global-exports {"@mui/material/Dialog" MuiMaterialDialog},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-dialog-actions.inc.js",
+   :file-min "mui/mui-material-dialog-actions.min.inc.js",
+   :provides ["@mui/material/DialogActions"],
+   :global-exports
+   {"@mui/material/DialogActions" MuiMaterialDialogActions},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-dialog-content.inc.js",
+   :file-min "mui/mui-material-dialog-content.min.inc.js",
+   :provides ["@mui/material/DialogContent"],
+   :global-exports
+   {"@mui/material/DialogContent" MuiMaterialDialogContent},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-dialog-content-text.inc.js",
+   :file-min "mui/mui-material-dialog-content-text.min.inc.js",
+   :provides ["@mui/material/DialogContentText"],
+   :global-exports
+   {"@mui/material/DialogContentText" MuiMaterialDialogContentText},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-dialog-title.inc.js",
+   :file-min "mui/mui-material-dialog-title.min.inc.js",
+   :provides ["@mui/material/DialogTitle"],
+   :global-exports
+   {"@mui/material/DialogTitle" MuiMaterialDialogTitle},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-divider.inc.js",
+   :file-min "mui/mui-material-divider.min.inc.js",
+   :provides ["@mui/material/Divider"],
+   :global-exports {"@mui/material/Divider" MuiMaterialDivider},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-drawer.inc.js",
+   :file-min "mui/mui-material-drawer.min.inc.js",
+   :provides ["@mui/material/Drawer"],
+   :global-exports {"@mui/material/Drawer" MuiMaterialDrawer},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-fab.inc.js",
+   :file-min "mui/mui-material-fab.min.inc.js",
+   :provides ["@mui/material/Fab"],
+   :global-exports {"@mui/material/Fab" MuiMaterialFab},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-fade.inc.js",
+   :file-min "mui/mui-material-fade.min.inc.js",
+   :provides ["@mui/material/Fade"],
+   :global-exports {"@mui/material/Fade" MuiMaterialFade},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-filled-input.inc.js",
+   :file-min "mui/mui-material-filled-input.min.inc.js",
+   :provides ["@mui/material/FilledInput"],
+   :global-exports
+   {"@mui/material/FilledInput" MuiMaterialFilledInput},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-form-control.inc.js",
+   :file-min "mui/mui-material-form-control.min.inc.js",
+   :provides ["@mui/material/FormControl"],
+   :global-exports
+   {"@mui/material/FormControl" MuiMaterialFormControl},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-form-control-label.inc.js",
+   :file-min "mui/mui-material-form-control-label.min.inc.js",
+   :provides ["@mui/material/FormControlLabel"],
+   :global-exports
+   {"@mui/material/FormControlLabel" MuiMaterialFormControlLabel},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-form-group.inc.js",
+   :file-min "mui/mui-material-form-group.min.inc.js",
+   :provides ["@mui/material/FormGroup"],
+   :global-exports {"@mui/material/FormGroup" MuiMaterialFormGroup},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-form-helper-text.inc.js",
+   :file-min "mui/mui-material-form-helper-text.min.inc.js",
+   :provides ["@mui/material/FormHelperText"],
+   :global-exports
+   {"@mui/material/FormHelperText" MuiMaterialFormHelperText},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-form-label.inc.js",
+   :file-min "mui/mui-material-form-label.min.inc.js",
+   :provides ["@mui/material/FormLabel"],
+   :global-exports {"@mui/material/FormLabel" MuiMaterialFormLabel},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-global-styles.inc.js",
+   :file-min "mui/mui-material-global-styles.min.inc.js",
+   :provides ["@mui/material/GlobalStyles"],
+   :global-exports
+   {"@mui/material/GlobalStyles" MuiMaterialGlobalStyles},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-grid.inc.js",
+   :file-min "mui/mui-material-grid.min.inc.js",
+   :provides ["@mui/material/Grid"],
+   :global-exports {"@mui/material/Grid" MuiMaterialGrid},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-grow.inc.js",
+   :file-min "mui/mui-material-grow.min.inc.js",
+   :provides ["@mui/material/Grow"],
+   :global-exports {"@mui/material/Grow" MuiMaterialGrow},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-hidden.inc.js",
+   :file-min "mui/mui-material-hidden.min.inc.js",
+   :provides ["@mui/material/Hidden"],
+   :global-exports {"@mui/material/Hidden" MuiMaterialHidden},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-icon.inc.js",
+   :file-min "mui/mui-material-icon.min.inc.js",
+   :provides ["@mui/material/Icon"],
+   :global-exports {"@mui/material/Icon" MuiMaterialIcon},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-icon-button.inc.js",
+   :file-min "mui/mui-material-icon-button.min.inc.js",
+   :provides ["@mui/material/IconButton"],
+   :global-exports {"@mui/material/IconButton" MuiMaterialIconButton},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-image-list.inc.js",
+   :file-min "mui/mui-material-image-list.min.inc.js",
+   :provides ["@mui/material/ImageList"],
+   :global-exports {"@mui/material/ImageList" MuiMaterialImageList},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-image-list-item.inc.js",
+   :file-min "mui/mui-material-image-list-item.min.inc.js",
+   :provides ["@mui/material/ImageListItem"],
+   :global-exports
+   {"@mui/material/ImageListItem" MuiMaterialImageListItem},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-image-list-item-bar.inc.js",
+   :file-min "mui/mui-material-image-list-item-bar.min.inc.js",
+   :provides ["@mui/material/ImageListItemBar"],
+   :global-exports
+   {"@mui/material/ImageListItemBar" MuiMaterialImageListItemBar},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-input.inc.js",
+   :file-min "mui/mui-material-input.min.inc.js",
+   :provides ["@mui/material/Input"],
+   :global-exports {"@mui/material/Input" MuiMaterialInput},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-input-adornment.inc.js",
+   :file-min "mui/mui-material-input-adornment.min.inc.js",
+   :provides ["@mui/material/InputAdornment"],
+   :global-exports
+   {"@mui/material/InputAdornment" MuiMaterialInputAdornment},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-input-base.inc.js",
+   :file-min "mui/mui-material-input-base.min.inc.js",
+   :provides ["@mui/material/InputBase"],
+   :global-exports {"@mui/material/InputBase" MuiMaterialInputBase},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-input-label.inc.js",
+   :file-min "mui/mui-material-input-label.min.inc.js",
+   :provides ["@mui/material/InputLabel"],
+   :global-exports {"@mui/material/InputLabel" MuiMaterialInputLabel},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-linear-progress.inc.js",
+   :file-min "mui/mui-material-linear-progress.min.inc.js",
+   :provides ["@mui/material/LinearProgress"],
+   :global-exports
+   {"@mui/material/LinearProgress" MuiMaterialLinearProgress},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-link.inc.js",
+   :file-min "mui/mui-material-link.min.inc.js",
+   :provides ["@mui/material/Link"],
+   :global-exports {"@mui/material/Link" MuiMaterialLink},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-list.inc.js",
+   :file-min "mui/mui-material-list.min.inc.js",
+   :provides ["@mui/material/List"],
+   :global-exports {"@mui/material/List" MuiMaterialList},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-list-item.inc.js",
+   :file-min "mui/mui-material-list-item.min.inc.js",
+   :provides ["@mui/material/ListItem"],
+   :global-exports {"@mui/material/ListItem" MuiMaterialListItem},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-list-item-avatar.inc.js",
+   :file-min "mui/mui-material-list-item-avatar.min.inc.js",
+   :provides ["@mui/material/ListItemAvatar"],
+   :global-exports
+   {"@mui/material/ListItemAvatar" MuiMaterialListItemAvatar},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-list-item-button.inc.js",
+   :file-min "mui/mui-material-list-item-button.min.inc.js",
+   :provides ["@mui/material/ListItemButton"],
+   :global-exports
+   {"@mui/material/ListItemButton" MuiMaterialListItemButton},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-list-item-icon.inc.js",
+   :file-min "mui/mui-material-list-item-icon.min.inc.js",
+   :provides ["@mui/material/ListItemIcon"],
+   :global-exports
+   {"@mui/material/ListItemIcon" MuiMaterialListItemIcon},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-list-item-secondary-action.inc.js",
+   :file-min "mui/mui-material-list-item-secondary-action.min.inc.js",
+   :provides ["@mui/material/ListItemSecondaryAction"],
+   :global-exports
+   {"@mui/material/ListItemSecondaryAction"
+    MuiMaterialListItemSecondaryAction},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-list-item-text.inc.js",
+   :file-min "mui/mui-material-list-item-text.min.inc.js",
+   :provides ["@mui/material/ListItemText"],
+   :global-exports
+   {"@mui/material/ListItemText" MuiMaterialListItemText},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-list-subheader.inc.js",
+   :file-min "mui/mui-material-list-subheader.min.inc.js",
+   :provides ["@mui/material/ListSubheader"],
+   :global-exports
+   {"@mui/material/ListSubheader" MuiMaterialListSubheader},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-menu.inc.js",
+   :file-min "mui/mui-material-menu.min.inc.js",
+   :provides ["@mui/material/Menu"],
+   :global-exports {"@mui/material/Menu" MuiMaterialMenu},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-menu-item.inc.js",
+   :file-min "mui/mui-material-menu-item.min.inc.js",
+   :provides ["@mui/material/MenuItem"],
+   :global-exports {"@mui/material/MenuItem" MuiMaterialMenuItem},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-menu-list.inc.js",
+   :file-min "mui/mui-material-menu-list.min.inc.js",
+   :provides ["@mui/material/MenuList"],
+   :global-exports {"@mui/material/MenuList" MuiMaterialMenuList},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-mobile-stepper.inc.js",
+   :file-min "mui/mui-material-mobile-stepper.min.inc.js",
+   :provides ["@mui/material/MobileStepper"],
+   :global-exports
+   {"@mui/material/MobileStepper" MuiMaterialMobileStepper},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-modal.inc.js",
+   :file-min "mui/mui-material-modal.min.inc.js",
+   :provides ["@mui/material/Modal"],
+   :global-exports {"@mui/material/Modal" MuiMaterialModal},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-native-select.inc.js",
+   :file-min "mui/mui-material-native-select.min.inc.js",
+   :provides ["@mui/material/NativeSelect"],
+   :global-exports
+   {"@mui/material/NativeSelect" MuiMaterialNativeSelect},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-no-ssr.inc.js",
+   :file-min "mui/mui-material-no-ssr.min.inc.js",
+   :provides ["@mui/material/NoSsr"],
+   :global-exports {"@mui/material/NoSsr" MuiMaterialNoSsr},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-outlined-input.inc.js",
+   :file-min "mui/mui-material-outlined-input.min.inc.js",
+   :provides ["@mui/material/OutlinedInput"],
+   :global-exports
+   {"@mui/material/OutlinedInput" MuiMaterialOutlinedInput},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-pagination.inc.js",
+   :file-min "mui/mui-material-pagination.min.inc.js",
+   :provides ["@mui/material/Pagination"],
+   :global-exports {"@mui/material/Pagination" MuiMaterialPagination},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-pagination-item.inc.js",
+   :file-min "mui/mui-material-pagination-item.min.inc.js",
+   :provides ["@mui/material/PaginationItem"],
+   :global-exports
+   {"@mui/material/PaginationItem" MuiMaterialPaginationItem},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-paper.inc.js",
+   :file-min "mui/mui-material-paper.min.inc.js",
+   :provides ["@mui/material/Paper"],
+   :global-exports {"@mui/material/Paper" MuiMaterialPaper},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-popover.inc.js",
+   :file-min "mui/mui-material-popover.min.inc.js",
+   :provides ["@mui/material/Popover"],
+   :global-exports {"@mui/material/Popover" MuiMaterialPopover},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-popper.inc.js",
+   :file-min "mui/mui-material-popper.min.inc.js",
+   :provides ["@mui/material/Popper"],
+   :global-exports {"@mui/material/Popper" MuiMaterialPopper},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-portal.inc.js",
+   :file-min "mui/mui-material-portal.min.inc.js",
+   :provides ["@mui/material/Portal"],
+   :global-exports {"@mui/material/Portal" MuiMaterialPortal},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-radio.inc.js",
+   :file-min "mui/mui-material-radio.min.inc.js",
+   :provides ["@mui/material/Radio"],
+   :global-exports {"@mui/material/Radio" MuiMaterialRadio},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-radio-group.inc.js",
+   :file-min "mui/mui-material-radio-group.min.inc.js",
+   :provides ["@mui/material/RadioGroup"],
+   :global-exports {"@mui/material/RadioGroup" MuiMaterialRadioGroup},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-rating.inc.js",
+   :file-min "mui/mui-material-rating.min.inc.js",
+   :provides ["@mui/material/Rating"],
+   :global-exports {"@mui/material/Rating" MuiMaterialRating},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-scoped-css-baseline.inc.js",
+   :file-min "mui/mui-material-scoped-css-baseline.min.inc.js",
+   :provides ["@mui/material/ScopedCssBaseline"],
+   :global-exports
+   {"@mui/material/ScopedCssBaseline" MuiMaterialScopedCssBaseline},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-select.inc.js",
+   :file-min "mui/mui-material-select.min.inc.js",
+   :provides ["@mui/material/Select"],
+   :global-exports {"@mui/material/Select" MuiMaterialSelect},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-skeleton.inc.js",
+   :file-min "mui/mui-material-skeleton.min.inc.js",
+   :provides ["@mui/material/Skeleton"],
+   :global-exports {"@mui/material/Skeleton" MuiMaterialSkeleton},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-slide.inc.js",
+   :file-min "mui/mui-material-slide.min.inc.js",
+   :provides ["@mui/material/Slide"],
+   :global-exports {"@mui/material/Slide" MuiMaterialSlide},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-slider.inc.js",
+   :file-min "mui/mui-material-slider.min.inc.js",
+   :provides ["@mui/material/Slider"],
+   :global-exports {"@mui/material/Slider" MuiMaterialSlider},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-snackbar.inc.js",
+   :file-min "mui/mui-material-snackbar.min.inc.js",
+   :provides ["@mui/material/Snackbar"],
+   :global-exports {"@mui/material/Snackbar" MuiMaterialSnackbar},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-snackbar-content.inc.js",
+   :file-min "mui/mui-material-snackbar-content.min.inc.js",
+   :provides ["@mui/material/SnackbarContent"],
+   :global-exports
+   {"@mui/material/SnackbarContent" MuiMaterialSnackbarContent},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-speed-dial.inc.js",
+   :file-min "mui/mui-material-speed-dial.min.inc.js",
+   :provides ["@mui/material/SpeedDial"],
+   :global-exports {"@mui/material/SpeedDial" MuiMaterialSpeedDial},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-speed-dial-action.inc.js",
+   :file-min "mui/mui-material-speed-dial-action.min.inc.js",
+   :provides ["@mui/material/SpeedDialAction"],
+   :global-exports
+   {"@mui/material/SpeedDialAction" MuiMaterialSpeedDialAction},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-speed-dial-icon.inc.js",
+   :file-min "mui/mui-material-speed-dial-icon.min.inc.js",
+   :provides ["@mui/material/SpeedDialIcon"],
+   :global-exports
+   {"@mui/material/SpeedDialIcon" MuiMaterialSpeedDialIcon},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-stack.inc.js",
+   :file-min "mui/mui-material-stack.min.inc.js",
+   :provides ["@mui/material/Stack"],
+   :global-exports {"@mui/material/Stack" MuiMaterialStack},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-step.inc.js",
+   :file-min "mui/mui-material-step.min.inc.js",
+   :provides ["@mui/material/Step"],
+   :global-exports {"@mui/material/Step" MuiMaterialStep},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-step-button.inc.js",
+   :file-min "mui/mui-material-step-button.min.inc.js",
+   :provides ["@mui/material/StepButton"],
+   :global-exports {"@mui/material/StepButton" MuiMaterialStepButton},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-step-connector.inc.js",
+   :file-min "mui/mui-material-step-connector.min.inc.js",
+   :provides ["@mui/material/StepConnector"],
+   :global-exports
+   {"@mui/material/StepConnector" MuiMaterialStepConnector},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-step-content.inc.js",
+   :file-min "mui/mui-material-step-content.min.inc.js",
+   :provides ["@mui/material/StepContent"],
+   :global-exports
+   {"@mui/material/StepContent" MuiMaterialStepContent},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-step-icon.inc.js",
+   :file-min "mui/mui-material-step-icon.min.inc.js",
+   :provides ["@mui/material/StepIcon"],
+   :global-exports {"@mui/material/StepIcon" MuiMaterialStepIcon},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-step-label.inc.js",
+   :file-min "mui/mui-material-step-label.min.inc.js",
+   :provides ["@mui/material/StepLabel"],
+   :global-exports {"@mui/material/StepLabel" MuiMaterialStepLabel},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-stepper.inc.js",
+   :file-min "mui/mui-material-stepper.min.inc.js",
+   :provides ["@mui/material/Stepper"],
+   :global-exports {"@mui/material/Stepper" MuiMaterialStepper},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-styled-engine-provider.inc.js",
+   :file-min "mui/mui-material-styled-engine-provider.min.inc.js",
+   :provides ["@mui/material/StyledEngineProvider"],
+   :global-exports
+   {"@mui/material/StyledEngineProvider"
+    MuiMaterialStyledEngineProvider},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-svg-icon.inc.js",
+   :file-min "mui/mui-material-svg-icon.min.inc.js",
+   :provides ["@mui/material/SvgIcon"],
+   :global-exports {"@mui/material/SvgIcon" MuiMaterialSvgIcon},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-swipeable-drawer.inc.js",
+   :file-min "mui/mui-material-swipeable-drawer.min.inc.js",
+   :provides ["@mui/material/SwipeableDrawer"],
+   :global-exports
+   {"@mui/material/SwipeableDrawer" MuiMaterialSwipeableDrawer},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-switch.inc.js",
+   :file-min "mui/mui-material-switch.min.inc.js",
+   :provides ["@mui/material/Switch"],
+   :global-exports {"@mui/material/Switch" MuiMaterialSwitch},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-tab.inc.js",
+   :file-min "mui/mui-material-tab.min.inc.js",
+   :provides ["@mui/material/Tab"],
+   :global-exports {"@mui/material/Tab" MuiMaterialTab},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-tab-scroll-button.inc.js",
+   :file-min "mui/mui-material-tab-scroll-button.min.inc.js",
+   :provides ["@mui/material/TabScrollButton"],
+   :global-exports
+   {"@mui/material/TabScrollButton" MuiMaterialTabScrollButton},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-table.inc.js",
+   :file-min "mui/mui-material-table.min.inc.js",
+   :provides ["@mui/material/Table"],
+   :global-exports {"@mui/material/Table" MuiMaterialTable},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-table-body.inc.js",
+   :file-min "mui/mui-material-table-body.min.inc.js",
+   :provides ["@mui/material/TableBody"],
+   :global-exports {"@mui/material/TableBody" MuiMaterialTableBody},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-table-cell.inc.js",
+   :file-min "mui/mui-material-table-cell.min.inc.js",
+   :provides ["@mui/material/TableCell"],
+   :global-exports {"@mui/material/TableCell" MuiMaterialTableCell},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-table-container.inc.js",
+   :file-min "mui/mui-material-table-container.min.inc.js",
+   :provides ["@mui/material/TableContainer"],
+   :global-exports
+   {"@mui/material/TableContainer" MuiMaterialTableContainer},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-table-footer.inc.js",
+   :file-min "mui/mui-material-table-footer.min.inc.js",
+   :provides ["@mui/material/TableFooter"],
+   :global-exports
+   {"@mui/material/TableFooter" MuiMaterialTableFooter},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-table-head.inc.js",
+   :file-min "mui/mui-material-table-head.min.inc.js",
+   :provides ["@mui/material/TableHead"],
+   :global-exports {"@mui/material/TableHead" MuiMaterialTableHead},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-table-pagination.inc.js",
+   :file-min "mui/mui-material-table-pagination.min.inc.js",
+   :provides ["@mui/material/TablePagination"],
+   :global-exports
+   {"@mui/material/TablePagination" MuiMaterialTablePagination},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-table-row.inc.js",
+   :file-min "mui/mui-material-table-row.min.inc.js",
+   :provides ["@mui/material/TableRow"],
+   :global-exports {"@mui/material/TableRow" MuiMaterialTableRow},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-table-sort-label.inc.js",
+   :file-min "mui/mui-material-table-sort-label.min.inc.js",
+   :provides ["@mui/material/TableSortLabel"],
+   :global-exports
+   {"@mui/material/TableSortLabel" MuiMaterialTableSortLabel},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-tabs.inc.js",
+   :file-min "mui/mui-material-tabs.min.inc.js",
+   :provides ["@mui/material/Tabs"],
+   :global-exports {"@mui/material/Tabs" MuiMaterialTabs},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-text-field.inc.js",
+   :file-min "mui/mui-material-text-field.min.inc.js",
+   :provides ["@mui/material/TextField"],
+   :global-exports {"@mui/material/TextField" MuiMaterialTextField},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-textarea-autosize.inc.js",
+   :file-min "mui/mui-material-textarea-autosize.min.inc.js",
+   :provides ["@mui/material/TextareaAutosize"],
+   :global-exports
+   {"@mui/material/TextareaAutosize" MuiMaterialTextareaAutosize},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-toggle-button.inc.js",
+   :file-min "mui/mui-material-toggle-button.min.inc.js",
+   :provides ["@mui/material/ToggleButton"],
+   :global-exports
+   {"@mui/material/ToggleButton" MuiMaterialToggleButton},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-toggle-button-group.inc.js",
+   :file-min "mui/mui-material-toggle-button-group.min.inc.js",
+   :provides ["@mui/material/ToggleButtonGroup"],
+   :global-exports
+   {"@mui/material/ToggleButtonGroup" MuiMaterialToggleButtonGroup},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-toolbar.inc.js",
+   :file-min "mui/mui-material-toolbar.min.inc.js",
+   :provides ["@mui/material/Toolbar"],
+   :global-exports {"@mui/material/Toolbar" MuiMaterialToolbar},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-tooltip.inc.js",
+   :file-min "mui/mui-material-tooltip.min.inc.js",
+   :provides ["@mui/material/Tooltip"],
+   :global-exports {"@mui/material/Tooltip" MuiMaterialTooltip},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-typography.inc.js",
+   :file-min "mui/mui-material-typography.min.inc.js",
+   :provides ["@mui/material/Typography"],
+   :global-exports {"@mui/material/Typography" MuiMaterialTypography},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-unstable-trap-focus.inc.js",
+   :file-min "mui/mui-material-unstable-trap-focus.min.inc.js",
+   :provides ["@mui/material/Unstable_TrapFocus"],
+   :global-exports
+   {"@mui/material/Unstable_TrapFocus" MuiMaterialUnstableTrapFocus},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-zoom.inc.js",
+   :file-min "mui/mui-material-zoom.min.inc.js",
+   :provides ["@mui/material/Zoom"],
+   :global-exports {"@mui/material/Zoom" MuiMaterialZoom},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-use-autocomplete.inc.js",
+   :file-min "mui/mui-material-use-autocomplete.min.inc.js",
+   :provides ["@mui/material/useAutocomplete"],
+   :global-exports
+   {"@mui/material/useAutocomplete" MuiMaterialUseAutocomplete},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-use-media-query.inc.js",
+   :file-min "mui/mui-material-use-media-query.min.inc.js",
+   :provides ["@mui/material/useMediaQuery"],
+   :global-exports
+   {"@mui/material/useMediaQuery" MuiMaterialUseMediaQuery},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-use-pagination.inc.js",
+   :file-min "mui/mui-material-use-pagination.min.inc.js",
+   :provides ["@mui/material/usePagination"],
+   :global-exports
+   {"@mui/material/usePagination" MuiMaterialUsePagination},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-use-scroll-trigger.inc.js",
+   :file-min "mui/mui-material-use-scroll-trigger.min.inc.js",
+   :provides ["@mui/material/useScrollTrigger"],
+   :global-exports
+   {"@mui/material/useScrollTrigger" MuiMaterialUseScrollTrigger},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-use-touch-ripple.inc.js",
+   :file-min "mui/mui-material-use-touch-ripple.min.inc.js",
+   :provides ["@mui/material/useTouchRipple"],
+   :global-exports
+   {"@mui/material/useTouchRipple" MuiMaterialUseTouchRipple},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-lab-calendar-picker.inc.js",
+   :file-min "mui/mui-lab-calendar-picker.min.inc.js",
+   :provides ["@mui/lab/CalendarPicker"],
+   :global-exports {"@mui/lab/CalendarPicker" MuiLabCalendarPicker},
+   :requires ["@mui/lab"]}
+  {:file "mui/mui-lab-calendar-picker-skeleton.inc.js",
+   :file-min "mui/mui-lab-calendar-picker-skeleton.min.inc.js",
+   :provides ["@mui/lab/CalendarPickerSkeleton"],
+   :global-exports
+   {"@mui/lab/CalendarPickerSkeleton" MuiLabCalendarPickerSkeleton},
+   :requires ["@mui/lab"]}
+  {:file "mui/mui-lab-clock-picker.inc.js",
+   :file-min "mui/mui-lab-clock-picker.min.inc.js",
+   :provides ["@mui/lab/ClockPicker"],
+   :global-exports {"@mui/lab/ClockPicker" MuiLabClockPicker},
+   :requires ["@mui/lab"]}
+  {:file "mui/mui-lab-date-picker.inc.js",
+   :file-min "mui/mui-lab-date-picker.min.inc.js",
+   :provides ["@mui/lab/DatePicker"],
+   :global-exports {"@mui/lab/DatePicker" MuiLabDatePicker},
+   :requires ["@mui/lab"]}
+  {:file "mui/mui-lab-date-range-picker.inc.js",
+   :file-min "mui/mui-lab-date-range-picker.min.inc.js",
+   :provides ["@mui/lab/DateRangePicker"],
+   :global-exports {"@mui/lab/DateRangePicker" MuiLabDateRangePicker},
+   :requires ["@mui/lab"]}
+  {:file "mui/mui-lab-date-range-picker-day.inc.js",
+   :file-min "mui/mui-lab-date-range-picker-day.min.inc.js",
+   :provides ["@mui/lab/DateRangePickerDay"],
+   :global-exports
+   {"@mui/lab/DateRangePickerDay" MuiLabDateRangePickerDay},
+   :requires ["@mui/lab"]}
+  {:file "mui/mui-lab-date-time-picker.inc.js",
+   :file-min "mui/mui-lab-date-time-picker.min.inc.js",
+   :provides ["@mui/lab/DateTimePicker"],
+   :global-exports {"@mui/lab/DateTimePicker" MuiLabDateTimePicker},
+   :requires ["@mui/lab"]}
+  {:file "mui/mui-lab-desktop-date-picker.inc.js",
+   :file-min "mui/mui-lab-desktop-date-picker.min.inc.js",
+   :provides ["@mui/lab/DesktopDatePicker"],
+   :global-exports
+   {"@mui/lab/DesktopDatePicker" MuiLabDesktopDatePicker},
+   :requires ["@mui/lab"]}
+  {:file "mui/mui-lab-desktop-date-range-picker.inc.js",
+   :file-min "mui/mui-lab-desktop-date-range-picker.min.inc.js",
+   :provides ["@mui/lab/DesktopDateRangePicker"],
+   :global-exports
+   {"@mui/lab/DesktopDateRangePicker" MuiLabDesktopDateRangePicker},
+   :requires ["@mui/lab"]}
+  {:file "mui/mui-lab-desktop-date-time-picker.inc.js",
+   :file-min "mui/mui-lab-desktop-date-time-picker.min.inc.js",
+   :provides ["@mui/lab/DesktopDateTimePicker"],
+   :global-exports
+   {"@mui/lab/DesktopDateTimePicker" MuiLabDesktopDateTimePicker},
+   :requires ["@mui/lab"]}
+  {:file "mui/mui-lab-desktop-time-picker.inc.js",
+   :file-min "mui/mui-lab-desktop-time-picker.min.inc.js",
+   :provides ["@mui/lab/DesktopTimePicker"],
+   :global-exports
+   {"@mui/lab/DesktopTimePicker" MuiLabDesktopTimePicker},
+   :requires ["@mui/lab"]}
+  {:file "mui/mui-lab-loading-button.inc.js",
+   :file-min "mui/mui-lab-loading-button.min.inc.js",
+   :provides ["@mui/lab/LoadingButton"],
+   :global-exports {"@mui/lab/LoadingButton" MuiLabLoadingButton},
+   :requires ["@mui/lab"]}
+  {:file "mui/mui-lab-localization-provider.inc.js",
+   :file-min "mui/mui-lab-localization-provider.min.inc.js",
+   :provides ["@mui/lab/LocalizationProvider"],
+   :global-exports
+   {"@mui/lab/LocalizationProvider" MuiLabLocalizationProvider},
+   :requires ["@mui/lab"]}
+  {:file "mui/mui-lab-masonry.inc.js",
+   :file-min "mui/mui-lab-masonry.min.inc.js",
+   :provides ["@mui/lab/Masonry"],
+   :global-exports {"@mui/lab/Masonry" MuiLabMasonry},
+   :requires ["@mui/lab"]}
+  {:file "mui/mui-lab-masonry-item.inc.js",
+   :file-min "mui/mui-lab-masonry-item.min.inc.js",
+   :provides ["@mui/lab/MasonryItem"],
+   :global-exports {"@mui/lab/MasonryItem" MuiLabMasonryItem},
+   :requires ["@mui/lab"]}
+  {:file "mui/mui-lab-mobile-date-picker.inc.js",
+   :file-min "mui/mui-lab-mobile-date-picker.min.inc.js",
+   :provides ["@mui/lab/MobileDatePicker"],
+   :global-exports
+   {"@mui/lab/MobileDatePicker" MuiLabMobileDatePicker},
+   :requires ["@mui/lab"]}
+  {:file "mui/mui-lab-mobile-date-range-picker.inc.js",
+   :file-min "mui/mui-lab-mobile-date-range-picker.min.inc.js",
+   :provides ["@mui/lab/MobileDateRangePicker"],
+   :global-exports
+   {"@mui/lab/MobileDateRangePicker" MuiLabMobileDateRangePicker},
+   :requires ["@mui/lab"]}
+  {:file "mui/mui-lab-mobile-date-time-picker.inc.js",
+   :file-min "mui/mui-lab-mobile-date-time-picker.min.inc.js",
+   :provides ["@mui/lab/MobileDateTimePicker"],
+   :global-exports
+   {"@mui/lab/MobileDateTimePicker" MuiLabMobileDateTimePicker},
+   :requires ["@mui/lab"]}
+  {:file "mui/mui-lab-mobile-time-picker.inc.js",
+   :file-min "mui/mui-lab-mobile-time-picker.min.inc.js",
+   :provides ["@mui/lab/MobileTimePicker"],
+   :global-exports
+   {"@mui/lab/MobileTimePicker" MuiLabMobileTimePicker},
+   :requires ["@mui/lab"]}
+  {:file "mui/mui-lab-month-picker.inc.js",
+   :file-min "mui/mui-lab-month-picker.min.inc.js",
+   :provides ["@mui/lab/MonthPicker"],
+   :global-exports {"@mui/lab/MonthPicker" MuiLabMonthPicker},
+   :requires ["@mui/lab"]}
+  {:file "mui/mui-lab-pickers-day.inc.js",
+   :file-min "mui/mui-lab-pickers-day.min.inc.js",
+   :provides ["@mui/lab/PickersDay"],
+   :global-exports {"@mui/lab/PickersDay" MuiLabPickersDay},
+   :requires ["@mui/lab"]}
+  {:file "mui/mui-lab-static-date-picker.inc.js",
+   :file-min "mui/mui-lab-static-date-picker.min.inc.js",
+   :provides ["@mui/lab/StaticDatePicker"],
+   :global-exports
+   {"@mui/lab/StaticDatePicker" MuiLabStaticDatePicker},
+   :requires ["@mui/lab"]}
+  {:file "mui/mui-lab-static-date-range-picker.inc.js",
+   :file-min "mui/mui-lab-static-date-range-picker.min.inc.js",
+   :provides ["@mui/lab/StaticDateRangePicker"],
+   :global-exports
+   {"@mui/lab/StaticDateRangePicker" MuiLabStaticDateRangePicker},
+   :requires ["@mui/lab"]}
+  {:file "mui/mui-lab-static-date-time-picker.inc.js",
+   :file-min "mui/mui-lab-static-date-time-picker.min.inc.js",
+   :provides ["@mui/lab/StaticDateTimePicker"],
+   :global-exports
+   {"@mui/lab/StaticDateTimePicker" MuiLabStaticDateTimePicker},
+   :requires ["@mui/lab"]}
+  {:file "mui/mui-lab-static-time-picker.inc.js",
+   :file-min "mui/mui-lab-static-time-picker.min.inc.js",
+   :provides ["@mui/lab/StaticTimePicker"],
+   :global-exports
+   {"@mui/lab/StaticTimePicker" MuiLabStaticTimePicker},
+   :requires ["@mui/lab"]}
+  {:file "mui/mui-lab-tab-context.inc.js",
+   :file-min "mui/mui-lab-tab-context.min.inc.js",
+   :provides ["@mui/lab/TabContext"],
+   :global-exports {"@mui/lab/TabContext" MuiLabTabContext},
+   :requires ["@mui/lab"]}
+  {:file "mui/mui-lab-tab-list.inc.js",
+   :file-min "mui/mui-lab-tab-list.min.inc.js",
+   :provides ["@mui/lab/TabList"],
+   :global-exports {"@mui/lab/TabList" MuiLabTabList},
+   :requires ["@mui/lab"]}
+  {:file "mui/mui-lab-tab-panel.inc.js",
+   :file-min "mui/mui-lab-tab-panel.min.inc.js",
+   :provides ["@mui/lab/TabPanel"],
+   :global-exports {"@mui/lab/TabPanel" MuiLabTabPanel},
+   :requires ["@mui/lab"]}
+  {:file "mui/mui-lab-time-picker.inc.js",
+   :file-min "mui/mui-lab-time-picker.min.inc.js",
+   :provides ["@mui/lab/TimePicker"],
+   :global-exports {"@mui/lab/TimePicker" MuiLabTimePicker},
+   :requires ["@mui/lab"]}
+  {:file "mui/mui-lab-timeline.inc.js",
+   :file-min "mui/mui-lab-timeline.min.inc.js",
+   :provides ["@mui/lab/Timeline"],
+   :global-exports {"@mui/lab/Timeline" MuiLabTimeline},
+   :requires ["@mui/lab"]}
+  {:file "mui/mui-lab-timeline-connector.inc.js",
+   :file-min "mui/mui-lab-timeline-connector.min.inc.js",
+   :provides ["@mui/lab/TimelineConnector"],
+   :global-exports
+   {"@mui/lab/TimelineConnector" MuiLabTimelineConnector},
+   :requires ["@mui/lab"]}
+  {:file "mui/mui-lab-timeline-content.inc.js",
+   :file-min "mui/mui-lab-timeline-content.min.inc.js",
+   :provides ["@mui/lab/TimelineContent"],
+   :global-exports {"@mui/lab/TimelineContent" MuiLabTimelineContent},
+   :requires ["@mui/lab"]}
+  {:file "mui/mui-lab-timeline-dot.inc.js",
+   :file-min "mui/mui-lab-timeline-dot.min.inc.js",
+   :provides ["@mui/lab/TimelineDot"],
+   :global-exports {"@mui/lab/TimelineDot" MuiLabTimelineDot},
+   :requires ["@mui/lab"]}
+  {:file "mui/mui-lab-timeline-item.inc.js",
+   :file-min "mui/mui-lab-timeline-item.min.inc.js",
+   :provides ["@mui/lab/TimelineItem"],
+   :global-exports {"@mui/lab/TimelineItem" MuiLabTimelineItem},
+   :requires ["@mui/lab"]}
+  {:file "mui/mui-lab-timeline-opposite-content.inc.js",
+   :file-min "mui/mui-lab-timeline-opposite-content.min.inc.js",
+   :provides ["@mui/lab/TimelineOppositeContent"],
+   :global-exports
+   {"@mui/lab/TimelineOppositeContent" MuiLabTimelineOppositeContent},
+   :requires ["@mui/lab"]}
+  {:file "mui/mui-lab-timeline-separator.inc.js",
+   :file-min "mui/mui-lab-timeline-separator.min.inc.js",
+   :provides ["@mui/lab/TimelineSeparator"],
+   :global-exports
+   {"@mui/lab/TimelineSeparator" MuiLabTimelineSeparator},
+   :requires ["@mui/lab"]}
+  {:file "mui/mui-lab-tree-item.inc.js",
+   :file-min "mui/mui-lab-tree-item.min.inc.js",
+   :provides ["@mui/lab/TreeItem"],
+   :global-exports {"@mui/lab/TreeItem" MuiLabTreeItem},
+   :requires ["@mui/lab"]}
+  {:file "mui/mui-lab-tree-view.inc.js",
+   :file-min "mui/mui-lab-tree-view.min.inc.js",
+   :provides ["@mui/lab/TreeView"],
+   :global-exports {"@mui/lab/TreeView" MuiLabTreeView},
+   :requires ["@mui/lab"]}
+  {:file "mui/mui-lab-year-picker.inc.js",
+   :file-min "mui/mui-lab-year-picker.min.inc.js",
+   :provides ["@mui/lab/YearPicker"],
+   :global-exports {"@mui/lab/YearPicker" MuiLabYearPicker},
+   :requires ["@mui/lab"]}
+  {:file "mui/mui-core-backdrop-unstyled.inc.js",
+   :file-min "mui/mui-core-backdrop-unstyled.min.inc.js",
+   :provides ["@mui/core/BackdropUnstyled"],
+   :global-exports
+   {"@mui/core/BackdropUnstyled" MuiCoreBackdropUnstyled},
    :requires
-   ["@material-ui/unstyled/composeClasses"
-    "@material-ui/unstyled/generateUtilityClass"
-    "@material-ui/unstyled/generateUtilityClasses"
-    "@material-ui/unstyled/utils"
+   ["@mui/core/composeClasses"
+    "@mui/core/generateUtilityClass"
+    "@mui/core/generateUtilityClasses"
+    "@mui/core/utils"
     "react"]}
-  {:file "material-ui/material-ui-unstyled-badge-unstyled.inc.js",
-   :file-min
-   "material-ui/material-ui-unstyled-badge-unstyled.min.inc.js",
-   :provides ["@material-ui/unstyled/BadgeUnstyled"],
-   :global-exports
-   {"@material-ui/unstyled/BadgeUnstyled"
-    MaterialUIUnstyledBadgeUnstyled},
+  {:file "mui/mui-core-badge-unstyled.inc.js",
+   :file-min "mui/mui-core-badge-unstyled.min.inc.js",
+   :provides ["@mui/core/BadgeUnstyled"],
+   :global-exports {"@mui/core/BadgeUnstyled" MuiCoreBadgeUnstyled},
    :requires
-   ["@material-ui/unstyled/composeClasses"
-    "@material-ui/unstyled/generateUtilityClass"
-    "@material-ui/unstyled/generateUtilityClasses"
-    "@material-ui/unstyled/utils"
-    "@material-ui/utils"
+   ["@mui/core/composeClasses"
+    "@mui/core/generateUtilityClass"
+    "@mui/core/generateUtilityClasses"
+    "@mui/core/utils"
+    "@mui/utils"
     "react"]}
-  {:file
-   "material-ui/material-ui-unstyled-form-control-unstyled.inc.js",
-   :file-min
-   "material-ui/material-ui-unstyled-form-control-unstyled.min.inc.js",
-   :provides ["@material-ui/unstyled/FormControlUnstyled"],
-   :global-exports
-   {"@material-ui/unstyled/FormControlUnstyled"
-    MaterialUIUnstyledFormControlUnstyled},
+  {:file "mui/mui-core-button-unstyled.inc.js",
+   :file-min "mui/mui-core-button-unstyled.min.inc.js",
+   :provides ["@mui/core/ButtonUnstyled"],
+   :global-exports {"@mui/core/ButtonUnstyled" MuiCoreButtonUnstyled},
    :requires
-   ["@material-ui/unstyled/generateUtilityClass"
-    "@material-ui/unstyled/generateUtilityClasses"
-    "@material-ui/utils"
+   ["@mui/core/composeClasses"
+    "@mui/core/generateUtilityClass"
+    "@mui/core/generateUtilityClasses"
+    "@mui/core/utils"
+    "@mui/utils"
     "react"]}
-  {:file "material-ui/material-ui-unstyled-modal-unstyled.inc.js",
-   :file-min
-   "material-ui/material-ui-unstyled-modal-unstyled.min.inc.js",
-   :provides ["@material-ui/unstyled/ModalUnstyled"],
+  {:file "mui/mui-core-form-control-unstyled.inc.js",
+   :file-min "mui/mui-core-form-control-unstyled.min.inc.js",
+   :provides ["@mui/core/FormControlUnstyled"],
    :global-exports
-   {"@material-ui/unstyled/ModalUnstyled"
-    MaterialUIUnstyledModalUnstyled},
+   {"@mui/core/FormControlUnstyled" MuiCoreFormControlUnstyled},
    :requires
-   ["@material-ui/unstyled/Portal"
-    "@material-ui/unstyled/Unstable_TrapFocus"
-    "@material-ui/unstyled/composeClasses"
-    "@material-ui/unstyled/generateUtilityClass"
-    "@material-ui/unstyled/generateUtilityClasses"
-    "@material-ui/unstyled/utils"
-    "@material-ui/utils"
+   ["@mui/core/generateUtilityClass"
+    "@mui/core/generateUtilityClasses"
+    "@mui/utils"
     "react"]}
-  {:file "material-ui/material-ui-unstyled-no-ssr.inc.js",
-   :file-min "material-ui/material-ui-unstyled-no-ssr.min.inc.js",
-   :provides ["@material-ui/unstyled/NoSsr"],
-   :global-exports
-   {"@material-ui/unstyled/NoSsr" MaterialUIUnstyledNoSsr},
-   :requires ["@material-ui/utils" "react"]}
-  {:file "material-ui/material-ui-unstyled-portal.inc.js",
-   :file-min "material-ui/material-ui-unstyled-portal.min.inc.js",
-   :provides ["@material-ui/unstyled/Portal"],
-   :global-exports
-   {"@material-ui/unstyled/Portal" MaterialUIUnstyledPortal},
-   :requires ["@material-ui/utils" "react" "react-dom"]}
-  {:file "material-ui/material-ui-unstyled-slider-unstyled.inc.js",
-   :file-min
-   "material-ui/material-ui-unstyled-slider-unstyled.min.inc.js",
-   :provides ["@material-ui/unstyled/SliderUnstyled"],
-   :global-exports
-   {"@material-ui/unstyled/SliderUnstyled"
-    MaterialUIUnstyledSliderUnstyled},
+  {:file "mui/mui-core-modal-unstyled.inc.js",
+   :file-min "mui/mui-core-modal-unstyled.min.inc.js",
+   :provides ["@mui/core/ModalUnstyled"],
+   :global-exports {"@mui/core/ModalUnstyled" MuiCoreModalUnstyled},
    :requires
-   ["@material-ui/unstyled/composeClasses"
-    "@material-ui/unstyled/generateUtilityClass"
-    "@material-ui/unstyled/generateUtilityClasses"
-    "@material-ui/unstyled/utils"
-    "@material-ui/utils"
+   ["@mui/core/Portal"
+    "@mui/core/Unstable_TrapFocus"
+    "@mui/core/composeClasses"
+    "@mui/core/generateUtilityClass"
+    "@mui/core/generateUtilityClasses"
+    "@mui/core/utils"
+    "@mui/utils"
     "react"]}
-  {:file "material-ui/material-ui-unstyled-switch-unstyled.inc.js",
-   :file-min
-   "material-ui/material-ui-unstyled-switch-unstyled.min.inc.js",
-   :provides ["@material-ui/unstyled/SwitchUnstyled"],
-   :global-exports
-   {"@material-ui/unstyled/SwitchUnstyled"
-    MaterialUIUnstyledSwitchUnstyled},
+  {:file "mui/mui-core-no-ssr.inc.js",
+   :file-min "mui/mui-core-no-ssr.min.inc.js",
+   :provides ["@mui/core/NoSsr"],
+   :global-exports {"@mui/core/NoSsr" MuiCoreNoSsr},
+   :requires ["@mui/utils" "react"]}
+  {:file "mui/mui-core-portal.inc.js",
+   :file-min "mui/mui-core-portal.min.inc.js",
+   :provides ["@mui/core/Portal"],
+   :global-exports {"@mui/core/Portal" MuiCorePortal},
+   :requires ["@mui/utils" "react" "react-dom"]}
+  {:file "mui/mui-core-slider-unstyled.inc.js",
+   :file-min "mui/mui-core-slider-unstyled.min.inc.js",
+   :provides ["@mui/core/SliderUnstyled"],
+   :global-exports {"@mui/core/SliderUnstyled" MuiCoreSliderUnstyled},
    :requires
-   ["@material-ui/unstyled/generateUtilityClass"
-    "@material-ui/unstyled/generateUtilityClasses"
-    "@material-ui/utils"
+   ["@mui/core/composeClasses"
+    "@mui/core/generateUtilityClass"
+    "@mui/core/generateUtilityClasses"
+    "@mui/core/utils"
+    "@mui/utils"
     "react"]}
-  {:file "material-ui/material-ui-unstyled-unstable-trap-focus.inc.js",
-   :file-min
-   "material-ui/material-ui-unstyled-unstable-trap-focus.min.inc.js",
-   :provides ["@material-ui/unstyled/Unstable_TrapFocus"],
+  {:file "mui/mui-core-switch-unstyled.inc.js",
+   :file-min "mui/mui-core-switch-unstyled.min.inc.js",
+   :provides ["@mui/core/SwitchUnstyled"],
+   :global-exports {"@mui/core/SwitchUnstyled" MuiCoreSwitchUnstyled},
+   :requires
+   ["@mui/core/generateUtilityClass"
+    "@mui/core/generateUtilityClasses"
+    "@mui/utils"
+    "react"]}
+  {:file "mui/mui-core-unstable-trap-focus.inc.js",
+   :file-min "mui/mui-core-unstable-trap-focus.min.inc.js",
+   :provides ["@mui/core/Unstable_TrapFocus"],
    :global-exports
-   {"@material-ui/unstyled/Unstable_TrapFocus"
-    MaterialUIUnstyledUnstableTrapFocus},
-   :requires ["@material-ui/utils" "react"]}
-  {:file "material-ui/material-ui-unstyled-compose-classes.inc.js",
-   :file-min
-   "material-ui/material-ui-unstyled-compose-classes.min.inc.js",
-   :provides ["@material-ui/unstyled/composeClasses"],
-   :global-exports
-   {"@material-ui/unstyled/composeClasses"
-    MaterialUIUnstyledComposeClasses},
+   {"@mui/core/Unstable_TrapFocus" MuiCoreUnstableTrapFocus},
+   :requires ["@mui/utils" "react"]}
+  {:file "mui/mui-core-compose-classes.inc.js",
+   :file-min "mui/mui-core-compose-classes.min.inc.js",
+   :provides ["@mui/core/composeClasses"],
+   :global-exports {"@mui/core/composeClasses" MuiCoreComposeClasses},
    :requires []}
-  {:file
-   "material-ui/material-ui-unstyled-generate-utility-class.inc.js",
-   :file-min
-   "material-ui/material-ui-unstyled-generate-utility-class.min.inc.js",
-   :provides ["@material-ui/unstyled/generateUtilityClass"],
+  {:file "mui/mui-core-generate-utility-class.inc.js",
+   :file-min "mui/mui-core-generate-utility-class.min.inc.js",
+   :provides ["@mui/core/generateUtilityClass"],
    :global-exports
-   {"@material-ui/unstyled/generateUtilityClass"
-    MaterialUIUnstyledGenerateUtilityClass},
+   {"@mui/core/generateUtilityClass" MuiCoreGenerateUtilityClass},
    :requires []}
-  {:file
-   "material-ui/material-ui-unstyled-generate-utility-classes.inc.js",
-   :file-min
-   "material-ui/material-ui-unstyled-generate-utility-classes.min.inc.js",
-   :provides ["@material-ui/unstyled/generateUtilityClasses"],
+  {:file "mui/mui-core-generate-utility-classes.inc.js",
+   :file-min "mui/mui-core-generate-utility-classes.min.inc.js",
+   :provides ["@mui/core/generateUtilityClasses"],
    :global-exports
-   {"@material-ui/unstyled/generateUtilityClasses"
-    MaterialUIUnstyledGenerateUtilityClasses},
-   :requires ["@material-ui/unstyled/generateUtilityClass"]}
-  {:file "material-ui/material-ui-unstyled-utils.inc.js",
-   :file-min "material-ui/material-ui-unstyled-utils.min.inc.js",
-   :provides ["@material-ui/unstyled/utils"],
-   :global-exports
-   {"@material-ui/unstyled/utils" MaterialUIUnstyledUtils},
+   {"@mui/core/generateUtilityClasses" MuiCoreGenerateUtilityClasses},
+   :requires ["@mui/core/generateUtilityClass"]}
+  {:file "mui/mui-core-utils.inc.js",
+   :file-min "mui/mui-core-utils.min.inc.js",
+   :provides ["@mui/core/utils"],
+   :global-exports {"@mui/core/utils" MuiCoreUtils},
    :requires []}
-  {:file
-   "material-ui/material-ui-unstyled-autocomplete-unstyled.inc.js",
-   :file-min
-   "material-ui/material-ui-unstyled-autocomplete-unstyled.min.inc.js",
-   :provides ["@material-ui/unstyled/AutocompleteUnstyled"],
+  {:file "mui/mui-core-autocomplete-unstyled.inc.js",
+   :file-min "mui/mui-core-autocomplete-unstyled.min.inc.js",
+   :provides ["@mui/core/AutocompleteUnstyled"],
    :global-exports
-   {"@material-ui/unstyled/AutocompleteUnstyled"
-    MaterialUIUnstyledAutocompleteUnstyled},
-   :requires ["@material-ui/utils" "react"]}],
- :externs ["material-ui/material-ui.ext.js"]}
+   {"@mui/core/AutocompleteUnstyled" MuiCoreAutocompleteUnstyled},
+   :requires ["@mui/utils" "react"]}],
+ :externs ["mui/mui.ext.js"]}

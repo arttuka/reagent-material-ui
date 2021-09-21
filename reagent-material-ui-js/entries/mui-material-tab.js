@@ -1,0 +1,1 @@
+export { Tab as default, tabClasses } from '@mui/material'

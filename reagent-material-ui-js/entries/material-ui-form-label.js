@@ -1,1 +1,0 @@
-export { FormLabel as default, formLabelClasses } from '@material-ui/core'

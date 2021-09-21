@@ -1,1 +1,0 @@
-export { useScrollTrigger as default } from '@material-ui/core'

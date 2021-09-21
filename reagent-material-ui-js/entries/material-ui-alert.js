@@ -1,1 +1,0 @@
-export { Alert as default, alertClasses } from '@material-ui/core'

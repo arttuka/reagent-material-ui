@@ -1,0 +1,1 @@
+export { Stepper as default, stepperClasses } from '@mui/material'

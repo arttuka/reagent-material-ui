@@ -1,0 +1,1 @@
+export { MasonryItem as default } from '@mui/lab'

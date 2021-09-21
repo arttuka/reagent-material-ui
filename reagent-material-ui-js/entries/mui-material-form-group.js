@@ -1,0 +1,1 @@
+export { FormGroup as default, formGroupClasses } from '@mui/material'

@@ -1,1 +1,0 @@
-export { AccordionActions as default, accordionActionsClasses } from '@material-ui/core'

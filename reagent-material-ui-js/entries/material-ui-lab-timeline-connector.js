@@ -1,1 +1,0 @@
-export { TimelineConnector as default } from '@material-ui/lab'

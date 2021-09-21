@@ -1,1 +1,0 @@
-export { TableHead as default, tableHeadClasses } from '@material-ui/core'

@@ -1,1 +1,0 @@
-export { TimelineOppositeContent as default } from '@material-ui/lab'

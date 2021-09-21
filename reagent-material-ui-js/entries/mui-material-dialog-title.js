@@ -1,0 +1,1 @@
+export { DialogTitle as default, dialogTitleClasses } from '@mui/material'

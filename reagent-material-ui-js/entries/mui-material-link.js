@@ -1,0 +1,1 @@
+export { Link as default, linkClasses } from '@mui/material'

@@ -1,0 +1,1 @@
+export { DialogContent as default, dialogContentClasses } from '@mui/material'

@@ -1,1 +1,0 @@
-export { CircularProgress as default, circularProgressClasses } from '@material-ui/core'

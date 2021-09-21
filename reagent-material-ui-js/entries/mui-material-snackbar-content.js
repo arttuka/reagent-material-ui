@@ -1,0 +1,1 @@
+export { SnackbarContent as default, snackbarContentClasses } from '@mui/material'

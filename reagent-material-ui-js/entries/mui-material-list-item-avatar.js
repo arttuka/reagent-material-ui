@@ -1,0 +1,1 @@
+export { ListItemAvatar as default, listItemAvatarClasses } from '@mui/material'

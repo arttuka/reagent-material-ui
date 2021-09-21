@@ -1,0 +1,1 @@
+export { Tooltip as default, tooltipClasses } from '@mui/material'

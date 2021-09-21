@@ -1,0 +1,1 @@
+export { Paper as default, paperClasses } from '@mui/material'

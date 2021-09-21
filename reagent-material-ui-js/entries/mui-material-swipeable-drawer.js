@@ -1,0 +1,1 @@
+export { SwipeableDrawer as default } from '@mui/material'

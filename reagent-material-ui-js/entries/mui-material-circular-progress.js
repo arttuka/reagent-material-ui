@@ -1,0 +1,1 @@
+export { CircularProgress as default, circularProgressClasses } from '@mui/material'

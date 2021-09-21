@@ -1,1 +1,0 @@
-export { ImageListItemBar as default, imageListItemBarClasses } from '@material-ui/core'

@@ -1,6 +1,6 @@
 # Changelog
 
-See [Material UI changelog](https://github.com/mui-org/material-ui/blob/next/CHANGELOG.md) for changes in Material UI.
+See [MUI changelog](https://github.com/mui-org/material-ui/blob/master/CHANGELOG.md) for changes in MUI.
 
 ## 5.0.0-beta.5-0
 

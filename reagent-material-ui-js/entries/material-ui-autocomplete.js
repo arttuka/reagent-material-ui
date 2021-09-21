@@ -1,1 +1,0 @@
-export { Autocomplete as default, createFilterOptions, autocompleteClasses } from '@material-ui/core'

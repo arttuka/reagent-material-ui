@@ -1,1 +1,0 @@
-export { ListItemSecondaryAction as default, listItemSecondaryActionClasses } from '@material-ui/core'

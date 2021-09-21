@@ -1,1 +1,0 @@
-export { ListItemIcon as default, listItemIconClasses } from '@material-ui/core'

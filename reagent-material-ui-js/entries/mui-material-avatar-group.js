@@ -1,0 +1,1 @@
+export { AvatarGroup as default, avatarGroupClasses } from '@mui/material'

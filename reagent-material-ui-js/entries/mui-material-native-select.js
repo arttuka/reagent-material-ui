@@ -1,0 +1,1 @@
+export { NativeSelect as default, nativeSelectClasses } from '@mui/material'

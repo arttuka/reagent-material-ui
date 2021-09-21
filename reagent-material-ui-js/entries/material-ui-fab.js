@@ -1,1 +1,0 @@
-export { Fab as default, fabClasses } from '@material-ui/core'

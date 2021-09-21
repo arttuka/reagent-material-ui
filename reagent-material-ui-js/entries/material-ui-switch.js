@@ -1,1 +1,0 @@
-export { Switch as default, switchClasses } from '@material-ui/core'

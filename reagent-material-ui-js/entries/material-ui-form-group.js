@@ -1,1 +1,0 @@
-export { FormGroup as default, formGroupClasses } from '@material-ui/core'

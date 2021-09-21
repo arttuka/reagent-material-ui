@@ -1,0 +1,1 @@
+export { AccordionDetails as default, accordionDetailsClasses } from '@mui/material'

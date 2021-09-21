@@ -1,1 +1,0 @@
-export { CardActionArea as default, cardActionAreaClasses } from '@material-ui/core'

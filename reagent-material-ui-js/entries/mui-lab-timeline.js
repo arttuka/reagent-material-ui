@@ -1,0 +1,1 @@
+export { Timeline as default } from '@mui/lab'

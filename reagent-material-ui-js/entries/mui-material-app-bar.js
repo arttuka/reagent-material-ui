@@ -1,0 +1,1 @@
+export { AppBar as default, appBarClasses } from '@mui/material'

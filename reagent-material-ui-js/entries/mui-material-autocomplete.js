@@ -1,0 +1,1 @@
+export { Autocomplete as default, createFilterOptions, autocompleteClasses } from '@mui/material'

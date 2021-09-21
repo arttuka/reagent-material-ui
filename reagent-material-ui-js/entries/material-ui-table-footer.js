@@ -1,1 +1,0 @@
-export { TableFooter as default, tableFooterClasses } from '@material-ui/core'

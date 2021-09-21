@@ -1,1 +1,0 @@
-export { MobileDatePicker as default } from '@material-ui/lab'

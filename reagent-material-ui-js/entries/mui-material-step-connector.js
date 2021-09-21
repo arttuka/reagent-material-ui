@@ -1,0 +1,1 @@
+export { StepConnector as default, stepConnectorClasses } from '@mui/material'

@@ -1,1 +1,0 @@
-export { Divider as default, dividerClasses } from '@material-ui/core'

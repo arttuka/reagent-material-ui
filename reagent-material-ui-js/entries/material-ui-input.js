@@ -1,1 +1,0 @@
-export { Input as default, inputClasses } from '@material-ui/core'

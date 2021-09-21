@@ -1,0 +1,1 @@
+export { FormHelperText as default, formHelperTextClasses } from '@mui/material'

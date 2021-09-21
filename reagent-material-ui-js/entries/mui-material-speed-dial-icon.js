@@ -1,0 +1,1 @@
+export { SpeedDialIcon as default, speedDialIconClasses } from '@mui/material'

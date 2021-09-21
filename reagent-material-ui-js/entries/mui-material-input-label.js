@@ -1,0 +1,1 @@
+export { InputLabel as default, inputLabelClasses } from '@mui/material'

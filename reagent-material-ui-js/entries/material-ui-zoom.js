@@ -1,1 +1,0 @@
-export { Zoom as default } from '@material-ui/core'

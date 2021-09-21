@@ -1,0 +1,1 @@
+export { useTouchRipple as default } from '@mui/material'

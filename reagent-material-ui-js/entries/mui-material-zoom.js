@@ -1,0 +1,1 @@
+export { Zoom as default } from '@mui/material'

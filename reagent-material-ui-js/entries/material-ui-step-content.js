@@ -1,1 +1,0 @@
-export { StepContent as default, stepContentClasses } from '@material-ui/core'

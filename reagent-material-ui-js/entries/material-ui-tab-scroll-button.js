@@ -1,1 +1,0 @@
-export { TabScrollButton as default, tabScrollButtonClasses } from '@material-ui/core'

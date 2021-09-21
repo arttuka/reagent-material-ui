@@ -1,1 +1,0 @@
-export { SpeedDialIcon as default, speedDialIconClasses } from '@material-ui/core'

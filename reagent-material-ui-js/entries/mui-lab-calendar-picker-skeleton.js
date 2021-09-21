@@ -1,0 +1,1 @@
+export { CalendarPickerSkeleton as default } from '@mui/lab'

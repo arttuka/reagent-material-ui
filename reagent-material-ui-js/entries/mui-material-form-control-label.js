@@ -1,0 +1,1 @@
+export { FormControlLabel as default, formControlLabelClasses } from '@mui/material'

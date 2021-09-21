@@ -1,0 +1,1 @@
+export { Chip as default, chipClasses } from '@mui/material'

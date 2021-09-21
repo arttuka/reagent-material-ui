@@ -1,1 +1,0 @@
-export { Menu as default, menuClasses } from '@material-ui/core'

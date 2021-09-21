@@ -1,1 +1,0 @@
-export { Unstable_TrapFocus as default } from '@material-ui/core'

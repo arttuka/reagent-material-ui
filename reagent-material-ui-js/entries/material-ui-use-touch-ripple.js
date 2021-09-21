@@ -1,1 +1,0 @@
-export { useTouchRipple as default } from '@material-ui/core'

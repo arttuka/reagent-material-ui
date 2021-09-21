@@ -1,0 +1,1 @@
+export { FormControl as default, useFormControl, formControlClasses } from '@mui/material'

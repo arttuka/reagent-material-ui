@@ -1,1 +1,0 @@
-export { MobileTimePicker as default } from '@material-ui/lab'

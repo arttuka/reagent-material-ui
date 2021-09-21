@@ -1,0 +1,1 @@
+export { CardContent as default, cardContentClasses } from '@mui/material'

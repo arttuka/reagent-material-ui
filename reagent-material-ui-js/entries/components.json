@@ -1,519 +1,525 @@
 [
   {
-    "entry": "material-ui-accordion",
-    "root": "MaterialUIAccordion"
+    "entry": "mui-material-accordion",
+    "root": "MuiMaterialAccordion"
   }, {
-    "entry": "material-ui-accordion-actions",
-    "root": "MaterialUIAccordionActions"
+    "entry": "mui-material-accordion-actions",
+    "root": "MuiMaterialAccordionActions"
   }, {
-    "entry": "material-ui-accordion-details",
-    "root": "MaterialUIAccordionDetails"
+    "entry": "mui-material-accordion-details",
+    "root": "MuiMaterialAccordionDetails"
   }, {
-    "entry": "material-ui-accordion-summary",
-    "root": "MaterialUIAccordionSummary"
+    "entry": "mui-material-accordion-summary",
+    "root": "MuiMaterialAccordionSummary"
   }, {
-    "entry": "material-ui-alert",
-    "root": "MaterialUIAlert"
+    "entry": "mui-material-alert",
+    "root": "MuiMaterialAlert"
   }, {
-    "entry": "material-ui-alert-title",
-    "root": "MaterialUIAlertTitle"
+    "entry": "mui-material-alert-title",
+    "root": "MuiMaterialAlertTitle"
   }, {
-    "entry": "material-ui-app-bar",
-    "root": "MaterialUIAppBar"
+    "entry": "mui-material-app-bar",
+    "root": "MuiMaterialAppBar"
   }, {
-    "entry": "material-ui-autocomplete",
-    "root": "MaterialUIAutocomplete"
+    "entry": "mui-material-autocomplete",
+    "root": "MuiMaterialAutocomplete"
   }, {
-    "entry": "material-ui-avatar",
-    "root": "MaterialUIAvatar"
+    "entry": "mui-material-avatar",
+    "root": "MuiMaterialAvatar"
   }, {
-    "entry": "material-ui-avatar-group",
-    "root": "MaterialUIAvatarGroup"
+    "entry": "mui-material-avatar-group",
+    "root": "MuiMaterialAvatarGroup"
   }, {
-    "entry": "material-ui-backdrop",
-    "root": "MaterialUIBackdrop"
+    "entry": "mui-material-backdrop",
+    "root": "MuiMaterialBackdrop"
   }, {
-    "entry": "material-ui-badge",
-    "root": "MaterialUIBadge"
+    "entry": "mui-material-badge",
+    "root": "MuiMaterialBadge"
   }, {
-    "entry": "material-ui-bottom-navigation",
-    "root": "MaterialUIBottomNavigation"
+    "entry": "mui-material-bottom-navigation",
+    "root": "MuiMaterialBottomNavigation"
   }, {
-    "entry": "material-ui-bottom-navigation-action",
-    "root": "MaterialUIBottomNavigationAction"
+    "entry": "mui-material-bottom-navigation-action",
+    "root": "MuiMaterialBottomNavigationAction"
   }, {
-    "entry": "material-ui-box",
-    "root": "MaterialUIBox"
+    "entry": "mui-material-box",
+    "root": "MuiMaterialBox"
   }, {
-    "entry": "material-ui-breadcrumbs",
-    "root": "MaterialUIBreadcrumbs"
+    "entry": "mui-material-breadcrumbs",
+    "root": "MuiMaterialBreadcrumbs"
   }, {
-    "entry": "material-ui-button",
-    "root": "MaterialUIButton"
+    "entry": "mui-material-button",
+    "root": "MuiMaterialButton"
   }, {
-    "entry": "material-ui-button-base",
-    "root": "MaterialUIButtonBase"
+    "entry": "mui-material-button-base",
+    "root": "MuiMaterialButtonBase"
   }, {
-    "entry": "material-ui-button-group",
-    "root": "MaterialUIButtonGroup"
+    "entry": "mui-material-button-group",
+    "root": "MuiMaterialButtonGroup"
   }, {
-    "entry": "material-ui-card",
-    "root": "MaterialUICard"
+    "entry": "mui-material-card",
+    "root": "MuiMaterialCard"
   }, {
-    "entry": "material-ui-card-action-area",
-    "root": "MaterialUICardActionArea"
+    "entry": "mui-material-card-action-area",
+    "root": "MuiMaterialCardActionArea"
   }, {
-    "entry": "material-ui-card-actions",
-    "root": "MaterialUICardActions"
+    "entry": "mui-material-card-actions",
+    "root": "MuiMaterialCardActions"
   }, {
-    "entry": "material-ui-card-content",
-    "root": "MaterialUICardContent"
+    "entry": "mui-material-card-content",
+    "root": "MuiMaterialCardContent"
   }, {
-    "entry": "material-ui-card-header",
-    "root": "MaterialUICardHeader"
+    "entry": "mui-material-card-header",
+    "root": "MuiMaterialCardHeader"
   }, {
-    "entry": "material-ui-card-media",
-    "root": "MaterialUICardMedia"
+    "entry": "mui-material-card-media",
+    "root": "MuiMaterialCardMedia"
   }, {
-    "entry": "material-ui-checkbox",
-    "root": "MaterialUICheckbox"
+    "entry": "mui-material-checkbox",
+    "root": "MuiMaterialCheckbox"
   }, {
-    "entry": "material-ui-chip",
-    "root": "MaterialUIChip"
+    "entry": "mui-material-chip",
+    "root": "MuiMaterialChip"
   }, {
-    "entry": "material-ui-circular-progress",
-    "root": "MaterialUICircularProgress"
+    "entry": "mui-material-circular-progress",
+    "root": "MuiMaterialCircularProgress"
   }, {
-    "entry": "material-ui-click-away-listener",
-    "root": "MaterialUIClickAwayListener"
+    "entry": "mui-material-click-away-listener",
+    "root": "MuiMaterialClickAwayListener"
   }, {
-    "entry": "material-ui-collapse",
-    "root": "MaterialUICollapse"
+    "entry": "mui-material-collapse",
+    "root": "MuiMaterialCollapse"
   }, {
-    "entry": "material-ui-container",
-    "root": "MaterialUIContainer"
+    "entry": "mui-material-container",
+    "root": "MuiMaterialContainer"
   }, {
-    "entry": "material-ui-css-baseline",
-    "root": "MaterialUICssBaseline"
+    "entry": "mui-material-css-baseline",
+    "root": "MuiMaterialCssBaseline"
   }, {
-    "entry": "material-ui-dialog",
-    "root": "MaterialUIDialog"
+    "entry": "mui-material-dialog",
+    "root": "MuiMaterialDialog"
   }, {
-    "entry": "material-ui-dialog-actions",
-    "root": "MaterialUIDialogActions"
+    "entry": "mui-material-dialog-actions",
+    "root": "MuiMaterialDialogActions"
   }, {
-    "entry": "material-ui-dialog-content",
-    "root": "MaterialUIDialogContent"
+    "entry": "mui-material-dialog-content",
+    "root": "MuiMaterialDialogContent"
   }, {
-    "entry": "material-ui-dialog-content-text",
-    "root": "MaterialUIDialogContentText"
+    "entry": "mui-material-dialog-content-text",
+    "root": "MuiMaterialDialogContentText"
   }, {
-    "entry": "material-ui-dialog-title",
-    "root": "MaterialUIDialogTitle"
+    "entry": "mui-material-dialog-title",
+    "root": "MuiMaterialDialogTitle"
   }, {
-    "entry": "material-ui-divider",
-    "root": "MaterialUIDivider"
+    "entry": "mui-material-divider",
+    "root": "MuiMaterialDivider"
   }, {
-    "entry": "material-ui-drawer",
-    "root": "MaterialUIDrawer"
+    "entry": "mui-material-drawer",
+    "root": "MuiMaterialDrawer"
   }, {
-    "entry": "material-ui-fab",
-    "root": "MaterialUIFab"
+    "entry": "mui-material-fab",
+    "root": "MuiMaterialFab"
   }, {
-    "entry": "material-ui-fade",
-    "root": "MaterialUIFade"
+    "entry": "mui-material-fade",
+    "root": "MuiMaterialFade"
   }, {
-    "entry": "material-ui-filled-input",
-    "root": "MaterialUIFilledInput"
+    "entry": "mui-material-filled-input",
+    "root": "MuiMaterialFilledInput"
   }, {
-    "entry": "material-ui-form-control",
-    "root": "MaterialUIFormControl"
+    "entry": "mui-material-form-control",
+    "root": "MuiMaterialFormControl"
   }, {
-    "entry": "material-ui-form-control-label",
-    "root": "MaterialUIFormControlLabel"
+    "entry": "mui-material-form-control-label",
+    "root": "MuiMaterialFormControlLabel"
   }, {
-    "entry": "material-ui-form-group",
-    "root": "MaterialUIFormGroup"
+    "entry": "mui-material-form-group",
+    "root": "MuiMaterialFormGroup"
   }, {
-    "entry": "material-ui-form-helper-text",
-    "root": "MaterialUIFormHelperText"
+    "entry": "mui-material-form-helper-text",
+    "root": "MuiMaterialFormHelperText"
   }, {
-    "entry": "material-ui-form-label",
-    "root": "MaterialUIFormLabel"
+    "entry": "mui-material-form-label",
+    "root": "MuiMaterialFormLabel"
   }, {
-    "entry": "material-ui-global-styles",
-    "root": "MaterialUIGlobalStyles"
+    "entry": "mui-material-global-styles",
+    "root": "MuiMaterialGlobalStyles"
   }, {
-    "entry": "material-ui-grid",
-    "root": "MaterialUIGrid"
+    "entry": "mui-material-grid",
+    "root": "MuiMaterialGrid"
   }, {
-    "entry": "material-ui-grow",
-    "root": "MaterialUIGrow"
+    "entry": "mui-material-grow",
+    "root": "MuiMaterialGrow"
   }, {
-    "entry": "material-ui-hidden",
-    "root": "MaterialUIHidden"
+    "entry": "mui-material-hidden",
+    "root": "MuiMaterialHidden"
   }, {
-    "entry": "material-ui-icon",
-    "root": "MaterialUIIcon"
+    "entry": "mui-material-icon",
+    "root": "MuiMaterialIcon"
   }, {
-    "entry": "material-ui-icon-button",
-    "root": "MaterialUIIconButton"
+    "entry": "mui-material-icon-button",
+    "root": "MuiMaterialIconButton"
   }, {
-    "entry": "material-ui-image-list",
-    "root": "MaterialUIImageList"
+    "entry": "mui-material-image-list",
+    "root": "MuiMaterialImageList"
   }, {
-    "entry": "material-ui-image-list-item",
-    "root": "MaterialUIImageListItem"
+    "entry": "mui-material-image-list-item",
+    "root": "MuiMaterialImageListItem"
   }, {
-    "entry": "material-ui-image-list-item-bar",
-    "root": "MaterialUIImageListItemBar"
+    "entry": "mui-material-image-list-item-bar",
+    "root": "MuiMaterialImageListItemBar"
   }, {
-    "entry": "material-ui-input",
-    "root": "MaterialUIInput"
+    "entry": "mui-material-input",
+    "root": "MuiMaterialInput"
   }, {
-    "entry": "material-ui-input-adornment",
-    "root": "MaterialUIInputAdornment"
+    "entry": "mui-material-input-adornment",
+    "root": "MuiMaterialInputAdornment"
   }, {
-    "entry": "material-ui-input-base",
-    "root": "MaterialUIInputBase"
+    "entry": "mui-material-input-base",
+    "root": "MuiMaterialInputBase"
   }, {
-    "entry": "material-ui-input-label",
-    "root": "MaterialUIInputLabel"
+    "entry": "mui-material-input-label",
+    "root": "MuiMaterialInputLabel"
   }, {
-    "entry": "material-ui-linear-progress",
-    "root": "MaterialUILinearProgress"
+    "entry": "mui-material-linear-progress",
+    "root": "MuiMaterialLinearProgress"
   }, {
-    "entry": "material-ui-link",
-    "root": "MaterialUILink"
+    "entry": "mui-material-link",
+    "root": "MuiMaterialLink"
   }, {
-    "entry": "material-ui-list",
-    "root": "MaterialUIList"
+    "entry": "mui-material-list",
+    "root": "MuiMaterialList"
   }, {
-    "entry": "material-ui-list-item",
-    "root": "MaterialUIListItem"
+    "entry": "mui-material-list-item",
+    "root": "MuiMaterialListItem"
   }, {
-    "entry": "material-ui-list-item-avatar",
-    "root": "MaterialUIListItemAvatar"
+    "entry": "mui-material-list-item-avatar",
+    "root": "MuiMaterialListItemAvatar"
   }, {
-    "entry": "material-ui-list-item-button",
-    "root": "MaterialUIListItemButton"
+    "entry": "mui-material-list-item-button",
+    "root": "MuiMaterialListItemButton"
   }, {
-    "entry": "material-ui-list-item-icon",
-    "root": "MaterialUIListItemIcon"
+    "entry": "mui-material-list-item-icon",
+    "root": "MuiMaterialListItemIcon"
   }, {
-    "entry": "material-ui-list-item-secondary-action",
-    "root": "MaterialUIListItemSecondaryAction"
+    "entry": "mui-material-list-item-secondary-action",
+    "root": "MuiMaterialListItemSecondaryAction"
   }, {
-    "entry": "material-ui-list-item-text",
-    "root": "MaterialUIListItemText"
+    "entry": "mui-material-list-item-text",
+    "root": "MuiMaterialListItemText"
   }, {
-    "entry": "material-ui-list-subheader",
-    "root": "MaterialUIListSubheader"
+    "entry": "mui-material-list-subheader",
+    "root": "MuiMaterialListSubheader"
   }, {
-    "entry": "material-ui-menu",
-    "root": "MaterialUIMenu"
+    "entry": "mui-material-menu",
+    "root": "MuiMaterialMenu"
   }, {
-    "entry": "material-ui-menu-item",
-    "root": "MaterialUIMenuItem"
+    "entry": "mui-material-menu-item",
+    "root": "MuiMaterialMenuItem"
   }, {
-    "entry": "material-ui-menu-list",
-    "root": "MaterialUIMenuList"
+    "entry": "mui-material-menu-list",
+    "root": "MuiMaterialMenuList"
   }, {
-    "entry": "material-ui-mobile-stepper",
-    "root": "MaterialUIMobileStepper"
+    "entry": "mui-material-mobile-stepper",
+    "root": "MuiMaterialMobileStepper"
   }, {
-    "entry": "material-ui-modal",
-    "root": "MaterialUIModal"
+    "entry": "mui-material-modal",
+    "root": "MuiMaterialModal"
   }, {
-    "entry": "material-ui-native-select",
-    "root": "MaterialUINativeSelect"
+    "entry": "mui-material-native-select",
+    "root": "MuiMaterialNativeSelect"
   }, {
-    "entry": "material-ui-no-ssr",
-    "root": "MaterialUINoSsr"
+    "entry": "mui-material-no-ssr",
+    "root": "MuiMaterialNoSsr"
   }, {
-    "entry": "material-ui-outlined-input",
-    "root": "MaterialUIOutlinedInput"
+    "entry": "mui-material-outlined-input",
+    "root": "MuiMaterialOutlinedInput"
   }, {
-    "entry": "material-ui-pagination",
-    "root": "MaterialUIPagination"
+    "entry": "mui-material-pagination",
+    "root": "MuiMaterialPagination"
   }, {
-    "entry": "material-ui-pagination-item",
-    "root": "MaterialUIPaginationItem"
+    "entry": "mui-material-pagination-item",
+    "root": "MuiMaterialPaginationItem"
   }, {
-    "entry": "material-ui-paper",
-    "root": "MaterialUIPaper"
+    "entry": "mui-material-paper",
+    "root": "MuiMaterialPaper"
   }, {
-    "entry": "material-ui-popover",
-    "root": "MaterialUIPopover"
+    "entry": "mui-material-popover",
+    "root": "MuiMaterialPopover"
   }, {
-    "entry": "material-ui-popper",
-    "root": "MaterialUIPopper"
+    "entry": "mui-material-popper",
+    "root": "MuiMaterialPopper"
   }, {
-    "entry": "material-ui-portal",
-    "root": "MaterialUIPortal"
+    "entry": "mui-material-portal",
+    "root": "MuiMaterialPortal"
   }, {
-    "entry": "material-ui-radio",
-    "root": "MaterialUIRadio"
+    "entry": "mui-material-radio",
+    "root": "MuiMaterialRadio"
   }, {
-    "entry": "material-ui-radio-group",
-    "root": "MaterialUIRadioGroup"
+    "entry": "mui-material-radio-group",
+    "root": "MuiMaterialRadioGroup"
   }, {
-    "entry": "material-ui-rating",
-    "root": "MaterialUIRating"
+    "entry": "mui-material-rating",
+    "root": "MuiMaterialRating"
   }, {
-    "entry": "material-ui-scoped-css-baseline",
-    "root": "MaterialUIScopedCssBaseline"
+    "entry": "mui-material-scoped-css-baseline",
+    "root": "MuiMaterialScopedCssBaseline"
   }, {
-    "entry": "material-ui-select",
-    "root": "MaterialUISelect"
+    "entry": "mui-material-select",
+    "root": "MuiMaterialSelect"
   }, {
-    "entry": "material-ui-skeleton",
-    "root": "MaterialUISkeleton"
+    "entry": "mui-material-skeleton",
+    "root": "MuiMaterialSkeleton"
   }, {
-    "entry": "material-ui-slide",
-    "root": "MaterialUISlide"
+    "entry": "mui-material-slide",
+    "root": "MuiMaterialSlide"
   }, {
-    "entry": "material-ui-slider",
-    "root": "MaterialUISlider"
+    "entry": "mui-material-slider",
+    "root": "MuiMaterialSlider"
   }, {
-    "entry": "material-ui-snackbar",
-    "root": "MaterialUISnackbar"
+    "entry": "mui-material-snackbar",
+    "root": "MuiMaterialSnackbar"
   }, {
-    "entry": "material-ui-snackbar-content",
-    "root": "MaterialUISnackbarContent"
+    "entry": "mui-material-snackbar-content",
+    "root": "MuiMaterialSnackbarContent"
   }, {
-    "entry": "material-ui-speed-dial",
-    "root": "MaterialUISpeedDial"
+    "entry": "mui-material-speed-dial",
+    "root": "MuiMaterialSpeedDial"
   }, {
-    "entry": "material-ui-speed-dial-action",
-    "root": "MaterialUISpeedDialAction"
+    "entry": "mui-material-speed-dial-action",
+    "root": "MuiMaterialSpeedDialAction"
   }, {
-    "entry": "material-ui-speed-dial-icon",
-    "root": "MaterialUISpeedDialIcon"
+    "entry": "mui-material-speed-dial-icon",
+    "root": "MuiMaterialSpeedDialIcon"
   }, {
-    "entry": "material-ui-stack",
-    "root": "MaterialUIStack"
+    "entry": "mui-material-stack",
+    "root": "MuiMaterialStack"
   }, {
-    "entry": "material-ui-step",
-    "root": "MaterialUIStep"
+    "entry": "mui-material-step",
+    "root": "MuiMaterialStep"
   }, {
-    "entry": "material-ui-step-button",
-    "root": "MaterialUIStepButton"
+    "entry": "mui-material-step-button",
+    "root": "MuiMaterialStepButton"
   }, {
-    "entry": "material-ui-step-connector",
-    "root": "MaterialUIStepConnector"
+    "entry": "mui-material-step-connector",
+    "root": "MuiMaterialStepConnector"
   }, {
-    "entry": "material-ui-step-content",
-    "root": "MaterialUIStepContent"
+    "entry": "mui-material-step-content",
+    "root": "MuiMaterialStepContent"
   }, {
-    "entry": "material-ui-step-icon",
-    "root": "MaterialUIStepIcon"
+    "entry": "mui-material-step-icon",
+    "root": "MuiMaterialStepIcon"
   }, {
-    "entry": "material-ui-step-label",
-    "root": "MaterialUIStepLabel"
+    "entry": "mui-material-step-label",
+    "root": "MuiMaterialStepLabel"
   }, {
-    "entry": "material-ui-stepper",
-    "root": "MaterialUIStepper"
+    "entry": "mui-material-stepper",
+    "root": "MuiMaterialStepper"
   }, {
-    "entry": "material-ui-styled-engine-provider",
-    "root": "MaterialUIStyledEngineProvider"
+    "entry": "mui-material-styled-engine-provider",
+    "root": "MuiMaterialStyledEngineProvider"
   }, {
-    "entry": "material-ui-svg-icon",
-    "root": "MaterialUISvgIcon"
+    "entry": "mui-material-svg-icon",
+    "root": "MuiMaterialSvgIcon"
   }, {
-    "entry": "material-ui-swipeable-drawer",
-    "root": "MaterialUISwipeableDrawer"
+    "entry": "mui-material-swipeable-drawer",
+    "root": "MuiMaterialSwipeableDrawer"
   }, {
-    "entry": "material-ui-switch",
-    "root": "MaterialUISwitch"
+    "entry": "mui-material-switch",
+    "root": "MuiMaterialSwitch"
   }, {
-    "entry": "material-ui-tab",
-    "root": "MaterialUITab"
+    "entry": "mui-material-tab",
+    "root": "MuiMaterialTab"
   }, {
-    "entry": "material-ui-tab-scroll-button",
-    "root": "MaterialUITabScrollButton"
+    "entry": "mui-material-tab-scroll-button",
+    "root": "MuiMaterialTabScrollButton"
   }, {
-    "entry": "material-ui-table",
-    "root": "MaterialUITable"
+    "entry": "mui-material-table",
+    "root": "MuiMaterialTable"
   }, {
-    "entry": "material-ui-table-body",
-    "root": "MaterialUITableBody"
+    "entry": "mui-material-table-body",
+    "root": "MuiMaterialTableBody"
   }, {
-    "entry": "material-ui-table-cell",
-    "root": "MaterialUITableCell"
+    "entry": "mui-material-table-cell",
+    "root": "MuiMaterialTableCell"
   }, {
-    "entry": "material-ui-table-container",
-    "root": "MaterialUITableContainer"
+    "entry": "mui-material-table-container",
+    "root": "MuiMaterialTableContainer"
   }, {
-    "entry": "material-ui-table-footer",
-    "root": "MaterialUITableFooter"
+    "entry": "mui-material-table-footer",
+    "root": "MuiMaterialTableFooter"
   }, {
-    "entry": "material-ui-table-head",
-    "root": "MaterialUITableHead"
+    "entry": "mui-material-table-head",
+    "root": "MuiMaterialTableHead"
   }, {
-    "entry": "material-ui-table-pagination",
-    "root": "MaterialUITablePagination"
+    "entry": "mui-material-table-pagination",
+    "root": "MuiMaterialTablePagination"
   }, {
-    "entry": "material-ui-table-row",
-    "root": "MaterialUITableRow"
+    "entry": "mui-material-table-row",
+    "root": "MuiMaterialTableRow"
   }, {
-    "entry": "material-ui-table-sort-label",
-    "root": "MaterialUITableSortLabel"
+    "entry": "mui-material-table-sort-label",
+    "root": "MuiMaterialTableSortLabel"
   }, {
-    "entry": "material-ui-tabs",
-    "root": "MaterialUITabs"
+    "entry": "mui-material-tabs",
+    "root": "MuiMaterialTabs"
   }, {
-    "entry": "material-ui-text-field",
-    "root": "MaterialUITextField"
+    "entry": "mui-material-text-field",
+    "root": "MuiMaterialTextField"
   }, {
-    "entry": "material-ui-textarea-autosize",
-    "root": "MaterialUITextareaAutosize"
+    "entry": "mui-material-textarea-autosize",
+    "root": "MuiMaterialTextareaAutosize"
   }, {
-    "entry": "material-ui-toggle-button",
-    "root": "MaterialUIToggleButton"
+    "entry": "mui-material-toggle-button",
+    "root": "MuiMaterialToggleButton"
   }, {
-    "entry": "material-ui-toggle-button-group",
-    "root": "MaterialUIToggleButtonGroup"
+    "entry": "mui-material-toggle-button-group",
+    "root": "MuiMaterialToggleButtonGroup"
   }, {
-    "entry": "material-ui-toolbar",
-    "root": "MaterialUIToolbar"
+    "entry": "mui-material-toolbar",
+    "root": "MuiMaterialToolbar"
   }, {
-    "entry": "material-ui-tooltip",
-    "root": "MaterialUITooltip"
+    "entry": "mui-material-tooltip",
+    "root": "MuiMaterialTooltip"
   }, {
-    "entry": "material-ui-typography",
-    "root": "MaterialUITypography"
+    "entry": "mui-material-typography",
+    "root": "MuiMaterialTypography"
   }, {
-    "entry": "material-ui-unstable-trap-focus",
-    "root": "MaterialUIUnstableTrapFocus"
+    "entry": "mui-material-unstable-trap-focus",
+    "root": "MuiMaterialUnstableTrapFocus"
   }, {
-    "entry": "material-ui-zoom",
-    "root": "MaterialUIZoom"
+    "entry": "mui-material-zoom",
+    "root": "MuiMaterialZoom"
   }, {
-    "entry": "material-ui-use-autocomplete",
-    "root": "MaterialUIUseAutocomplete"
+    "entry": "mui-material-use-autocomplete",
+    "root": "MuiMaterialUseAutocomplete"
   }, {
-    "entry": "material-ui-use-media-query",
-    "root": "MaterialUIUseMediaQuery"
+    "entry": "mui-material-use-media-query",
+    "root": "MuiMaterialUseMediaQuery"
   }, {
-    "entry": "material-ui-use-pagination",
-    "root": "MaterialUIUsePagination"
+    "entry": "mui-material-use-pagination",
+    "root": "MuiMaterialUsePagination"
   }, {
-    "entry": "material-ui-use-scroll-trigger",
-    "root": "MaterialUIUseScrollTrigger"
+    "entry": "mui-material-use-scroll-trigger",
+    "root": "MuiMaterialUseScrollTrigger"
   }, {
-    "entry": "material-ui-use-touch-ripple",
-    "root": "MaterialUIUseTouchRipple"
+    "entry": "mui-material-use-touch-ripple",
+    "root": "MuiMaterialUseTouchRipple"
   }, {
-    "entry": "material-ui-lab-calendar-picker",
-    "root": "MaterialUILabCalendarPicker"
+    "entry": "mui-lab-calendar-picker",
+    "root": "MuiLabCalendarPicker"
   }, {
-    "entry": "material-ui-lab-calendar-picker-skeleton",
-    "root": "MaterialUILabCalendarPickerSkeleton"
+    "entry": "mui-lab-calendar-picker-skeleton",
+    "root": "MuiLabCalendarPickerSkeleton"
   }, {
-    "entry": "material-ui-lab-clock-picker",
-    "root": "MaterialUILabClockPicker"
+    "entry": "mui-lab-clock-picker",
+    "root": "MuiLabClockPicker"
   }, {
-    "entry": "material-ui-lab-date-picker",
-    "root": "MaterialUILabDatePicker"
+    "entry": "mui-lab-date-picker",
+    "root": "MuiLabDatePicker"
   }, {
-    "entry": "material-ui-lab-date-range-picker",
-    "root": "MaterialUILabDateRangePicker"
+    "entry": "mui-lab-date-range-picker",
+    "root": "MuiLabDateRangePicker"
   }, {
-    "entry": "material-ui-lab-date-range-picker-day",
-    "root": "MaterialUILabDateRangePickerDay"
+    "entry": "mui-lab-date-range-picker-day",
+    "root": "MuiLabDateRangePickerDay"
   }, {
-    "entry": "material-ui-lab-date-time-picker",
-    "root": "MaterialUILabDateTimePicker"
+    "entry": "mui-lab-date-time-picker",
+    "root": "MuiLabDateTimePicker"
   }, {
-    "entry": "material-ui-lab-desktop-date-picker",
-    "root": "MaterialUILabDesktopDatePicker"
+    "entry": "mui-lab-desktop-date-picker",
+    "root": "MuiLabDesktopDatePicker"
   }, {
-    "entry": "material-ui-lab-desktop-date-range-picker",
-    "root": "MaterialUILabDesktopDateRangePicker"
+    "entry": "mui-lab-desktop-date-range-picker",
+    "root": "MuiLabDesktopDateRangePicker"
   }, {
-    "entry": "material-ui-lab-desktop-date-time-picker",
-    "root": "MaterialUILabDesktopDateTimePicker"
+    "entry": "mui-lab-desktop-date-time-picker",
+    "root": "MuiLabDesktopDateTimePicker"
   }, {
-    "entry": "material-ui-lab-desktop-time-picker",
-    "root": "MaterialUILabDesktopTimePicker"
+    "entry": "mui-lab-desktop-time-picker",
+    "root": "MuiLabDesktopTimePicker"
   }, {
-    "entry": "material-ui-lab-loading-button",
-    "root": "MaterialUILabLoadingButton"
+    "entry": "mui-lab-loading-button",
+    "root": "MuiLabLoadingButton"
   }, {
-    "entry": "material-ui-lab-localization-provider",
-    "root": "MaterialUILabLocalizationProvider"
+    "entry": "mui-lab-localization-provider",
+    "root": "MuiLabLocalizationProvider"
   }, {
-    "entry": "material-ui-lab-mobile-date-picker",
-    "root": "MaterialUILabMobileDatePicker"
+    "entry": "mui-lab-masonry",
+    "root": "MuiLabMasonry"
   }, {
-    "entry": "material-ui-lab-mobile-date-range-picker",
-    "root": "MaterialUILabMobileDateRangePicker"
+    "entry": "mui-lab-masonry-item",
+    "root": "MuiLabMasonryItem"
   }, {
-    "entry": "material-ui-lab-mobile-date-time-picker",
-    "root": "MaterialUILabMobileDateTimePicker"
+    "entry": "mui-lab-mobile-date-picker",
+    "root": "MuiLabMobileDatePicker"
   }, {
-    "entry": "material-ui-lab-mobile-time-picker",
-    "root": "MaterialUILabMobileTimePicker"
+    "entry": "mui-lab-mobile-date-range-picker",
+    "root": "MuiLabMobileDateRangePicker"
   }, {
-    "entry": "material-ui-lab-month-picker",
-    "root": "MaterialUILabMonthPicker"
+    "entry": "mui-lab-mobile-date-time-picker",
+    "root": "MuiLabMobileDateTimePicker"
   }, {
-    "entry": "material-ui-lab-pickers-day",
-    "root": "MaterialUILabPickersDay"
+    "entry": "mui-lab-mobile-time-picker",
+    "root": "MuiLabMobileTimePicker"
   }, {
-    "entry": "material-ui-lab-static-date-picker",
-    "root": "MaterialUILabStaticDatePicker"
+    "entry": "mui-lab-month-picker",
+    "root": "MuiLabMonthPicker"
   }, {
-    "entry": "material-ui-lab-static-date-range-picker",
-    "root": "MaterialUILabStaticDateRangePicker"
+    "entry": "mui-lab-pickers-day",
+    "root": "MuiLabPickersDay"
   }, {
-    "entry": "material-ui-lab-static-date-time-picker",
-    "root": "MaterialUILabStaticDateTimePicker"
+    "entry": "mui-lab-static-date-picker",
+    "root": "MuiLabStaticDatePicker"
   }, {
-    "entry": "material-ui-lab-static-time-picker",
-    "root": "MaterialUILabStaticTimePicker"
+    "entry": "mui-lab-static-date-range-picker",
+    "root": "MuiLabStaticDateRangePicker"
   }, {
-    "entry": "material-ui-lab-tab-context",
-    "root": "MaterialUILabTabContext"
+    "entry": "mui-lab-static-date-time-picker",
+    "root": "MuiLabStaticDateTimePicker"
   }, {
-    "entry": "material-ui-lab-tab-list",
-    "root": "MaterialUILabTabList"
+    "entry": "mui-lab-static-time-picker",
+    "root": "MuiLabStaticTimePicker"
   }, {
-    "entry": "material-ui-lab-tab-panel",
-    "root": "MaterialUILabTabPanel"
+    "entry": "mui-lab-tab-context",
+    "root": "MuiLabTabContext"
   }, {
-    "entry": "material-ui-lab-time-picker",
-    "root": "MaterialUILabTimePicker"
+    "entry": "mui-lab-tab-list",
+    "root": "MuiLabTabList"
   }, {
-    "entry": "material-ui-lab-timeline",
-    "root": "MaterialUILabTimeline"
+    "entry": "mui-lab-tab-panel",
+    "root": "MuiLabTabPanel"
   }, {
-    "entry": "material-ui-lab-timeline-connector",
-    "root": "MaterialUILabTimelineConnector"
+    "entry": "mui-lab-time-picker",
+    "root": "MuiLabTimePicker"
   }, {
-    "entry": "material-ui-lab-timeline-content",
-    "root": "MaterialUILabTimelineContent"
+    "entry": "mui-lab-timeline",
+    "root": "MuiLabTimeline"
   }, {
-    "entry": "material-ui-lab-timeline-dot",
-    "root": "MaterialUILabTimelineDot"
+    "entry": "mui-lab-timeline-connector",
+    "root": "MuiLabTimelineConnector"
   }, {
-    "entry": "material-ui-lab-timeline-item",
-    "root": "MaterialUILabTimelineItem"
+    "entry": "mui-lab-timeline-content",
+    "root": "MuiLabTimelineContent"
   }, {
-    "entry": "material-ui-lab-timeline-opposite-content",
-    "root": "MaterialUILabTimelineOppositeContent"
+    "entry": "mui-lab-timeline-dot",
+    "root": "MuiLabTimelineDot"
   }, {
-    "entry": "material-ui-lab-timeline-separator",
-    "root": "MaterialUILabTimelineSeparator"
+    "entry": "mui-lab-timeline-item",
+    "root": "MuiLabTimelineItem"
   }, {
-    "entry": "material-ui-lab-tree-item",
-    "root": "MaterialUILabTreeItem"
+    "entry": "mui-lab-timeline-opposite-content",
+    "root": "MuiLabTimelineOppositeContent"
   }, {
-    "entry": "material-ui-lab-tree-view",
-    "root": "MaterialUILabTreeView"
+    "entry": "mui-lab-timeline-separator",
+    "root": "MuiLabTimelineSeparator"
   }, {
-    "entry": "material-ui-lab-year-picker",
-    "root": "MaterialUILabYearPicker"
+    "entry": "mui-lab-tree-item",
+    "root": "MuiLabTreeItem"
+  }, {
+    "entry": "mui-lab-tree-view",
+    "root": "MuiLabTreeView"
+  }, {
+    "entry": "mui-lab-year-picker",
+    "root": "MuiLabYearPicker"
   }
 ]

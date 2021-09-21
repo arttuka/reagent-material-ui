@@ -1,0 +1,1 @@
+export { StepIcon as default, stepIconClasses } from '@mui/material'

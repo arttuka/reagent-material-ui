@@ -1,0 +1,1 @@
+export { InputBase as default, inputBaseClasses } from '@mui/material'

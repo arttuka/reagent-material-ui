@@ -1,0 +1,1 @@
+export { TimelineSeparator as default } from '@mui/lab'

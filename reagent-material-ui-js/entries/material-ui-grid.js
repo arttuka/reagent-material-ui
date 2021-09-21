@@ -1,1 +1,0 @@
-export { Grid as default, gridClasses } from '@material-ui/core'

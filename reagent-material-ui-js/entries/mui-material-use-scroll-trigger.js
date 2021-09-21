@@ -1,0 +1,1 @@
+export { useScrollTrigger as default } from '@mui/material'

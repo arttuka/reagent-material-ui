@@ -1,1 +1,0 @@
-export { StepIcon as default, stepIconClasses } from '@material-ui/core'

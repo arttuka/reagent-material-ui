@@ -1,1 +1,0 @@
-export { Icon as default, iconClasses } from '@material-ui/core'

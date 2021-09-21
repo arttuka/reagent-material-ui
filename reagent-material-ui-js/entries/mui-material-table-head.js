@@ -1,0 +1,1 @@
+export { TableHead as default, tableHeadClasses } from '@mui/material'

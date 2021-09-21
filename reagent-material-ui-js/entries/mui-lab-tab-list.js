@@ -1,0 +1,1 @@
+export { TabList as default } from '@mui/lab'

@@ -1,1 +1,0 @@
-export { TableBody as default, tableBodyClasses } from '@material-ui/core'

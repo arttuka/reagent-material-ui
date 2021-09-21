@@ -1,0 +1,1 @@
+export { TableFooter as default, tableFooterClasses } from '@mui/material'

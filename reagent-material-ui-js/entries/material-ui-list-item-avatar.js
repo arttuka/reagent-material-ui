@@ -1,1 +1,0 @@
-export { ListItemAvatar as default, listItemAvatarClasses } from '@material-ui/core'

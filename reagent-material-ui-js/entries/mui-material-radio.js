@@ -1,0 +1,1 @@
+export { Radio as default, radioClasses } from '@mui/material'

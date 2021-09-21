@@ -1,0 +1,1 @@
+export { Divider as default, dividerClasses } from '@mui/material'

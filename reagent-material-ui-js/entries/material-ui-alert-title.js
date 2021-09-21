@@ -1,1 +1,0 @@
-export { AlertTitle as default, alertTitleClasses } from '@material-ui/core'

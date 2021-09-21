@@ -1,0 +1,1 @@
+export { Rating as default, ratingClasses } from '@mui/material'

@@ -1,1 +1,0 @@
-export { CalendarPicker as default } from '@material-ui/lab'

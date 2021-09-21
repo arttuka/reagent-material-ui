@@ -1,1 +1,0 @@
-export { Avatar as default, avatarClasses } from '@material-ui/core'
