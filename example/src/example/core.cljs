@@ -1,25 +1,24 @@
 (ns ^:figwheel-hooks example.core
-  (:require-macros [reagent-material-ui.util :refer [react-component]])
+  (:require-macros [reagent-mui.util :refer [react-component]])
   (:require [reagent.core :as r]
             [reagent.dom :as rdom]
-            [reagent-material-ui.cljs-time-adapter :refer [cljs-time-adapter]]
-            [reagent-material-ui.colors :as colors]
-            [reagent-material-ui.core.button :refer [button]]
-            [reagent-material-ui.core.chip :refer [chip]]
-            [reagent-material-ui.core.css-baseline :refer [css-baseline]]
-            [reagent-material-ui.core.input-adornment :refer [input-adornment]]
-            [reagent-material-ui.core.menu-item :refer [menu-item]]
-            [reagent-material-ui.core.stack :refer [stack]]
-            [reagent-material-ui.core.styled-engine-provider :refer [styled-engine-provider]]
-            [reagent-material-ui.core.text-field :refer [text-field]]
-            [reagent-material-ui.core.toolbar :refer [toolbar]]
-            [reagent-material-ui.icons.add-box :refer [add-box]]
-            [reagent-material-ui.icons.clear :refer [clear]]
-            [reagent-material-ui.icons.face :refer [face]]
-            [reagent-material-ui.icons.face-outlined :refer [face-outlined]]
-            [reagent-material-ui.lab.date-picker :refer [date-picker]]
-            [reagent-material-ui.lab.localization-provider :refer [localization-provider]]
-            [reagent-material-ui.styles :as styles]
+            [reagent-mui.cljs-time-adapter :refer [cljs-time-adapter]]
+            [reagent-mui.colors :as colors]
+            [reagent-mui.material.button :refer [button]]
+            [reagent-mui.material.chip :refer [chip]]
+            [reagent-mui.material.css-baseline :refer [css-baseline]]
+            [reagent-mui.material.input-adornment :refer [input-adornment]]
+            [reagent-mui.material.menu-item :refer [menu-item]]
+            [reagent-mui.material.stack :refer [stack]]
+            [reagent-mui.material.text-field :refer [text-field]]
+            [reagent-mui.material.toolbar :refer [toolbar]]
+            [reagent-mui.icons.add-box :refer [add-box]]
+            [reagent-mui.icons.clear :refer [clear]]
+            [reagent-mui.icons.face :refer [face]]
+            [reagent-mui.icons.face-outlined :refer [face-outlined]]
+            [reagent-mui.lab.date-picker :refer [date-picker]]
+            [reagent-mui.lab.localization-provider :refer [localization-provider]]
+            [reagent-mui.styles :as styles]
             [example.autocomplete :refer [autocomplete]])
   (:import (goog.i18n DateTimeSymbols_en_US)))
 
@@ -167,12 +166,10 @@
    [css-baseline]
    ;; localization-provider provides date handling utils to date and time pickers.
    ;; cljs-time-adapter is a date adapter that allows you to use cljs-time / goog.date date objects.
-   ;; styled-engine-provider is needed to ensure correct order of CSS injection until Material UI has completely migrated to emotion
    [localization-provider {:date-adapter cljs-time-adapter
                            :locale       DateTimeSymbols_en_US}
     [styles/theme-provider (styles/create-theme custom-theme)
-     [styled-engine-provider {:inject-first true}
-      [form]]]]])
+     [form]]]])
 
 (defn ^{:after-load true, :dev/after-load true}
   mount []

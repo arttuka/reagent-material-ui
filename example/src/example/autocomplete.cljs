@@ -1,8 +1,8 @@
 (ns example.autocomplete
-  (:require-macros [reagent-material-ui.util :refer [react-component]])
+  (:require-macros [reagent-mui.util :refer [react-component]])
   (:require [reagent.core :as r]
-            [reagent-material-ui.core.autocomplete :refer [autocomplete] :rename {autocomplete mui-autocomplete}]
-            [reagent-material-ui.core.text-field :refer [text-field]]))
+            [reagent-mui.material.autocomplete :refer [autocomplete] :rename {autocomplete mui-autocomplete}]
+            [reagent-mui.material.text-field :refer [text-field]]))
 
 (def options (clj->js [{:label "Denmark"
                         :code  "dk"
