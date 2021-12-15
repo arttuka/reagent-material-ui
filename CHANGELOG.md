@@ -2,6 +2,15 @@
 
 See [MUI changelog](https://github.com/mui-org/material-ui/blob/master/CHANGELOG.md) for changes in MUI.
 
+## 5.2.4-0
+
+**[compare](https://github.com/arttuka/reagent-material-ui/compare/v5.0.0-0...v5.2.4-0)**
+
+- Update MUI to v5.2.4
+- **BREAKING** Rename package `reagent-mui.core` to `reagent-mui.base` as in MUI
+- Fix React key warnings on some icons (#27)
+- Add support for MUI X Pro components (currently just DataGrid) (#25)
+
 ## 5.0.0-0
 
 **[compare](https://github.com/arttuka/reagent-material-ui/compare/v5.0.0-beta.5-0...v5.0.0-0)**
