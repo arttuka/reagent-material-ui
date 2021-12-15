@@ -11,7 +11,7 @@
   :plugins [[lein-cljfmt "0.8.0"]
             [lein-cljsbuild "1.1.8"]
             [lein-doo "0.1.11"]]
-  :source-paths ["src/core" "src/icons"]
+  :source-paths ["src/core" "src/x" "src/icons"]
   :resource-paths ["deps.cljs"]
   :profiles {:dev      {:test-paths     ["test"]
                         :resource-paths ["target" "dev-resources"]}
@@ -21,7 +21,7 @@
                                        [prismatic/dommy "1.1.0"]]}}
   :clean-targets ^{:protect false} ["target" ".shadow-cljs"]
   :cljfmt {:indents {forward-ref [[:inner 0]]}
-           :paths   ["src/core"]}
+           :paths   ["src/core" "src/x"]}
   :cljsbuild {:builds [{:id           "test"
                         :source-paths ["src/core" "test"]
                         :compiler     {:output-to     "target/public/js/test-main.js"

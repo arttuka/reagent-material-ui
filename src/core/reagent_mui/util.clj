@@ -34,3 +34,20 @@
                                      (js/Object.assign (cljs.core/js-obj "ref" ref#) props#)
                                      ~@(if (vector? path) path [path]))))]
      (reagent-mui.util/adapt-react-class component# ~display-name)))
+
+(defmacro with-unchanged-js-props
+  "Returns a new component where the props are turned into JS objects
+   that keep the same JS reference if the CLJS prop is unchanged"
+  [component]
+  `(fn [params#]
+     (reagent.core/with-let [value-atom# (atom nil)]
+       (let [prev-values# @value-atom#
+             new-values# (into {} (for [[k# v#] params#]
+                                    [k# (let [prev# (get prev-values# k#)]
+                                          {:value    v#
+                                           :js-value (if (= v# (:value prev#))
+                                                       (:js-value prev#)
+                                                       (~'clj->js v#))})]))]
+         (reset! value-atom# new-values#)
+         [~component (into {} (for [[k# v#] new-values#]
+                                [k# (:js-value v#)]))]))))

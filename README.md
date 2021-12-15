@@ -47,6 +47,14 @@ See the example project for a usage example.
 If you want to use another date library, you can use [date-fns](https://date-fns.org/) adapters.
 The adapters from MUI Lab are not included in this library.
 
+#### MUI X Pro
+
+This library also includes components from [MUI X Pro](https://material-ui.com/store/items/material-ui-pro/).
+Namespace `reagent-mui.x` contains those components.
+
+MUI X Pro components are only supported in projects with NPM dependencies.
+They can't be used in projects with CLJSJS sources.
+
 #### Using npm dependencies with Figwheel Main
 
 To use npm dependencies with Figwheel Main, you need to exclude prebuilt JS files (React from CLJSJS and MUI from this library).

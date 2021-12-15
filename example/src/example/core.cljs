@@ -12,6 +12,7 @@
             [reagent-mui.material.stack :refer [stack]]
             [reagent-mui.material.text-field :refer [text-field]]
             [reagent-mui.material.toolbar :refer [toolbar]]
+            [reagent-mui.material.typography :refer [typography]]
             [reagent-mui.icons.add-box :refer [add-box]]
             [reagent-mui.icons.clear :refer [clear]]
             [reagent-mui.icons.face :refer [face]]
@@ -19,7 +20,8 @@
             [reagent-mui.lab.date-picker :refer [date-picker]]
             [reagent-mui.lab.localization-provider :refer [localization-provider]]
             [reagent-mui.styles :as styles]
-            [example.autocomplete :refer [autocomplete]])
+            [example.autocomplete :refer [autocomplete]]
+            [example.data-grid :as data-grid])
   (:import (goog.i18n DateTimeSymbols_en_US)))
 
 (set! *warn-on-infer* true)
@@ -156,7 +158,9 @@
    [autocomplete {:class     (:text-field classes)
                   :value     @autocomplete-state
                   :on-change (fn [new-value]
-                               (reset! autocomplete-state new-value))}]])
+                               (reset! autocomplete-state new-value))}]
+   [typography {:variant :h5} "Data Grid"]
+   [data-grid/component]])
 
 (def form (styles/styled form* custom-styles))
 
