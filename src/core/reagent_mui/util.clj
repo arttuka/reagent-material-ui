@@ -32,5 +32,5 @@
   `(let [component# (react/memo (forward-ref ~(symbol display-name) [props# ref#]
                                   (e (.-default ~'SvgIcon)
                                      (js/Object.assign (cljs.core/js-obj "ref" ref#) props#)
-                                     ~path)))]
+                                     ~@(if (vector? path) path [path]))))]
      (reagent-mui.util/adapt-react-class component# ~display-name)))
