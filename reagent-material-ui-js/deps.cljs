@@ -4,15 +4,17 @@
    :provides ["@mui/material"],
    :global-exports {"@mui/material" MuiMaterial},
    :requires
-   ["@mui/core"
-    "@mui/core/AutocompleteUnstyled"
-    "@mui/core/BackdropUnstyled"
-    "@mui/core/BadgeUnstyled"
-    "@mui/core/ModalUnstyled"
-    "@mui/core/NoSsr"
-    "@mui/core/Portal"
-    "@mui/core/SliderUnstyled"
-    "@mui/core/composeClasses"
+   ["@mui/base"
+    "@mui/base/AutocompleteUnstyled"
+    "@mui/base/BackdropUnstyled"
+    "@mui/base/BadgeUnstyled"
+    "@mui/base/ClickAwayListener"
+    "@mui/base/ModalUnstyled"
+    "@mui/base/NoSsr"
+    "@mui/base/PopperUnstyled"
+    "@mui/base/SliderUnstyled"
+    "@mui/base/TextareaAutosize"
+    "@mui/base/composeClasses"
     "@mui/utils"
     "react"
     "react-dom"]}
@@ -31,7 +33,7 @@
    :provides ["@mui/lab"],
    :global-exports {"@mui/lab" MuiLab},
    :requires
-   ["@mui/core"
+   ["@mui/base"
     "@mui/material"
     "@mui/material/Alert"
     "@mui/material/AlertTitle"
@@ -69,26 +71,34 @@
     "@mui/utils"
     "react"
     "react-dom"]}
-  {:file "mui/mui-core.inc.js",
-   :file-min "mui/mui-core.min.inc.js",
-   :provides ["@mui/core"],
-   :global-exports {"@mui/core" MuiCore},
+  {:file "mui/mui-base.inc.js",
+   :file-min "mui/mui-base.min.inc.js",
+   :provides ["@mui/base"],
+   :global-exports {"@mui/base" MuiBase},
    :requires
-   ["@mui/core/AutocompleteUnstyled"
-    "@mui/core/BackdropUnstyled"
-    "@mui/core/BadgeUnstyled"
-    "@mui/core/ButtonUnstyled"
-    "@mui/core/FormControlUnstyled"
-    "@mui/core/ModalUnstyled"
-    "@mui/core/NoSsr"
-    "@mui/core/Portal"
-    "@mui/core/SliderUnstyled"
-    "@mui/core/SwitchUnstyled"
-    "@mui/core/Unstable_TrapFocus"
-    "@mui/core/composeClasses"
-    "@mui/core/generateUtilityClass"
-    "@mui/core/generateUtilityClasses"
-    "@mui/core/utils"]}
+   ["@mui/base/AutocompleteUnstyled"
+    "@mui/base/BackdropUnstyled"
+    "@mui/base/BadgeUnstyled"
+    "@mui/base/ButtonUnstyled"
+    "@mui/base/ClickAwayListener"
+    "@mui/base/FormControlUnstyled"
+    "@mui/base/InputUnstyled"
+    "@mui/base/ModalUnstyled"
+    "@mui/base/NoSsr"
+    "@mui/base/PopperUnstyled"
+    "@mui/base/Portal"
+    "@mui/base/SliderUnstyled"
+    "@mui/base/SwitchUnstyled"
+    "@mui/base/TabPanelUnstyled"
+    "@mui/base/TabUnstyled"
+    "@mui/base/TabsListUnstyled"
+    "@mui/base/TabsUnstyled"
+    "@mui/base/TextareaAutosize"
+    "@mui/base/Unstable_TrapFocus"
+    "@mui/base/composeClasses"
+    "@mui/base/generateUtilityClass"
+    "@mui/base/generateUtilityClasses"
+    "@mui/base/utils"]}
   {:file "mui/mui-styles.inc.js",
    :file-min "mui/mui-styles.min.inc.js",
    :provides ["@mui/styles"],
@@ -1050,124 +1060,212 @@
    :provides ["@mui/lab/YearPicker"],
    :global-exports {"@mui/lab/YearPicker" MuiLabYearPicker},
    :requires ["@mui/lab"]}
-  {:file "mui/mui-core-backdrop-unstyled.inc.js",
-   :file-min "mui/mui-core-backdrop-unstyled.min.inc.js",
-   :provides ["@mui/core/BackdropUnstyled"],
+  {:file "mui/mui-base-backdrop-unstyled.inc.js",
+   :file-min "mui/mui-base-backdrop-unstyled.min.inc.js",
+   :provides ["@mui/base/BackdropUnstyled"],
    :global-exports
-   {"@mui/core/BackdropUnstyled" MuiCoreBackdropUnstyled},
+   {"@mui/base/BackdropUnstyled" MuiBaseBackdropUnstyled},
    :requires
-   ["@mui/core/composeClasses"
-    "@mui/core/generateUtilityClass"
-    "@mui/core/generateUtilityClasses"
-    "@mui/core/utils"
+   ["@mui/base/composeClasses"
+    "@mui/base/generateUtilityClass"
+    "@mui/base/generateUtilityClasses"
+    "@mui/base/utils"
     "react"]}
-  {:file "mui/mui-core-badge-unstyled.inc.js",
-   :file-min "mui/mui-core-badge-unstyled.min.inc.js",
-   :provides ["@mui/core/BadgeUnstyled"],
-   :global-exports {"@mui/core/BadgeUnstyled" MuiCoreBadgeUnstyled},
+  {:file "mui/mui-base-badge-unstyled.inc.js",
+   :file-min "mui/mui-base-badge-unstyled.min.inc.js",
+   :provides ["@mui/base/BadgeUnstyled"],
+   :global-exports {"@mui/base/BadgeUnstyled" MuiBaseBadgeUnstyled},
    :requires
-   ["@mui/core/composeClasses"
-    "@mui/core/generateUtilityClass"
-    "@mui/core/generateUtilityClasses"
-    "@mui/core/utils"
+   ["@mui/base/composeClasses"
+    "@mui/base/generateUtilityClass"
+    "@mui/base/generateUtilityClasses"
     "@mui/utils"
     "react"]}
-  {:file "mui/mui-core-button-unstyled.inc.js",
-   :file-min "mui/mui-core-button-unstyled.min.inc.js",
-   :provides ["@mui/core/ButtonUnstyled"],
-   :global-exports {"@mui/core/ButtonUnstyled" MuiCoreButtonUnstyled},
+  {:file "mui/mui-base-button-unstyled.inc.js",
+   :file-min "mui/mui-base-button-unstyled.min.inc.js",
+   :provides ["@mui/base/ButtonUnstyled"],
+   :global-exports {"@mui/base/ButtonUnstyled" MuiBaseButtonUnstyled},
    :requires
-   ["@mui/core/composeClasses"
-    "@mui/core/generateUtilityClass"
-    "@mui/core/generateUtilityClasses"
-    "@mui/core/utils"
+   ["@mui/base/composeClasses"
+    "@mui/base/generateUtilityClass"
+    "@mui/base/generateUtilityClasses"
+    "@mui/base/utils"
     "@mui/utils"
     "react"]}
-  {:file "mui/mui-core-form-control-unstyled.inc.js",
-   :file-min "mui/mui-core-form-control-unstyled.min.inc.js",
-   :provides ["@mui/core/FormControlUnstyled"],
+  {:file "mui/mui-base-click-away-listener.inc.js",
+   :file-min "mui/mui-base-click-away-listener.min.inc.js",
+   :provides ["@mui/base/ClickAwayListener"],
    :global-exports
-   {"@mui/core/FormControlUnstyled" MuiCoreFormControlUnstyled},
-   :requires
-   ["@mui/core/generateUtilityClass"
-    "@mui/core/generateUtilityClasses"
-    "@mui/utils"
-    "react"]}
-  {:file "mui/mui-core-modal-unstyled.inc.js",
-   :file-min "mui/mui-core-modal-unstyled.min.inc.js",
-   :provides ["@mui/core/ModalUnstyled"],
-   :global-exports {"@mui/core/ModalUnstyled" MuiCoreModalUnstyled},
-   :requires
-   ["@mui/core/Portal"
-    "@mui/core/Unstable_TrapFocus"
-    "@mui/core/composeClasses"
-    "@mui/core/generateUtilityClass"
-    "@mui/core/generateUtilityClasses"
-    "@mui/core/utils"
-    "@mui/utils"
-    "react"]}
-  {:file "mui/mui-core-no-ssr.inc.js",
-   :file-min "mui/mui-core-no-ssr.min.inc.js",
-   :provides ["@mui/core/NoSsr"],
-   :global-exports {"@mui/core/NoSsr" MuiCoreNoSsr},
+   {"@mui/base/ClickAwayListener" MuiBaseClickAwayListener},
    :requires ["@mui/utils" "react"]}
-  {:file "mui/mui-core-portal.inc.js",
-   :file-min "mui/mui-core-portal.min.inc.js",
-   :provides ["@mui/core/Portal"],
-   :global-exports {"@mui/core/Portal" MuiCorePortal},
+  {:file "mui/mui-base-form-control-unstyled.inc.js",
+   :file-min "mui/mui-base-form-control-unstyled.min.inc.js",
+   :provides ["@mui/base/FormControlUnstyled"],
+   :global-exports
+   {"@mui/base/FormControlUnstyled" MuiBaseFormControlUnstyled},
+   :requires
+   ["@mui/base/generateUtilityClass"
+    "@mui/base/generateUtilityClasses"
+    "@mui/utils"
+    "react"]}
+  {:file "mui/mui-base-input-unstyled.inc.js",
+   :file-min "mui/mui-base-input-unstyled.min.inc.js",
+   :provides ["@mui/base/InputUnstyled"],
+   :global-exports {"@mui/base/InputUnstyled" MuiBaseInputUnstyled},
+   :requires
+   ["@mui/base/FormControlUnstyled"
+    "@mui/base/generateUtilityClass"
+    "@mui/base/generateUtilityClasses"
+    "@mui/base/utils"
+    "@mui/utils"
+    "react"]}
+  {:file "mui/mui-base-modal-unstyled.inc.js",
+   :file-min "mui/mui-base-modal-unstyled.min.inc.js",
+   :provides ["@mui/base/ModalUnstyled"],
+   :global-exports {"@mui/base/ModalUnstyled" MuiBaseModalUnstyled},
+   :requires
+   ["@mui/base/Portal"
+    "@mui/base/Unstable_TrapFocus"
+    "@mui/base/composeClasses"
+    "@mui/base/generateUtilityClass"
+    "@mui/base/generateUtilityClasses"
+    "@mui/base/utils"
+    "@mui/utils"
+    "react"]}
+  {:file "mui/mui-base-no-ssr.inc.js",
+   :file-min "mui/mui-base-no-ssr.min.inc.js",
+   :provides ["@mui/base/NoSsr"],
+   :global-exports {"@mui/base/NoSsr" MuiBaseNoSsr},
+   :requires ["@mui/utils" "react"]}
+  {:file "mui/mui-base-popper-unstyled.inc.js",
+   :file-min "mui/mui-base-popper-unstyled.min.inc.js",
+   :provides ["@mui/base/PopperUnstyled"],
+   :global-exports {"@mui/base/PopperUnstyled" MuiBasePopperUnstyled},
+   :requires ["@mui/base/Portal" "@mui/utils" "react"]}
+  {:file "mui/mui-base-portal.inc.js",
+   :file-min "mui/mui-base-portal.min.inc.js",
+   :provides ["@mui/base/Portal"],
+   :global-exports {"@mui/base/Portal" MuiBasePortal},
    :requires ["@mui/utils" "react" "react-dom"]}
-  {:file "mui/mui-core-slider-unstyled.inc.js",
-   :file-min "mui/mui-core-slider-unstyled.min.inc.js",
-   :provides ["@mui/core/SliderUnstyled"],
-   :global-exports {"@mui/core/SliderUnstyled" MuiCoreSliderUnstyled},
+  {:file "mui/mui-base-slider-unstyled.inc.js",
+   :file-min "mui/mui-base-slider-unstyled.min.inc.js",
+   :provides ["@mui/base/SliderUnstyled"],
+   :global-exports {"@mui/base/SliderUnstyled" MuiBaseSliderUnstyled},
    :requires
-   ["@mui/core/composeClasses"
-    "@mui/core/generateUtilityClass"
-    "@mui/core/generateUtilityClasses"
-    "@mui/core/utils"
+   ["@mui/base/composeClasses"
+    "@mui/base/generateUtilityClass"
+    "@mui/base/generateUtilityClasses"
+    "@mui/base/utils"
     "@mui/utils"
     "react"]}
-  {:file "mui/mui-core-switch-unstyled.inc.js",
-   :file-min "mui/mui-core-switch-unstyled.min.inc.js",
-   :provides ["@mui/core/SwitchUnstyled"],
-   :global-exports {"@mui/core/SwitchUnstyled" MuiCoreSwitchUnstyled},
+  {:file "mui/mui-base-switch-unstyled.inc.js",
+   :file-min "mui/mui-base-switch-unstyled.min.inc.js",
+   :provides ["@mui/base/SwitchUnstyled"],
+   :global-exports {"@mui/base/SwitchUnstyled" MuiBaseSwitchUnstyled},
    :requires
-   ["@mui/core/generateUtilityClass"
-    "@mui/core/generateUtilityClasses"
+   ["@mui/base/generateUtilityClass"
+    "@mui/base/generateUtilityClasses"
     "@mui/utils"
     "react"]}
-  {:file "mui/mui-core-unstable-trap-focus.inc.js",
-   :file-min "mui/mui-core-unstable-trap-focus.min.inc.js",
-   :provides ["@mui/core/Unstable_TrapFocus"],
+  {:file "mui/mui-base-table-pagination-unstyled.inc.js",
+   :file-min "mui/mui-base-table-pagination-unstyled.min.inc.js",
+   :provides ["@mui/base/TablePaginationUnstyled"],
    :global-exports
-   {"@mui/core/Unstable_TrapFocus" MuiCoreUnstableTrapFocus},
+   {"@mui/base/TablePaginationUnstyled"
+    MuiBaseTablePaginationUnstyled},
+   :requires
+   ["@mui/base/composeClasses"
+    "@mui/base/generateUtilityClass"
+    "@mui/base/generateUtilityClasses"
+    "@mui/base/utils"
+    "@mui/utils"
+    "react"]}
+  {:file "mui/mui-base-tab-panel-unstyled.inc.js",
+   :file-min "mui/mui-base-tab-panel-unstyled.min.inc.js",
+   :provides ["@mui/base/TabPanelUnstyled"],
+   :global-exports
+   {"@mui/base/TabPanelUnstyled" MuiBaseTabPanelUnstyled},
+   :requires
+   ["@mui/base/TabsUnstyled"
+    "@mui/base/composeClasses"
+    "@mui/base/generateUtilityClass"
+    "@mui/base/generateUtilityClasses"
+    "@mui/base/utils"
+    "react"]}
+  {:file "mui/mui-base-tabs-list-unstyled.inc.js",
+   :file-min "mui/mui-base-tabs-list-unstyled.min.inc.js",
+   :provides ["@mui/base/TabsListUnstyled"],
+   :global-exports
+   {"@mui/base/TabsListUnstyled" MuiBaseTabsListUnstyled},
+   :requires
+   ["@mui/base/TabsUnstyled"
+    "@mui/base/composeClasses"
+    "@mui/base/generateUtilityClass"
+    "@mui/base/generateUtilityClasses"
+    "@mui/base/utils"
+    "@mui/utils"
+    "react"]}
+  {:file "mui/mui-base-tabs-unstyled.inc.js",
+   :file-min "mui/mui-base-tabs-unstyled.min.inc.js",
+   :provides ["@mui/base/TabsUnstyled"],
+   :global-exports {"@mui/base/TabsUnstyled" MuiBaseTabsUnstyled},
+   :requires
+   ["@mui/base/composeClasses"
+    "@mui/base/generateUtilityClass"
+    "@mui/base/generateUtilityClasses"
+    "@mui/base/utils"
+    "@mui/utils"
+    "react"]}
+  {:file "mui/mui-base-tab-unstyled.inc.js",
+   :file-min "mui/mui-base-tab-unstyled.min.inc.js",
+   :provides ["@mui/base/TabUnstyled"],
+   :global-exports {"@mui/base/TabUnstyled" MuiBaseTabUnstyled},
+   :requires
+   ["@mui/base/ButtonUnstyled"
+    "@mui/base/TabsUnstyled"
+    "@mui/base/composeClasses"
+    "@mui/base/generateUtilityClass"
+    "@mui/base/generateUtilityClasses"
+    "@mui/utils"
+    "react"]}
+  {:file "mui/mui-base-unstable-trap-focus.inc.js",
+   :file-min "mui/mui-base-unstable-trap-focus.min.inc.js",
+   :provides ["@mui/base/Unstable_TrapFocus"],
+   :global-exports
+   {"@mui/base/Unstable_TrapFocus" MuiBaseUnstableTrapFocus},
    :requires ["@mui/utils" "react"]}
-  {:file "mui/mui-core-compose-classes.inc.js",
-   :file-min "mui/mui-core-compose-classes.min.inc.js",
-   :provides ["@mui/core/composeClasses"],
-   :global-exports {"@mui/core/composeClasses" MuiCoreComposeClasses},
+  {:file "mui/mui-base-compose-classes.inc.js",
+   :file-min "mui/mui-base-compose-classes.min.inc.js",
+   :provides ["@mui/base/composeClasses"],
+   :global-exports {"@mui/base/composeClasses" MuiBaseComposeClasses},
    :requires []}
-  {:file "mui/mui-core-generate-utility-class.inc.js",
-   :file-min "mui/mui-core-generate-utility-class.min.inc.js",
-   :provides ["@mui/core/generateUtilityClass"],
+  {:file "mui/mui-base-generate-utility-class.inc.js",
+   :file-min "mui/mui-base-generate-utility-class.min.inc.js",
+   :provides ["@mui/base/generateUtilityClass"],
    :global-exports
-   {"@mui/core/generateUtilityClass" MuiCoreGenerateUtilityClass},
+   {"@mui/base/generateUtilityClass" MuiBaseGenerateUtilityClass},
    :requires []}
-  {:file "mui/mui-core-generate-utility-classes.inc.js",
-   :file-min "mui/mui-core-generate-utility-classes.min.inc.js",
-   :provides ["@mui/core/generateUtilityClasses"],
+  {:file "mui/mui-base-generate-utility-classes.inc.js",
+   :file-min "mui/mui-base-generate-utility-classes.min.inc.js",
+   :provides ["@mui/base/generateUtilityClasses"],
    :global-exports
-   {"@mui/core/generateUtilityClasses" MuiCoreGenerateUtilityClasses},
-   :requires ["@mui/core/generateUtilityClass"]}
-  {:file "mui/mui-core-utils.inc.js",
-   :file-min "mui/mui-core-utils.min.inc.js",
-   :provides ["@mui/core/utils"],
-   :global-exports {"@mui/core/utils" MuiCoreUtils},
+   {"@mui/base/generateUtilityClasses" MuiBaseGenerateUtilityClasses},
+   :requires ["@mui/base/generateUtilityClass"]}
+  {:file "mui/mui-base-textarea-autosize.inc.js",
+   :file-min "mui/mui-base-textarea-autosize.min.inc.js",
+   :provides ["@mui/base/TextareaAutosize"],
+   :global-exports
+   {"@mui/base/TextareaAutosize" MuiBaseTextareaAutosize},
+   :requires ["@mui/utils" "react"]}
+  {:file "mui/mui-base-utils.inc.js",
+   :file-min "mui/mui-base-utils.min.inc.js",
+   :provides ["@mui/base/utils"],
+   :global-exports {"@mui/base/utils" MuiBaseUtils},
    :requires []}
-  {:file "mui/mui-core-autocomplete-unstyled.inc.js",
-   :file-min "mui/mui-core-autocomplete-unstyled.min.inc.js",
-   :provides ["@mui/core/AutocompleteUnstyled"],
+  {:file "mui/mui-base-autocomplete-unstyled.inc.js",
+   :file-min "mui/mui-base-autocomplete-unstyled.min.inc.js",
+   :provides ["@mui/base/AutocompleteUnstyled"],
    :global-exports
-   {"@mui/core/AutocompleteUnstyled" MuiCoreAutocompleteUnstyled},
+   {"@mui/base/AutocompleteUnstyled" MuiBaseAutocompleteUnstyled},
    :requires ["@mui/utils" "react"]}],
  :externs ["mui/mui.ext.js"]}

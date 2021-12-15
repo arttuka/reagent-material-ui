@@ -2,7 +2,7 @@ const path = require('path')
 const {merge} = require('webpack-merge')
 const TerserWebpackPlugin = require('terser-webpack-plugin')
 const components = require('./entries/components.json')
-const coreComponents = require('./entries/coreComponents.json')
+const baseComponents = require('./entries/baseComponents.json')
 
 const toKebabCase = (s) => s.replace(/([a-z])_?([A-Z])/g, '$1-$2').toLowerCase()
 const toPascalCase = (s) => s[0].toUpperCase() + s.slice(1).replace(/_/, '')
@@ -14,10 +14,15 @@ const makeExternal = (root, lib) => ({
   umd: lib
 })
 
-const makeComponentExternal = (name, isCore = false) => makeExternal(
-  (isCore ? 'MuiCore' : 'MuiMaterial') + toPascalCase(name),
-  (isCore ? 'mui-core-' : 'mui-material-') + toKebabCase(name)
-)
+const makeComponentExternal = (name, isBase = false, property = null) => {
+  const pascalName = (isBase ? 'MuiBase' : 'MuiMaterial') + toPascalCase(name)
+  const kebabName = (isBase ? 'mui-base-' : 'mui-material-') + toKebabCase(name)
+  return (
+    property !== null
+      ? makeExternal([pascalName, property], [kebabName, property])
+      : makeExternal(pascalName, kebabName)
+  )
+}
 
 const getName = (re, request) => {
   if (re.test(request)) {
@@ -26,7 +31,7 @@ const getName = (re, request) => {
   }
 }
 
-const isCore = (context) => /@mui\/core\/[^/]*$/.test(context)
+const isBase = (context) => /@mui\/base\/[^/]*$/.test(context)
 
 const makeEntry = (externals) => ({entry, root}) => ({
   entry: {
@@ -86,6 +91,13 @@ const production = {
   }
 }
 
+const baseInternals = {
+  '../utils/isHostComponent': makeComponentExternal('Utils', true, 'isHostComponent'),
+  '../utils/extractEventHandlers': makeComponentExternal('Utils', true, 'extractEventHandlers'),
+  '../FormControlUnstyled/useFormControl': makeComponentExternal('FormControlUnstyled', true, 'useFormControlUnstyled'),
+  '../FormControlUnstyled/FormControlContext': makeComponentExternal('FormControlUnstyled', true, 'FormControlUnstyledContext')
+}
+
 const externals = {
   components: function ({request}, callback) {
     const name = getName(/^@mui\/material\/(.*)$/, request)
@@ -99,25 +111,23 @@ const externals = {
   material: {
     '@mui/material': makeExternal('MuiMaterial', 'mui-material')
   },
-  core: function ({context, request}, callback) {
-    const name = getName(/^@mui\/core\/(.*)$/, request)
-    if (isCore(context)) {
+  base: function ({context, request}, callback) {
+    const name = getName(/^@mui\/base\/(.*)$/, request)
+    if (isBase(context)) {
       return callback()
-    } else if (request === '@mui/core') {
-      return callback(null, makeExternal('MuiCore', 'mui-core'))
+    } else if (request === '@mui/base') {
+      return callback(null, makeExternal('MuiBase', 'mui-base'))
     } else if (name) {
       return callback(null, makeComponentExternal(name, true))
     }
     callback()
   },
-  coreInternal: function ({context, request}, callback) {
+  baseInternal: function ({context, request}, callback) {
     const name = getName(/^\.\.\/(.*)$/, request)
-    if (!isCore(context)) {
+    if (!isBase(context)) {
       return callback()
-    } else if (request === '../utils/isHostComponent') {
-      return callback(null, makeExternal(['MuiCoreUtils', 'isHostComponent'], ['mui-core-utils', 'isHostComponent']))
-    } else if (request === '../utils/extractEventHandlers') {
-      return callback(null, makeExternal(['MuiCoreUtils', 'extractEventHandlers'], ['mui-core-utils', 'extractEventHandlers']))
+    } else if (request in baseInternals) {
+      return callback(null, baseInternals[request])
     } else if (request === '../utils/appendOwnerState') {
       return callback()
     } else if (name) {
@@ -125,7 +135,7 @@ const externals = {
     }
     callback()
   },
-  coreIndex: function ({request}, callback) {
+  baseIndex: function ({request}, callback) {
     const name = getName(/^\.\/(.*)$/, request)
     if (name) {
       return callback(null, makeComponentExternal(name, true))
@@ -152,7 +162,7 @@ const entries = [{
     }
   },
   externals: [
-    externals.core,
+    externals.base,
     externals.utils
   ]
 }, {
@@ -197,7 +207,7 @@ const entries = [{
   externals: [
     externals.components,
     externals.material,
-    externals.core,
+    externals.base,
     externals.utils
   ]
 }, {
@@ -227,25 +237,25 @@ const entries = [{
   },
 }, {
   entry: {
-    'mui-core': path.resolve(__dirname, '../node_modules/@mui/core/index.js')
+    'mui-base': path.resolve(__dirname, '../node_modules/@mui/base/index.js')
   },
   output: {
     library: {
       name: {
-        root: 'MuiCore'
+        root: 'MuiBase'
       }
     }
   },
   externals: [
-    externals.coreIndex
+    externals.baseIndex
   ],
 }].concat(components.map(makeEntry([
   externals.material,
   externals.lab,
-  externals.core,
+  externals.base,
   externals.utils
-]))).concat(coreComponents.map(makeEntry([
-  externals.coreInternal,
+]))).concat(baseComponents.map(makeEntry([
+  externals.baseInternal,
   externals.utils
 ])))
 
