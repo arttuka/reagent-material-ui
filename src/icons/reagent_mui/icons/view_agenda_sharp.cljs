@@ -5,5 +5,5 @@
             ["@mui/material/SvgIcon" :as SvgIcon]
             [reagent-mui.util]))
 
-(def view-agenda-sharp (create-svg-icon (e "path" #js {"d" "M21 13H2v8h19v-8zm0-10H2v8h19V3z"})
+(def view-agenda-sharp (create-svg-icon (e "path" #js {"d" "M3 13h18v8H3zM3 3h18v8H3z"})
                                         "ViewAgendaSharp"))
