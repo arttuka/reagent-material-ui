@@ -2,7 +2,7 @@
   "name": "reagent-material-ui",
   "private": true,
   "devDependencies": {
-    "karma": "^6.3.9",
+    "karma": "^6.3.14",
     "karma-chrome-launcher": "^3.1.0",
     "karma-cli": "^2.0.0",
     "karma-cljs-test": "^0.1.0",
