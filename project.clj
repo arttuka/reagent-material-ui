@@ -15,7 +15,7 @@
   :resource-paths ["deps.cljs"]
   :profiles {:dev      {:test-paths     ["test"]
                         :resource-paths ["target" "dev-resources"]}
-             :provided {:dependencies [[org.clojure/clojurescript "1.10.896"]
+             :provided {:dependencies [[org.clojure/clojurescript "1.10.914"]
                                        [cljsjs/react "17.0.2-0"]
                                        [cljsjs/react-dom "17.0.2-0"]
                                        [prismatic/dommy "1.1.0"]]}}

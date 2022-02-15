@@ -18,17 +18,32 @@
     "entry": "mui-base-input-unstyled",
     "root": "MuiBaseInputUnstyled"
   }, {
+    "entry": "mui-base-listbox-unstyled",
+    "root": "MuiBaseListboxUnstyled"
+  }, {
     "entry": "mui-base-modal-unstyled",
     "root": "MuiBaseModalUnstyled"
   }, {
+    "entry": "mui-base-multi-select-unstyled",
+    "root": "MuiBaseMultiSelectUnstyled"
+  }, {
     "entry": "mui-base-no-ssr",
     "root": "MuiBaseNoSsr"
+  }, {
+    "entry": "mui-base-option-group-unstyled",
+    "root": "MuiBaseOptionGroupUnstyled"
+  }, {
+    "entry": "mui-base-option-unstyled",
+    "root": "MuiBaseOptionUnstyled"
   }, {
     "entry": "mui-base-popper-unstyled",
     "root": "MuiBasePopperUnstyled"
   }, {
     "entry": "mui-base-portal",
     "root": "MuiBasePortal"
+  }, {
+    "entry": "mui-base-select-unstyled",
+    "root": "MuiBaseSelectUnstyled"
   }, {
     "entry": "mui-base-slider-unstyled",
     "root": "MuiBaseSliderUnstyled"

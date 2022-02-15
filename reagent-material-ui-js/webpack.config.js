@@ -94,8 +94,12 @@ const production = {
 const baseInternals = {
   '../utils/isHostComponent': makeComponentExternal('Utils', true, 'isHostComponent'),
   '../utils/extractEventHandlers': makeComponentExternal('Utils', true, 'extractEventHandlers'),
+  '../utils/areArraysEqual': makeComponentExternal('Utils', true, 'areArraysEqual'),
   '../FormControlUnstyled/useFormControl': makeComponentExternal('FormControlUnstyled', true, 'useFormControlUnstyled'),
-  '../FormControlUnstyled/FormControlContext': makeComponentExternal('FormControlUnstyled', true, 'FormControlUnstyledContext')
+  '../FormControlUnstyled/FormControlContext': makeComponentExternal('FormControlUnstyled', true, 'FormControlUnstyledContext'),
+  '../SelectUnstyled/useSelect': makeComponentExternal('SelectUnstyled', true, 'useSelect'),
+  '../SelectUnstyled/SelectUnstyledContext': makeComponentExternal('SelectUnstyled', true, 'SelectUnstyledContext'),
+  '../SelectUnstyled/selectUnstyledClasses': makeComponentExternal('SelectUnstyled', true, 'selectUnstyledClasses')
 }
 
 const externals = {
@@ -129,6 +133,8 @@ const externals = {
     } else if (request in baseInternals) {
       return callback(null, baseInternals[request])
     } else if (request === '../utils/appendOwnerState') {
+      return callback()
+    } else if (request === '../SelectUnstyled/utils') {
       return callback()
     } else if (name) {
       return callback(null, makeComponentExternal(name, true))
