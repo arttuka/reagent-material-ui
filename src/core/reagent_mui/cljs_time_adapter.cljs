@@ -36,7 +36,7 @@
 
 (defn ^:private to-cljs-date [value]
   (cond
-    (undefined? value) (time/now)
+    (undefined? value) (time/time-now)
     (nil? value) nil
     (time/date? value) value
     :else (coerce/to-date-time value)))
