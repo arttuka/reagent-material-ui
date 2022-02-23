@@ -108,6 +108,13 @@
                 x))
             m))
 
+(defn wrap-all-js-functions [m]
+  (postwalk (fn [x]
+              (if (fn? x)
+                (wrap-js-function x)
+                x))
+            m))
+
 (defn reactify-component [component]
   (let [reactified (forward-ref [props ref]
                      (let [clj-props (assoc (js->clj' props) :ref ref)]
