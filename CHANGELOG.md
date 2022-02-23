@@ -2,6 +2,14 @@
 
 See [MUI changelog](https://github.com/mui-org/material-ui/blob/master/CHANGELOG.md) for changes in MUI.
 
+## 5.4.3-0
+
+**[compare](https://github.com/arttuka/reagent-material-ui/compare/v5.2.4-0...v5.4.3-0)**
+
+- Update MUI to v5.4.3
+- Use local timezone instead of UTC by default in `reagent-mui/cljs-time-adapter` (#30) @patapizza
+- Allow string as component in `reagent-mui.styles/styled`
+
 ## 5.2.4-0
 
 **[compare](https://github.com/arttuka/reagent-material-ui/compare/v5.0.0-0...v5.2.4-0)**
