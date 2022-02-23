@@ -14,7 +14,10 @@
   ([component styles]
    (styled component {} styles))
   ([component opts styles]
-   (let [styled-component (mui-styles/styled (util/reactify-component component) (clj->js opts))]
+   (let [react-component (if (string? component)
+                           component
+                           (util/reactify-component component))
+         styled-component (mui-styles/styled react-component (clj->js opts))]
      (util/adapt-react-class
       (styled-component (util/wrap-styles styles))))))
 
