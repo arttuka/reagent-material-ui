@@ -1,3 +1,8 @@
 /checkouts
 /target
 /resources/public/js
+/node_modules
+.cpcache
+.idea
+.lsp
+.shadow-cljs

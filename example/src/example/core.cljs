@@ -21,6 +21,7 @@
             [reagent-mui.lab.localization-provider :refer [localization-provider]]
             [reagent-mui.styles :as styles]
             [example.autocomplete :refer [autocomplete]]
+            [example.select :as select]
             [example.data-grid :as data-grid])
   (:import (goog.i18n DateTimeSymbols_en_US)))
 
@@ -160,7 +161,12 @@
                   :on-change (fn [new-value]
                                (reset! autocomplete-state new-value))}]
    [typography {:variant :h5} "Data Grid"]
-   [data-grid/component]])
+   [data-grid/component]
+   [stack {:direction :row
+           :spacing   2}
+    [:> select/component {:options [{:label "Red" :value "#D32F2F"}
+                                    {:label "Blue" :value "#2196F3"}]
+                          :placeholder "Select a color"}]]])
 
 (def form (styles/styled form* custom-styles))
 

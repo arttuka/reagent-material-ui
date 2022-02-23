@@ -2,6 +2,10 @@
 
 Example project demonstrating `arttuka/reagent-material-ui`. Server will run at http://localhost:9500/
 
+If you're running this example with NPM deps,
+you can also uncomment the `example.data-grid` require
+and its use in `core.cljs` to see an example of `@mui/x-data-grid`.
+
 ### Run with Figwheel Main
 
 #### Leiningen + CLJSJS deps
