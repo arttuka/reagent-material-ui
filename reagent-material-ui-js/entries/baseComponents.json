@@ -21,6 +21,12 @@
     "entry": "mui-base-listbox-unstyled",
     "root": "MuiBaseListboxUnstyled"
   }, {
+    "entry": "mui-base-menu-unstyled",
+    "root": "MuiBaseMenuUnstyled"
+  }, {
+    "entry": "mui-base-menu-item-unstyled",
+    "root": "MuiBaseMenuItemUnstyled"
+  }, {
     "entry": "mui-base-modal-unstyled",
     "root": "MuiBaseModalUnstyled"
   }, {
@@ -68,6 +74,9 @@
   }, {
     "entry": "mui-base-unstable-trap-focus",
     "root": "MuiBaseUnstableTrapFocus"
+  }, {
+    "entry": "mui-base-class-name",
+    "root": "MuiBaseClassName"
   }, {
     "entry": "mui-base-compose-classes",
     "root": "MuiBaseComposeClasses"

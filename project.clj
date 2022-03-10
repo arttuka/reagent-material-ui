@@ -4,7 +4,7 @@
   :license {:name "Eclipse Public License 2.0"
             :url  "https://www.eclipse.org/legal/epl-2.0/"}
   :dependencies [[org.clojure/clojure "1.10.3"]
-                 [reagent "1.1.0"]
+                 [reagent "1.1.1"]
                  [com.andrewmcveigh/cljs-time "0.5.2"]
                  [camel-snake-kebab "0.4.2"]
                  [arttuka/reagent-material-ui-js "5.4.3-0"]]
@@ -15,7 +15,7 @@
   :resource-paths ["deps.cljs"]
   :profiles {:dev      {:test-paths     ["test"]
                         :resource-paths ["target" "dev-resources"]}
-             :provided {:dependencies [[org.clojure/clojurescript "1.10.914"]
+             :provided {:dependencies [[org.clojure/clojurescript "1.11.4"]
                                        [cljsjs/react "17.0.2-0"]
                                        [cljsjs/react-dom "17.0.2-0"]
                                        [prismatic/dommy "1.1.0"]]}}

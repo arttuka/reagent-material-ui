@@ -15,6 +15,7 @@
     "@mui/base/Portal"
     "@mui/base/SliderUnstyled"
     "@mui/base/TextareaAutosize"
+    "@mui/base/className"
     "@mui/base/composeClasses"
     "@mui/base/generateUtilityClass"
     "@mui/base/generateUtilityClasses"
@@ -87,6 +88,8 @@
     "@mui/base/FormControlUnstyled"
     "@mui/base/InputUnstyled"
     "@mui/base/ListboxUnstyled"
+    "@mui/base/MenuItemUnstyled"
+    "@mui/base/MenuUnstyled"
     "@mui/base/ModalUnstyled"
     "@mui/base/MultiSelectUnstyled"
     "@mui/base/NoSsr"
@@ -1133,6 +1136,32 @@
    :global-exports
    {"@mui/base/ListboxUnstyled" MuiBaseListboxUnstyled},
    :requires ["@mui/base/utils" "@mui/utils" "react"]}
+  {:file "mui/mui-base-menu-unstyled.inc.js",
+   :file-min "mui/mui-base-menu-unstyled.min.inc.js",
+   :provides ["@mui/base/MenuUnstyled"],
+   :global-exports {"@mui/base/MenuUnstyled" MuiBaseMenuUnstyled},
+   :requires
+   ["@mui/base/ListboxUnstyled"
+    "@mui/base/PopperUnstyled"
+    "@mui/base/composeClasses"
+    "@mui/base/generateUtilityClass"
+    "@mui/base/generateUtilityClasses"
+    "@mui/utils"
+    "react"]}
+  {:file "mui/mui-base-menu-item-unstyled.inc.js",
+   :file-min "mui/mui-base-menu-item-unstyled.min.inc.js",
+   :provides ["@mui/base/MenuItemUnstyled"],
+   :global-exports
+   {"@mui/base/MenuItemUnstyled" MuiBaseMenuItemUnstyled},
+   :requires
+   ["@mui/base/ButtonUnstyled"
+    "@mui/base/MenuUnstyled"
+    "@mui/base/composeClasses"
+    "@mui/base/generateUtilityClass"
+    "@mui/base/generateUtilityClasses"
+    "@mui/base/utils"
+    "@mui/utils"
+    "react"]}
   {:file "mui/mui-base-modal-unstyled.inc.js",
    :file-min "mui/mui-base-modal-unstyled.min.inc.js",
    :provides ["@mui/base/ModalUnstyled"],
@@ -1295,6 +1324,11 @@
    :global-exports
    {"@mui/base/Unstable_TrapFocus" MuiBaseUnstableTrapFocus},
    :requires ["@mui/utils" "react"]}
+  {:file "mui/mui-base-class-name.inc.js",
+   :file-min "mui/mui-base-class-name.min.inc.js",
+   :provides ["@mui/base/className"],
+   :global-exports {"@mui/base/className" MuiBaseClassName},
+   :requires []}
   {:file "mui/mui-base-compose-classes.inc.js",
    :file-min "mui/mui-base-compose-classes.min.inc.js",
    :provides ["@mui/base/composeClasses"],
@@ -1305,7 +1339,7 @@
    :provides ["@mui/base/generateUtilityClass"],
    :global-exports
    {"@mui/base/generateUtilityClass" MuiBaseGenerateUtilityClass},
-   :requires []}
+   :requires ["@mui/base/className"]}
   {:file "mui/mui-base-generate-utility-classes.inc.js",
    :file-min "mui/mui-base-generate-utility-classes.min.inc.js",
    :provides ["@mui/base/generateUtilityClasses"],

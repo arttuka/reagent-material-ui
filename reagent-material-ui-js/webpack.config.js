@@ -92,6 +92,7 @@ const production = {
 }
 
 const baseInternals = {
+  '../className/ClassNameGenerator': makeComponentExternal('className', true, 'unstable_ClassNameGenerator'),
   '../utils/isHostComponent': makeComponentExternal('Utils', true, 'isHostComponent'),
   '../utils/extractEventHandlers': makeComponentExternal('Utils', true, 'extractEventHandlers'),
   '../utils/areArraysEqual': makeComponentExternal('Utils', true, 'areArraysEqual'),
