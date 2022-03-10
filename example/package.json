@@ -1,20 +1,20 @@
 {
   "dependencies": {
-    "@emotion/react": "^11.7.1",
+    "@emotion/react": "^11.8.2",
     "@emotion/styled": "^11.6.0",
-    "@mui/lab": "5.0.0-alpha.70",
-    "@mui/material": "5.4.3",
-    "@mui/x-data-grid": "5.5.1",
+    "@mui/lab": "5.0.0-alpha.72",
+    "@mui/material": "5.5.0",
+    "@mui/x-data-grid": "5.6.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-transition-group": "^4.4.2",
-    "shadow-cljs": "2.16.12"
+    "shadow-cljs": "2.17.8"
   },
   "scripts": {
     "watch": "shadow-cljs watch dev"
   },
   "devDependencies": {
-    "webpack": "^5.69.0",
+    "webpack": "^5.70.0",
     "webpack-cli": "^4.9.2"
   }
 }
