@@ -2,6 +2,12 @@
 
 See [MUI changelog](https://github.com/mui-org/material-ui/blob/master/CHANGELOG.md) for changes in MUI.
 
+## 5.5.0-0
+
+**[compare](https://github.com/arttuka/reagent-material-ui/compare/v5.4.3-0...v5.5.0-0)**
+
+- Update MUI to v5.5.0
+
 ## 5.4.3-0
 
 **[compare](https://github.com/arttuka/reagent-material-ui/compare/v5.2.4-0...v5.4.3-0)**
