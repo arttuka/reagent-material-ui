@@ -1,5 +1,6 @@
 (ns reagent-mui.icons.merge
   "Imports @mui/icons-material/Merge as a Reagent component."
+  (:refer-clojure :exclude [merge])
   (:require-macros [reagent-mui.util :refer [create-svg-icon e]])
   (:require [react :as react]
             ["@mui/material/SvgIcon" :as SvgIcon]

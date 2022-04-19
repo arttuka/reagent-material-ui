@@ -1,6 +1,6 @@
 (ns reagent-mui.material.image-list-item
   "Imports @mui/material/ImageListItem as a Reagent component.
-   Original documentation is at https://mui.com/api/image-list-item/ ."
+   Original documentation is at https://mui.com/material-ui/api/image-list-item/ ."
   (:require [reagent-mui.util :refer [adapt-react-class]]
             ["@mui/material/ImageListItem" :as MuiImageListItem]))
 

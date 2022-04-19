@@ -1,1 +1,0 @@
-export { TimePicker as default } from '@mui/lab'

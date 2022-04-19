@@ -1,6 +1,6 @@
 (ns reagent-mui.material.menu-item
   "Imports @mui/material/MenuItem as a Reagent component.
-   Original documentation is at https://mui.com/api/menu-item/ ."
+   Original documentation is at https://mui.com/material-ui/api/menu-item/ ."
   (:require [reagent-mui.util :refer [adapt-react-class]]
             ["@mui/material/MenuItem" :as MuiMenuItem]))
 

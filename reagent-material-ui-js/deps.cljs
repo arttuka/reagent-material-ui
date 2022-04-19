@@ -6,7 +6,6 @@
    :requires
    ["@mui/base"
     "@mui/base/AutocompleteUnstyled"
-    "@mui/base/BackdropUnstyled"
     "@mui/base/BadgeUnstyled"
     "@mui/base/ClickAwayListener"
     "@mui/base/ModalUnstyled"
@@ -81,7 +80,6 @@
    :global-exports {"@mui/base" MuiBase},
    :requires
    ["@mui/base/AutocompleteUnstyled"
-    "@mui/base/BackdropUnstyled"
     "@mui/base/BadgeUnstyled"
     "@mui/base/ButtonUnstyled"
     "@mui/base/ClickAwayListener"
@@ -105,7 +103,7 @@
     "@mui/base/TabsListUnstyled"
     "@mui/base/TabsUnstyled"
     "@mui/base/TextareaAutosize"
-    "@mui/base/Unstable_TrapFocus"
+    "@mui/base/TrapFocus"
     "@mui/base/composeClasses"
     "@mui/base/generateUtilityClass"
     "@mui/base/generateUtilityClasses"
@@ -858,77 +856,10 @@
    :global-exports
    {"@mui/material/useTouchRipple" MuiMaterialUseTouchRipple},
    :requires ["@mui/material"]}
-  {:file "mui/mui-lab-calendar-picker.inc.js",
-   :file-min "mui/mui-lab-calendar-picker.min.inc.js",
-   :provides ["@mui/lab/CalendarPicker"],
-   :global-exports {"@mui/lab/CalendarPicker" MuiLabCalendarPicker},
-   :requires ["@mui/lab"]}
-  {:file "mui/mui-lab-calendar-picker-skeleton.inc.js",
-   :file-min "mui/mui-lab-calendar-picker-skeleton.min.inc.js",
-   :provides ["@mui/lab/CalendarPickerSkeleton"],
-   :global-exports
-   {"@mui/lab/CalendarPickerSkeleton" MuiLabCalendarPickerSkeleton},
-   :requires ["@mui/lab"]}
-  {:file "mui/mui-lab-clock-picker.inc.js",
-   :file-min "mui/mui-lab-clock-picker.min.inc.js",
-   :provides ["@mui/lab/ClockPicker"],
-   :global-exports {"@mui/lab/ClockPicker" MuiLabClockPicker},
-   :requires ["@mui/lab"]}
-  {:file "mui/mui-lab-date-picker.inc.js",
-   :file-min "mui/mui-lab-date-picker.min.inc.js",
-   :provides ["@mui/lab/DatePicker"],
-   :global-exports {"@mui/lab/DatePicker" MuiLabDatePicker},
-   :requires ["@mui/lab"]}
-  {:file "mui/mui-lab-date-range-picker.inc.js",
-   :file-min "mui/mui-lab-date-range-picker.min.inc.js",
-   :provides ["@mui/lab/DateRangePicker"],
-   :global-exports {"@mui/lab/DateRangePicker" MuiLabDateRangePicker},
-   :requires ["@mui/lab"]}
-  {:file "mui/mui-lab-date-range-picker-day.inc.js",
-   :file-min "mui/mui-lab-date-range-picker-day.min.inc.js",
-   :provides ["@mui/lab/DateRangePickerDay"],
-   :global-exports
-   {"@mui/lab/DateRangePickerDay" MuiLabDateRangePickerDay},
-   :requires ["@mui/lab"]}
-  {:file "mui/mui-lab-date-time-picker.inc.js",
-   :file-min "mui/mui-lab-date-time-picker.min.inc.js",
-   :provides ["@mui/lab/DateTimePicker"],
-   :global-exports {"@mui/lab/DateTimePicker" MuiLabDateTimePicker},
-   :requires ["@mui/lab"]}
-  {:file "mui/mui-lab-desktop-date-picker.inc.js",
-   :file-min "mui/mui-lab-desktop-date-picker.min.inc.js",
-   :provides ["@mui/lab/DesktopDatePicker"],
-   :global-exports
-   {"@mui/lab/DesktopDatePicker" MuiLabDesktopDatePicker},
-   :requires ["@mui/lab"]}
-  {:file "mui/mui-lab-desktop-date-range-picker.inc.js",
-   :file-min "mui/mui-lab-desktop-date-range-picker.min.inc.js",
-   :provides ["@mui/lab/DesktopDateRangePicker"],
-   :global-exports
-   {"@mui/lab/DesktopDateRangePicker" MuiLabDesktopDateRangePicker},
-   :requires ["@mui/lab"]}
-  {:file "mui/mui-lab-desktop-date-time-picker.inc.js",
-   :file-min "mui/mui-lab-desktop-date-time-picker.min.inc.js",
-   :provides ["@mui/lab/DesktopDateTimePicker"],
-   :global-exports
-   {"@mui/lab/DesktopDateTimePicker" MuiLabDesktopDateTimePicker},
-   :requires ["@mui/lab"]}
-  {:file "mui/mui-lab-desktop-time-picker.inc.js",
-   :file-min "mui/mui-lab-desktop-time-picker.min.inc.js",
-   :provides ["@mui/lab/DesktopTimePicker"],
-   :global-exports
-   {"@mui/lab/DesktopTimePicker" MuiLabDesktopTimePicker},
-   :requires ["@mui/lab"]}
   {:file "mui/mui-lab-loading-button.inc.js",
    :file-min "mui/mui-lab-loading-button.min.inc.js",
    :provides ["@mui/lab/LoadingButton"],
    :global-exports {"@mui/lab/LoadingButton" MuiLabLoadingButton},
-   :requires ["@mui/lab"]}
-  {:file "mui/mui-lab-localization-provider.inc.js",
-   :file-min "mui/mui-lab-localization-provider.min.inc.js",
-   :provides ["@mui/lab/LocalizationProvider"],
-   :global-exports
-   {"@mui/lab/LocalizationProvider" MuiLabLocalizationProvider},
    :requires ["@mui/lab"]}
   {:file "mui/mui-lab-masonry.inc.js",
    :file-min "mui/mui-lab-masonry.min.inc.js",
@@ -939,64 +870,6 @@
    :file-min "mui/mui-lab-masonry-item.min.inc.js",
    :provides ["@mui/lab/MasonryItem"],
    :global-exports {"@mui/lab/MasonryItem" MuiLabMasonryItem},
-   :requires ["@mui/lab"]}
-  {:file "mui/mui-lab-mobile-date-picker.inc.js",
-   :file-min "mui/mui-lab-mobile-date-picker.min.inc.js",
-   :provides ["@mui/lab/MobileDatePicker"],
-   :global-exports
-   {"@mui/lab/MobileDatePicker" MuiLabMobileDatePicker},
-   :requires ["@mui/lab"]}
-  {:file "mui/mui-lab-mobile-date-range-picker.inc.js",
-   :file-min "mui/mui-lab-mobile-date-range-picker.min.inc.js",
-   :provides ["@mui/lab/MobileDateRangePicker"],
-   :global-exports
-   {"@mui/lab/MobileDateRangePicker" MuiLabMobileDateRangePicker},
-   :requires ["@mui/lab"]}
-  {:file "mui/mui-lab-mobile-date-time-picker.inc.js",
-   :file-min "mui/mui-lab-mobile-date-time-picker.min.inc.js",
-   :provides ["@mui/lab/MobileDateTimePicker"],
-   :global-exports
-   {"@mui/lab/MobileDateTimePicker" MuiLabMobileDateTimePicker},
-   :requires ["@mui/lab"]}
-  {:file "mui/mui-lab-mobile-time-picker.inc.js",
-   :file-min "mui/mui-lab-mobile-time-picker.min.inc.js",
-   :provides ["@mui/lab/MobileTimePicker"],
-   :global-exports
-   {"@mui/lab/MobileTimePicker" MuiLabMobileTimePicker},
-   :requires ["@mui/lab"]}
-  {:file "mui/mui-lab-month-picker.inc.js",
-   :file-min "mui/mui-lab-month-picker.min.inc.js",
-   :provides ["@mui/lab/MonthPicker"],
-   :global-exports {"@mui/lab/MonthPicker" MuiLabMonthPicker},
-   :requires ["@mui/lab"]}
-  {:file "mui/mui-lab-pickers-day.inc.js",
-   :file-min "mui/mui-lab-pickers-day.min.inc.js",
-   :provides ["@mui/lab/PickersDay"],
-   :global-exports {"@mui/lab/PickersDay" MuiLabPickersDay},
-   :requires ["@mui/lab"]}
-  {:file "mui/mui-lab-static-date-picker.inc.js",
-   :file-min "mui/mui-lab-static-date-picker.min.inc.js",
-   :provides ["@mui/lab/StaticDatePicker"],
-   :global-exports
-   {"@mui/lab/StaticDatePicker" MuiLabStaticDatePicker},
-   :requires ["@mui/lab"]}
-  {:file "mui/mui-lab-static-date-range-picker.inc.js",
-   :file-min "mui/mui-lab-static-date-range-picker.min.inc.js",
-   :provides ["@mui/lab/StaticDateRangePicker"],
-   :global-exports
-   {"@mui/lab/StaticDateRangePicker" MuiLabStaticDateRangePicker},
-   :requires ["@mui/lab"]}
-  {:file "mui/mui-lab-static-date-time-picker.inc.js",
-   :file-min "mui/mui-lab-static-date-time-picker.min.inc.js",
-   :provides ["@mui/lab/StaticDateTimePicker"],
-   :global-exports
-   {"@mui/lab/StaticDateTimePicker" MuiLabStaticDateTimePicker},
-   :requires ["@mui/lab"]}
-  {:file "mui/mui-lab-static-time-picker.inc.js",
-   :file-min "mui/mui-lab-static-time-picker.min.inc.js",
-   :provides ["@mui/lab/StaticTimePicker"],
-   :global-exports
-   {"@mui/lab/StaticTimePicker" MuiLabStaticTimePicker},
    :requires ["@mui/lab"]}
   {:file "mui/mui-lab-tab-context.inc.js",
    :file-min "mui/mui-lab-tab-context.min.inc.js",
@@ -1012,11 +885,6 @@
    :file-min "mui/mui-lab-tab-panel.min.inc.js",
    :provides ["@mui/lab/TabPanel"],
    :global-exports {"@mui/lab/TabPanel" MuiLabTabPanel},
-   :requires ["@mui/lab"]}
-  {:file "mui/mui-lab-time-picker.inc.js",
-   :file-min "mui/mui-lab-time-picker.min.inc.js",
-   :provides ["@mui/lab/TimePicker"],
-   :global-exports {"@mui/lab/TimePicker" MuiLabTimePicker},
    :requires ["@mui/lab"]}
   {:file "mui/mui-lab-timeline.inc.js",
    :file-min "mui/mui-lab-timeline.min.inc.js",
@@ -1066,22 +934,6 @@
    :provides ["@mui/lab/TreeView"],
    :global-exports {"@mui/lab/TreeView" MuiLabTreeView},
    :requires ["@mui/lab"]}
-  {:file "mui/mui-lab-year-picker.inc.js",
-   :file-min "mui/mui-lab-year-picker.min.inc.js",
-   :provides ["@mui/lab/YearPicker"],
-   :global-exports {"@mui/lab/YearPicker" MuiLabYearPicker},
-   :requires ["@mui/lab"]}
-  {:file "mui/mui-base-backdrop-unstyled.inc.js",
-   :file-min "mui/mui-base-backdrop-unstyled.min.inc.js",
-   :provides ["@mui/base/BackdropUnstyled"],
-   :global-exports
-   {"@mui/base/BackdropUnstyled" MuiBaseBackdropUnstyled},
-   :requires
-   ["@mui/base/composeClasses"
-    "@mui/base/generateUtilityClass"
-    "@mui/base/generateUtilityClasses"
-    "@mui/base/utils"
-    "react"]}
   {:file "mui/mui-base-badge-unstyled.inc.js",
    :file-min "mui/mui-base-badge-unstyled.min.inc.js",
    :provides ["@mui/base/BadgeUnstyled"],
@@ -1168,7 +1020,7 @@
    :global-exports {"@mui/base/ModalUnstyled" MuiBaseModalUnstyled},
    :requires
    ["@mui/base/Portal"
-    "@mui/base/Unstable_TrapFocus"
+    "@mui/base/TrapFocus"
     "@mui/base/composeClasses"
     "@mui/base/generateUtilityClass"
     "@mui/base/generateUtilityClasses"
@@ -1318,11 +1170,10 @@
     "@mui/base/generateUtilityClasses"
     "@mui/utils"
     "react"]}
-  {:file "mui/mui-base-unstable-trap-focus.inc.js",
-   :file-min "mui/mui-base-unstable-trap-focus.min.inc.js",
-   :provides ["@mui/base/Unstable_TrapFocus"],
-   :global-exports
-   {"@mui/base/Unstable_TrapFocus" MuiBaseUnstableTrapFocus},
+  {:file "mui/mui-base-trap-focus.inc.js",
+   :file-min "mui/mui-base-trap-focus.min.inc.js",
+   :provides ["@mui/base/TrapFocus"],
+   :global-exports {"@mui/base/TrapFocus" MuiBaseTrapFocus},
    :requires ["@mui/utils" "react"]}
   {:file "mui/mui-base-class-name.inc.js",
    :file-min "mui/mui-base-class-name.min.inc.js",

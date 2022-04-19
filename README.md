@@ -39,21 +39,20 @@ This library also includes components from [MUI Lab](https://mui.com/components/
 
 Namespace `reagent-mui.lab` contains all components from `@mui/lab`.
 
+#### MUI X Pro
+
+This library also includes components from [MUI X](https://mui.com/x/advanced-components/).
+Namespace `reagent-mui.x` contains those components.
+
+MUI X components are only supported in projects with NPM dependencies.
+They can't be used in projects with CLJSJS sources.
+
 Namespace `reagent-mui.cljs-time-adapter` contains an adapter that lets you use the date pickers with `cljs-time` (`goog.date`) date objects.
-`reagent-mui.lab.localization-provider` accepts this adapter as its `date-adapter` property.
+`reagent-mui.x.localization-provider` accepts this adapter as its `date-adapter` property.
 The locale prop must be an instance of `goog.i18n.DateTimeSymbols`. The default locale is used if no locale prop is given.
 See the example project for a usage example.
 
-If you want to use another date library, you can use [date-fns](https://date-fns.org/) adapters.
-The adapters from MUI Lab are not included in this library.
-
-#### MUI X Pro
-
-This library also includes components from [MUI X Pro](https://material-ui.com/store/items/material-ui-pro/).
-Namespace `reagent-mui.x` contains those components.
-
-MUI X Pro components are only supported in projects with NPM dependencies.
-They can't be used in projects with CLJSJS sources.
+If you want to use another date library, you can use [adapters from `@mui/x-date-pickers`](https://mui.com/x/react-date-pickers/getting-started/#setup).
 
 #### Using npm dependencies with Figwheel Main
 

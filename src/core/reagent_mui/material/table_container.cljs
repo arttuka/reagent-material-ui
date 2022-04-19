@@ -1,6 +1,6 @@
 (ns reagent-mui.material.table-container
   "Imports @mui/material/TableContainer as a Reagent component.
-   Original documentation is at https://mui.com/api/table-container/ ."
+   Original documentation is at https://mui.com/material-ui/api/table-container/ ."
   (:require [reagent-mui.util :refer [adapt-react-class]]
             ["@mui/material/TableContainer" :as MuiTableContainer]))
 

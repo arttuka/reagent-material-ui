@@ -1,1 +1,0 @@
-export { StaticDateRangePicker as default } from '@mui/lab'

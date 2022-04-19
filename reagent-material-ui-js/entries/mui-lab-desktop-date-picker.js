@@ -1,1 +1,0 @@
-export { DesktopDatePicker as default } from '@mui/lab'

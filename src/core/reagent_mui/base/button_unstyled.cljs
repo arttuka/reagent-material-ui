@@ -1,6 +1,6 @@
 (ns reagent-mui.base.button-unstyled
   "Imports @mui/base/ButtonUnstyled as a Reagent component.
-   Original documentation is at https://mui.com/api/button-unstyled/ ."
+   Original documentation is at https://mui.com/base/api/button-unstyled/ ."
   (:require [reagent-mui.util :refer [adapt-react-class]]
             ["@mui/base/ButtonUnstyled" :as MuiButtonUnstyled]))
 

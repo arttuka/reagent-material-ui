@@ -1,6 +1,6 @@
 (ns reagent-mui.lab.timeline
   "Imports @mui/lab/Timeline as a Reagent component.
-   Original documentation is at https://mui.com/api/timeline/ ."
+   Original documentation is at https://mui.com/material-ui/api/timeline/ ."
   (:require [reagent-mui.util :refer [adapt-react-class]]
             ["@mui/lab/Timeline" :as MuiTimeline]))
 

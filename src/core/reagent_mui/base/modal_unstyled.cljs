@@ -1,6 +1,6 @@
 (ns reagent-mui.base.modal-unstyled
   "Imports @mui/base/ModalUnstyled as a Reagent component.
-   Original documentation is at https://mui.com/api/modal-unstyled/ ."
+   Original documentation is at https://mui.com/base/api/modal-unstyled/ ."
   (:require [reagent-mui.util :refer [adapt-react-class]]
             ["@mui/base/ModalUnstyled" :as MuiModalUnstyled]))
 

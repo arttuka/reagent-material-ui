@@ -1,6 +1,6 @@
 (ns reagent-mui.material.card-actions
   "Imports @mui/material/CardActions as a Reagent component.
-   Original documentation is at https://mui.com/api/card-actions/ ."
+   Original documentation is at https://mui.com/material-ui/api/card-actions/ ."
   (:require [reagent-mui.util :refer [adapt-react-class]]
             ["@mui/material/CardActions" :as MuiCardActions]))
 

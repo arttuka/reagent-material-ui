@@ -1,6 +1,6 @@
 (ns reagent-mui.material.textarea-autosize
   "Imports @mui/material/TextareaAutosize as a Reagent component.
-   Original documentation is at https://mui.com/api/textarea-autosize/ ."
+   Original documentation is at https://mui.com/material-ui/react-textarea-autosize/ ."
   (:require-macros [reagent-mui.util :refer [forward-ref]])
   (:require ["react" :as react]
             ["@mui/material/utils" :as mui-utils]

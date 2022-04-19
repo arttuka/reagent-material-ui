@@ -1,1 +1,0 @@
-export { MobileDateRangePicker as default } from '@mui/lab'

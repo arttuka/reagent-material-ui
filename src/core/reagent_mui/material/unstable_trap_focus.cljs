@@ -1,6 +1,6 @@
 (ns reagent-mui.material.unstable-trap-focus
   "Imports @mui/material/Unstable_TrapFocus as a Reagent component.
-   Original documentation is at https://mui.com/api/unstable-trap-focus/ ."
+   Original documentation is at https://mui.com/material-ui/api/unstable-trap-focus/ ."
   (:require [reagent-mui.util :refer [adapt-react-class]]
             ["@mui/material/Unstable_TrapFocus" :as MuiUnstable_TrapFocus]))
 

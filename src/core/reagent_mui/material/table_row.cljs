@@ -1,6 +1,6 @@
 (ns reagent-mui.material.table-row
   "Imports @mui/material/TableRow as a Reagent component.
-   Original documentation is at https://mui.com/api/table-row/ ."
+   Original documentation is at https://mui.com/material-ui/api/table-row/ ."
   (:require [reagent-mui.util :refer [adapt-react-class]]
             ["@mui/material/TableRow" :as MuiTableRow]))
 

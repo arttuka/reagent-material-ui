@@ -1,6 +1,6 @@
 (ns reagent-mui.material.box
   "Imports @mui/material/Box as a Reagent component.
-   Original documentation is at https://mui.com/api/box/ ."
+   Original documentation is at https://mui.com/material-ui/api/box/ ."
   (:require [reagent-mui.util :refer [adapt-react-class]]
             ["@mui/material/Box" :as MuiBox]))
 

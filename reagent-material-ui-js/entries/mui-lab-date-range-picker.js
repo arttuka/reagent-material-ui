@@ -1,1 +1,0 @@
-export { DateRangePicker as default } from '@mui/lab'

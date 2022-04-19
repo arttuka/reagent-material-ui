@@ -1,1 +1,0 @@
-export { StaticTimePicker as default } from '@mui/lab'

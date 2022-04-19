@@ -6,6 +6,7 @@
             [reagent-mui.util :as util]))
 
 (def ^:private theme-provider* (util/adapt-react-class mui-styles/ThemeProvider "mui-theme-provider"))
+(def ^:private experimental-css-vars-provider* (util/adapt-react-class mui-styles/Experimental_CssVarsProvider "mui-experimental-css-vars-provider"))
 
 (defn styled
   "The styled-components pattern. Takes a component and a styles-generating function or a styles object.
@@ -24,7 +25,7 @@
 (defn responsive-font-sizes
   "Takes a theme object and enhances it with responsive font options
    Options may optionally be passed in to override the defaults provided by Material-UI
-   See: https://mui.com/customization/theming/#responsivefontsizes-theme-options-theme"
+   See: https://mui.com/material-ui/customization/theming/#responsivefontsizes-theme-options-theme"
   ([theme]
    (responsive-font-sizes theme {}))
   ([theme options]
@@ -43,8 +44,24 @@
   (into [theme-provider* {:theme theme}]
         (map r/as-element children)))
 
+(defn experimental-css-vars-provider
+  "Experimental provider for the theme to inject styles into Material UI components.
+   In addition to providing the theme in the inner React context,
+   this new provider also generates CSS variables out of all tokens in the theme
+   that are not functions, and makes them available in the context as well.
+   Currently only supported by the Button component.
+   See: https://mui.com/material-ui/experimental-api/css-variables/"
+  [props & children]
+  (into [experimental-css-vars-provider* props]
+        (map r/as-element children)))
+
+(defn use-color-scheme
+  "Hook that provides the current mode and setMode function for experimental-css-vars-provider.
+  See: https://mui.com/material-ui/experimental-api/css-variables/"
+  []
+  (util/js->clj' (mui-styles/useColorScheme)))
+
 (defn create-theme
   "Takes an incomplete theme object and adds the missing parts"
   [options]
   (util/js->clj' (mui-styles/createTheme (util/clj->js' options))))
-

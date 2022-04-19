@@ -1,8 +1,5 @@
 [
   {
-    "entry": "mui-base-backdrop-unstyled",
-    "root": "MuiBaseBackdropUnstyled"
-  }, {
     "entry": "mui-base-badge-unstyled",
     "root": "MuiBaseBadgeUnstyled"
   }, {
@@ -72,8 +69,8 @@
     "entry": "mui-base-tab-unstyled",
     "root": "MuiBaseTabUnstyled"
   }, {
-    "entry": "mui-base-unstable-trap-focus",
-    "root": "MuiBaseUnstableTrapFocus"
+    "entry": "mui-base-trap-focus",
+    "root": "MuiBaseTrapFocus"
   }, {
     "entry": "mui-base-class-name",
     "root": "MuiBaseClassName"

@@ -1,6 +1,6 @@
 (ns reagent-mui.lab.tree-view
   "Imports @mui/lab/TreeView as a Reagent component.
-   Original documentation is at https://mui.com/api/tree-view/ ."
+   Original documentation is at https://mui.com/material-ui/api/tree-view/ ."
   (:require [reagent-mui.util :refer [adapt-react-class]]
             ["@mui/lab/TreeView" :as MuiTreeView]))
 

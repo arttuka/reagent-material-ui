@@ -1,6 +1,6 @@
 (ns reagent-mui.material.speed-dial
   "Imports @mui/material/SpeedDial as a Reagent component.
-   Original documentation is at https://mui.com/api/speed-dial/ ."
+   Original documentation is at https://mui.com/material-ui/api/speed-dial/ ."
   (:require [reagent-mui.util :refer [adapt-react-class]]
             ["@mui/material/SpeedDial" :as MuiSpeedDial]))
 

@@ -1,6 +1,6 @@
 (ns reagent-mui.material.autocomplete
   "Imports @mui/material/Autocomplete as a Reagent component.
-   Original documentation is at https://mui.com/api/autocomplete/ ."
+   Original documentation is at https://mui.com/material-ui/api/autocomplete/ ."
   (:require [reagent-mui.util :refer [adapt-react-class]]
             ["@mui/material/Autocomplete" :as MuiAutocomplete]))
 

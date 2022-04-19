@@ -405,80 +405,14 @@
     "entry": "mui-material-use-touch-ripple",
     "root": "MuiMaterialUseTouchRipple"
   }, {
-    "entry": "mui-lab-calendar-picker",
-    "root": "MuiLabCalendarPicker"
-  }, {
-    "entry": "mui-lab-calendar-picker-skeleton",
-    "root": "MuiLabCalendarPickerSkeleton"
-  }, {
-    "entry": "mui-lab-clock-picker",
-    "root": "MuiLabClockPicker"
-  }, {
-    "entry": "mui-lab-date-picker",
-    "root": "MuiLabDatePicker"
-  }, {
-    "entry": "mui-lab-date-range-picker",
-    "root": "MuiLabDateRangePicker"
-  }, {
-    "entry": "mui-lab-date-range-picker-day",
-    "root": "MuiLabDateRangePickerDay"
-  }, {
-    "entry": "mui-lab-date-time-picker",
-    "root": "MuiLabDateTimePicker"
-  }, {
-    "entry": "mui-lab-desktop-date-picker",
-    "root": "MuiLabDesktopDatePicker"
-  }, {
-    "entry": "mui-lab-desktop-date-range-picker",
-    "root": "MuiLabDesktopDateRangePicker"
-  }, {
-    "entry": "mui-lab-desktop-date-time-picker",
-    "root": "MuiLabDesktopDateTimePicker"
-  }, {
-    "entry": "mui-lab-desktop-time-picker",
-    "root": "MuiLabDesktopTimePicker"
-  }, {
     "entry": "mui-lab-loading-button",
     "root": "MuiLabLoadingButton"
-  }, {
-    "entry": "mui-lab-localization-provider",
-    "root": "MuiLabLocalizationProvider"
   }, {
     "entry": "mui-lab-masonry",
     "root": "MuiLabMasonry"
   }, {
     "entry": "mui-lab-masonry-item",
     "root": "MuiLabMasonryItem"
-  }, {
-    "entry": "mui-lab-mobile-date-picker",
-    "root": "MuiLabMobileDatePicker"
-  }, {
-    "entry": "mui-lab-mobile-date-range-picker",
-    "root": "MuiLabMobileDateRangePicker"
-  }, {
-    "entry": "mui-lab-mobile-date-time-picker",
-    "root": "MuiLabMobileDateTimePicker"
-  }, {
-    "entry": "mui-lab-mobile-time-picker",
-    "root": "MuiLabMobileTimePicker"
-  }, {
-    "entry": "mui-lab-month-picker",
-    "root": "MuiLabMonthPicker"
-  }, {
-    "entry": "mui-lab-pickers-day",
-    "root": "MuiLabPickersDay"
-  }, {
-    "entry": "mui-lab-static-date-picker",
-    "root": "MuiLabStaticDatePicker"
-  }, {
-    "entry": "mui-lab-static-date-range-picker",
-    "root": "MuiLabStaticDateRangePicker"
-  }, {
-    "entry": "mui-lab-static-date-time-picker",
-    "root": "MuiLabStaticDateTimePicker"
-  }, {
-    "entry": "mui-lab-static-time-picker",
-    "root": "MuiLabStaticTimePicker"
   }, {
     "entry": "mui-lab-tab-context",
     "root": "MuiLabTabContext"
@@ -488,9 +422,6 @@
   }, {
     "entry": "mui-lab-tab-panel",
     "root": "MuiLabTabPanel"
-  }, {
-    "entry": "mui-lab-time-picker",
-    "root": "MuiLabTimePicker"
   }, {
     "entry": "mui-lab-timeline",
     "root": "MuiLabTimeline"
@@ -518,8 +449,5 @@
   }, {
     "entry": "mui-lab-tree-view",
     "root": "MuiLabTreeView"
-  }, {
-    "entry": "mui-lab-year-picker",
-    "root": "MuiLabYearPicker"
   }
 ]

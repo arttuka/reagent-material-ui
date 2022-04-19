@@ -1,6 +1,6 @@
 (ns reagent-mui.material.popper
   "Imports @mui/material/Popper as a Reagent component.
-   Original documentation is at https://mui.com/api/popper/ ."
+   Original documentation is at https://mui.com/material-ui/api/popper/ ."
   (:require [reagent-mui.util :refer [adapt-react-class]]
             ["@mui/material/Popper" :as MuiPopper]))
 

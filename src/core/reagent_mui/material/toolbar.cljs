@@ -1,6 +1,6 @@
 (ns reagent-mui.material.toolbar
   "Imports @mui/material/Toolbar as a Reagent component.
-   Original documentation is at https://mui.com/api/toolbar/ ."
+   Original documentation is at https://mui.com/material-ui/api/toolbar/ ."
   (:require [reagent-mui.util :refer [adapt-react-class]]
             ["@mui/material/Toolbar" :as MuiToolbar]))
 

@@ -1,6 +1,6 @@
 (ns reagent-mui.material.text-field
   "Imports @mui/material/TextField as a Reagent component.
-   Original documentation is at https://mui.com/api/text-field/ ."
+   Original documentation is at https://mui.com/material/api/text-field/ ."
   (:require-macros [reagent-mui.util :refer [forward-ref]])
   (:require [react :as react]
             [reagent.core :as r]

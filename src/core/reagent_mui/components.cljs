@@ -1,6 +1,8 @@
 (ns reagent-mui.components
   "Imports all components from @mui/material as Reagent components.
-   Original documentation is at https://mui.com/api/ ."
+   Importing components from their own namespaces is preferred due to bundle size.
+   Requiring this namespace causes the whole @mui/material package to be included in the final bundle.
+   Original documentation is at https://mui.com/material/api/ ."
   (:refer-clojure :exclude [list])
   (:require reagent-mui.material.accordion
             reagent-mui.material.accordion-actions

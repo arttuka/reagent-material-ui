@@ -1,6 +1,6 @@
 (ns reagent-mui.material.mobile-stepper
   "Imports @mui/material/MobileStepper as a Reagent component.
-   Original documentation is at https://mui.com/api/mobile-stepper/ ."
+   Original documentation is at https://mui.com/material-ui/api/mobile-stepper/ ."
   (:require [reagent-mui.util :refer [adapt-react-class]]
             ["@mui/material/MobileStepper" :as MuiMobileStepper]))
 

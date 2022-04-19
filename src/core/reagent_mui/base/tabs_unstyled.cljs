@@ -1,6 +1,6 @@
 (ns reagent-mui.base.tabs-unstyled
   "Imports @mui/base/TabsUnstyled as a Reagent component.
-   Original documentation is at https://mui.com/api/tabs-unstyled/ ."
+   Original documentation is at https://mui.com/base/api/tabs-unstyled/ ."
   (:require [reagent-mui.util :refer [adapt-react-class]]
             ["@mui/base/TabsUnstyled" :as MuiTabsUnstyled]))
 
