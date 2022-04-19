@@ -35,8 +35,9 @@
                        {:keys [get-button-props get-listbox-props get-option-props value]} (wrap-all-js-functions
                                                                                             (use-select {:listbox-ref listbox-ref
                                                                                                          :options     options}))]
-                   (use-effect #(when listbox-visible?
-                                  (some-> (.-current listbox-ref) (.focus)))
+                   (use-effect #(do (when listbox-visible?
+                                      (some-> (.-current listbox-ref) (.focus)))
+                                    js/undefined)
                                #js [listbox-visible?])
                    [root {:on-mouse-over #(set-listbox-visible true)
                           :on-mouse-out  #(set-listbox-visible false)

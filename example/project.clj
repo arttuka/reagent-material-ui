@@ -1,7 +1,7 @@
 (defproject reagent-material-ui-example "1.0.0"
-  :dependencies [[org.clojure/clojure "1.10.3"]
+  :dependencies [[org.clojure/clojure "1.11.1"]
                  [org.clojure/clojurescript "1.11.4"]
-                 [arttuka/reagent-material-ui "5.5.0-0"
+                 [arttuka/reagent-material-ui "5.6.2-0"
                   #_#_ :exclusions [arttuka/reagent-material-ui-js]]
                  [cljsjs/react "17.0.2-0"]
                  [cljsjs/react-dom "17.0.2-0"]]
