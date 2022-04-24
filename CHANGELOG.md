@@ -2,6 +2,12 @@
 
 See [MUI changelog](https://github.com/mui-org/material-ui/blob/master/CHANGELOG.md) for changes in MUI.
 
+## 5.6.2-1
+
+**[compare](https://github.com/arttuka/reagent-material-ui/compare/v5.6.2-0...v5.6.2-1)**
+
+- Fix extern inference with Figwheel-Main (#35)
+
 ## 5.6.2-0
 
 **[compare](https://github.com/arttuka/reagent-material-ui/compare/v5.5.0-0...v5.6.2-0)**

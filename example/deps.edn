@@ -1,5 +1,5 @@
 {:paths   ["src" "target" "resources"]
- :deps    {arttuka/reagent-material-ui {:mvn/version "5.6.2-0"
+ :deps    {arttuka/reagent-material-ui {:mvn/version "5.6.2-1"
                                         #_#_:exclusions [arttuka/reagent-material-ui-js]}
            cljsjs/react                {:mvn/version "17.0.2-0"}
            cljsjs/react-dom            {:mvn/version "17.0.2-0"}
