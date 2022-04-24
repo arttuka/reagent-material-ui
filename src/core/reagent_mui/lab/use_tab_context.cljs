@@ -5,4 +5,4 @@
   (:require [reagent-mui.util :refer [wrap-js-function]]
             ["@mui/lab/TabContext" :as MuiTabContext]))
 
-(def use-tab-context (wrap-js-function (.-useTabContext MuiTabContext)))
+(def use-tab-context (wrap-js-function MuiTabContext/useTabContext))

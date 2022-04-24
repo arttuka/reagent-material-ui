@@ -4,4 +4,4 @@
   (:require [reagent-mui.util :refer [adapt-react-class]]
             ["@mui/x-date-pickers-pro/TimePicker" :as MuiTimePicker]))
 
-(def time-picker (adapt-react-class (.-TimePicker MuiTimePicker) "mui-time-picker"))
+(def time-picker (adapt-react-class MuiTimePicker/TimePicker "mui-time-picker"))

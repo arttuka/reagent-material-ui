@@ -4,4 +4,4 @@
   (:require [reagent-mui.util :refer [adapt-react-class]]
             ["@mui/x-date-pickers-pro/MonthPicker" :as MuiMonthPicker]))
 
-(def month-picker (adapt-react-class (.-MonthPicker MuiMonthPicker) "mui-month-picker"))
+(def month-picker (adapt-react-class MuiMonthPicker/MonthPicker "mui-month-picker"))

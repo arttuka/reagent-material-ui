@@ -5,4 +5,4 @@
   (:require [reagent-mui.util :refer [wrap-js-function]]
             ["@mui/base/InputUnstyled" :as MuiInputUnstyled]))
 
-(def use-input (wrap-js-function (.-useInput MuiInputUnstyled)))
+(def use-input (wrap-js-function MuiInputUnstyled/useInput))

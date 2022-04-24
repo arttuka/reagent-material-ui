@@ -5,4 +5,4 @@
   (:require [reagent-mui.util :refer [wrap-js-function]]
             ["@mui/base/SwitchUnstyled" :as MuiSwitchUnstyled]))
 
-(def use-switch (wrap-js-function (.-useSwitch MuiSwitchUnstyled)))
+(def use-switch (wrap-js-function MuiSwitchUnstyled/useSwitch))

@@ -5,4 +5,4 @@
   (:require [reagent-mui.util :refer [wrap-js-function]]
             ["@mui/base/SliderUnstyled" :as MuiSliderUnstyled]))
 
-(def use-slider (wrap-js-function (.-useSlider MuiSliderUnstyled)))
+(def use-slider (wrap-js-function MuiSliderUnstyled/useSlider))

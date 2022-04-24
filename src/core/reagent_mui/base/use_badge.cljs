@@ -5,4 +5,4 @@
   (:require [reagent-mui.util :refer [wrap-js-function]]
             ["@mui/base/BadgeUnstyled" :as MuiBadgeUnstyled]))
 
-(def use-badge (wrap-js-function (.-useBadge MuiBadgeUnstyled)))
+(def use-badge (wrap-js-function MuiBadgeUnstyled/useBadge))

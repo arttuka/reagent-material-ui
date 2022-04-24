@@ -4,4 +4,4 @@
   (:require [reagent-mui.util :refer [adapt-react-class]]
             ["@mui/x-date-pickers/StaticTimePicker" :as MuiStaticTimePicker]))
 
-(def static-time-picker (adapt-react-class (.-StaticTimePicker MuiStaticTimePicker) "mui-static-time-picker"))
+(def static-time-picker (adapt-react-class MuiStaticTimePicker/StaticTimePicker "mui-static-time-picker"))

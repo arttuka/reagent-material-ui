@@ -5,4 +5,4 @@
   (:require [reagent-mui.util :refer [wrap-js-function]]
             ["@mui/base/MenuItemUnstyled" :as MuiMenuItemUnstyled]))
 
-(def use-menu-item (wrap-js-function (.-useMenuItem MuiMenuItemUnstyled)))
+(def use-menu-item (wrap-js-function MuiMenuItemUnstyled/useMenuItem))

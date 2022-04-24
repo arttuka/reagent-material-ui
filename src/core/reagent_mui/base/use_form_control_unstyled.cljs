@@ -5,4 +5,4 @@
   (:require [reagent-mui.util :refer [wrap-js-function]]
             ["@mui/base/FormControlUnstyled" :as MuiFormControlUnstyled]))
 
-(def use-form-control-unstyled (wrap-js-function (.-useFormControlUnstyled MuiFormControlUnstyled)))
+(def use-form-control-unstyled (wrap-js-function MuiFormControlUnstyled/useFormControlUnstyled))

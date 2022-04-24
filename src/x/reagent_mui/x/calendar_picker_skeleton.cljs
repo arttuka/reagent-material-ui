@@ -4,4 +4,4 @@
   (:require [reagent-mui.util :refer [adapt-react-class]]
             ["@mui/x-date-pickers/CalendarPickerSkeleton" :as MuiCalendarPickerSkeleton]))
 
-(def calendar-picker-skeleton (adapt-react-class (.-CalendarPickerSkeleton MuiCalendarPickerSkeleton) "mui-calendar-picker-skeleton"))
+(def calendar-picker-skeleton (adapt-react-class MuiCalendarPickerSkeleton/CalendarPickerSkeleton "mui-calendar-picker-skeleton"))

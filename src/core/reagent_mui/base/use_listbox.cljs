@@ -5,4 +5,4 @@
   (:require [reagent-mui.util :refer [wrap-js-function]]
             ["@mui/base/ListboxUnstyled" :as MuiListboxUnstyled]))
 
-(def use-listbox (wrap-js-function (.-useListbox MuiListboxUnstyled)))
+(def use-listbox (wrap-js-function MuiListboxUnstyled/useListbox))

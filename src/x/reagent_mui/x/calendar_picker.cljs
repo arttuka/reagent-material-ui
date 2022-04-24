@@ -4,4 +4,4 @@
   (:require [reagent-mui.util :refer [adapt-react-class]]
             ["@mui/x-date-pickers/CalendarPicker" :as MuiCalendarPicker]))
 
-(def calendar-picker (adapt-react-class (.-CalendarPicker MuiCalendarPicker) "mui-calendar-picker"))
+(def calendar-picker (adapt-react-class MuiCalendarPicker/CalendarPicker "mui-calendar-picker"))

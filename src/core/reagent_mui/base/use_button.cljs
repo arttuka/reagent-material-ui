@@ -5,4 +5,4 @@
   (:require [reagent-mui.util :refer [wrap-js-function]]
             ["@mui/base/ButtonUnstyled" :as MuiButtonUnstyled]))
 
-(def use-button (wrap-js-function (.-useButton MuiButtonUnstyled)))
+(def use-button (wrap-js-function MuiButtonUnstyled/useButton))

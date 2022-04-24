@@ -5,4 +5,4 @@
   (:require [reagent-mui.util :refer [wrap-js-function]]
             ["@mui/base/SelectUnstyled" :as MuiSelectUnstyled]))
 
-(def use-select (wrap-js-function (.-useSelect MuiSelectUnstyled)))
+(def use-select (wrap-js-function MuiSelectUnstyled/useSelect))

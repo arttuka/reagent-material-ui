@@ -5,4 +5,4 @@
   (:require [reagent-mui.util :refer [adapt-react-class]]
             ["@mui/x-data-grid-pro" :as MuiDataGridPro]))
 
-(def data-grid-pro (with-unchanged-js-props (adapt-react-class (.-DataGridPro MuiDataGridPro) "mui-data-grid-pro")))
+(def data-grid-pro (with-unchanged-js-props (adapt-react-class MuiDataGridPro/DataGridPro "mui-data-grid-pro")))

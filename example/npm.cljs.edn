@@ -2,4 +2,6 @@
   :auto-bundle     :webpack
   :bundle-freq     :smart
   :final-output-to "target/public/js/app.js"}
-{:main example.core}
+{:main example.core
+ :infer-externs true
+ :language-in :es-next}

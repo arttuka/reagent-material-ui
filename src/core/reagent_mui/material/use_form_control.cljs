@@ -5,4 +5,4 @@
   (:require [reagent-mui.util :refer [wrap-js-function]]
             ["@mui/material/FormControl" :as MuiFormControl]))
 
-(def use-form-control (wrap-js-function (.-useFormControl MuiFormControl)))
+(def use-form-control (wrap-js-function MuiFormControl/useFormControl))

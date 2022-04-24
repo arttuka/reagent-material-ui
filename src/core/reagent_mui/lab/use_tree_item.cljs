@@ -5,4 +5,4 @@
   (:require [reagent-mui.util :refer [wrap-js-function]]
             ["@mui/lab/TreeItem" :as MuiTreeItem]))
 
-(def use-tree-item (wrap-js-function (.-useTreeItem MuiTreeItem)))
+(def use-tree-item (wrap-js-function MuiTreeItem/useTreeItem))

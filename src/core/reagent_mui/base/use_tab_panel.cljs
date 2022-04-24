@@ -5,4 +5,4 @@
   (:require [reagent-mui.util :refer [wrap-js-function]]
             ["@mui/base/TabPanelUnstyled" :as MuiTabPanelUnstyled]))
 
-(def use-tab-panel (wrap-js-function (.-useTabPanel MuiTabPanelUnstyled)))
+(def use-tab-panel (wrap-js-function MuiTabPanelUnstyled/useTabPanel))

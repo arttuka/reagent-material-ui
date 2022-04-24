@@ -4,4 +4,4 @@
   (:require [reagent-mui.util :refer [adapt-react-class]]
             ["@mui/x-date-pickers-pro/DesktopTimePicker" :as MuiDesktopTimePicker]))
 
-(def desktop-time-picker (adapt-react-class (.-DesktopTimePicker MuiDesktopTimePicker) "mui-desktop-time-picker"))
+(def desktop-time-picker (adapt-react-class MuiDesktopTimePicker/DesktopTimePicker "mui-desktop-time-picker"))

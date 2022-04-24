@@ -4,4 +4,4 @@
   (:require [reagent-mui.util :refer [adapt-react-class]]
             ["@mui/material/Modal" :as MuiModal]))
 
-(def modal-manager (adapt-react-class (.-ModalManager MuiModal) "mui-modal-manager"))
+(def modal-manager (adapt-react-class MuiModal/ModalManager "mui-modal-manager"))

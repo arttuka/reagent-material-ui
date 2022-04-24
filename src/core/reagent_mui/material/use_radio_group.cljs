@@ -5,4 +5,4 @@
   (:require [reagent-mui.util :refer [wrap-js-function]]
             ["@mui/material/RadioGroup" :as MuiRadioGroup]))
 
-(def use-radio-group (wrap-js-function (.-useRadioGroup MuiRadioGroup)))
+(def use-radio-group (wrap-js-function MuiRadioGroup/useRadioGroup))

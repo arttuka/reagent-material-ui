@@ -4,4 +4,4 @@
   (:require [reagent-mui.util :refer [adapt-react-class]]
             ["@mui/x-date-pickers/StaticDateTimePicker" :as MuiStaticDateTimePicker]))
 
-(def static-date-time-picker (adapt-react-class (.-StaticDateTimePicker MuiStaticDateTimePicker) "mui-static-date-time-picker"))
+(def static-date-time-picker (adapt-react-class MuiStaticDateTimePicker/StaticDateTimePicker "mui-static-date-time-picker"))
