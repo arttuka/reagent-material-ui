@@ -96,6 +96,7 @@ const baseInternals = {
   '../utils/isHostComponent': makeComponentExternal('Utils', true, 'isHostComponent'),
   '../utils/extractEventHandlers': makeComponentExternal('Utils', true, 'extractEventHandlers'),
   '../utils/areArraysEqual': makeComponentExternal('Utils', true, 'areArraysEqual'),
+  '../utils/useSlotProps': makeComponentExternal('Utils', true, 'useSlotProps'),
   '../FormControlUnstyled/useFormControl': makeComponentExternal('FormControlUnstyled', true, 'useFormControlUnstyled'),
   '../FormControlUnstyled/FormControlContext': makeComponentExternal('FormControlUnstyled', true, 'FormControlUnstyledContext'),
   '../SelectUnstyled/useSelect': makeComponentExternal('SelectUnstyled', true, 'useSelect'),
@@ -136,6 +137,8 @@ const externals = {
     } else if (request === '../utils/appendOwnerState') {
       return callback()
     } else if (request === '../SelectUnstyled/utils') {
+      return callback()
+    } else if (request === '../SelectUnstyled/defaultOptionStringifier') {
       return callback()
     } else if (name) {
       return callback(null, makeComponentExternal(name, true))

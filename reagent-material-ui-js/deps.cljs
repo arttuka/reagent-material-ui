@@ -18,6 +18,7 @@
     "@mui/base/composeClasses"
     "@mui/base/generateUtilityClass"
     "@mui/base/generateUtilityClasses"
+    "@mui/base/utils"
     "@mui/utils"
     "react"
     "react-dom"]}
@@ -43,33 +44,19 @@
     "@mui/material/Autocomplete"
     "@mui/material/AvatarGroup"
     "@mui/material/Button"
-    "@mui/material/ButtonBase"
     "@mui/material/CircularProgress"
     "@mui/material/Collapse"
-    "@mui/material/Dialog"
-    "@mui/material/DialogActions"
-    "@mui/material/DialogContent"
-    "@mui/material/Fade"
-    "@mui/material/Grid"
-    "@mui/material/Grow"
-    "@mui/material/IconButton"
-    "@mui/material/InputAdornment"
     "@mui/material/Pagination"
     "@mui/material/PaginationItem"
-    "@mui/material/Paper"
-    "@mui/material/Popper"
     "@mui/material/Rating"
     "@mui/material/Skeleton"
     "@mui/material/SpeedDial"
     "@mui/material/SpeedDialAction"
     "@mui/material/SpeedDialIcon"
-    "@mui/material/Tab"
     "@mui/material/Tabs"
     "@mui/material/ToggleButton"
     "@mui/material/ToggleButtonGroup"
     "@mui/material/Typography"
-    "@mui/material/Unstable_TrapFocus"
-    "@mui/material/useMediaQuery"
     "@mui/material/usePagination"
     "@mui/utils"
     "react"
@@ -100,6 +87,7 @@
     "@mui/base/SwitchUnstyled"
     "@mui/base/TabPanelUnstyled"
     "@mui/base/TabUnstyled"
+    "@mui/base/TablePaginationUnstyled"
     "@mui/base/TabsListUnstyled"
     "@mui/base/TabsUnstyled"
     "@mui/base/TextareaAutosize"
@@ -942,6 +930,7 @@
    ["@mui/base/composeClasses"
     "@mui/base/generateUtilityClass"
     "@mui/base/generateUtilityClasses"
+    "@mui/base/utils"
     "@mui/utils"
     "react"]}
   {:file "mui/mui-base-button-unstyled.inc.js",
@@ -967,8 +956,10 @@
    :global-exports
    {"@mui/base/FormControlUnstyled" MuiBaseFormControlUnstyled},
    :requires
-   ["@mui/base/generateUtilityClass"
+   ["@mui/base/composeClasses"
+    "@mui/base/generateUtilityClass"
     "@mui/base/generateUtilityClasses"
+    "@mui/base/utils"
     "@mui/utils"
     "react"]}
   {:file "mui/mui-base-input-unstyled.inc.js",
@@ -998,6 +989,7 @@
     "@mui/base/composeClasses"
     "@mui/base/generateUtilityClass"
     "@mui/base/generateUtilityClasses"
+    "@mui/base/utils"
     "@mui/utils"
     "react"]}
   {:file "mui/mui-base-menu-item-unstyled.inc.js",
@@ -1053,6 +1045,7 @@
    ["@mui/base/composeClasses"
     "@mui/base/generateUtilityClass"
     "@mui/base/generateUtilityClasses"
+    "@mui/base/utils"
     "react"]}
   {:file "mui/mui-base-option-unstyled.inc.js",
    :file-min "mui/mui-base-option-unstyled.min.inc.js",
@@ -1063,13 +1056,21 @@
     "@mui/base/composeClasses"
     "@mui/base/generateUtilityClass"
     "@mui/base/generateUtilityClasses"
+    "@mui/base/utils"
     "@mui/utils"
     "react"]}
   {:file "mui/mui-base-popper-unstyled.inc.js",
    :file-min "mui/mui-base-popper-unstyled.min.inc.js",
    :provides ["@mui/base/PopperUnstyled"],
    :global-exports {"@mui/base/PopperUnstyled" MuiBasePopperUnstyled},
-   :requires ["@mui/base/Portal" "@mui/utils" "react"]}
+   :requires
+   ["@mui/base/Portal"
+    "@mui/base/composeClasses"
+    "@mui/base/generateUtilityClass"
+    "@mui/base/generateUtilityClasses"
+    "@mui/base/utils"
+    "@mui/utils"
+    "react"]}
   {:file "mui/mui-base-portal.inc.js",
    :file-min "mui/mui-base-portal.min.inc.js",
    :provides ["@mui/base/Portal"],
@@ -1105,8 +1106,10 @@
    :provides ["@mui/base/SwitchUnstyled"],
    :global-exports {"@mui/base/SwitchUnstyled" MuiBaseSwitchUnstyled},
    :requires
-   ["@mui/base/generateUtilityClass"
+   ["@mui/base/composeClasses"
+    "@mui/base/generateUtilityClass"
     "@mui/base/generateUtilityClasses"
+    "@mui/base/utils"
     "@mui/utils"
     "react"]}
   {:file "mui/mui-base-table-pagination-unstyled.inc.js",
@@ -1168,6 +1171,7 @@
     "@mui/base/composeClasses"
     "@mui/base/generateUtilityClass"
     "@mui/base/generateUtilityClasses"
+    "@mui/base/utils"
     "@mui/utils"
     "react"]}
   {:file "mui/mui-base-trap-focus.inc.js",
@@ -1179,35 +1183,35 @@
    :file-min "mui/mui-base-class-name.min.inc.js",
    :provides ["@mui/base/className"],
    :global-exports {"@mui/base/className" MuiBaseClassName},
-   :requires []}
+   :requires ["@mui/utils"]}
   {:file "mui/mui-base-compose-classes.inc.js",
    :file-min "mui/mui-base-compose-classes.min.inc.js",
    :provides ["@mui/base/composeClasses"],
    :global-exports {"@mui/base/composeClasses" MuiBaseComposeClasses},
-   :requires []}
+   :requires ["@mui/utils"]}
   {:file "mui/mui-base-generate-utility-class.inc.js",
    :file-min "mui/mui-base-generate-utility-class.min.inc.js",
    :provides ["@mui/base/generateUtilityClass"],
    :global-exports
    {"@mui/base/generateUtilityClass" MuiBaseGenerateUtilityClass},
-   :requires ["@mui/base/className"]}
+   :requires ["@mui/utils"]}
   {:file "mui/mui-base-generate-utility-classes.inc.js",
    :file-min "mui/mui-base-generate-utility-classes.min.inc.js",
    :provides ["@mui/base/generateUtilityClasses"],
    :global-exports
    {"@mui/base/generateUtilityClasses" MuiBaseGenerateUtilityClasses},
-   :requires ["@mui/base/generateUtilityClass"]}
+   :requires ["@mui/utils"]}
   {:file "mui/mui-base-textarea-autosize.inc.js",
    :file-min "mui/mui-base-textarea-autosize.min.inc.js",
    :provides ["@mui/base/TextareaAutosize"],
    :global-exports
    {"@mui/base/TextareaAutosize" MuiBaseTextareaAutosize},
-   :requires ["@mui/utils" "react"]}
+   :requires ["@mui/utils" "react" "react-dom"]}
   {:file "mui/mui-base-utils.inc.js",
    :file-min "mui/mui-base-utils.min.inc.js",
    :provides ["@mui/base/utils"],
    :global-exports {"@mui/base/utils" MuiBaseUtils},
-   :requires []}
+   :requires ["@mui/utils"]}
   {:file "mui/mui-base-autocomplete-unstyled.inc.js",
    :file-min "mui/mui-base-autocomplete-unstyled.min.inc.js",
    :provides ["@mui/base/AutocompleteUnstyled"],

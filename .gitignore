@@ -17,3 +17,5 @@ node_modules
 .cpcache
 .java-version
 .lsp
+.calva
+.clj-kondo
