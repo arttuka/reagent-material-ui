@@ -176,8 +176,8 @@
    [css-baseline]
    ;; localization-provider provides date handling utils to date and time pickers.
    ;; cljs-time-adapter is a date adapter that allows you to use cljs-time / goog.date date objects.
-   [localization-provider {:date-adapter cljs-time-adapter
-                           :locale       DateTimeSymbols_en_US}
+   [localization-provider {:date-adapter   cljs-time-adapter
+                           :adapter-locale DateTimeSymbols_en_US}
     [styles/theme-provider (styles/create-theme custom-theme)
      [form]]]])
 
