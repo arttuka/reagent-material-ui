@@ -1,12 +1,12 @@
-(defproject arttuka/reagent-material-ui "5.6.2-1"
+(defproject arttuka/reagent-material-ui "5.10.1-0"
   :description "Reagent wrapper library for MUI (formerly Material UI) v5"
   :url "https://github.com/arttuka/reagent-material-ui"
   :license {:name "Eclipse Public License 2.0"
             :url  "https://www.eclipse.org/legal/epl-2.0/"}
   :dependencies [[reagent "1.1.1"]
                  [com.andrewmcveigh/cljs-time "0.5.2"]
-                 [camel-snake-kebab "0.4.2"]
-                 [arttuka/reagent-material-ui-js "5.6.2-0"]]
+                 [camel-snake-kebab "0.4.3"]
+                 [arttuka/reagent-material-ui-js "5.10.1-0"]]
   :plugins [[lein-cljfmt "0.8.0"]
             [lein-cljsbuild "1.1.8"]
             [lein-doo "0.1.11"]]

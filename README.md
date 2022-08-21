@@ -15,7 +15,7 @@ Their examples are very good. and this library tries to follow the original idea
 
 To add MUI to an existing Reagent project, just add this library to your dependencies:
 ```
-[arttuka/reagent-material-ui "5.6.2-1"]
+[arttuka/reagent-material-ui "5.10.1-0"]
 ```
 
 Most of the library is in the form of regular Reagent components. Each component is contained in a namespace that mirrors
@@ -59,7 +59,7 @@ If you want to use another date library, you can use [adapters from `@mui/x-date
 To use npm dependencies with Figwheel Main, you need to exclude prebuilt JS files (React from CLJSJS and MUI from this library).
 To do so, add these exclusions to your dependency. See the example project for working configuration.
 
-    [arttuka/reagent-material-ui "5.6.2-1" :exclusions [arttuka/reagent-material-ui-js]]
+    [arttuka/reagent-material-ui "5.10.1-0" :exclusions [arttuka/reagent-material-ui-js]]
 
 #### MUI component names with shadow-cljs
 
@@ -71,11 +71,11 @@ to your build in `shadow-cljs.edn`.
 
 * Some components want to have a React node as a prop. A Reagent component is not good enough and will just result in
   errors about invalid React nodes. `reagent.core/as-element` can turn a Reagent component into a React node.
-* React hooks can't be used in most Reagent components. [More information](https://cljdoc.org/d/reagent/reagent/1.0.0-alpha2/doc/tutorials/react-features#hooks).
+* React hooks can't be used in most Reagent components. [More information](https://cljdoc.org/d/reagent/reagent/1.1.1/doc/tutorials/react-features#hooks).
 * Higher order React components can only deal with components that take all their parameters
   (including children) in a single map.
   
-For more information, check out [Reagent's interop guide](https://cljdoc.org/d/reagent/reagent/1.0.0-alpha2/doc/tutorials/interop-with-react).
+For more information, check out [Reagent's interop guide](https://cljdoc.org/d/reagent/reagent/1.1.1/doc/tutorials/interop-with-react).
 
 ### Development
 
@@ -91,9 +91,9 @@ The build process also includes `lein cljfmt`.
 
 The project follows MUI's version numbering.
 
-* Current `@mui/material` version: `5.6.2`
-* Current `@mui/icons-material` version: `5.6.2`
-* Current `@mui/lab` version: `5.0.0-alpha.78`
+* Current `@mui/material` version: `5.10.1`
+* Current `@mui/icons-material` version: `5.8.4`
+* Current `@mui/lab` version: `5.0.0-alpha.95`
 
 ### License
 
