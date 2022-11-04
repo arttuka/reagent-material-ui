@@ -55,6 +55,14 @@
   (testing "endOfDay"
     (is (= "2018-10-30 23:59" (format-datetime (.endOfDay utils test-date))))))
 
+(deftest start-of-year-test
+  (testing "startOfYear"
+    (is (= "2018-01-01 00:00" (format-datetime (.startOfYear utils test-date))))))
+
+(deftest end-of-year-test
+  (testing "endOfYear"
+    (is (= "2018-12-31 23:59" (format-datetime (.endOfYear utils test-date))))))
+
 (deftest start-of-month-test
   (testing "startOfMonth"
     (is (= "2018-10-01 00:00" (format-datetime (.startOfMonth utils test-date))))))

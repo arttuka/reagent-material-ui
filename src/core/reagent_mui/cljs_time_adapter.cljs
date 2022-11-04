@@ -287,6 +287,10 @@
          :isWithinRange                (fn [date [from to]]
                                          (or (time/within? from to date)
                                              (time/equal? to date)))
+         :startOfYear                  (fn [date]
+                                         (start-of-year date))
+         :endOfYear                    (fn [date]
+                                         (end-of-year date))
          :startOfMonth                 (fn [date]
                                          (start-of-month date))
          :endOfMonth                   (fn [date]
