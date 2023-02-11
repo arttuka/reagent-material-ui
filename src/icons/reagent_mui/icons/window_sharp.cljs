@@ -5,5 +5,5 @@
             ["@mui/material/SvgIcon" :as SvgIcon]
             [reagent-mui.util]))
 
-(def window-sharp (create-svg-icon (e "path" #js {"d" "M22 2H2v20h20V2zm-2 9h-7V4h7v7zm-9-7v7H4V4h7zm-7 9h7v7H4v-7zm9 7v-7h7v7h-7z"})
+(def window-sharp (create-svg-icon (e "path" #js {"d" "M3 3h8v8H3zm10 0h8v8h-8zM3 13h8v8H3zm10 0h8v8h-8z"})
                                    "WindowSharp"))

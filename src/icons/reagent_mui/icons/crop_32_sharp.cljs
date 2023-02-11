@@ -5,5 +5,5 @@
             ["@mui/material/SvgIcon" :as SvgIcon]
             [reagent-mui.util]))
 
-(def crop-32-sharp (create-svg-icon (e "path" #js {"d" "M21 4H3v16h18V4zm-2 14H5V6h14v12z"})
+(def crop-32-sharp (create-svg-icon (e "path" #js {"d" "M21 6H3v12h18V6zm-2 10H5V8h14v8z"})
                                     "Crop32Sharp"))

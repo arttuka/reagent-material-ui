@@ -5,5 +5,5 @@
             ["@mui/material/SvgIcon" :as SvgIcon]
             [reagent-mui.util]))
 
-(def stacked-bar-chart-sharp (create-svg-icon (e "path" #js {"d" "M6 10h3v10H6V10zm0-5h3v4H6V5zm10 11h3v4h-3v-4zm0-3h3v2h-3v-2zm-5 0h3v7h-3v-7zm0-4h3v3h-3V9z"})
+(def stacked-bar-chart-sharp (create-svg-icon (e "path" #js {"d" "M4 9h4v11H4zm0-5h4v4H4zm6 3h4v4h-4zm6 3h4v4h-4zm0 5h4v5h-4zm-6-3h4v8h-4z"})
                                               "StackedBarChartSharp"))
