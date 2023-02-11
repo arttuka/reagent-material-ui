@@ -2,6 +2,16 @@
 
 See [MUI changelog](https://github.com/mui-org/material-ui/blob/master/CHANGELOG.md) for changes in MUI.
 
+## 5.11.8-0
+
+**[compare](https://github.com/arttuka/reagent-material-ui/compare/v5.10.1-0...v5.11.8-0)**
+
+- Update MUI to v5.11.8
+- Fix `cljs-time-adapter` bug with `date-range-picker-pro` (#44) and `calendar-picker` (#40)
+- Add information regarding `date-picker` input rendering (#39)
+- **BREAKING** `reagent-mui.material.switch-component` renamed to `reagent-mui.material.switch`
+  since reserved JS keywords aren't a problem anymore
+
 ## 5.10.1-0
 
 **[compare](https://github.com/arttuka/reagent-material-ui/compare/v5.6.2-1...v5.10.1-0)**
