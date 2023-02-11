@@ -33,7 +33,7 @@
                                   (e (.-default ~'SvgIcon)
                                      (js/Object.assign (cljs.core/js-obj "ref" ref#) props#)
                                      ~@(if (vector? path) path [path]))))]
-     (reagent-mui.util/adapt-react-class component# ~display-name)))
+     (reagent.core/adapt-react-class component#)))
 
 (defmacro with-unchanged-js-props
   "Returns a new component where the props are turned into JS objects

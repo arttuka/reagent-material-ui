@@ -1,7 +1,7 @@
 (ns reagent-mui.material.dialog-title
   "Imports @mui/material/DialogTitle as a Reagent component.
    Original documentation is at https://mui.com/material-ui/api/dialog-title/ ."
-  (:require [reagent-mui.util :refer [adapt-react-class]]
+  (:require [reagent.core :as r]
             ["@mui/material/DialogTitle" :as MuiDialogTitle]))
 
-(def dialog-title (adapt-react-class (.-default MuiDialogTitle) "mui-dialog-title"))
+(def dialog-title (r/adapt-react-class (.-default MuiDialogTitle)))

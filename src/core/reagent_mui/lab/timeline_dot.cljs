@@ -1,7 +1,7 @@
 (ns reagent-mui.lab.timeline-dot
   "Imports @mui/lab/TimelineDot as a Reagent component.
    Original documentation is at https://mui.com/material-ui/api/timeline-dot/ ."
-  (:require [reagent-mui.util :refer [adapt-react-class]]
+  (:require [reagent.core :as r]
             ["@mui/lab/TimelineDot" :as MuiTimelineDot]))
 
-(def timeline-dot (adapt-react-class (.-default MuiTimelineDot) "mui-timeline-dot"))
+(def timeline-dot (r/adapt-react-class (.-default MuiTimelineDot)))

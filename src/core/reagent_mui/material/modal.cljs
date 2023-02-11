@@ -1,7 +1,7 @@
 (ns reagent-mui.material.modal
   "Imports @mui/material/Modal as a Reagent component.
    Original documentation is at https://mui.com/material-ui/api/modal/ ."
-  (:require [reagent-mui.util :refer [adapt-react-class]]
+  (:require [reagent.core :as r]
             ["@mui/material/Modal" :as MuiModal]))
 
-(def modal (adapt-react-class (.-default MuiModal) "mui-modal"))
+(def modal (r/adapt-react-class (.-default MuiModal)))

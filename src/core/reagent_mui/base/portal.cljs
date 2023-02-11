@@ -1,7 +1,7 @@
 (ns reagent-mui.base.portal
   "Imports @mui/base/Portal as a Reagent component.
    Original documentation is at https://mui.com/base/api/portal/ ."
-  (:require [reagent-mui.util :refer [adapt-react-class]]
+  (:require [reagent.core :as r]
             ["@mui/base/Portal" :as MuiPortal]))
 
-(def portal (adapt-react-class (.-default MuiPortal) "mui-portal"))
+(def portal (r/adapt-react-class (.-default MuiPortal)))

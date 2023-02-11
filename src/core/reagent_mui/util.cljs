@@ -10,14 +10,6 @@
             [goog.object :as obj]
             ["@mui/material/SvgIcon" :as SvgIcon]))
 
-(defn adapt-react-class
-  ([c]
-   (adapt-react-class c (fun-name c)))
-  ([c display-name]
-   (let [adapted (r/adapt-react-class c)]
-     (set! (.-displayName adapted) display-name)
-     adapted)))
-
 (def ^:private color-key? #{:A100 :A200 :A400 :A700 "A100" "A200" "A400" "A700"})
 (defn ^:private numeric-string? [s]
   (and (string? s)
@@ -135,7 +127,7 @@
   (-> component
       (reactify-component)
       (hoc)
-      (adapt-react-class)))
+      (r/adapt-react-class)))
 
 (defn get-anycase
   ([m k]

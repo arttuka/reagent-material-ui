@@ -6,7 +6,7 @@
             ["@mui/material/utils" :as mui-utils]
             [reagent.core :as r :refer [atom]]
             [goog.object :as obj]
-            [reagent-mui.util :refer [adapt-react-class js->clj' remove-undefined-vals use-fork-ref
+            [reagent-mui.util :refer [js->clj' remove-undefined-vals use-fork-ref
                                       use-callback use-effect use-ref use-state set-ref swap-ref]]))
 
 ;; Converted from https://github.com/mui-org/material-ui/blob/v4.8.3/packages/material-ui/src/TextareaAutosize/TextareaAutosize.js
@@ -119,4 +119,4 @@
                                         style
                                         {:padding 0})}]]))))
 
-(def textarea-autosize (adapt-react-class react-textarea-autosize))
+(def textarea-autosize (r/adapt-react-class react-textarea-autosize))

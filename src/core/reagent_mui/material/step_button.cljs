@@ -1,7 +1,7 @@
 (ns reagent-mui.material.step-button
   "Imports @mui/material/StepButton as a Reagent component.
    Original documentation is at https://mui.com/material-ui/api/step-button/ ."
-  (:require [reagent-mui.util :refer [adapt-react-class]]
+  (:require [reagent.core :as r]
             ["@mui/material/StepButton" :as MuiStepButton]))
 
-(def step-button (adapt-react-class (.-default MuiStepButton) "mui-step-button"))
+(def step-button (r/adapt-react-class (.-default MuiStepButton)))

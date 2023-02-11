@@ -1,7 +1,7 @@
 (ns reagent-mui.base.no-ssr
   "Imports @mui/base/NoSsr as a Reagent component.
    Original documentation is at https://mui.com/base/api/no-ssr/ ."
-  (:require [reagent-mui.util :refer [adapt-react-class]]
+  (:require [reagent.core :as r]
             ["@mui/base/NoSsr" :as MuiNoSsr]))
 
-(def no-ssr (adapt-react-class (.-default MuiNoSsr) "mui-no-ssr"))
+(def no-ssr (r/adapt-react-class (.-default MuiNoSsr)))

@@ -1,7 +1,7 @@
 (ns reagent-mui.material.button-group
   "Imports @mui/material/ButtonGroup as a Reagent component.
    Original documentation is at https://mui.com/material-ui/api/button-group/ ."
-  (:require [reagent-mui.util :refer [adapt-react-class]]
+  (:require [reagent.core :as r]
             ["@mui/material/ButtonGroup" :as MuiButtonGroup]))
 
-(def button-group (adapt-react-class (.-default MuiButtonGroup) "mui-button-group"))
+(def button-group (r/adapt-react-class (.-default MuiButtonGroup)))

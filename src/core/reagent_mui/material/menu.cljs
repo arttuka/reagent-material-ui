@@ -1,7 +1,7 @@
 (ns reagent-mui.material.menu
   "Imports @mui/material/Menu as a Reagent component.
    Original documentation is at https://mui.com/material-ui/api/menu/ ."
-  (:require [reagent-mui.util :refer [adapt-react-class]]
+  (:require [reagent.core :as r]
             ["@mui/material/Menu" :as MuiMenu]))
 
-(def menu (adapt-react-class (.-default MuiMenu) "mui-menu"))
+(def menu (r/adapt-react-class (.-default MuiMenu)))

@@ -5,8 +5,8 @@
             ["@mui/material/styles" :as mui-styles]
             [reagent-mui.util :as util]))
 
-(def ^:private theme-provider* (util/adapt-react-class mui-styles/ThemeProvider "mui-theme-provider"))
-(def ^:private experimental-css-vars-provider* (util/adapt-react-class mui-styles/Experimental_CssVarsProvider "mui-experimental-css-vars-provider"))
+(def ^:private theme-provider* (r/adapt-react-class mui-styles/ThemeProvider))
+(def ^:private experimental-css-vars-provider* (r/adapt-react-class mui-styles/Experimental_CssVarsProvider))
 
 (defn styled
   "The styled-components pattern. Takes a component and a styles-generating function or a styles object.
@@ -19,7 +19,7 @@
                            component
                            (util/reactify-component component))
          styled-component (mui-styles/styled react-component (clj->js opts))]
-     (util/adapt-react-class
+     (r/adapt-react-class
       (styled-component (util/wrap-styles styles))))))
 
 (defn responsive-font-sizes

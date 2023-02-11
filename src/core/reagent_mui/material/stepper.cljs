@@ -1,7 +1,7 @@
 (ns reagent-mui.material.stepper
   "Imports @mui/material/Stepper as a Reagent component.
    Original documentation is at https://mui.com/material-ui/api/stepper/ ."
-  (:require [reagent-mui.util :refer [adapt-react-class]]
+  (:require [reagent.core :as r]
             ["@mui/material/Stepper" :as MuiStepper]))
 
-(def stepper (adapt-react-class (.-default MuiStepper) "mui-stepper"))
+(def stepper (r/adapt-react-class (.-default MuiStepper)))

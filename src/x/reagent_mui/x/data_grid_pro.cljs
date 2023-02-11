@@ -2,7 +2,7 @@
   "Imports @mui/x-data-grid-pro as a Reagent component.
    Original documentation is at https://mui.com/x/api/data-grid/data-grid-pro/ ."
   (:require-macros [reagent-mui.util :refer [with-unchanged-js-props]])
-  (:require [reagent-mui.util :refer [adapt-react-class]]
+  (:require [reagent.core :as r]
             ["@mui/x-data-grid-pro" :as MuiDataGridPro]))
 
-(def data-grid-pro (with-unchanged-js-props (adapt-react-class MuiDataGridPro/DataGridPro "mui-data-grid-pro")))
+(def data-grid-pro (with-unchanged-js-props (r/adapt-react-class MuiDataGridPro/DataGridPro)))

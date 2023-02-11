@@ -1,7 +1,7 @@
 (ns reagent-mui.material.grid
   "Imports @mui/material/Grid as a Reagent component.
    Original documentation is at https://mui.com/material-ui/api/grid/ ."
-  (:require [reagent-mui.util :refer [adapt-react-class]]
+  (:require [reagent.core :as r]
             ["@mui/material/Grid" :as MuiGrid]))
 
-(def grid (adapt-react-class (.-default MuiGrid) "mui-grid"))
+(def grid (r/adapt-react-class (.-default MuiGrid)))

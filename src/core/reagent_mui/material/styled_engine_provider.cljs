@@ -1,7 +1,7 @@
 (ns reagent-mui.material.styled-engine-provider
   "Imports @mui/material/StyledEngineProvider as a Reagent component.
    Original documentation is at https://mui.com/material-ui/api/styled-engine-provider/ ."
-  (:require [reagent-mui.util :refer [adapt-react-class]]
+  (:require [reagent.core :as r]
             ["@mui/material/StyledEngineProvider" :as MuiStyledEngineProvider]))
 
-(def styled-engine-provider (adapt-react-class (.-default MuiStyledEngineProvider) "mui-styled-engine-provider"))
+(def styled-engine-provider (r/adapt-react-class (.-default MuiStyledEngineProvider)))

@@ -6,7 +6,7 @@
             [reagent.core :as r]
             ["@mui/material/TextField" :as MuiTextField]
             [reagent-mui.material.textarea-autosize :refer [react-textarea-autosize]]
-            [reagent-mui.util :refer [adapt-react-class get-anycase assoc-anycase js->clj' remove-undefined-vals]]))
+            [reagent-mui.util :refer [get-anycase assoc-anycase js->clj' remove-undefined-vals]]))
 
 ;; Fix cursor positioning for Reagent
 ;; https://github.com/reagent-project/reagent/blob/v1.1.0/doc/examples/material-ui.md
@@ -24,7 +24,7 @@
   (forward-ref textarea [props ref]
     (r/as-element [:textarea (input-props props ref)])))
 
-(def ^:private mui-text-field (adapt-react-class (.-default MuiTextField) "mui-text-field"))
+(def ^:private mui-text-field (r/adapt-react-class (.-default MuiTextField)))
 
 (defn text-field [props & children]
   (let [min-rows (get-anycase props :min-rows)

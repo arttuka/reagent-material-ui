@@ -5,7 +5,7 @@
             ["@mui/styles" :as mui-styles]
             [reagent-mui.util :as util]))
 
-(def ^:private styles-provider* (util/adapt-react-class mui-styles/StylesProvider "mui-styles-provider"))
+(def ^:private styles-provider* (r/adapt-react-class mui-styles/StylesProvider))
 
 (defn make-styles
   "Takes a styles-generating function or a styles object.
@@ -35,7 +35,7 @@
    (styled component styles {}))
   ([component styles opts]
    (let [styled-component (mui-styles/styled (util/reactify-component component))]
-     (util/adapt-react-class
+     (r/adapt-react-class
       (styled-component (util/wrap-styles styles) (clj->js opts))))))
 
 (defn with-theme

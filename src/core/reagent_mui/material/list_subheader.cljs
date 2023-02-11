@@ -1,7 +1,7 @@
 (ns reagent-mui.material.list-subheader
   "Imports @mui/material/ListSubheader as a Reagent component.
    Original documentation is at https://mui.com/material-ui/api/list-subheader/ ."
-  (:require [reagent-mui.util :refer [adapt-react-class]]
+  (:require [reagent.core :as r]
             ["@mui/material/ListSubheader" :as MuiListSubheader]))
 
-(def list-subheader (adapt-react-class (.-default MuiListSubheader) "mui-list-subheader"))
+(def list-subheader (r/adapt-react-class (.-default MuiListSubheader)))
