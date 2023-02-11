@@ -39,6 +39,8 @@
     (undefined? value) (time/time-now)
     (nil? value) nil
     (time/date? value) value
+    (sequential? value) nil
+    (array? value) nil
     :else (coerce/to-date-time value)))
 
 (defn ^:private to-start-of-day [^DateTime date]
