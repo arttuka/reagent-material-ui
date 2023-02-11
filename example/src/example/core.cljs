@@ -156,6 +156,7 @@
                  :on-change    (fn [value]
                                  (reset! date-picker-state value))
                  :input-format "MM/dd/yyyy"
+                 :mask          "__/__/____"
                  :label        "Date picker"}]
    [autocomplete {:class     (:text-field classes)
                   :value     @autocomplete-state
