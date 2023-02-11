@@ -8,6 +8,7 @@
     "@mui/base/AutocompleteUnstyled"
     "@mui/base/BadgeUnstyled"
     "@mui/base/ClickAwayListener"
+    "@mui/base/FocusTrap"
     "@mui/base/ModalUnstyled"
     "@mui/base/NoSsr"
     "@mui/base/PopperUnstyled"
@@ -16,8 +17,6 @@
     "@mui/base/TextareaAutosize"
     "@mui/base/className"
     "@mui/base/composeClasses"
-    "@mui/base/generateUtilityClass"
-    "@mui/base/generateUtilityClasses"
     "@mui/base/utils"
     "@mui/utils"
     "react"
@@ -57,6 +56,8 @@
     "@mui/material/ToggleButton"
     "@mui/material/ToggleButtonGroup"
     "@mui/material/Typography"
+    "@mui/material/generateUtilityClass"
+    "@mui/material/generateUtilityClasses"
     "@mui/material/usePagination"
     "@mui/utils"
     "react"
@@ -70,6 +71,7 @@
     "@mui/base/BadgeUnstyled"
     "@mui/base/ButtonUnstyled"
     "@mui/base/ClickAwayListener"
+    "@mui/base/FocusTrap"
     "@mui/base/FormControlUnstyled"
     "@mui/base/InputUnstyled"
     "@mui/base/ListboxUnstyled"
@@ -84,6 +86,7 @@
     "@mui/base/Portal"
     "@mui/base/SelectUnstyled"
     "@mui/base/SliderUnstyled"
+    "@mui/base/SnackbarUnstyled"
     "@mui/base/SwitchUnstyled"
     "@mui/base/TabPanelUnstyled"
     "@mui/base/TabUnstyled"
@@ -91,10 +94,7 @@
     "@mui/base/TabsListUnstyled"
     "@mui/base/TabsUnstyled"
     "@mui/base/TextareaAutosize"
-    "@mui/base/TrapFocus"
     "@mui/base/composeClasses"
-    "@mui/base/generateUtilityClass"
-    "@mui/base/generateUtilityClasses"
     "@mui/base/utils"]}
   {:file "mui/mui-styles.inc.js",
    :file-min "mui/mui-styles.min.inc.js",
@@ -803,6 +803,12 @@
    :provides ["@mui/material/Typography"],
    :global-exports {"@mui/material/Typography" MuiMaterialTypography},
    :requires ["@mui/material"]}
+  {:file "mui/mui-material-unstable-grid-2.inc.js",
+   :file-min "mui/mui-material-unstable-grid-2.min.inc.js",
+   :provides ["@mui/material/Unstable_Grid2"],
+   :global-exports
+   {"@mui/material/Unstable_Grid2" MuiMaterialUnstableGrid2},
+   :requires ["@mui/material"]}
   {:file "mui/mui-material-unstable-trap-focus.inc.js",
    :file-min "mui/mui-material-unstable-trap-focus.min.inc.js",
    :provides ["@mui/material/Unstable_TrapFocus"],
@@ -843,6 +849,20 @@
    :provides ["@mui/material/useTouchRipple"],
    :global-exports
    {"@mui/material/useTouchRipple" MuiMaterialUseTouchRipple},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-generate-utility-class.inc.js",
+   :file-min "mui/mui-material-generate-utility-class.min.inc.js",
+   :provides ["@mui/material/generateUtilityClass"],
+   :global-exports
+   {"@mui/material/generateUtilityClass"
+    MuiMaterialGenerateUtilityClass},
+   :requires ["@mui/material"]}
+  {:file "mui/mui-material-generate-utility-classes.inc.js",
+   :file-min "mui/mui-material-generate-utility-classes.min.inc.js",
+   :provides ["@mui/material/generateUtilityClasses"],
+   :global-exports
+   {"@mui/material/generateUtilityClasses"
+    MuiMaterialGenerateUtilityClasses},
    :requires ["@mui/material"]}
   {:file "mui/mui-lab-loading-button.inc.js",
    :file-min "mui/mui-lab-loading-button.min.inc.js",
@@ -950,6 +970,11 @@
    :global-exports
    {"@mui/base/ClickAwayListener" MuiBaseClickAwayListener},
    :requires ["@mui/utils" "react"]}
+  {:file "mui/mui-base-focus-trap.inc.js",
+   :file-min "mui/mui-base-focus-trap.min.inc.js",
+   :provides ["@mui/base/FocusTrap"],
+   :global-exports {"@mui/base/FocusTrap" MuiBaseFocusTrap},
+   :requires ["@mui/utils" "react"]}
   {:file "mui/mui-base-form-control-unstyled.inc.js",
    :file-min "mui/mui-base-form-control-unstyled.min.inc.js",
    :provides ["@mui/base/FormControlUnstyled"],
@@ -1011,8 +1036,8 @@
    :provides ["@mui/base/ModalUnstyled"],
    :global-exports {"@mui/base/ModalUnstyled" MuiBaseModalUnstyled},
    :requires
-   ["@mui/base/Portal"
-    "@mui/base/TrapFocus"
+   ["@mui/base/FocusTrap"
+    "@mui/base/Portal"
     "@mui/base/composeClasses"
     "@mui/base/generateUtilityClass"
     "@mui/base/generateUtilityClasses"
@@ -1101,6 +1126,19 @@
     "@mui/base/utils"
     "@mui/utils"
     "react"]}
+  {:file "mui/mui-base-snackbar-unstyled.inc.js",
+   :file-min "mui/mui-base-snackbar-unstyled.min.inc.js",
+   :provides ["@mui/base/SnackbarUnstyled"],
+   :global-exports
+   {"@mui/base/SnackbarUnstyled" MuiBaseSnackbarUnstyled},
+   :requires
+   ["@mui/base/ClickAwayListener"
+    "@mui/base/composeClasses"
+    "@mui/base/generateUtilityClass"
+    "@mui/base/generateUtilityClasses"
+    "@mui/base/utils"
+    "@mui/utils"
+    "react"]}
   {:file "mui/mui-base-switch-unstyled.inc.js",
    :file-min "mui/mui-base-switch-unstyled.min.inc.js",
    :provides ["@mui/base/SwitchUnstyled"],
@@ -1174,11 +1212,6 @@
     "@mui/base/utils"
     "@mui/utils"
     "react"]}
-  {:file "mui/mui-base-trap-focus.inc.js",
-   :file-min "mui/mui-base-trap-focus.min.inc.js",
-   :provides ["@mui/base/TrapFocus"],
-   :global-exports {"@mui/base/TrapFocus" MuiBaseTrapFocus},
-   :requires ["@mui/utils" "react"]}
   {:file "mui/mui-base-class-name.inc.js",
    :file-min "mui/mui-base-class-name.min.inc.js",
    :provides ["@mui/base/className"],
@@ -1188,18 +1221,6 @@
    :file-min "mui/mui-base-compose-classes.min.inc.js",
    :provides ["@mui/base/composeClasses"],
    :global-exports {"@mui/base/composeClasses" MuiBaseComposeClasses},
-   :requires ["@mui/utils"]}
-  {:file "mui/mui-base-generate-utility-class.inc.js",
-   :file-min "mui/mui-base-generate-utility-class.min.inc.js",
-   :provides ["@mui/base/generateUtilityClass"],
-   :global-exports
-   {"@mui/base/generateUtilityClass" MuiBaseGenerateUtilityClass},
-   :requires ["@mui/utils"]}
-  {:file "mui/mui-base-generate-utility-classes.inc.js",
-   :file-min "mui/mui-base-generate-utility-classes.min.inc.js",
-   :provides ["@mui/base/generateUtilityClasses"],
-   :global-exports
-   {"@mui/base/generateUtilityClasses" MuiBaseGenerateUtilityClasses},
    :requires ["@mui/utils"]}
   {:file "mui/mui-base-textarea-autosize.inc.js",
    :file-min "mui/mui-base-textarea-autosize.min.inc.js",
@@ -1217,5 +1238,17 @@
    :provides ["@mui/base/AutocompleteUnstyled"],
    :global-exports
    {"@mui/base/AutocompleteUnstyled" MuiBaseAutocompleteUnstyled},
-   :requires ["@mui/utils" "react"]}],
+   :requires ["@mui/utils" "react"]}
+  {:file "mui/mui-base-generate-utility-class.inc.js",
+   :file-min "mui/mui-base-generate-utility-class.min.inc.js",
+   :provides ["@mui/base/generateUtilityClass"],
+   :global-exports
+   {"@mui/base/generateUtilityClass" MuiBaseGenerateUtilityClass},
+   :requires ["@mui/utils"]}
+  {:file "mui/mui-base-generate-utility-classes.inc.js",
+   :file-min "mui/mui-base-generate-utility-classes.min.inc.js",
+   :provides ["@mui/base/generateUtilityClasses"],
+   :global-exports
+   {"@mui/base/generateUtilityClasses" MuiBaseGenerateUtilityClasses},
+   :requires ["@mui/utils"]}],
  :externs ["mui/mui.ext.js"]}

@@ -384,6 +384,9 @@
     "entry": "mui-material-typography",
     "root": "MuiMaterialTypography"
   }, {
+    "entry": "mui-material-unstable-grid-2",
+    "root": "MuiMaterialUnstableGrid2"
+  }, {
     "entry": "mui-material-unstable-trap-focus",
     "root": "MuiMaterialUnstableTrapFocus"
   }, {
@@ -404,6 +407,12 @@
   }, {
     "entry": "mui-material-use-touch-ripple",
     "root": "MuiMaterialUseTouchRipple"
+  }, {
+    "entry": "mui-material-generate-utility-class",
+    "root": "MuiMaterialGenerateUtilityClass"
+  }, {
+    "entry": "mui-material-generate-utility-classes",
+    "root": "MuiMaterialGenerateUtilityClasses"
   }, {
     "entry": "mui-lab-loading-button",
     "root": "MuiLabLoadingButton"

@@ -9,6 +9,9 @@
     "entry": "mui-base-click-away-listener",
     "root": "MuiBaseClickAwayListener"
   }, {
+    "entry": "mui-base-focus-trap",
+    "root": "MuiBaseFocusTrap"
+  }, {
     "entry": "mui-base-form-control-unstyled",
     "root": "MuiBaseFormControlUnstyled"
   }, {
@@ -51,6 +54,9 @@
     "entry": "mui-base-slider-unstyled",
     "root": "MuiBaseSliderUnstyled"
   }, {
+    "entry": "mui-base-snackbar-unstyled",
+    "root": "MuiBaseSnackbarUnstyled"
+  }, {
     "entry": "mui-base-switch-unstyled",
     "root": "MuiBaseSwitchUnstyled"
   }, {
@@ -69,20 +75,11 @@
     "entry": "mui-base-tab-unstyled",
     "root": "MuiBaseTabUnstyled"
   }, {
-    "entry": "mui-base-trap-focus",
-    "root": "MuiBaseTrapFocus"
-  }, {
     "entry": "mui-base-class-name",
     "root": "MuiBaseClassName"
   }, {
     "entry": "mui-base-compose-classes",
     "root": "MuiBaseComposeClasses"
-  }, {
-    "entry": "mui-base-generate-utility-class",
-    "root": "MuiBaseGenerateUtilityClass"
-  }, {
-    "entry": "mui-base-generate-utility-classes",
-    "root": "MuiBaseGenerateUtilityClasses"
   }, {
     "entry": "mui-base-textarea-autosize",
     "root": "MuiBaseTextareaAutosize"
@@ -92,5 +89,11 @@
   }, {
     "entry": "mui-base-autocomplete-unstyled",
     "root": "MuiBaseAutocompleteUnstyled"
+  }, {
+    "entry": "mui-base-generate-utility-class",
+    "root": "MuiBaseGenerateUtilityClass"
+  }, {
+    "entry": "mui-base-generate-utility-classes",
+    "root": "MuiBaseGenerateUtilityClasses"
   }
 ]

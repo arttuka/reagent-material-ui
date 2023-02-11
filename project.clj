@@ -7,7 +7,7 @@
                  [com.andrewmcveigh/cljs-time "0.5.2"]
                  [camel-snake-kebab "0.4.3"]
                  [arttuka/reagent-material-ui-js "5.10.1-0"]]
-  :plugins [[lein-cljfmt "0.8.0"]
+  :plugins [[lein-cljfmt "0.9.2"]
             [lein-cljsbuild "1.1.8"]
             [lein-doo "0.1.11"]]
   :source-paths ["src/core" "src/x" "src/icons"]
@@ -15,7 +15,7 @@
   :profiles {:dev      {:test-paths     ["test"]
                         :resource-paths ["target" "dev-resources"]}
              :provided {:dependencies [[org.clojure/clojure "1.11.1"]
-                                       [org.clojure/clojurescript "1.11.4"]
+                                       [org.clojure/clojurescript "1.11.60"]
                                        [cljsjs/react "17.0.2-0"]
                                        [cljsjs/react-dom "17.0.2-0"]
                                        [prismatic/dommy "1.1.0"]]}}

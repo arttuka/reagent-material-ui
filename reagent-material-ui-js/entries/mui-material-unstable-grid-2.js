@@ -1,0 +1,1 @@
+export { Unstable_Grid2 as default } from '@mui/material'

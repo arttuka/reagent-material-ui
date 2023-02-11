@@ -136,6 +136,7 @@
             reagent-mui.material.toolbar
             reagent-mui.material.tooltip
             reagent-mui.material.typography
+            reagent-mui.material.unstable-grid-2
             reagent-mui.material.unstable-trap-focus
             reagent-mui.material.zoom
             reagent-mui.material.use-autocomplete
@@ -276,6 +277,7 @@
 (def toolbar reagent-mui.material.toolbar/toolbar)
 (def tooltip reagent-mui.material.tooltip/tooltip)
 (def typography reagent-mui.material.typography/typography)
+(def unstable-grid-2 reagent-mui.material.unstable-grid-2/unstable-grid-2)
 (def unstable-trap-focus reagent-mui.material.unstable-trap-focus/unstable-trap-focus)
 (def zoom reagent-mui.material.zoom/zoom)
 (def use-autocomplete reagent-mui.material.use-autocomplete/use-autocomplete)

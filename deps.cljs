@@ -1,5 +1,5 @@
 {:npm-deps
- {"@mui/material"   "5.10.1"
+ {"@mui/material"   "5.11.8"
   "@emotion/react"  "^11.0.0"
   "@emotion/styled" "^11.0.0"
   "react"           "^17.0.0"

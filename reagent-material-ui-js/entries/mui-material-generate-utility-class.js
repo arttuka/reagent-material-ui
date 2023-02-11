@@ -1,0 +1,1 @@
+export { generateUtilityClass as default } from '@mui/material'
