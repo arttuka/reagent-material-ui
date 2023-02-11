@@ -1,6 +1,7 @@
 (ns ^:figwheel-hooks example.core
   (:require-macros [reagent-mui.util :refer [react-component]])
-  (:require [reagent.core :as r]
+  (:require [react :as react]
+            [reagent.core :as r]
             [reagent.dom :as rdom]
             [reagent-mui.cljs-time-adapter :refer [cljs-time-adapter]]
             [reagent-mui.colors :as colors]
@@ -22,7 +23,8 @@
             [reagent-mui.styles :as styles]
             [example.autocomplete :refer [autocomplete]]
             [example.select :as select]
-            [example.data-grid :as data-grid])
+            [example.data-grid :as data-grid]
+            ["@mui/material/TextField" :as MuiTextField])
   (:import (goog.i18n DateTimeSymbols_en_US)))
 
 (set! *warn-on-infer* true)
@@ -148,10 +150,9 @@
     [chip {:icon  (r/as-element [face-outlined])
            :label "Another example icon"}]]
 
-
    [date-picker {:value        @date-picker-state
-                 :render-input (react-component [props]
-                                 [text-field props])
+                 :render-input (fn [params]
+                                 (react/createElement (.-default MuiTextField) params))
                  :on-change    (fn [value]
                                  (reset! date-picker-state value))
                  :input-format "MM/dd/yyyy"

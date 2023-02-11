@@ -74,6 +74,8 @@ to your build in `shadow-cljs.edn`.
 * React hooks can't be used in most Reagent components. [More information](https://cljdoc.org/d/reagent/reagent/1.1.1/doc/tutorials/react-features#hooks).
 * Higher order React components can only deal with components that take all their parameters
   (including children) in a single map.
+* MUI X DatePickers accept a `renderInput` prop. Rendering a Reagent element causes problems with cursor positioning.
+  You should instead render a React element with `react/createElement`. See [this issue](https://github.com/arttuka/reagent-material-ui/issues/39).
   
 For more information, check out [Reagent's interop guide](https://cljdoc.org/d/reagent/reagent/1.1.1/doc/tutorials/interop-with-react).
 
