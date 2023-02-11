@@ -116,7 +116,7 @@
             reagent-mui.material.styled-engine-provider
             reagent-mui.material.svg-icon
             reagent-mui.material.swipeable-drawer
-            reagent-mui.material.switch-component
+            reagent-mui.material.switch
             reagent-mui.material.tab
             reagent-mui.material.tab-scroll-button
             reagent-mui.material.table
@@ -257,7 +257,7 @@
 (def styled-engine-provider reagent-mui.material.styled-engine-provider/styled-engine-provider)
 (def svg-icon reagent-mui.material.svg-icon/svg-icon)
 (def swipeable-drawer reagent-mui.material.swipeable-drawer/swipeable-drawer)
-(def switch reagent-mui.material.switch-component/switch)
+(def switch reagent-mui.material.switch/switch)
 (def tab reagent-mui.material.tab/tab)
 (def tab-scroll-button reagent-mui.material.tab-scroll-button/tab-scroll-button)
 (def table reagent-mui.material.table/table)
