@@ -38,7 +38,8 @@
   (cond
     (undefined? value) (time/time-now)
     (nil? value) nil
-    (time/date? value) value
+    (instance? DateTime value) value
+    (time/date? value) (coerce/to-date-time value)
     (sequential? value) nil
     (array? value) nil
     :else (coerce/to-date-time value)))

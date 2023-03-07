@@ -2,7 +2,8 @@
   (:require [cljs.test :refer-macros [deftest testing is use-fixtures]]
             [cljs-time.core :as time]
             [reagent-mui.cljs-time-adapter :refer [cljs-time-adapter]])
-  (:import (goog.i18n DateTimeSymbols_fi)))
+  (:import (goog.i18n DateTimeSymbols_fi)
+           (goog.date DateTime)))
 
 (def test-date (time/date-time 2018 10 30 11 44 22 0))
 (def timestamp "2018-10-30T11:44:22.000Z")
@@ -27,7 +28,8 @@
     (is (equal? test-date (date (js/Date. timestamp))))
     (is (equal? test-date (date (date timestamp))))
     (is (nil? (date nil)))
-    (is (some? (date js/undefined)))))
+    (is (some? (date js/undefined)))
+    (is (instance? DateTime (date (time/local-date 2018 10 30))))))
 
 (deftest is-valid-test
   (testing "isValid"
