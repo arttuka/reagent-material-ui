@@ -10,6 +10,10 @@
             [goog.object :as obj]
             ["@mui/material/SvgIcon" :as SvgIcon]))
 
+(defn ^:private ref-key? [k]
+  (and (string? k)
+       (or (.endsWith k "ref")
+           (.endsWith k "Ref"))))
 (def ^:private color-key? #{:A100 :A200 :A400 :A700 "A100" "A200" "A400" "A700"})
 (defn ^:private numeric-string? [s]
   (and (string? s)
@@ -78,9 +82,9 @@
                     (identical? (type x) js/Object)
                     (persistent!
                      (reduce (fn [r k]
-                               (if (= "ref" k)
-                                 (assoc! r :ref (obj/get x k))
-                                 (assoc! r (js-key->clj k) (convert (obj/get x k)))))
+                               (assoc! r (js-key->clj k) (if (ref-key? k)
+                                                           (obj/get x k)
+                                                           (convert (obj/get x k)))))
                              (transient {}) (js-keys x)))
                     :else x))]
     (convert obj)))
