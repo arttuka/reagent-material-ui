@@ -18,9 +18,6 @@
     "entry": "mui-base-input-unstyled",
     "root": "MuiBaseInputUnstyled"
   }, {
-    "entry": "mui-base-listbox-unstyled",
-    "root": "MuiBaseListboxUnstyled"
-  }, {
     "entry": "mui-base-menu-unstyled",
     "root": "MuiBaseMenuUnstyled"
   }, {
@@ -29,9 +26,6 @@
   }, {
     "entry": "mui-base-modal-unstyled",
     "root": "MuiBaseModalUnstyled"
-  }, {
-    "entry": "mui-base-multi-select-unstyled",
-    "root": "MuiBaseMultiSelectUnstyled"
   }, {
     "entry": "mui-base-no-ssr",
     "root": "MuiBaseNoSsr"
@@ -60,11 +54,14 @@
     "entry": "mui-base-switch-unstyled",
     "root": "MuiBaseSwitchUnstyled"
   }, {
-    "entry": "mui-base-table-pagination-unstyled",
-    "root": "MuiBaseTablePaginationUnstyled"
-  }, {
     "entry": "mui-base-tab-panel-unstyled",
     "root": "MuiBaseTabPanelUnstyled"
+  }, {
+    "entry": "mui-base-tab-unstyled",
+    "root": "MuiBaseTabUnstyled"
+  }, {
+    "entry": "mui-base-table-pagination-unstyled",
+    "root": "MuiBaseTablePaginationUnstyled"
   }, {
     "entry": "mui-base-tabs-list-unstyled",
     "root": "MuiBaseTabsListUnstyled"
@@ -72,8 +69,50 @@
     "entry": "mui-base-tabs-unstyled",
     "root": "MuiBaseTabsUnstyled"
   }, {
-    "entry": "mui-base-tab-unstyled",
-    "root": "MuiBaseTabUnstyled"
+    "entry": "mui-base-use-badge",
+    "root": "MuiBaseUseBadge"
+  }, {
+    "entry": "mui-base-use-button",
+    "root": "MuiBaseUseButton"
+  }, {
+    "entry": "mui-base-use-input",
+    "root": "MuiBaseUseInput"
+  }, {
+    "entry": "mui-base-use-listbox",
+    "root": "MuiBaseUseListbox"
+  }, {
+    "entry": "mui-base-use-menu",
+    "root": "MuiBaseUseMenu"
+  }, {
+    "entry": "mui-base-use-menu-item",
+    "root": "MuiBaseUseMenuItem"
+  }, {
+    "entry": "mui-base-use-option",
+    "root": "MuiBaseUseOption"
+  }, {
+    "entry": "mui-base-use-select",
+    "root": "MuiBaseUseSelect"
+  }, {
+    "entry": "mui-base-use-slider",
+    "root": "MuiBaseUseSlider"
+  }, {
+    "entry": "mui-base-use-snackbar",
+    "root": "MuiBaseUseSnackbar"
+  }, {
+    "entry": "mui-base-use-switch",
+    "root": "MuiBaseUseSwitch"
+  }, {
+    "entry": "mui-base-use-tab",
+    "root": "MuiBaseUseTab"
+  }, {
+    "entry": "mui-base-use-tab-panel",
+    "root": "MuiBaseUseTabPanel"
+  }, {
+    "entry": "mui-base-use-tabs",
+    "root": "MuiBaseUseTabs"
+  }, {
+    "entry": "mui-base-use-tabs-list",
+    "root": "MuiBaseUseTabsList"
   }, {
     "entry": "mui-base-class-name",
     "root": "MuiBaseClassName"
@@ -87,8 +126,8 @@
     "entry": "mui-base-utils",
     "root": "MuiBaseUtils"
   }, {
-    "entry": "mui-base-autocomplete-unstyled",
-    "root": "MuiBaseAutocompleteUnstyled"
+    "entry": "mui-base-use-autocomplete",
+    "root": "MuiBaseUseAutocomplete"
   }, {
     "entry": "mui-base-generate-utility-class",
     "root": "MuiBaseGenerateUtilityClass"

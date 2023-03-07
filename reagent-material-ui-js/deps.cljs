@@ -5,18 +5,19 @@
    :global-exports {"@mui/material" MuiMaterial},
    :requires
    ["@mui/base"
-    "@mui/base/AutocompleteUnstyled"
-    "@mui/base/BadgeUnstyled"
     "@mui/base/ClickAwayListener"
     "@mui/base/FocusTrap"
     "@mui/base/ModalUnstyled"
     "@mui/base/NoSsr"
     "@mui/base/PopperUnstyled"
     "@mui/base/Portal"
-    "@mui/base/SliderUnstyled"
     "@mui/base/TextareaAutosize"
     "@mui/base/className"
     "@mui/base/composeClasses"
+    "@mui/base/useAutocomplete"
+    "@mui/base/useBadge"
+    "@mui/base/useSlider"
+    "@mui/base/useSnackbar"
     "@mui/base/utils"
     "@mui/utils"
     "react"
@@ -67,18 +68,15 @@
    :provides ["@mui/base"],
    :global-exports {"@mui/base" MuiBase},
    :requires
-   ["@mui/base/AutocompleteUnstyled"
-    "@mui/base/BadgeUnstyled"
+   ["@mui/base/BadgeUnstyled"
     "@mui/base/ButtonUnstyled"
     "@mui/base/ClickAwayListener"
     "@mui/base/FocusTrap"
     "@mui/base/FormControlUnstyled"
     "@mui/base/InputUnstyled"
-    "@mui/base/ListboxUnstyled"
     "@mui/base/MenuItemUnstyled"
     "@mui/base/MenuUnstyled"
     "@mui/base/ModalUnstyled"
-    "@mui/base/MultiSelectUnstyled"
     "@mui/base/NoSsr"
     "@mui/base/OptionGroupUnstyled"
     "@mui/base/OptionUnstyled"
@@ -95,6 +93,22 @@
     "@mui/base/TabsUnstyled"
     "@mui/base/TextareaAutosize"
     "@mui/base/composeClasses"
+    "@mui/base/useAutocomplete"
+    "@mui/base/useBadge"
+    "@mui/base/useButton"
+    "@mui/base/useInput"
+    "@mui/base/useListbox"
+    "@mui/base/useMenu"
+    "@mui/base/useMenuItem"
+    "@mui/base/useOption"
+    "@mui/base/useSelect"
+    "@mui/base/useSlider"
+    "@mui/base/useSnackbar"
+    "@mui/base/useSwitch"
+    "@mui/base/useTab"
+    "@mui/base/useTabPanel"
+    "@mui/base/useTabs"
+    "@mui/base/useTabsList"
     "@mui/base/utils"]}
   {:file "mui/mui-styles.inc.js",
    :file-min "mui/mui-styles.min.inc.js",
@@ -950,8 +964,8 @@
    ["@mui/base/composeClasses"
     "@mui/base/generateUtilityClass"
     "@mui/base/generateUtilityClasses"
+    "@mui/base/useBadge"
     "@mui/base/utils"
-    "@mui/utils"
     "react"]}
   {:file "mui/mui-base-button-unstyled.inc.js",
    :file-min "mui/mui-base-button-unstyled.min.inc.js",
@@ -961,8 +975,8 @@
    ["@mui/base/composeClasses"
     "@mui/base/generateUtilityClass"
     "@mui/base/generateUtilityClasses"
+    "@mui/base/useButton"
     "@mui/base/utils"
-    "@mui/utils"
     "react"]}
   {:file "mui/mui-base-click-away-listener.inc.js",
    :file-min "mui/mui-base-click-away-listener.min.inc.js",
@@ -992,28 +1006,21 @@
    :provides ["@mui/base/InputUnstyled"],
    :global-exports {"@mui/base/InputUnstyled" MuiBaseInputUnstyled},
    :requires
-   ["@mui/base/FormControlUnstyled"
-    "@mui/base/generateUtilityClass"
+   ["@mui/base/generateUtilityClass"
     "@mui/base/generateUtilityClasses"
+    "@mui/base/useInput"
     "@mui/base/utils"
-    "@mui/utils"
     "react"]}
-  {:file "mui/mui-base-listbox-unstyled.inc.js",
-   :file-min "mui/mui-base-listbox-unstyled.min.inc.js",
-   :provides ["@mui/base/ListboxUnstyled"],
-   :global-exports
-   {"@mui/base/ListboxUnstyled" MuiBaseListboxUnstyled},
-   :requires ["@mui/base/utils" "@mui/utils" "react"]}
   {:file "mui/mui-base-menu-unstyled.inc.js",
    :file-min "mui/mui-base-menu-unstyled.min.inc.js",
    :provides ["@mui/base/MenuUnstyled"],
    :global-exports {"@mui/base/MenuUnstyled" MuiBaseMenuUnstyled},
    :requires
-   ["@mui/base/ListboxUnstyled"
-    "@mui/base/PopperUnstyled"
+   ["@mui/base/PopperUnstyled"
     "@mui/base/composeClasses"
     "@mui/base/generateUtilityClass"
     "@mui/base/generateUtilityClasses"
+    "@mui/base/useMenu"
     "@mui/base/utils"
     "@mui/utils"
     "react"]}
@@ -1023,13 +1030,11 @@
    :global-exports
    {"@mui/base/MenuItemUnstyled" MuiBaseMenuItemUnstyled},
    :requires
-   ["@mui/base/ButtonUnstyled"
-    "@mui/base/MenuUnstyled"
-    "@mui/base/composeClasses"
+   ["@mui/base/composeClasses"
     "@mui/base/generateUtilityClass"
     "@mui/base/generateUtilityClasses"
+    "@mui/base/useMenuItem"
     "@mui/base/utils"
-    "@mui/utils"
     "react"]}
   {:file "mui/mui-base-modal-unstyled.inc.js",
    :file-min "mui/mui-base-modal-unstyled.min.inc.js",
@@ -1041,18 +1046,6 @@
     "@mui/base/composeClasses"
     "@mui/base/generateUtilityClass"
     "@mui/base/generateUtilityClasses"
-    "@mui/base/utils"
-    "@mui/utils"
-    "react"]}
-  {:file "mui/mui-base-multi-select-unstyled.inc.js",
-   :file-min "mui/mui-base-multi-select-unstyled.min.inc.js",
-   :provides ["@mui/base/MultiSelectUnstyled"],
-   :global-exports
-   {"@mui/base/MultiSelectUnstyled" MuiBaseMultiSelectUnstyled},
-   :requires
-   ["@mui/base/PopperUnstyled"
-    "@mui/base/SelectUnstyled"
-    "@mui/base/composeClasses"
     "@mui/base/utils"
     "@mui/utils"
     "react"]}
@@ -1081,8 +1074,8 @@
     "@mui/base/composeClasses"
     "@mui/base/generateUtilityClass"
     "@mui/base/generateUtilityClasses"
+    "@mui/base/useOption"
     "@mui/base/utils"
-    "@mui/utils"
     "react"]}
   {:file "mui/mui-base-popper-unstyled.inc.js",
    :file-min "mui/mui-base-popper-unstyled.min.inc.js",
@@ -1106,12 +1099,11 @@
    :provides ["@mui/base/SelectUnstyled"],
    :global-exports {"@mui/base/SelectUnstyled" MuiBaseSelectUnstyled},
    :requires
-   ["@mui/base/ButtonUnstyled"
-    "@mui/base/ListboxUnstyled"
-    "@mui/base/PopperUnstyled"
+   ["@mui/base/PopperUnstyled"
     "@mui/base/composeClasses"
     "@mui/base/generateUtilityClass"
     "@mui/base/generateUtilityClasses"
+    "@mui/base/useSelect"
     "@mui/base/utils"
     "@mui/utils"
     "react"]}
@@ -1123,6 +1115,7 @@
    ["@mui/base/composeClasses"
     "@mui/base/generateUtilityClass"
     "@mui/base/generateUtilityClasses"
+    "@mui/base/useSlider"
     "@mui/base/utils"
     "@mui/utils"
     "react"]}
@@ -1136,8 +1129,8 @@
     "@mui/base/composeClasses"
     "@mui/base/generateUtilityClass"
     "@mui/base/generateUtilityClasses"
+    "@mui/base/useSnackbar"
     "@mui/base/utils"
-    "@mui/utils"
     "react"]}
   {:file "mui/mui-base-switch-unstyled.inc.js",
    :file-min "mui/mui-base-switch-unstyled.min.inc.js",
@@ -1147,6 +1140,30 @@
    ["@mui/base/composeClasses"
     "@mui/base/generateUtilityClass"
     "@mui/base/generateUtilityClasses"
+    "@mui/base/useSwitch"
+    "@mui/base/utils"
+    "react"]}
+  {:file "mui/mui-base-tab-panel-unstyled.inc.js",
+   :file-min "mui/mui-base-tab-panel-unstyled.min.inc.js",
+   :provides ["@mui/base/TabPanelUnstyled"],
+   :global-exports
+   {"@mui/base/TabPanelUnstyled" MuiBaseTabPanelUnstyled},
+   :requires
+   ["@mui/base/composeClasses"
+    "@mui/base/generateUtilityClass"
+    "@mui/base/generateUtilityClasses"
+    "@mui/base/useTabPanel"
+    "@mui/base/utils"
+    "react"]}
+  {:file "mui/mui-base-tab-unstyled.inc.js",
+   :file-min "mui/mui-base-tab-unstyled.min.inc.js",
+   :provides ["@mui/base/TabUnstyled"],
+   :global-exports {"@mui/base/TabUnstyled" MuiBaseTabUnstyled},
+   :requires
+   ["@mui/base/composeClasses"
+    "@mui/base/generateUtilityClass"
+    "@mui/base/generateUtilityClasses"
+    "@mui/base/useTab"
     "@mui/base/utils"
     "@mui/utils"
     "react"]}
@@ -1163,30 +1180,17 @@
     "@mui/base/utils"
     "@mui/utils"
     "react"]}
-  {:file "mui/mui-base-tab-panel-unstyled.inc.js",
-   :file-min "mui/mui-base-tab-panel-unstyled.min.inc.js",
-   :provides ["@mui/base/TabPanelUnstyled"],
-   :global-exports
-   {"@mui/base/TabPanelUnstyled" MuiBaseTabPanelUnstyled},
-   :requires
-   ["@mui/base/TabsUnstyled"
-    "@mui/base/composeClasses"
-    "@mui/base/generateUtilityClass"
-    "@mui/base/generateUtilityClasses"
-    "@mui/base/utils"
-    "react"]}
   {:file "mui/mui-base-tabs-list-unstyled.inc.js",
    :file-min "mui/mui-base-tabs-list-unstyled.min.inc.js",
    :provides ["@mui/base/TabsListUnstyled"],
    :global-exports
    {"@mui/base/TabsListUnstyled" MuiBaseTabsListUnstyled},
    :requires
-   ["@mui/base/TabsUnstyled"
-    "@mui/base/composeClasses"
+   ["@mui/base/composeClasses"
     "@mui/base/generateUtilityClass"
     "@mui/base/generateUtilityClasses"
+    "@mui/base/useTabsList"
     "@mui/base/utils"
-    "@mui/utils"
     "react"]}
   {:file "mui/mui-base-tabs-unstyled.inc.js",
    :file-min "mui/mui-base-tabs-unstyled.min.inc.js",
@@ -1196,22 +1200,94 @@
    ["@mui/base/composeClasses"
     "@mui/base/generateUtilityClass"
     "@mui/base/generateUtilityClasses"
+    "@mui/base/useTabs"
     "@mui/base/utils"
-    "@mui/utils"
     "react"]}
-  {:file "mui/mui-base-tab-unstyled.inc.js",
-   :file-min "mui/mui-base-tab-unstyled.min.inc.js",
-   :provides ["@mui/base/TabUnstyled"],
-   :global-exports {"@mui/base/TabUnstyled" MuiBaseTabUnstyled},
+  {:file "mui/mui-base-use-badge.inc.js",
+   :file-min "mui/mui-base-use-badge.min.inc.js",
+   :provides ["@mui/base/useBadge"],
+   :global-exports {"@mui/base/useBadge" MuiBaseUseBadge},
+   :requires ["@mui/utils"]}
+  {:file "mui/mui-base-use-button.inc.js",
+   :file-min "mui/mui-base-use-button.min.inc.js",
+   :provides ["@mui/base/useButton"],
+   :global-exports {"@mui/base/useButton" MuiBaseUseButton},
+   :requires ["@mui/base/utils" "@mui/utils" "react"]}
+  {:file "mui/mui-base-use-input.inc.js",
+   :file-min "mui/mui-base-use-input.min.inc.js",
+   :provides ["@mui/base/useInput"],
+   :global-exports {"@mui/base/useInput" MuiBaseUseInput},
    :requires
-   ["@mui/base/ButtonUnstyled"
-    "@mui/base/TabsUnstyled"
-    "@mui/base/composeClasses"
-    "@mui/base/generateUtilityClass"
-    "@mui/base/generateUtilityClasses"
+   ["@mui/base/FormControlUnstyled"
     "@mui/base/utils"
     "@mui/utils"
     "react"]}
+  {:file "mui/mui-base-use-listbox.inc.js",
+   :file-min "mui/mui-base-use-listbox.min.inc.js",
+   :provides ["@mui/base/useListbox"],
+   :global-exports {"@mui/base/useListbox" MuiBaseUseListbox},
+   :requires ["@mui/base/utils" "@mui/utils" "react"]}
+  {:file "mui/mui-base-use-menu.inc.js",
+   :file-min "mui/mui-base-use-menu.min.inc.js",
+   :provides ["@mui/base/useMenu"],
+   :global-exports {"@mui/base/useMenu" MuiBaseUseMenu},
+   :requires ["@mui/base/useListbox" "@mui/utils" "react"]}
+  {:file "mui/mui-base-use-menu-item.inc.js",
+   :file-min "mui/mui-base-use-menu-item.min.inc.js",
+   :provides ["@mui/base/useMenuItem"],
+   :global-exports {"@mui/base/useMenuItem" MuiBaseUseMenuItem},
+   :requires
+   ["@mui/base/MenuUnstyled"
+    "@mui/base/useButton"
+    "@mui/utils"
+    "react"]}
+  {:file "mui/mui-base-use-option.inc.js",
+   :file-min "mui/mui-base-use-option.min.inc.js",
+   :provides ["@mui/base/useOption"],
+   :global-exports {"@mui/base/useOption" MuiBaseUseOption},
+   :requires ["@mui/base/SelectUnstyled" "@mui/utils" "react"]}
+  {:file "mui/mui-base-use-select.inc.js",
+   :file-min "mui/mui-base-use-select.min.inc.js",
+   :provides ["@mui/base/useSelect"],
+   :global-exports {"@mui/base/useSelect" MuiBaseUseSelect},
+   :requires
+   ["@mui/base/useButton" "@mui/base/useListbox" "@mui/utils" "react"]}
+  {:file "mui/mui-base-use-slider.inc.js",
+   :file-min "mui/mui-base-use-slider.min.inc.js",
+   :provides ["@mui/base/useSlider"],
+   :global-exports {"@mui/base/useSlider" MuiBaseUseSlider},
+   :requires ["@mui/utils" "react"]}
+  {:file "mui/mui-base-use-snackbar.inc.js",
+   :file-min "mui/mui-base-use-snackbar.min.inc.js",
+   :provides ["@mui/base/useSnackbar"],
+   :global-exports {"@mui/base/useSnackbar" MuiBaseUseSnackbar},
+   :requires ["@mui/base/utils" "@mui/utils" "react"]}
+  {:file "mui/mui-base-use-switch.inc.js",
+   :file-min "mui/mui-base-use-switch.min.inc.js",
+   :provides ["@mui/base/useSwitch"],
+   :global-exports {"@mui/base/useSwitch" MuiBaseUseSwitch},
+   :requires ["@mui/utils" "react"]}
+  {:file "mui/mui-base-use-tab.inc.js",
+   :file-min "mui/mui-base-use-tab.min.inc.js",
+   :provides ["@mui/base/useTab"],
+   :global-exports {"@mui/base/useTab" MuiBaseUseTab},
+   :requires ["@mui/base/TabsUnstyled" "@mui/base/useButton"]}
+  {:file "mui/mui-base-use-tab-panel.inc.js",
+   :file-min "mui/mui-base-use-tab-panel.min.inc.js",
+   :provides ["@mui/base/useTabPanel"],
+   :global-exports {"@mui/base/useTabPanel" MuiBaseUseTabPanel},
+   :requires ["@mui/base/TabsUnstyled"]}
+  {:file "mui/mui-base-use-tabs.inc.js",
+   :file-min "mui/mui-base-use-tabs.min.inc.js",
+   :provides ["@mui/base/useTabs"],
+   :global-exports {"@mui/base/useTabs" MuiBaseUseTabs},
+   :requires ["@mui/utils" "react"]}
+  {:file "mui/mui-base-use-tabs-list.inc.js",
+   :file-min "mui/mui-base-use-tabs-list.min.inc.js",
+   :provides ["@mui/base/useTabsList"],
+   :global-exports {"@mui/base/useTabsList" MuiBaseUseTabsList},
+   :requires
+   ["@mui/base/TabsUnstyled" "@mui/base/utils" "@mui/utils" "react"]}
   {:file "mui/mui-base-class-name.inc.js",
    :file-min "mui/mui-base-class-name.min.inc.js",
    :provides ["@mui/base/className"],
@@ -1233,11 +1309,11 @@
    :provides ["@mui/base/utils"],
    :global-exports {"@mui/base/utils" MuiBaseUtils},
    :requires ["@mui/utils"]}
-  {:file "mui/mui-base-autocomplete-unstyled.inc.js",
-   :file-min "mui/mui-base-autocomplete-unstyled.min.inc.js",
-   :provides ["@mui/base/AutocompleteUnstyled"],
+  {:file "mui/mui-base-use-autocomplete.inc.js",
+   :file-min "mui/mui-base-use-autocomplete.min.inc.js",
+   :provides ["@mui/base/useAutocomplete"],
    :global-exports
-   {"@mui/base/AutocompleteUnstyled" MuiBaseAutocompleteUnstyled},
+   {"@mui/base/useAutocomplete" MuiBaseUseAutocomplete},
    :requires ["@mui/utils" "react"]}
   {:file "mui/mui-base-generate-utility-class.inc.js",
    :file-min "mui/mui-base-generate-utility-class.min.inc.js",

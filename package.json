@@ -8,26 +8,26 @@
     "karma-cljs-test": "^0.1.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "rimraf": "^4.1.2",
-    "shadow-cljs": "2.20.14",
+    "rimraf": "^4.3.1",
+    "shadow-cljs": "2.22.0",
     "terser-webpack-plugin": "^5.3.6",
-    "webpack": "^5.75.0",
+    "webpack": "^5.76.0",
     "webpack-cli": "^5.0.1",
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
-    "@emotion/react": "^11.10.5",
-    "@emotion/styled": "^11.10.5",
-    "@mui/base": "5.0.0-alpha.117",
-    "@mui/lab": "5.0.0-alpha.119",
-    "@mui/material": "5.11.8",
-    "@mui/styles": "5.11.7"
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@mui/base": "5.0.0-alpha.120",
+    "@mui/lab": "5.0.0-alpha.122",
+    "@mui/material": "5.11.12",
+    "@mui/styles": "5.11.12"
   },
   "scripts": {
     "build": "npm run clean && npm run build:dev && npm run build:prod",
     "build:dev": "webpack --config ./reagent-material-ui-js/webpack.config.js --mode development",
     "build:prod": "webpack --config ./reagent-material-ui-js/webpack.config.js --mode production",
-    "clean": "rimraf './reagent-material-ui-js/src/mui/mui*.{inc,min.inc}.js' .shadow-cljs",
+    "clean": "rimraf -g './reagent-material-ui-js/src/mui/*.{inc,min.inc}.js' .shadow-cljs",
     "test": "shadow-cljs compile test && karma start --single-run",
     "test:browser": "shadow-cljs watch browser-test"
   }

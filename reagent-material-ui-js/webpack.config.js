@@ -97,12 +97,22 @@ const baseInternals = {
   '../utils/extractEventHandlers': makeComponentExternal('Utils', true, 'extractEventHandlers'),
   '../utils/areArraysEqual': makeComponentExternal('Utils', true, 'areArraysEqual'),
   '../utils/useSlotProps': makeComponentExternal('Utils', true, 'useSlotProps'),
-  '../FormControlUnstyled/useFormControl': makeComponentExternal('FormControlUnstyled', true, 'useFormControlUnstyled'),
   '../FormControlUnstyled/FormControlContext': makeComponentExternal('FormControlUnstyled', true, 'FormControlUnstyledContext'),
-  '../SelectUnstyled/useSelect': makeComponentExternal('SelectUnstyled', true, 'useSelect'),
-  '../SelectUnstyled/SelectUnstyledContext': makeComponentExternal('SelectUnstyled', true, 'SelectUnstyledContext'),
-  '../SelectUnstyled/selectUnstyledClasses': makeComponentExternal('SelectUnstyled', true, 'selectUnstyledClasses')
+  '../SelectUnstyled/SelectUnstyledContext': makeComponentExternal('SelectUnstyled', true),
+  '../SelectUnstyled/selectUnstyledClasses': makeComponentExternal('SelectUnstyled', true, 'selectUnstyledClasses'),
+  '../useTabPanel/useTabPanel': makeComponentExternal('useTabPanel', true, 'useTabPanel')
 }
+
+const baseIgnored = [
+  '../utils/appendOwnerState',
+  '../utils/useForcedRerendering',
+  '../utils/useLatest',
+  '../utils/useMessageBus',
+  '../utils/useTextNavigation',
+  '../SelectUnstyled/utils',
+  '../SelectUnstyled/defaultOptionStringifier',
+  '../MenuUnstyled/useMenuChangeNotifiers'
+]
 
 const externals = {
   components: function ({request}, callback) {
@@ -134,11 +144,7 @@ const externals = {
       return callback()
     } else if (request in baseInternals) {
       return callback(null, baseInternals[request])
-    } else if (request === '../utils/appendOwnerState') {
-      return callback()
-    } else if (request === '../SelectUnstyled/utils') {
-      return callback()
-    } else if (request === '../SelectUnstyled/defaultOptionStringifier') {
+    } else if (baseIgnored.includes(request)) {
       return callback()
     } else if (name) {
       return callback(null, makeComponentExternal(name, true))
