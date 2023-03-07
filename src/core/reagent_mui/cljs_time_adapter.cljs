@@ -233,13 +233,14 @@
                    (.format formatter date)))]
     #js {:locale                       locale
          :formats                      (clj->js formats)
+         :lib                          "cljs-time"
          :date                         to-cljs-date
          :toJsDate                     (fn [value]
                                          (coerce/to-date value))
          :parse                        (fn [value format-str]
                                          (let [date (coerce/to-date-time 0)
                                                ^DateTimeParse parser (DateTimeParse. format-str locale)
-                                               cnt (.strictParse parser value date)]
+                                               cnt (.parse parser value date #js {:validate true})]
                                            (when (pos? cnt)
                                              date)))
          :getCurrentLocaleCode         (fn []
@@ -301,10 +302,20 @@
                                          (start-of-week date locale))
          :endOfWeek                    (fn [date]
                                          (end-of-week date locale))
+         :addSeconds                   (fn [date n]
+                                         (time/plus date (time/seconds n)))
+         :addMinutes                   (fn [date n]
+                                         (time/plus date (time/minutes n)))
+         :addHours                     (fn [date n]
+                                         (time/plus date (time/hours n)))
          :addDays                      (fn [date n]
                                          (time/plus date (time/days n)))
+         :addWeeks                     (fn [date n]
+                                         (time/plus date (time/weeks n)))
          :addMonths                    (fn [date n]
                                          (time/plus date (time/months n)))
+         :addYears                     (fn [date n]
+                                         (time/plus date (time/years n)))
          :startOfDay                   (fn [date]
                                          (start-of-day date))
          :endOfDay                     (fn [date]
@@ -329,8 +340,15 @@
          :setSeconds                   (fn [^DateTime date n]
                                          (doto ^DateTime (.clone date)
                                            (.setSeconds n)))
+         :getDate                      (fn [^DateTime date]
+                                         (time/day date))
+         :setDate                      (fn [^DateTime date n]
+                                         (doto ^DateTime (.clone date)
+                                           (.setDate n)))
          :getMonth                     (fn [^DateTime date]
                                          (.getMonth date))
+         :getDaysInMonth               (fn [^DateTime date]
+                                         (time/number-of-days-in-the-month date))
          :setMonth                     (fn [^DateTime date n]
                                          (let [last-day-of-month (time/day (time/last-day-of-the-month (time/year date) (inc n)))]
                                            (doto ^DateTime (.clone date)

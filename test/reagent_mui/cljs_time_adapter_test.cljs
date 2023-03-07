@@ -4,8 +4,8 @@
             [reagent-mui.cljs-time-adapter :refer [cljs-time-adapter]])
   (:import (goog.i18n DateTimeSymbols_fi)))
 
-(def test-date (time/date-time 2018 10 30 11 44 0 0))
-(def timestamp "2018-10-30T11:44:00.000Z")
+(def test-date (time/date-time 2018 10 30 11 44 22 0))
+(def timestamp "2018-10-30T11:44:22.000Z")
 (def utils (cljs-time-adapter #js {}))
 (def datetime-format "yyyy-MM-dd HH:mm")
 (defn format-datetime
@@ -38,14 +38,34 @@
       (is (not (.isValid utils nil)))
       (is (not (.isValid utils "2018-42-30T11:60:00.000Z"))))))
 
+(deftest add-seconds-test
+  (testing "addSeconds"
+    (is (= "23" (format-datetime (.addSeconds utils test-date 1) "ss")))))
+
+(deftest add-minutes-test
+  (testing "addMinutes"
+    (is (= "45" (format-datetime (.addMinutes utils test-date 1) "mm")))))
+
+(deftest add-hours-test
+  (testing "addHours"
+    (is (= "12" (format-datetime (.addHours utils test-date 1) "HH")))))
+
 (deftest add-days-test
   (testing "addDays"
     (is (= "31" (format-datetime (.addDays utils test-date 1) "dd")))))
 
+(deftest add-weeks-test
+  (testing "addWeeks"
+    (is (= "2018-11-06" (format-datetime (.addWeeks utils test-date 1) "yyyy-MM-dd")))))
+
 (deftest add-months-test
   (testing "addMonths"
-    (is (= "December 2018" (format-datetime (.addMonths utils test-date 2) "MMMM yyyy")))
-    (is (= "August 2018" (format-datetime (.addMonths utils test-date -2) "MMMM yyyy")))))
+    (is (= "2018-12-30" (format-datetime (.addMonths utils test-date 2) "yyyy-MM-dd")))
+    (is (= "2018-08-30" (format-datetime (.addMonths utils test-date -2) "yyyy-MM-dd")))))
+
+(deftest add-years-test
+  (testing "addYears"
+    (is (= "2019-10-30" (format-datetime (.addYears utils test-date 1) "yyyy-MM-dd")))))
 
 (deftest start-of-day-test
   (testing "startOfDay"
@@ -111,6 +131,10 @@
   (testing "getMonth"
     (is (= 9 (.getMonth utils test-date)))))
 
+(deftest get-date-test
+  (testing "getDate"
+    (is (= 30 (.getDate utils test-date)))))
+
 (deftest get-hours-test
   (testing "getHours"
     (is (= 11 (.getHours utils test-date)))))
@@ -121,7 +145,13 @@
 
 (deftest get-seconds-test
   (testing "getSeconds"
-    (is (= 0 (.getSeconds utils test-date)))))
+    (is (= 22 (.getSeconds utils test-date)))))
+
+(deftest get-days-in-month-test
+  (testing "getDaysInMonth"
+    (is (= [31 28 31 30 31 30 31 31 30 31 30 31]
+           (map #(.getDaysInMonth utils (time/date-time 2018 % 1)) [1 2 3 4 5 6 7 8 9 10 11 12])))
+    (is (= 29 (.getDaysInMonth utils (time/date-time 2016 2 1))))))
 
 (deftest set-year-test
   (testing "setYear"
@@ -130,6 +160,10 @@
 (deftest set-month-test
   (testing "setMonth"
     (is (= "2018-05-30 11:44" (format-datetime (.setMonth utils test-date 4))))))
+
+(deftest set-date-test
+  (testing "setDate"
+    (is (= "2018-10-05 11:44" (format-datetime (.setDate utils test-date 5))))))
 
 (deftest set-hours-test
   (testing "setHours"
@@ -194,9 +228,9 @@
 
 (deftest get-diff-test
   (testing "getDiff"
-    (is (= 86400000 (.getDiff utils test-date (date "2018-10-29T11:44:00.000Z"))))
-    (is (= -86400000 (.getDiff utils test-date (date "2018-10-31T11:44:00.000Z"))))
-    (is (= -86400000 (.getDiff utils test-date "2018-10-31T11:44:00.000Z")))))
+    (is (= 86400000 (.getDiff utils test-date (date "2018-10-29T11:44:22.000Z"))))
+    (is (= -86400000 (.getDiff utils test-date (date "2018-10-31T11:44:22.000Z"))))
+    (is (= -86400000 (.getDiff utils test-date "2018-10-31T11:44:22.000Z")))))
 
 (deftest merge-date-and-time-test
   (testing "mergeDateAndTime"
@@ -211,7 +245,7 @@
 
 (deftest parse-test
   (testing "parse"
-    (is (equal? test-date (.parse utils "2018-10-30 11:44" datetime-format)))
+    (is (equal? test-date (.parse utils "2018-10-30 11:44:22" "yyyy-MM-dd HH:mm:ss")))
     (is (nil? (.parse utils "" datetime-format)))
     (is (not (.isValid utils (.parse utils "99-99-9999" datetime-format))))))
 
