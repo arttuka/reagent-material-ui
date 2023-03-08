@@ -10,7 +10,7 @@
                                 "fullDate"              "dd MMM yyyy"
                                 "fullDateWithWeekday"   "EEEE dd MMMM yyyy"
                                 "fullDateTime"          "dd MMM yyyy HH:mm"
-                                "fullDateTime12h"       "dd MMM yyyy hh:mm aaa"
+                                "fullDateTime12h"       "dd MMM yyyy hh:mm a"
                                 "fullDateTime24h"       "dd MMM yyyy HH:mm"
                                 "fullTime"              "HH:mm"
                                 "fullTime12h"           "hh:mm aaa"
@@ -19,7 +19,7 @@
                                 "hours24h"              "HH"
                                 "keyboardDate"          "dd MMM yyyy"
                                 "keyboardDateTime"      "dd MMM yyyy HH:mm"
-                                "keyboardDateTime12h"   "dd MMM yyyy hh:mm aaa"
+                                "keyboardDateTime12h"   "dd MMM yyyy hh:mm a"
                                 "keyboardDateTime24h"   "dd MMM yyyy HH:mm"
                                 "minutes"               "mm"
                                 "month"                 "MMMM"
@@ -33,6 +33,44 @@
                                 "seconds"               "ss"
                                 "shortDate"             "MMM d"
                                 "year"                  "yyyy"})
+
+(def ^:private format-token-map {"yy"    "year"
+                                 "yyyy"  "year"
+
+                                 "M"     "month"
+                                 "MM"    "month"
+                                 "MMM"   {:sectionType "month" :contentType "letter"}
+                                 "MMMM"  {:sectionType "month" :contentType "letter"}
+                                 "LLL"   {:sectionType "month" :contentType "letter"}
+                                 "LLLL"  {:sectionType "month" :contentType "letter"}
+
+                                 "d"     "day"
+                                 "dd"    "day"
+
+                                 "E"     {:sectionType "weekDay" :contentType "letter"}
+                                 "EE"    {:sectionType "weekDay" :contentType "letter"}
+                                 "EEE"   {:sectionType "weekDay" :contentType "letter"}
+                                 "EEEE"  {:sectionType "weekDay" :contentType "letter"}
+                                 "EEEEE" {:sectionType "weekDay" :contentType "letter"}
+                                 "c"     "weekDay"
+                                 "cc"    "weekDay"
+                                 "ccc"   {:sectionType "weekDay" :contentType "letter"}
+                                 "cccc"  {:sectionType "weekDay" :contentType "letter"}
+                                 "ccccc" {:sectionType "weekDay" :contentType "letter"}
+
+                                 "a"     "meridiem"
+                                 "b"     "meridiem"
+
+                                 "h"     "hours"
+                                 "hh"    "hours"
+                                 "H"     "hours"
+                                 "HH"    "hours"
+
+                                 "m"     "minutes"
+                                 "mm"    "minutes"
+
+                                 "s"     "seconds"
+                                 "ss"    "seconds"})
 
 (defn ^:private to-cljs-date [value]
   (cond
@@ -232,7 +270,11 @@
         format (fn [date format-str]
                  (let [^DateTimeFormat formatter (DateTimeFormat. format-str locale)]
                    (.format formatter date)))]
-    #js {:locale                       locale
+    #js {:isMUIAdapter                 true
+         :formatTokenMap               (clj->js format-token-map)
+         :escapedCharacters            #js {:start "'" :end "'"}
+         :expandFormat                 identity
+         :locale                       locale
          :formats                      (clj->js formats)
          :lib                          "cljs-time"
          :date                         to-cljs-date
@@ -247,7 +289,9 @@
          :getCurrentLocaleCode         (fn []
                                          (locale-code locale))
          :is12HourCycleInCurrentLocale (constantly true)
-         :getFormatHelperText          (constantly "")
+         :getFormatHelperText          (fn [s] (-> s
+                                                   (.replace (js/RegExp. "(a)" "g") "(a|p)m")
+                                                   (.toLocaleLowerCase)))
          :isNull                       (fn [value]
                                          (nil? value))
          :isValid                      (fn [value]
@@ -346,6 +390,8 @@
          :setDate                      (fn [^DateTime date n]
                                          (doto ^DateTime (.clone date)
                                            (.setDate n)))
+         :getWeekNumber                (fn [^DateTime date]
+                                         (.getWeekNumber date))
          :getMonth                     (fn [^DateTime date]
                                          (.getMonth date))
          :getDaysInMonth               (fn [^DateTime date]

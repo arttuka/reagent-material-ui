@@ -149,6 +149,10 @@
   (testing "getSeconds"
     (is (= 22 (.getSeconds utils test-date)))))
 
+(deftest get-week-number-test
+  (testing "getWeekNumber"
+    (is (= 44 (.getWeekNumber utils test-date)))))
+
 (deftest get-days-in-month-test
   (testing "getDaysInMonth"
     (is (= [31 28 31 30 31 30 31 31 30 31 30 31]
