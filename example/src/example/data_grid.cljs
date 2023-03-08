@@ -1,7 +1,7 @@
 (ns example.data-grid
   (:require [reagent.core :as r]
             [reagent-mui.x.data-grid :refer [data-grid]]
-            [reagent-mui.util :refer [wrap-clj-function]]))
+            [reagent-mui.util :refer [clj->js' wrap-clj-function]]))
 
 (def columns [{:field      :id
                :headerName "ID"
@@ -40,9 +40,9 @@
 
 (defn component []
   [:div {:style {:height 400 :width 800}}
-   [data-grid {:rows                       rows
-               :columns                    columns
-               :page-size                  5
-               :rows-per-page-options      [5]
-               :checkbox-selection         true
-               :disable-selection-on-click true}]])
+   [data-grid {:rows                           rows
+               :columns                        columns
+               :initial-state                  (clj->js' {:pagination {:pagination-model {:page-size 5}}})
+               :page-size-options              [5]
+               :checkbox-selection             true
+               :disable-row-selection-on-click true}]])

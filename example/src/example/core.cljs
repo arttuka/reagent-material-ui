@@ -2,7 +2,7 @@
   (:require-macros [reagent-mui.util :refer [react-component]])
   (:require [react :as react]
             [reagent.core :as r]
-            [reagent.dom :as rdom]
+            [reagent.dom.client :as rdom]
             [reagent-mui.cljs-time-adapter :refer [cljs-time-adapter]]
             [reagent-mui.colors :as colors]
             [reagent-mui.material.button :refer [button]]
@@ -150,14 +150,11 @@
     [chip {:icon  (r/as-element [face-outlined])
            :label "Another example icon"}]]
 
-   [date-picker {:value        @date-picker-state
-                 :render-input (fn [params]
-                                 (react/createElement (.-default MuiTextField) params))
-                 :on-change    (fn [value]
-                                 (reset! date-picker-state value))
-                 :input-format "MM/dd/yyyy"
-                 :mask          "__/__/____"
-                 :label        "Date picker"}]
+   [date-picker {:value     @date-picker-state
+                 :on-change (fn [value]
+                              (reset! date-picker-state value))
+                 :format    "MM/dd/yyyy"
+                 :label     "Date picker"}]
    [autocomplete {:class     (:text-field classes)
                   :value     @autocomplete-state
                   :on-change (fn [new-value]
@@ -185,7 +182,8 @@
 
 (defn ^{:after-load true, :dev/after-load true}
   mount []
-  (rdom/render [main] (js/document.getElementById "app")))
+  (let [root (rdom/create-root (js/document.getElementById "app"))]
+    (rdom/render root [main])))
 
 (defn ^:export init []
   (mount))
