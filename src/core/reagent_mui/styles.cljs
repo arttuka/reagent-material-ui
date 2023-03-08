@@ -41,8 +41,7 @@
   "Component that takes a theme object and makes it available in child components.
    It should preferably be used at the root of your component tree."
   [theme & children]
-  (into [theme-provider* {:theme theme}]
-        (map r/as-element children)))
+  (into [theme-provider* {:theme (util/clj->js' theme)}] children))
 
 (defn experimental-css-vars-provider
   "Experimental provider for the theme to inject styles into Material UI components.
@@ -52,8 +51,7 @@
    Currently only supported by the Button component.
    See: https://mui.com/material-ui/experimental-api/css-variables/"
   [props & children]
-  (into [experimental-css-vars-provider* props]
-        (map r/as-element children)))
+  (into [experimental-css-vars-provider* props] children))
 
 (defn use-color-scheme
   "Hook that provides the current mode and setMode function for experimental-css-vars-provider.
