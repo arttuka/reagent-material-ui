@@ -2,13 +2,24 @@
 
 See [MUI changelog](https://github.com/mui-org/material-ui/blob/master/CHANGELOG.md) for changes in MUI.
 
+## 5.11.12-0
+
+**[compare](https://github.com/arttuka/reagent-material-ui/compare/v5.11.8-0...v5.11.12-0)**
+
+- Update MUI to v5.11.12
+- **BREAKING** Update `@mui/x-date-pickers` to v6.0.0. See [migration guide](https://mui.com/x/migration/migration-pickers-v5/).
+- Fix handling of `Date` inputs in `cljs-time-adapter`
+- Fix incorrect conversion of theme object in `reagent-mui.styles/theme-provider` ([#41](https://github.com/arttuka/reagent-material-ui/issue/41))
+- Don't convert ref props in `reagent-mui.util/js->clj'`
+- Support for Reagent 1.2.0 / React 18
+
 ## 5.11.8-0
 
 **[compare](https://github.com/arttuka/reagent-material-ui/compare/v5.10.1-0...v5.11.8-0)**
 
 - Update MUI to v5.11.8
-- Fix `cljs-time-adapter` bug with `date-range-picker-pro` (#44) and `calendar-picker` (#40)
-- Add information regarding `date-picker` input rendering (#39)
+- Fix `cljs-time-adapter` bug with `date-range-picker-pro` ([#44](https://github.com/arttuka/reagent-material-ui/issue/44)) and `calendar-picker` ([#40](https://github.com/arttuka/reagent-material-ui/pull/40))
+- Add information regarding `date-picker` input rendering ([#39](https://github.com/arttuka/reagent-material-ui/issue/39))
 - **BREAKING** `reagent-mui.material.switch-component` renamed to `reagent-mui.material.switch`
   since reserved JS keywords aren't a problem anymore
 
@@ -22,7 +33,7 @@ See [MUI changelog](https://github.com/mui-org/material-ui/blob/master/CHANGELOG
 
 **[compare](https://github.com/arttuka/reagent-material-ui/compare/v5.6.2-0...v5.6.2-1)**
 
-- Fix extern inference with Figwheel-Main (#35)
+- Fix extern inference with Figwheel-Main ([#35](https://github.com/arttuka/reagent-material-ui/issue/35))
 
 ## 5.6.2-0
 
@@ -42,7 +53,7 @@ See [MUI changelog](https://github.com/mui-org/material-ui/blob/master/CHANGELOG
 **[compare](https://github.com/arttuka/reagent-material-ui/compare/v5.2.4-0...v5.4.3-0)**
 
 - Update MUI to v5.4.3
-- Use local timezone instead of UTC by default in `reagent-mui/cljs-time-adapter` (#30) @patapizza
+- Use local timezone instead of UTC by default in `reagent-mui/cljs-time-adapter` ([#30](https://github.com/arttuka/reagent-material-ui/pull/30)) @patapizza
 - Allow string as component in `reagent-mui.styles/styled`
 
 ## 5.2.4-0
@@ -51,8 +62,8 @@ See [MUI changelog](https://github.com/mui-org/material-ui/blob/master/CHANGELOG
 
 - Update MUI to v5.2.4
 - **BREAKING** Rename package `reagent-mui.core` to `reagent-mui.base` as in MUI
-- Fix React key warnings on some icons (#27)
-- Add support for MUI X Pro components (currently just DataGrid) (#25)
+- Fix React key warnings on some icons ([#27](https://github.com/arttuka/reagent-material-ui/issue/27))
+- Add support for MUI X Pro components (currently just DataGrid) ([#25](https://github.com/arttuka/reagent-material-ui/issue/25))
 
 ## 5.0.0-0
 
@@ -78,7 +89,7 @@ See [MUI changelog](https://github.com/mui-org/material-ui/blob/master/CHANGELOG
 - Update Material UI to v5.0.0-beta.2
 - Add components from `@material-ui/unstyled`
 - Move functions from `@material-ui/core/styles` and `@material-ui/styles` to separate namespaces
-- Fix default locale in `localization-provider` (#19) @alenkralj
+- Fix default locale in `localization-provider` ([#19](https://github.com/arttuka/reagent-material-ui/pull/19)) @alenkralj
 
 ## 5.0.0-alpha.32-0
 
@@ -91,7 +102,7 @@ See [MUI changelog](https://github.com/mui-org/material-ui/blob/master/CHANGELOG
 **[compare](https://github.com/arttuka/reagent-material-ui/compare/v5.0.0-alpha.27-1...v5.0.0-alpha.29-0)**
 
 - Update Material UI to v5.0.0-alpha.29
-- Fix bug in `reagent-material-ui/js-clj'` when converting keys with non-keyword characters (#15) @adrsm108
+- Fix bug in `reagent-material-ui/js-clj'` when converting keys with non-keyword characters ([#15](https://github.com/arttuka/reagent-material-ui/pull/15)) @adrsm108
 
 ## 5.0.0-alpha.27-1
 
@@ -129,7 +140,7 @@ See [MUI changelog](https://github.com/mui-org/material-ui/blob/master/CHANGELOG
 - Update Material UI to v5.0.0-alpha.17
 - **BREAKING** `material-ui-pickers` have been moved to `material-ui-lab`
 - **BREAKING** `cljs-time-utils` has been renamed to `cljs-time-adapter` to use the same terminology as Material UI
-- Added support for responsive font sizes (#9) @wkok
+- Added support for responsive font sizes ([#9](https://github.com/arttuka/reagent-material-ui/pull/9)) @wkok
 - Fix bug in `reagent-material-ui.core.text-field` when used as uncontrolled
 
 ## 5.0.0-alpha.15-0
@@ -166,7 +177,7 @@ See [MUI changelog](https://github.com/mui-org/material-ui/blob/master/CHANGELOG
 
 **[compare](https://github.com/arttuka/reagent-material-ui/compare/v4.11.0-0...v4.11.0-1)**
 
-- Enable pure shadow-cljs usage (fixes #2)
+- Enable pure shadow-cljs usage ([#2](https://github.com/arttuka/reagent-material-ui/issue/2))
 
 ## 4.11.0-0
 

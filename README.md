@@ -15,7 +15,7 @@ Their examples are very good. and this library tries to follow the original idea
 
 To add MUI to an existing Reagent project, just add this library to your dependencies:
 ```
-[arttuka/reagent-material-ui "5.11.8-0"]
+[arttuka/reagent-material-ui "5.11.12-0"]
 ```
 
 Most of the library is in the form of regular Reagent components. Each component is contained in a namespace that mirrors
@@ -59,13 +59,18 @@ If you want to use another date library, you can use [adapters from `@mui/x-date
 To use npm dependencies with Figwheel Main, you need to exclude prebuilt JS files (React from CLJSJS and MUI from this library).
 To do so, add these exclusions to your dependency. See the example project for working configuration.
 
-    [arttuka/reagent-material-ui "5.11.8-0" :exclusions [arttuka/reagent-material-ui-js]]
+    [arttuka/reagent-material-ui "5.11.12-0" :exclusions [arttuka/reagent-material-ui-js]]
 
 #### MUI component names with shadow-cljs
 
 The compiler used by shadow-cljs will remove local function names, causing most MUI component to
 show as `Anonymous` in React Devtools. If you want to keep the names, add `:js-options {:anon-fn-naming-policy :unmapped}`
 to your build in `shadow-cljs.edn`.
+
+#### React 18
+
+[Reagent v1.2.0](https://github.com/reagent-project/reagent/blob/master/CHANGELOG.md#120-2023-02-16) has experimental
+support for React 18. This library works with Reagent 1.2.0 / React 18. See example project.
 
 ### Common pitfalls in Reagent/React interop
 
@@ -93,9 +98,10 @@ The build process also includes `lein cljfmt`.
 
 The project follows MUI's version numbering.
 
-* Current `@mui/material` version: `5.11.8`
-* Current `@mui/icons-material` version: `5.11.0`
-* Current `@mui/lab` version: `5.0.0-alpha.119`
+* Current `@mui/material` version: `5.11.12`
+* Current `@mui/icons-material` version: `5.11.11`
+* Current `@mui/lab` version: `5.0.0-alpha.122`
+* Current `@mui/x-date-pickers` version: `6.0.0`
 
 ### License
 
