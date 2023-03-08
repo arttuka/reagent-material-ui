@@ -14,8 +14,8 @@ on:
       - created
 
 env:
-  NODE_VERSION: 14.15.1
-  JAVA_VERSION: 15
+  NODE_VERSION: 16
+  JAVA_VERSION: 17
   LEIN_VERSION: 2.9.4
 
 jobs:
@@ -23,25 +23,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-java@v1
+      - uses: actions/checkout@v3
+      - uses: actions/setup-java@v3
         with:
           java-version: ${{ env.JAVA_VERSION }}
+          distribution: 'temurin'
       - uses: DeLaGuardo/setup-clojure@master
         with:
           lein: ${{ env.LEIN_VERSION }}
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v3
         with:
           node-version: ${{ env.NODE_VERSION }}
-      - name: npm cache
-        uses: actions/cache@v2
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
+          cache: 'npm'
       - name: Maven cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: ~/.m2/repository
           key: ${{ runner.os }}-maven-${{ hashFiles('project.clj') }}
